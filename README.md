@@ -7,6 +7,10 @@ A dark Wonderland-forest site for GitHub Pages. Whimsy, magic & mania.
 | `index.html` | **Software Shop:** House Rules + Queens Court, Asset Logger, D&D Combat Balancer, Mobile Game Revenue Projector |
 | `games.html` | **March Hare Games:** promises, Mimic Masters (featured), Scorchlet, Hero Impervious, We Built This City: Farmer Edition, studio story |
 | `socials.html` | **Socials:** YouTube, Twitch, Bluesky, Mastodon, Instagram, Facebook, itch.io |
+| `transparency.html` | **Transparency:** studio-wide made / given / kept, per charity, per game, month by month |
+| `mimic-masters/` | The full Mimic Masters site (its own README is inside) |
+| `scorchlet/`, `hero-impervious/`, `we-built-this-city/`, `asset-logger/`, `dnd-combat-balancer/` | Product sites |
+| `data/` | **The charity ledgers:** one CSV per game + `games.js` (charities and rates) |
 | `style.css` | All colours, fonts and layout (colours at the top under `:root`) |
 | `main.js` | Fireflies, wobbly title letters, mobile menu, fade-ins |
 | `assets/logos` | Studio, label and game logos |
@@ -18,8 +22,44 @@ The Mastodon link uses `rel="me"`, so you can add this site to your Mastodon pro
 
 ## Put it online
 1. Create a GitHub repository (name it `yourusername.github.io` for the root address).
-2. **Add file → Upload files**, drag in everything from this folder (including `assets/`), and commit.
+2. **Add file → Upload files**, drag in everything from this folder (including `assets/`, `data/` and every product folder), and commit. GitHub's web uploader takes 100 files at a time, so upload in a few batches, or use GitHub Desktop to push it all at once.
 3. **Settings → Pages → Deploy from a branch → `main` / `(root)` → Save.**
+
+## Charity transparency: filling in the CSVs
+
+Each game has its own ledger in `data/`:
+
+| File | Charity | Share |
+|---|---|---|
+| `mimic-masters.csv` | Autistic Self Advocacy Network (ASAN) | 70% |
+| `scorchlet.csv` | Organization for Autism Research (OAR) | 15% |
+| `hero-impervious.csv` | IGDA Foundation | 15% |
+| `we-built-this-city.csv` | IGDA Foundation | 15% |
+
+Add **one row per platform per month** (open the file on github.com → pencil icon → add a line → Commit):
+
+```
+Month,Platform,Gross,PlatformCut,Donated,Charity,Receipt,Notes
+2026-10,itch.io,49.90,10%,6.74,OAR,https://link-to-receipt,first month
+2026-10,Google Play,62.50,15%,37.19,ASAN,,ad revenue
+```
+
+- **Month**: `2026-10` (year-month).
+- **Gross**: what players paid (or the ad revenue reported) before the store's cut.
+- **PlatformCut**: dollars (`4.99`) or a percent of Gross (`10%`). itch.io's default is 10%; Google Play and the App Store are usually 15% for small developers.
+- **Donated**: what you actually gave from that row's money. Use `0` until you've donated, then edit the row.
+- **Charity**: `ASAN`, `OAR` or `IGDA` (leave blank to use the game's charity).
+- **Receipt**: optional link to proof (a receipt, a public donation page, a screenshot). Shows as a "Receipt" link.
+- **Notes**: optional. Not shown in the trackers, but anyone can read the CSV file itself, so keep it public-friendly.
+
+The site works out **Made** (Gross minus cut), **Kept** (Made minus Donated) and checks your pledge: it shows "✓ Pledge kept" or "⏳ Donation pending: $X still to give".
+Where the numbers show up: each game's Giving Back section, `mimic-masters/transparency.html` and `charity.html`, and the studio `transparency.html`.
+To change a charity, rate or add a game, edit `data/games.js`.
+
+**Note:** the trackers read the CSV over the web, so they only fill in on the live site (or a local web server), not when you double-click an HTML file.
+
+## Mimic Masters privacy-policy sync
+The bot that copies the privacy policy from the Google Doc now lives at `.github/workflows/sync-privacy.yml` and works inside `mimic-masters/`. In **Settings → Actions → General → Workflow permissions**, choose **Read and write permissions**, or it can't save the update. If you edit files locally, pull before you push, because the bot commits too.
 
 ## Common edits
 - **Turn on a "Coming soon" item:** replace

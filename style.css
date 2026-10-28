@@ -447,3 +447,14 @@ footer::before { content: ""; position: absolute; top: 0; left: 50%; transform: 
 /* card titles link to the product's own site */
 .card h3 .card-link { color: inherit; text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .3s; }
 .card h3 .card-link:hover { background-size: 100% 1px; color: #fff; }
+
+/* House Rules: five promises, 3 + 2, each with a proof link */
+#rules .pillars { display: flex; flex-wrap: wrap; justify-content: center; }
+#rules .pillar { flex: 0 1 340px; }
+.pillar .panel-inner { display: flex; flex-direction: column; height: 100%; }
+.pillar .proof { margin-top: auto; padding-top: 12px; font-size: .9rem; color: var(--glow); text-decoration: none; }
+.pillar .proof:hover { text-decoration: underline; }
+.pillar h3 .card-link { color: inherit; text-decoration: none; }
+.pillar h3 .card-link:hover { text-decoration: underline; text-decoration-color: var(--glow); }
+#queens-court, #looking-glass, #menu { scroll-margin-top: 90px; }
+#queens-court:target, #looking-glass:target { filter: drop-shadow(0 0 22px rgba(243,200,94,.55)); }

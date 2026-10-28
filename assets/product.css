@@ -167,3 +167,8 @@ a { color: var(--neon); text-underline-offset: 3px; }
 .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
 .js .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- Giving Back (charity tracker) ---------- */
+.giving-intro { text-align: center; color: var(--muted); max-width: 720px; margin: 0 auto 22px; font-size: 1.05rem; }
+.giving-intro b { color: var(--neon2); font-size: 1.15em; }
+.giving-intro a { color: var(--neon); font-weight: 700; }
