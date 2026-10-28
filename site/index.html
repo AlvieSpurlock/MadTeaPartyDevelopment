@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mad Tea Party Development · Software Shop</title>
+  <meta name="description" content="The software that runs a tiny game studio, released so everyone can benefit. One-time purchase, editable code, kind to your wallet.">
+  <meta name="theme-color" content="#0a140f">
+  <link rel="icon" href="assets/logos/mad-tea-party.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img class="logo" src="assets/logos/mad-tea-party.webp" alt="">
+        <span>Mad Tea Party<small>Development</small></span>
+      </a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="nav-links">
+        <a href="index.html" aria-current="page">Shop</a>
+        <a href="games.html">Games</a>
+        <a href="socials.html">Socials</a>
+        <a href="games.html" class="btn violet small"><img src="assets/icons/key_gold.webp" alt="">March Hare Games</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" style="background-image:url(assets/bg/forest.webp)"></div>
+      <div class="fireflies" data-count="30" aria-hidden="true"></div>
+
+      <img class="float f1" src="assets/icons/key_gold.webp" alt="" aria-hidden="true">
+      <div class="float f2" aria-hidden="true"><img src="assets/icons/potion_purple.webp" alt=""><span class="tag-note">drink me</span></div>
+      <img class="float f3" src="assets/icons/stopwatch.webp" alt="" aria-hidden="true">
+      <img class="float f4" src="assets/icons/mushroom.webp" alt="" aria-hidden="true">
+      <img class="float f5" src="assets/icons/heart.webp" alt="" aria-hidden="true">
+      <img class="float f6" src="assets/icons/hourglass.webp" alt="" aria-hidden="true">
+
+      <div class="wrap reveal">
+        <p class="kicker">~ we're all mad here ~</p>
+        <img class="hero-logo" src="assets/logos/mad-tea-party.webp" alt="">
+        <h1 class="sr-only">Mad Tea Party Development</h1>
+        <p class="tagline">The software that runs my studio, released so everyone can benefit. Big, life-changing apps that companies charge hundreds a year for, yours for $20 or less, once. Editable code included.</p>
+        <div class="actions">
+          <a class="btn" href="#menu">Browse the Menu</a>
+          <a class="btn violet" href="games.html">Visit March Hare Games</a>
+          <a class="btn ghost" href="#rules">The House Rules</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOUSE RULES ============ -->
+    <section class="section" id="rules">
+      <div class="wrap">
+        <div class="ribbon reveal"><h2>House Rules</h2></div>
+        <p class="lede reveal">Four promises, poured fresh with every release.</p>
+        <div class="pillars">
+          <div class="panel pillar reveal"><div class="panel-inner">
+            <img src="assets/icons/key_gold.webp" alt="">
+            <h3><a class="card-link" href="asset-logger/index.html">By a player, for the players</a></h3>
+            <p>Nothing leaves the workshop until I've played every inch of it myself, and enjoyed it.</p>
+          </div></div>
+          <div class="panel pillar reveal"><div class="panel-inner">
+            <span class="big">10%+</span>
+            <h3><a class="card-link" href="dnd-combat-balancer/index.html">To charity, always</a></h3>
+            <p>Every March Hare game donates at least 10% to charity. Fun that does some good.</p>
+          </div></div>
+          <div class="panel pillar reveal"><div class="panel-inner">
+            <img src="assets/icons/scroll_letter.webp" alt="">
+            <h3>Buy once, make it yours</h3>
+            <p>All software is a one-time purchase with editable code, so you can customize it however you like.</p>
+          </div></div>
+          <div class="panel pillar reveal"><div class="panel-inner">
+            <img src="assets/icons/coins_pouch.webp" alt="">
+            <h3>Huge apps, tiny prices</h3>
+            <p>Big, life-changing software that companies charge hundreds a year for, yours for $20 or less, once.</p>
+          </div></div>
+        </div>
+
+        <!-- Value comparison -->
+        <div class="panel value reveal">
+          <div class="panel-inner">
+            <div class="value-col them">
+              <span class="value-label">Most companies</span>
+              <span class="value-price"><s>$100s</s><small>/year</small></span>
+              <ul>
+                <li>Monthly subscriptions, forever</li>
+                <li>Locked code, no customizing</li>
+                <li>Features held behind higher tiers</li>
+              </ul>
+            </div>
+            <div class="value-vs" aria-hidden="true">vs</div>
+            <div class="value-col us">
+              <span class="value-label">Mad Tea Party</span>
+              <span class="value-price">≤$20<small>once</small></span>
+              <ul>
+                <li>One purchase, yours for good</li>
+                <li>Editable code: customize and upgrade it</li>
+                <li>The whole app, nothing held back</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOFTWARE ============ -->
+    <section class="section" id="menu">
+      <div class="wrap">
+        <div class="ribbon reveal"><h2>The Tea Menu</h2></div>
+        <p class="lede reveal">The tools that run my studio, now on the table for you.</p>
+
+        <div class="grid flow">
+
+          <!-- Queens Court · Gumroad (coming soon) -->
+          <article class="card reveal">
+            <span class="bookmark">only<b>$19.99</b></span>
+            <div class="art" style="--tint:rgba(255,93,125,.22)">
+              <img class="platform" src="assets/ui/platform.webp" alt="">
+              <img class="item" src="assets/icons/crown.webp" alt="">
+            </div>
+            <div class="card-body">
+              <div class="meta"><span class="chip gum">Gumroad</span><span class="chip code">Editable code</span><span class="chip">Coming soon</span></div>
+              <h3>Queens Court</h3>
+              <p>Does the entire job of a full-time social media <em>and</em> marketing manager, automatically, with zero breaks. One payment, no salary, no subscription.</p>
+              <div class="card-actions">
+                <span class="btn soon" aria-disabled="true">Coming soon</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Looking Glass (coming soon) -->
+          <article class="card reveal">
+            <span class="bookmark">only<b>$14.99</b></span>
+            <div class="art" style="--tint:rgba(110,90,255,.28)">
+              <img class="platform" src="assets/ui/platform.webp" alt="">
+              <img class="item" src="assets/icons/looking_glass.webp" alt="">
+            </div>
+            <div class="card-body">
+              <div class="meta"><span class="chip code">Editable code</span><span class="chip">Coming soon</span></div>
+              <h3>Looking Glass</h3>
+              <p>Does the full job of a social media manager, automatically, with zero breaks. Step through and let it keep your socials alive.</p>
+              <div class="card-actions">
+                <span class="btn soon" aria-disabled="true">Coming soon</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Asset Logger · itch.io -->
+          <article class="card reveal">
+            <span class="bookmark">from<b>$1.99</b></span>
+            <div class="art has-shot">
+              <img class="shot" src="assets/covers/asset-logger.webp" alt="Asset Logger cover art">
+            </div>
+            <div class="card-body">
+              <div class="meta"><span class="chip itch">itch.io</span><span class="chip code">Editable code</span><span class="chip">Windows</span></div>
+              <h3>Asset Logger</h3>
+              <p>Keeps a tidy ledger of every third-party asset you use and exports it to CSV, ready for platform submissions.</p>
+              <div class="card-actions">
+                <a class="btn" href="asset-logger/index.html">Explore →</a>
+                <a class="btn ghost small" href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">itch.io</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- D&D Combat Balancer · itch.io -->
+          <article class="card reveal">
+            <span class="bookmark">from<b>$4.99</b></span>
+            <div class="art has-shot">
+              <img class="shot" src="assets/covers/dnd-combat-balancer.webp" alt="D&amp;D Combat Balancer cover art">
+            </div>
+            <div class="card-body">
+              <div class="meta"><span class="chip itch">itch.io</span><span class="chip code">Editable code</span><span class="chip">Windows</span></div>
+              <h3>D&amp;D Combat Balancer</h3>
+              <p>Statistics-backed combat at your fingertips. Weigh every encounter so it's tense, fair and fun for the whole table.</p>
+              <div class="card-actions">
+                <a class="btn" href="dnd-combat-balancer/index.html">Explore →</a>
+                <a class="btn ghost small" href="https://marchharegames.itch.io/dnd-combat-balancer" target="_blank" rel="noopener">itch.io</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Mobile Game Revenue Projector · Gumroad (coming soon) -->
+          <article class="card reveal">
+            <div class="art" style="--tint:rgba(141,255,193,.2)">
+              <img class="platform" src="assets/ui/platform.webp" alt="">
+              <img class="item" src="assets/icons/coins_pouch.webp" alt="">
+            </div>
+            <div class="card-body">
+              <div class="meta"><span class="chip gum">Gumroad</span><span class="chip">Coming soon</span></div>
+              <h3>Mobile Game Revenue Projector</h3>
+              <p>Peer into the crystal ball and forecast what your mobile game could earn before it ever ships.</p>
+              <div class="card-actions">
+                <span class="btn soon" aria-disabled="true">Coming soon</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="section" id="story">
+      <div class="wrap">
+        <div class="ribbon reveal"><h2>Why "Mad"?</h2></div>
+        <p class="lede reveal">Because the best ideas arrive at 3 AM, uninvited, carrying a teapot.</p>
+        <div class="story">
+          <div class="panel reveal">
+            <div class="panel-inner">
+              <h3><img src="assets/icons/lamp.webp" alt="">A lantern in the woods</h3>
+              <p>Mad Tea Party Development is the workshop of Alvie Spurlock, also known as HattersMania: game developer, storyteller and chaos-alchemist. The tools on this menu are the same ones that keep the studio running. They helped me, so I'm putting them out there to help you too.</p>
+              <p class="quote">Those who are called "mad" are often just ahead of their time.</p>
+              <p>Looking for something to play instead? Follow the white rabbit to <a href="games.html">March Hare Games</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta" id="contact">
+      <div class="fireflies" data-count="14" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="panel reveal">
+          <div class="panel-inner">
+            <h2>Pull up a chair</h2>
+            <p>Questions, bug reports, or a wild idea for the next tool? The kettle's always on.</p>
+            <div class="actions">
+              <!-- ↓ Replace with your real contact email -->
+              <a class="btn gold" href="mailto:hello@example.com">Send a Raven</a>
+              <a class="btn ghost" href="socials.html">Find us online</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="brand" href="index.html"><img class="logo" src="assets/logos/mad-tea-party.webp" alt=""><span>Mad Tea Party<small>Development</small></span></a>
+          <p>By a player, for the players. Home of March Hare Games.</p>
+          <div class="social-row">
+            <a href="https://www.youtube.com/@HattersMania" target="_blank" rel="noopener" aria-label="YouTube"><img src="assets/social/youtube.webp" alt=""></a>
+            <a href="https://www.twitch.tv/hattersmania" target="_blank" rel="noopener" aria-label="Twitch"><img src="assets/social/twitch.webp" alt=""></a>
+            <a href="https://bsky.app/profile/alviespurlock.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky"><img src="assets/social/bluesky.webp" alt=""></a>
+            <a href="https://mastodon.social/@alviespurlock" target="_blank" rel="me noopener" aria-label="Mastodon"><img src="assets/social/mastodon.svg" alt=""></a>
+            <a href="https://www.instagram.com/hattersmania/" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/social/instagram.webp" alt=""></a>
+            <a href="https://www.facebook.com/profile.php?id=61559210605002" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/social/facebook.webp" alt=""></a>
+          </div>
+        </div>
+        <div>
+          <h4>The Menu</h4>
+          <ul>
+            <li><a href="#menu">Queens Court</a></li>
+            <li><a href="#menu">Looking Glass</a></li>
+            <li><a href="asset-logger/index.html">Asset Logger</a></li>
+            <li><a href="dnd-combat-balancer/index.html">D&amp;D Combat Balancer</a></li>
+            <li><a href="#menu">Revenue Projector</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>The Games</h4>
+          <ul>
+            <li><a href="games.html#mimic-masters">Mimic Masters</a></li>
+            <li><a href="scorchlet/index.html">Scorchlet</a></li>
+            <li><a href="hero-impervious/index.html">Hero Impervious</a></li>
+            <li><a href="we-built-this-city/index.html">We Built This City</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Find Us</h4>
+          <ul>
+            <li><a href="socials.html">All socials</a></li>
+            <li><a href="https://marchharegames.itch.io" target="_blank" rel="noopener">itch.io</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a href="#main">Back up the rabbit hole ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

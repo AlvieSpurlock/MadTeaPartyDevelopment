@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hero Impervious · Earn the name</title>
+  <meta name="description" content="Hero Impervious is a rage game: an RPG twist with simulation and arcade bite. You&#x27;ve become a ball, trapped in a twisted castle. Explore every nook to escape. $1+ on itch.io.">
+  <meta name="theme-color" content="#0a0709">
+  <link rel="icon" href="../assets/covers/hero-impervious.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Creepster&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <style>
+    :root {
+      --bg: #0a0709; --bg2: #120c10;
+      --panel: #1c1418; --panel2: #120c10; --line: #4a2a34;
+      --text: #efe6e8; --muted: #b8a4aa;
+      --a1: #b3122a; --a1d: #560612;
+      --a2: #8a3bd1; --a2d: #431a6b;
+      --a3: #3e3a44; --a3d: #121014;
+      --neon: #d24bff; --neon2: #e01e3c;
+      --head: 'Cinzel', Georgia, serif;
+      --body: 'Crimson Pro', Georgia, serif;
+      --bevel: rgba(210,75,255,.28);
+    }
+    body { font-size: 19px; background: radial-gradient(ellipse 60% 45% at 50% 0%, rgba(150,30,200,.18), transparent 70%), var(--bg); }
+    .p-hero { background: linear-gradient(180deg, rgba(10,7,9,.3), rgba(10,7,9,.65) 60%, var(--bg)), url(img/castle.webp) center / cover no-repeat; padding-bottom: 110px; }
+    .p-hero::after { content: ""; position: absolute; left: 50%; top: 40%; width: 380px; height: 380px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle, rgba(210,75,255,.35), transparent 65%); z-index: -1; animation: pulse 3.2s ease-in-out infinite; }
+    @keyframes pulse { 50% { opacity: .5; transform: translate(-50%,-50%) scale(1.15); } }
+    @media (prefers-reduced-motion: reduce) { .p-hero::after { animation: none; } }
+    .p-hero .panel { background: linear-gradient(180deg, rgba(28,20,24,.88), rgba(18,12,16,.92)); }
+    .p-title { font-family: 'Cinzel', serif; font-weight: 900; letter-spacing: .06em; color: #f4ecee; text-shadow: 0 0 22px rgba(210,75,255,.55), 0 4px 0 #000; }
+    .p-title span { display: block; font-family: 'Creepster', 'Cinzel', serif; font-weight: 400; color: var(--neon2); letter-spacing: .04em; font-size: .55em; text-shadow: 0 0 18px rgba(224,30,60,.6), 0 3px 0 #000; margin-top: 8px; }
+    .neon { font-family: 'Cinzel', serif; font-weight: 900; border-radius: 2px; }
+    .neon.alt { font-family: 'Creepster', serif; font-weight: 400; letter-spacing: .06em; }
+    .wordmark { font-family: 'Cinzel', serif; font-weight: 900; letter-spacing: .06em; font-size: 1.15rem; }
+    .btn { font-family: 'Cinzel', serif; letter-spacing: .05em; border-radius: 4px; }
+    .card { border-radius: 6px; } .card .ico { border-radius: 6px; background: radial-gradient(circle, rgba(210,75,255,.3), rgba(0,0,0,.3)); border-color: var(--neon); }
+    .scroll { font-size: 1.2rem; line-height: 1.75; color: #e6dadd; }
+    .scroll p { margin: 0 0 16px; }
+    .scroll .drop::first-letter { float: left; font-family: 'Cinzel', serif; font-weight: 900; font-size: 3.6em; line-height: .85; padding: 6px 10px 0 0; color: var(--neon2); text-shadow: 0 0 14px rgba(224,30,60,.5); }
+    .scroll strong { color: #fff; letter-spacing: .06em; }
+    .warning { text-align: center; font-family: 'Creepster', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); color: var(--neon2); letter-spacing: .06em; text-shadow: 0 0 18px rgba(224,30,60,.55); margin: 0 0 4px; }
+    .first { display: inline-block; padding: 4px 12px; border: 1px solid var(--neon); color: var(--neon); border-radius: 999px; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+  </style>
+</head>
+<body class="hero-impervious">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="crumb">
+    <div class="wrap">
+      <img src="../assets/logos/march-hare.webp" alt="">
+      <span>A <a href="../games.html">March Hare Games</a> release · <a href="../games.html">← Back to all games</a></span>
+    </div>
+  </div>
+
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="#main"><span>HERO <em>IMPERVIOUS</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="#story">The Story</a>
+        <a href="#game">The Game</a>
+        <a href="#look">Gallery</a>
+        <a class="btn small" href="https://marchharegames.itch.io/hero-impervious" target="_blank" rel="noopener">Play · $1+</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="p-hero">
+      <div class="wrap">
+        <div class="panel reveal">
+          <span class="first">The first March Hare game ever</span>
+          <h1 class="p-title">Hero Impervious<span>Earn the name</span></h1>
+          <p class="tagline">A twist on the typical RPG with simulation and arcade bite. Built from the ground up to be a rage game.</p>
+          <div class="actions">
+            <a class="btn" href="https://marchharegames.itch.io/hero-impervious" target="_blank" rel="noopener">Enter the Castle</a>
+            <a class="btn b2" href="#story">Read the Legend</a>
+          </div>
+        </div>
+        <aside class="store-card reveal" aria-label="Buy Hero Impervious">
+          <span class="price">$1<small>OR MORE · ITCH.IO</small></span>
+          <a class="itch" href="https://marchharegames.itch.io/hero-impervious" target="_blank" rel="noopener">Buy on itch.io</a>
+          <span class="note">Windows<br>At least 10% goes to charity</span>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ AT A GLANCE ============ -->
+    <section class="glance">
+      <div class="wrap">
+        <div class="panel reveal">
+          <h2>At a Glance</h2>
+          <div class="tiles">
+            <div class="tile"><b>RPG</b><span>with a twist</span></div>
+            <div class="tile"><b>1</b><span>ball. That's you now.</span></div>
+            <div class="tile"><b>1</b><span>twisted castle to escape</span></div>
+            <div class="tile"><b>∞</b><span>rage quits (probably)</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="p-section" id="story">
+      <div class="wrap">
+        <h2 class="neon">The Legend</h2>
+        <div class="panel reveal" style="max-width:860px;margin:0 auto">
+          <div class="scroll">
+            <p class="drop">You are the Hero of Toadstool, a beautiful town… or at least it was the last time you saw it. This time you enter the town in ruins, and the only survivor is Princess Winterfall, off in the distance.</p>
+            <p>She tells you to go check on the usual suspect. Y'know, the usual "keep going straight into the cave of wonders and take a left" schtick?</p>
+            <p>Well, when you get there, things aren't right at all. <strong>You have become a ball.</strong> Not just that, you're in a strange version of the Castle you've fought through so many times before.</p>
+            <p>The <strong>ONLY. HOPE.</strong> of escaping this place is to explore every nook and cranny. <em>Maybe</em> you'll find something…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GAME ============ -->
+    <section class="p-section" id="game">
+      <div class="wrap">
+        <p class="warning">Warning: may cause rage</p>
+        <h2 class="neon alt">The Game</h2>
+        <div class="cards">
+          <div class="card reveal"><div class="ico">🗡️</div><h3>An RPG, Twisted</h3><p>The classic hero's quest, turned inside out the moment you step through the castle gate.</p></div>
+          <div class="card reveal"><div class="ico">🔮</div><h3>Simulation Meets Arcade</h3><p>Physics-driven, arcade-tight movement. You're a ball now, so learn to roll with it.</p></div>
+          <div class="card reveal"><div class="ico">🏰</div><h3>Explore Every Corner</h3><p>The only way out is to search every nook and cranny of a castle you thought you knew.</p></div>
+          <div class="card reveal"><div class="ico">😤</div><h3>Built to Enrage</h3><p>Designed as a rage game from the start. Every inch you gain, you'll earn.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEEP DIVE ============ -->
+    <section class="p-section">
+      <div class="wrap rows">
+        <div class="row reveal">
+          <div class="row-media"><img src="img/title-screen.webp" alt="The Toadstool title screen"></div>
+          <div>
+            <h3>It starts so innocently…</h3>
+            <p>Bright skies, a cheerful little town, "Press to Start." Toadstool looks just like you remember it. Enjoy it while it lasts.</p>
+          </div>
+        </div>
+        <div class="row reveal">
+          <div class="row-media"><img src="img/castle.webp" alt="The twisted castle"></div>
+          <div>
+            <h3>…and then the castle</h3>
+            <p>Cold stone, iron bars and a swirling purple light. This isn't the Castle you know, and you're not the Hero you were.</p>
+            <ul><li>Optional Immersion Mode</li><li>Pause any time to catch your breath (or calm down)</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="p-section" id="look">
+      <div class="wrap">
+        <h2 class="neon">Take a Look</h2>
+        <div class="gallery reveal">
+          <button aria-label="View screenshot"><img src="img/cover.webp" alt="Hero Impervious cover art"></button>
+          <button aria-label="View screenshot"><img src="img/title-screen.webp" alt="Title screen"></button>
+          <button aria-label="View screenshot"><img src="img/castle.webp" alt="The castle"></button>
+          <button aria-label="View screenshot"><img src="img/paused.webp" alt="Pause menu"></button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="p-section community" id="community">
+      <div class="wrap">
+        <div class="panel reveal">
+          <h2>Survived the castle?</h2>
+          <p>Escaped? Rage-quit? Found a secret? Come share your runs, your screams and your clips. Hero Impervious was the first game EVER from March Hare Games, and it's where the madness began.</p>
+          <div class="socials">
+            <a href="https://www.youtube.com/@HattersMania" target="_blank" rel="noopener" aria-label="YouTube"><img src="../assets/social/youtube.webp" alt=""></a>
+<a href="https://www.twitch.tv/hattersmania" target="_blank" rel="noopener" aria-label="Twitch"><img src="../assets/social/twitch.webp" alt=""></a>
+<a href="https://bsky.app/profile/alviespurlock.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky"><img src="../assets/social/bluesky.webp" alt=""></a>
+<a href="https://mastodon.social/@alviespurlock" target="_blank" rel="me noopener" aria-label="Mastodon"><img src="../assets/social/mastodon.svg" alt=""></a>
+<a href="https://www.instagram.com/hattersmania/" target="_blank" rel="noopener" aria-label="Instagram"><img src="../assets/social/instagram.webp" alt=""></a>
+<a href="https://www.facebook.com/profile.php?id=61559210605002" target="_blank" rel="noopener" aria-label="Facebook"><img src="../assets/social/facebook.webp" alt=""></a>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://marchharegames.itch.io/hero-impervious" target="_blank" rel="noopener">Get it on itch.io</a>
+            <a class="btn dark" href="../games.html">More March Hare Games</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="#main"><span>HERO <em>IMPERVIOUS</em></span></a>
+          <p>Earn the name. A rage game from the first page of the March Hare story.</p>
+        </div>
+        <div>
+          <h4>Play</h4>
+          <ul>
+            <li><a href="https://marchharegames.itch.io/hero-impervious" target="_blank" rel="noopener">Get it · $1+</a></li>
+            <li><a href="#story">The Story</a></li>
+            <li><a href="#game">The Game</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#look">Gallery</a></li>
+            <li><a href="../games.html">March Hare Games</a></li>
+            <li><a href="../index.html">Software Shop</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="../socials.html">All socials</a></li>
+            <li><a href="https://marchharegames.itch.io" target="_blank" rel="noopener">itch.io</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© <span data-year>2026</span> March Hare Games · Mad Tea Party Development</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/product.js"></script>
+</body>
+</html>

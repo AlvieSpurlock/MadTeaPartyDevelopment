@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asset Logger · Submission-ready asset documentation</title>
+  <meta name="description" content="Asset Logger documents every third-party asset in your game and exports a clean, submission-ready CSV for Steam and other platforms. $1.99 one-time, Windows.">
+  <meta name="theme-color" content="#0e1116">
+  <link rel="icon" href="../assets/covers/asset-logger.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <style>
+    :root {
+      --bg: #0e1116; --bg2: #141922;
+      --panel: #18202b; --panel2: #121820; --line: #2b3a4a;
+      --text: #e8eef5; --muted: #9fb0c2;
+      --a1: #f2b134; --a1d: #94650c;
+      --a2: #20c6d6; --a2d: #0d6f78;
+      --a3: #b8e04a; --a3d: #5f7a14;
+      --neon: #20d6e6; --neon2: #c8f04f;
+      --head: 'Space Grotesk', system-ui, sans-serif;
+      --body: 'Inter', system-ui, sans-serif;
+      --bevel: rgba(32,214,230,.28);
+      --title-shadow: none;
+    }
+    body { background: radial-gradient(ellipse 60% 40% at 80% 0%, rgba(32,214,230,.12), transparent 70%), radial-gradient(ellipse 50% 40% at 0% 30%, rgba(200,240,79,.08), transparent 70%), linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 100% 32px, var(--bg); }
+    .p-hero { background: linear-gradient(180deg, transparent, var(--bg)); }
+    .p-hero .panel { text-align: left; display: grid; grid-template-columns: 1fr 260px; gap: 30px; align-items: center; }
+    .p-hero .panel .actions { justify-content: flex-start; }
+    .p-hero .tagline { margin-left: 0; }
+    .p-hero .cover { border-radius: 16px; border: 3px solid #000; box-shadow: 0 0 0 2px var(--line), 0 0 40px rgba(32,214,230,.25); }
+    @media (max-width: 760px) { .p-hero .panel { grid-template-columns: 1fr; text-align: center; } .p-hero .panel .actions { justify-content: center; } .p-hero .cover { max-width: 240px; margin: 0 auto; } }
+    .p-title { font-weight: 700; letter-spacing: -.02em; }
+    .p-title em { font-style: normal; color: var(--neon); }
+    .wordmark { font-weight: 700; letter-spacing: -.01em; } .wordmark em { color: var(--neon); }
+    .neon { font-weight: 700; border-radius: 12px; letter-spacing: .02em; }
+    .btn { border-radius: 10px; } .btn:not(.dark) { color: #0b0f14; text-shadow: none; } .btn:not(.dark):hover { color: #0b0f14; }
+    .card { text-align: left; } .card .ico { margin: 0 0 12px; border-radius: 12px; width: 54px; height: 54px; font-size: 1.5rem; background: rgba(32,214,230,.1); border-color: rgba(32,214,230,.4); }
+    .for { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .for div { padding: 14px 16px; border-radius: 12px; background: rgba(200,240,79,.06); border: 1px solid rgba(200,240,79,.25); }
+    .for div::before { content: "→ "; color: var(--neon2); font-weight: 700; }
+    .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .vs > div { border-radius: 14px; padding: 18px 20px; }
+    .vs .old { background: rgba(255,90,90,.06); border: 1px solid rgba(255,90,90,.3); }
+    .vs .new { background: rgba(32,214,230,.07); border: 1px solid rgba(32,214,230,.4); }
+    .vs h3 { font-family: var(--head); margin: 0 0 8px; }
+    .vs ul { margin: 0; padding-left: 18px; color: var(--muted); display: grid; gap: 4px; }
+    @media (max-width: 700px) { .vs { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="asset-logger">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="crumb">
+    <div class="wrap">
+      <img src="../assets/logos/mad-tea-party.webp" alt="">
+      <span>A <a href="../index.html">Mad Tea Party Development</a> release · <a href="../index.html">← Back to the Software Shop</a></span>
+    </div>
+  </div>
+
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="#main"><span>Asset<em>Logger</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="#why">Why</a>
+        <a href="#features">Features</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#look">Gallery</a>
+        <a class="btn small" href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Get it · $1.99</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="p-hero">
+      <div class="wrap">
+        <div class="panel reveal">
+          <div>
+            <h1 class="p-title">Asset<em>Logger</em></h1>
+            <p class="tagline">Document every third-party asset in your game and export a clean, submission-ready CSV. No spreadsheets, no missed fields, no stress.</p>
+            <div class="actions">
+              <a class="btn" href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Get Asset Logger</a>
+              <a class="btn b2" href="#workflow">See the Workflow</a>
+              <a class="btn dark" href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Free Proof of Concept</a>
+            </div>
+          </div>
+          <img class="cover" src="../assets/covers/asset-logger.webp" alt="Asset Logger cover art">
+        </div>
+        <aside class="store-card reveal" aria-label="Buy Asset Logger">
+          <span class="price">$1.99<small>ONE TIME · ITCH.IO</small></span>
+          <a class="itch" href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Buy on itch.io</a>
+          <span class="note">Windows · 5.7 MB<br>Editable code · yours for good</span>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ AT A GLANCE ============ -->
+    <section class="glance">
+      <div class="wrap">
+        <div class="panel reveal">
+          <h2>At a Glance</h2>
+          <div class="tiles">
+            <div class="tile"><b>6</b><span>required fields, guided</span></div>
+            <div class="tile"><b>1-click</b><span>CSV export</span></div>
+            <div class="tile"><b>∞</b><span>assets per session</span></div>
+            <div class="tile"><b>0</b><span>accidental overwrites</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section class="p-section" id="why">
+      <div class="wrap">
+        <h2 class="neon">Why Asset Logger?</h2>
+        <p class="lede">Steam requires clear documentation for every third-party asset in your game. Tracking that in spreadsheets is slow, error-prone and easy to forget.</p>
+        <div class="vs reveal">
+          <div class="old">
+            <h3>The spreadsheet way</h3>
+            <ul><li>Re-typing the same fields again and again</li><li>Inconsistent formatting</li><li>Duplicate or missing entries</li><li>Typos you won't notice until review</li></ul>
+          </div>
+          <div class="new">
+            <h3>The Asset Logger way</h3>
+            <ul><li>Prompts you for every required field</li><li>Consistent formatting, every time</li><li>Confirms each asset before saving</li><li>Clean CSV, ready to drop into your submission</li></ul>
+          </div>
+        </div>
+        <h3 style="font-family:var(--head);text-align:center;margin:40px 0 16px;font-size:1.4rem">Perfect for</h3>
+        <div class="for reveal">
+          <div>Indie devs preparing Steam submissions</div>
+          <div>Teams tracking assets across levels or scenes</div>
+          <div>Solo devs who want clean docs without spreadsheets</div>
+          <div>Anyone who needs a simple, repeatable workflow</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="p-section" id="features">
+      <div class="wrap">
+        <h2 class="neon alt">Core Features</h2>
+        <div class="cards">
+          <div class="card reveal"><div class="ico">🧭</div><h3>Guided Entry</h3><p>Walks you through platform, location, usage, asset name, creator and license type.</p></div>
+          <div class="card reveal"><div class="ico">✅</div><h3>Confirmation Step</h3><p>Shows a formatted summary of each asset and asks "Is this correct?" before saving.</p></div>
+          <div class="card reveal"><div class="ico">📚</div><h3>Multi-Asset Sessions</h3><p>Log as many assets as you need in one go. It keeps asking until you're done.</p></div>
+          <div class="card reveal"><div class="ico">📄</div><h3>Clean CSV Export</h3><p>Exports a structured, comma-separated file that's ready for platform documentation.</p></div>
+          <div class="card reveal"><div class="ico">🛡️</div><h3>File Safety</h3><p>If the CSV already exists, it warns you and asks before overwriting. No lost data.</p></div>
+          <div class="card reveal"><div class="ico">⚡</div><h3>Fast &amp; Focused</h3><p>Lightweight and distraction-free. Open it, log it, ship it.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORKFLOW ============ -->
+    <section class="p-section" id="workflow">
+      <div class="wrap">
+        <h2 class="neon">Example Workflow</h2>
+        <div class="rows">
+          <div class="row reveal">
+            <div class="code"><span class="c"># Log a new asset</span>
+<span class="k">Platform:</span>       <span class="v">Fab</span>
+<span class="k">Location:</span>       <span class="v">Main Level</span>
+<span class="k">Use:</span>            <span class="v">Rocks</span>
+<span class="k">Asset Name:</span>     <span class="v">Modular Rock Pack</span>
+<span class="k">Asset Maker:</span>    <span class="v">Rocker</span>
+<span class="k">License Type:</span>   <span class="v">Professional</span>
+
+Is this correct?        <span class="k">1: Yes</span>  2: No
+Do you have more assets? 1: Yes  <span class="k">2: No</span></div>
+            <div>
+              <h3>Answer, confirm, repeat</h3>
+              <p>Each asset takes seconds. Fill in the six fields, confirm the summary, and either add another or wrap up.</p>
+              <ul><li>Platforms like Fab, Unity Asset Store and Unreal Marketplace</li><li>Where and how the asset is used in your game</li><li>Creator and license, recorded right</li></ul>
+            </div>
+          </div>
+          <div class="row reveal">
+            <div class="code"><span class="c">------ Results ------</span>
+<span class="k">Platform,Location,Use,Asset Name,Asset Maker,License Type</span>
+<span class="v">Fab,Main Level,Rocks,Modular Rock Pack,Rocker,Professional</span>
+<span class="v">Fab,Main Menu,SFX,SFX Asset Pack,SFX Artist,Professional</span>
+
+<span class="c"># File already exists?</span>
+Do you want to overwrite it? 1: Yes  <span class="k">2: No</span></div>
+            <div>
+              <h3>Out comes a clean CSV</h3>
+              <p>Everything lands in one tidy, comma-separated file you can drop straight into your submission package, with a safety check before any overwrite.</p>
+            </div>
+          </div>
+          <div class="row reveal">
+            <div class="row-media"><img src="img/registry.webp" alt="The Asset Registry window"></div>
+            <div>
+              <h3>A registry you can see</h3>
+              <p>Your Asset Registry lists everything you've logged. Add, edit or remove entries, then open, save or "Save As" your CSV.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="p-section" id="look">
+      <div class="wrap">
+        <h2 class="neon alt">Take a Look</h2>
+        <div class="gallery reveal">
+          <button aria-label="View screenshot"><img src="img/new-asset.webp" alt="Adding a new asset"></button>
+          <button aria-label="View screenshot"><img src="img/registry.webp" alt="The asset registry"></button>
+          <button aria-label="View screenshot"><img src="img/csv-output.webp" alt="CSV output in a spreadsheet"></button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="p-section community" id="community">
+      <div class="wrap">
+        <div class="panel reveal">
+          <h2>Ship with confidence</h2>
+          <p>Prepping a Steam submission? Have a field you wish it tracked? Come hang out, ask questions, and help shape the next version. It's your code too.</p>
+          <div class="socials">
+            <a href="https://www.youtube.com/@HattersMania" target="_blank" rel="noopener" aria-label="YouTube"><img src="../assets/social/youtube.webp" alt=""></a>
+<a href="https://www.twitch.tv/hattersmania" target="_blank" rel="noopener" aria-label="Twitch"><img src="../assets/social/twitch.webp" alt=""></a>
+<a href="https://bsky.app/profile/alviespurlock.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky"><img src="../assets/social/bluesky.webp" alt=""></a>
+<a href="https://mastodon.social/@alviespurlock" target="_blank" rel="me noopener" aria-label="Mastodon"><img src="../assets/social/mastodon.svg" alt=""></a>
+<a href="https://www.instagram.com/hattersmania/" target="_blank" rel="noopener" aria-label="Instagram"><img src="../assets/social/instagram.webp" alt=""></a>
+<a href="https://www.facebook.com/profile.php?id=61559210605002" target="_blank" rel="noopener" aria-label="Facebook"><img src="../assets/social/facebook.webp" alt=""></a>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Get it on itch.io</a>
+            <a class="btn b2" href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Try the Proof of Concept</a>
+            <a class="btn dark" href="../index.html#menu">More Tools</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="#main"><span>Asset<em>Logger</em></span></a>
+          <p>Clean asset documentation without the spreadsheet headache.</p>
+        </div>
+        <div>
+          <h4>Tool</h4>
+          <ul>
+            <li><a href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Get it · $1.99</a></li>
+            <li><a href="#why">Why Asset Logger</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#workflow">Workflow</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#look">Gallery</a></li>
+            <li><a href="../index.html#menu">Software Shop</a></li>
+            <li><a href="../index.html#rules">House Rules</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="../socials.html">All socials</a></li>
+            <li><a href="https://marchharegames.itch.io" target="_blank" rel="noopener">itch.io</a></li>
+            <li><a href="../index.html">Mad Tea Party</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development · Mad Tea Party Development</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/product.js"></script>
+</body>
+</html>

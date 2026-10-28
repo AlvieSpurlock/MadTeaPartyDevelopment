@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>We Built This City: Farmer Edition</title>
+  <meta name="description" content="A farming sim with all four seasons, a day/night cycle and a whole year in one hour. Grow 3 food groups and sell into a balanced economy. Name your own price on itch.io.">
+  <meta name="theme-color" content="#2f7a2a">
+  <link rel="icon" href="../assets/covers/we-built-this-city.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <style>
+    :root {
+      --bg: #1b2a17; --bg2: #223620;
+      --panel: #fff8ea; --panel2: #f3e6c8; --line: #c9a868;
+      --text: #3a2a15; --muted: #6b5434;
+      --a1: #5cc94a; --a1d: #2f7a22;
+      --a2: #3aa0f0; --a2d: #1b5f99;
+      --a3: #ff6fb5; --a3d: #b02f72;
+      --neon: #3aa0f0; --neon2: #ff6fb5;
+      --head: 'Bowlby One', 'Trebuchet MS', sans-serif;
+      --body: 'Fredoka', system-ui, sans-serif;
+      --bevel: rgba(255,255,255,.8);
+      --title-shadow: none;
+    }
+    body { color: #fff8ea; background: linear-gradient(180deg, #2a4a22, #1b2a17 40%); }
+    body .lede { color: #e7f0d8; }
+    .p-nav { background: rgba(27,42,23,.9); }
+    .p-nav .wordmark, .p-links a { color: #fff8ea; }
+    .wordmark em { color: var(--a3); }
+    .p-hero { background: linear-gradient(180deg, #8fd3ff 0%, #c7ecff 45%, #7ed36a 46%, #4caf43 78%, #2a4a22 100%); padding-bottom: 110px; }
+    .p-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 18% 9% at 18% 18%, #fff 60%, transparent 62%), radial-gradient(ellipse 13% 7% at 26% 15%, #fff 60%, transparent 62%), radial-gradient(ellipse 16% 8% at 78% 24%, #fff 60%, transparent 62%), radial-gradient(ellipse 11% 6% at 86% 20%, #fff 60%, transparent 62%); opacity: .9; animation: drift 40s linear infinite alternate; }
+    @keyframes drift { to { transform: translateX(6%); } }
+    @media (prefers-reduced-motion: reduce) { .p-hero::before { animation: none; } }
+    .panel { color: var(--text); border-color: #6b4a22; outline-color: rgba(107,74,34,.15); }
+    .panel p, .panel li { color: var(--muted); }
+    .hero-logo { width: min(520px, 92%); border-radius: 18px; border: 4px solid #6b4a22; box-shadow: 0 10px 0 #4a3216, 0 20px 30px rgba(0,0,0,.25); }
+    .tagline { color: var(--text) !important; font-weight: 600; }
+    .neon { font-weight: 400; color: #fff; background: var(--a2); border-color: #fff; border-width: 4px; border-radius: 16px; text-shadow: 0 3px 0 rgba(0,0,0,.25); box-shadow: 0 6px 0 var(--a2d), 0 14px 24px rgba(0,0,0,.25); }
+    .neon.alt { background: var(--a3); box-shadow: 0 6px 0 var(--a3d), 0 14px 24px rgba(0,0,0,.25); }
+    .card { background: linear-gradient(180deg, #fff8ea, #f3e6c8); border: 3px solid #6b4a22; color: var(--text); box-shadow: 0 6px 0 #4a3216, 0 14px 24px rgba(0,0,0,.25); }
+    .card p { color: var(--muted); } .card:hover { border-color: var(--a1d); }
+    .card .ico { background: #fff; border-color: #6b4a22; }
+    .tile { background: #fff; border-color: var(--a1); } .tile:nth-child(even) { border-color: var(--a3); }
+    .tile b { color: var(--text); text-shadow: none; } .tile span { color: var(--muted); }
+    .glance h2, .community h2 { color: var(--text); }
+    .row h3 { color: #fff8ea; } .row p, .row li { color: #e7f0d8; }
+    .row-media img { border-color: #6b4a22; box-shadow: 0 8px 0 #4a3216, 0 18px 30px rgba(0,0,0,.35); }
+    .season { text-align: center; padding: 22px 14px; border-radius: 18px; border: 3px solid #6b4a22; box-shadow: 0 6px 0 #4a3216; color: #3a2a15; }
+    .season b { display: block; font-family: var(--head); font-weight: 400; font-size: 1.4rem; } .season span { font-size: 2.4rem; display: block; }
+    .spring { background: linear-gradient(180deg, #e3ffd6, #b9f0a4); } .summer { background: linear-gradient(180deg, #fff6c2, #ffd86b); } .autumn { background: linear-gradient(180deg, #ffe0bf, #f5a25b); } .winter { background: linear-gradient(180deg, #f2f8ff, #c8e1ff); }
+    .seasons { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+    .roles { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 10px; }
+    .roles span { padding: 8px 16px; border-radius: 999px; background: #fff; border: 2px dashed #c9a868; color: #6b5434; font-weight: 600; }
+    .roles span.now { background: var(--a1); border: 2px solid var(--a1d); color: #fff; }
+    .made-before { display: inline-block; font-size: .85rem; padding: 4px 12px; border-radius: 999px; background: #fff3d1; border: 1px solid #c9a868; color: #6b5434; margin-bottom: 10px; }
+    .gallery button { border-color: #6b4a22; }
+    .p-footer { background: #142012; } .p-footer .wordmark { color: #fff8ea; }
+  </style>
+</head>
+<body class="we-built-this-city">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="crumb">
+    <div class="wrap">
+      <img src="../assets/logos/march-hare.webp" alt="">
+      <span>A <a href="../games.html">March Hare Games</a> release · <a href="../games.html">← Back to all games</a></span>
+    </div>
+  </div>
+
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="#main"><span>WE BUILT <em>THIS CITY</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="#farm">The Farm</a>
+        <a href="#seasons">Seasons</a>
+        <a href="#project">The Project</a>
+        <a href="#look">Gallery</a>
+        <a class="btn small" href="https://marchharegames.itch.io/we-built-this-city-farmer" target="_blank" rel="noopener">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="p-hero">
+      <div class="wrap">
+        <div class="panel reveal">
+          <img class="hero-logo" src="img/banner.webp" alt="">
+          <h1 class="sr-only">We Built This City: Farmer Edition</h1>
+          <p class="tagline">Rome might not have been built in a day, but it certainly wasn't built on an empty stomach.</p>
+          <div class="actions">
+            <a class="btn" href="https://marchharegames.itch.io/we-built-this-city-farmer" target="_blank" rel="noopener">Download Free</a>
+            <a class="btn b2" href="#farm">Tour the Farm</a>
+            <a class="btn b3" href="#project">The Big Plan</a>
+          </div>
+        </div>
+        <aside class="store-card reveal" aria-label="Download We Built This City">
+          <span class="price">Free<small>NAME YOUR PRICE · ITCH.IO</small></span>
+          <a class="itch" href="https://marchharegames.itch.io/we-built-this-city-farmer" target="_blank" rel="noopener">Download on itch.io</a>
+          <span class="note">Windows<br>Pay what you want</span>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ AT A GLANCE ============ -->
+    <section class="glance">
+      <div class="wrap">
+        <div class="panel reveal">
+          <h2>At a Glance</h2>
+          <div class="tiles">
+            <div class="tile"><b>4</b><span>seasons</span></div>
+            <div class="tile"><b>1 hour</b><span>= one whole year</span></div>
+            <div class="tile"><b>3</b><span>food groups</span></div>
+            <div class="tile"><b>9+</b><span>crops to grow</span></div>
+            <div class="tile"><b>☀/☾</b><span>day &amp; night cycle</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FARM ============ -->
+    <section class="p-section" id="farm">
+      <div class="wrap">
+        <h2 class="neon">Life on the Farm</h2>
+        <p class="lede">Plant, tend, harvest and sell. Keep the village fed and your coffers full.</p>
+        <div class="cards">
+          <div class="card reveal"><div class="ico">🌱</div><h3>Grow</h3><p>Three food groups, each with at least three different crops to plant and tend.</p></div>
+          <div class="card reveal"><div class="ico">🧺</div><h3>Harvest</h3><p>Work the fields through the seasons and bring in the harvest when it's ready.</p></div>
+          <div class="card reveal"><div class="ico">🪙</div><h3>Sell</h3><p>Sell your food into a balanced economy, and learn what's worth planting and when.</p></div>
+          <div class="card reveal"><div class="ico">⏩</div><h3>Skip Ahead</h3><p>Skip the day when you're ready to move on, or reset and try a new plan.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SEASONS ============ -->
+    <section class="p-section" id="seasons">
+      <div class="wrap">
+        <h2 class="neon alt">A Year in an Hour</h2>
+        <p class="lede">All four seasons and a full day/night cycle. One hour of play takes you through an entire year.</p>
+        <div class="seasons reveal">
+          <div class="season spring"><span>🌷</span><b>Spring</b>Fresh starts</div>
+          <div class="season summer"><span>☀️</span><b>Summer</b>Long, golden days</div>
+          <div class="season autumn"><span>🍂</span><b>Autumn</b>Harvest time</div>
+          <div class="season winter"><span>❄️</span><b>Winter</b>Plan and prepare</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEEP DIVE ============ -->
+    <section class="p-section">
+      <div class="wrap rows">
+        <div class="row reveal">
+          <div class="row-media"><img src="img/fields.webp" alt="Working the fields"></div>
+          <div>
+            <h3>Work the land</h3>
+            <p>Grab your tools, choose your plots and get growing. Fences, fields and the open sky are yours to tend.</p>
+          </div>
+        </div>
+        <div class="row reveal">
+          <div class="row-media"><img src="img/village.webp" alt="The farmhouse at golden hour"></div>
+          <div>
+            <h3>Golden hours</h3>
+            <p>Watch the light change as the days roll by, from bright mornings to warm sunsets over the farmhouse.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECT ============ -->
+    <section class="p-section" id="project">
+      <div class="wrap">
+        <h2 class="neon">The Big Plan</h2>
+        <div class="panel reveal" style="text-align:center;max-width:860px;margin:0 auto">
+          <span class="made-before">Made by the Hatter before Mad Tea Party Development</span>
+          <p style="margin:0 auto 10px;max-width:640px">Farmer Edition is part of a multi-game project to simulate every important role in a typical high-fantasy medieval village. Every village starts with a farmer.</p>
+          <div class="roles">
+            <span class="now">🌾 Farmer · Out now</span>
+            <span>⚒️ More roles</span>
+            <span>🏰 …to come</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="p-section" id="look">
+      <div class="wrap">
+        <h2 class="neon alt">Take a Look</h2>
+        <div class="gallery reveal">
+          <button aria-label="View screenshot"><img src="img/banner.webp" alt="Key art"></button>
+          <button aria-label="View screenshot"><img src="img/title-screen.webp" alt="Title screen"></button>
+          <button aria-label="View screenshot"><img src="img/fields.webp" alt="The fields"></button>
+          <button aria-label="View screenshot"><img src="img/village.webp" alt="The farmhouse"></button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="p-section community" id="community">
+      <div class="wrap">
+        <div class="panel reveal">
+          <h2>Help build the village</h2>
+          <p>Farmer Edition is the first piece of a bigger village. Follow along on the devlogs and socials as the rest of the town gets built, one role at a time.</p>
+          <div class="socials">
+            <a href="https://www.youtube.com/@HattersMania" target="_blank" rel="noopener" aria-label="YouTube"><img src="../assets/social/youtube.webp" alt=""></a>
+<a href="https://www.twitch.tv/hattersmania" target="_blank" rel="noopener" aria-label="Twitch"><img src="../assets/social/twitch.webp" alt=""></a>
+<a href="https://bsky.app/profile/alviespurlock.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky"><img src="../assets/social/bluesky.webp" alt=""></a>
+<a href="https://mastodon.social/@alviespurlock" target="_blank" rel="me noopener" aria-label="Mastodon"><img src="../assets/social/mastodon.svg" alt=""></a>
+<a href="https://www.instagram.com/hattersmania/" target="_blank" rel="noopener" aria-label="Instagram"><img src="../assets/social/instagram.webp" alt=""></a>
+<a href="https://www.facebook.com/profile.php?id=61559210605002" target="_blank" rel="noopener" aria-label="Facebook"><img src="../assets/social/facebook.webp" alt=""></a>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://marchharegames.itch.io/we-built-this-city-farmer" target="_blank" rel="noopener">Download on itch.io</a>
+            <a class="btn b2" href="https://marchharegames.itch.io/we-built-this-city-farmer/devlog" target="_blank" rel="noopener">Read the Devlog</a>
+            <a class="btn dark" href="../games.html">More March Hare Games</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="#main"><span>WE BUILT <em>THIS CITY</em></span></a>
+          <p>Rome wasn't built in a day, but it certainly wasn't built on an empty stomach.</p>
+        </div>
+        <div>
+          <h4>Play</h4>
+          <ul>
+            <li><a href="https://marchharegames.itch.io/we-built-this-city-farmer" target="_blank" rel="noopener">Download</a></li>
+            <li><a href="#farm">The Farm</a></li>
+            <li><a href="#seasons">Seasons</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#project">The Project</a></li>
+            <li><a href="https://marchharegames.itch.io/we-built-this-city-farmer/devlog" target="_blank" rel="noopener">Devlog</a></li>
+            <li><a href="#look">Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="../socials.html">All socials</a></li>
+            <li><a href="../games.html">March Hare Games</a></li>
+            <li><a href="../index.html">Mad Tea Party</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© <span data-year>2026</span> March Hare Games · Mad Tea Party Development</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/product.js"></script>
+</body>
+</html>
