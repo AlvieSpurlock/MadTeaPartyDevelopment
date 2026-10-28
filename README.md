@@ -10,7 +10,8 @@ A dark Wonderland-forest site for GitHub Pages. Whimsy, magic & mania.
 | `transparency.html` | **Transparency:** studio-wide made / given / kept, per charity, per game, month by month |
 | `mimic-masters/` | The full Mimic Masters site (its own README is inside) |
 | `scorchlet/`, `hero-impervious/`, `we-built-this-city/`, `asset-logger/`, `dnd-combat-balancer/` | Product sites |
-| `data/` | **The charity ledgers:** one CSV per game + `games.js` (charities and rates) |
+| `queens-court/`, `looking-glass/` | App sites, 6 pages each: Home, Features, Pricing, Guides, FAQ, Legal |
+| `data/` | **The charity ledgers:** one CSV per game + `games.js` (charities and rates); `products.js` (Gumroad links, demo videos, support email for the app sites) |
 | `style.css` | All colours, fonts and layout (colours at the top under `:root`) |
 | `main.js` | Fireflies, wobbly title letters, mobile menu, fade-ins |
 | `assets/logos` | Studio, label and game logos |
@@ -57,6 +58,12 @@ Where the numbers show up: each game's Giving Back section, `mimic-masters/trans
 To change a charity, rate or add a game, edit `data/games.js`.
 
 **Note:** the trackers read the CSV over the web, so they only fill in on the live site (or a local web server), not when you double-click an HTML file.
+
+## Queens Court and Looking Glass
+
+- **Gumroad links and demo videos:** fill in `data/products.js`. Until a `buy` link is set, every Buy button on that site shows "Coming soon". Paste a YouTube video ID into `demo` and it appears in the "See It Work" section.
+- **Screenshots and hero loops:** drop files into `queens-court/media/` and `looking-glass/media/` with the exact names listed in each folder's `README.md`. Each one shows up by itself; until then the site shows a labeled placeholder.
+- **Guides and legal text:** `guides.html` and `legal.html` show summaries marked "Full guide at launch" / "Full text at launch". Send the finished Setup Guide, Operating Guide, EULA, privacy policy and refund policy to replace them.
 
 ## Mimic Masters privacy-policy sync
 The bot that copies the privacy policy from the Google Doc now lives at `.github/workflows/sync-privacy.yml` and works inside `mimic-masters/`. In **Settings → Actions → General → Workflow permissions**, choose **Read and write permissions**, or it can't save the update. If you edit files locally, pull before you push, because the bot commits too.

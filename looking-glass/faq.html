@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Looking Glass · FAQ</title>
+  <meta name="description" content="Looking Glass turns your stream recordings into captioned vertical clips, posts them across 7 platforms, and tells followers when you go live. $14.99 one time, Windows.">
+  <meta name="theme-color" content="#0a0b14">
+  <link rel="icon" href="../assets/icons/looking_glass.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <style>
+    :root {
+      --bg: #0a0b14; --bg2: #10121e;
+      --panel: #171a2b; --panel2: #10121f; --line: #333a5c;
+      --text: #eef0ff; --muted: #a9b0d4;
+      --a1: #8b5cf6; --a1d: #4c2a9e;
+      --a2: #12b5d0; --a2d: #0b6372;
+      --a3: #ec4899; --a3d: #8a1e55;
+      --neon: #7ee8fa; --neon2: #c4b5fd;
+      --head: 'Syne', system-ui, sans-serif;
+      --body: 'Inter', system-ui, sans-serif;
+      --bevel: rgba(196,181,253,.3);
+      --title-shadow: none;
+      --hero: radial-gradient(ellipse 50% 60% at 80% 40%, rgba(139,92,246,.28), transparent 70%), radial-gradient(ellipse 45% 50% at 15% 10%, rgba(18,181,208,.18), transparent 70%), linear-gradient(180deg, #0d0f1c, var(--bg));
+    }
+    body { background: var(--bg); }
+    .a-hero h1, .page-head h1, .neon, .plan h3, .final h2, .wordmark { font-weight: 800; letter-spacing: -.01em; }
+    .a-hero h1 .say { background: linear-gradient(90deg, #7ee8fa, #c4b5fd, #f0abfc); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .neon { text-transform: none; border-radius: 16px; border-color: transparent; background: linear-gradient(var(--bg), var(--bg)) padding-box, linear-gradient(90deg, #7ee8fa, #c4b5fd, #f0abfc) border-box; box-shadow: 0 0 24px rgba(196,181,253,.25); text-shadow: none; }
+    .neon.alt { background: linear-gradient(var(--bg), var(--bg)) padding-box, linear-gradient(90deg, #f0abfc, #c4b5fd, #7ee8fa) border-box; text-shadow: none; }
+    .wordmark em { font-style: normal; background: linear-gradient(90deg, #7ee8fa, #c4b5fd); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lg-mark { width: 34px; height: 34px; border-radius: 50%; background: conic-gradient(from 210deg, #7ee8fa, #c4b5fd, #f0abfc, #7ee8fa); box-shadow: inset 0 0 0 5px #0a0b14, 0 0 18px rgba(126,232,250,.45); }
+    .panel { background: linear-gradient(180deg, rgba(23,26,43,.92), rgba(16,18,31,.92)); backdrop-filter: blur(8px); }
+    .card { background: linear-gradient(180deg, rgba(23,26,43,.8), rgba(16,18,31,.8)); }
+    .card .ico { background: radial-gradient(circle at 35% 30%, rgba(126,232,250,.25), rgba(139,92,246,.15)); border-color: rgba(196,181,253,.5); }
+    .step::before { background: linear-gradient(135deg, #8b5cf6, #12b5d0); box-shadow: 0 4px 0 #2a1a5e; font-family: 'Syne', sans-serif; }
+    /* stream → clip mirror */
+    .mirror { display: grid; grid-template-columns: 1fr auto 150px; gap: 16px; align-items: center; width: 100%; max-width: 520px; }
+    .stream { position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; border: 2px solid #000; box-shadow: 0 0 0 1px #333a5c, 0 18px 36px rgba(0,0,0,.5); background: linear-gradient(160deg, #1e2a4a, #2a1650); }
+    .stream .live { position: absolute; top: 8px; left: 8px; background: #e11d48; color: #fff; font-size: .62rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; letter-spacing: .06em; }
+    .stream .cam { position: absolute; right: 8px; bottom: 8px; width: 28%; aspect-ratio: 4/3; border-radius: 6px; background: radial-gradient(circle at 50% 40%, #f0abfc 0 18%, #6b4fa8 19% 100%); border: 2px solid #000; }
+    .stream .game i { position: absolute; border-radius: 4px; background: rgba(126,232,250,.35); }
+    .stream .game i:nth-child(1) { left: 10%; top: 35%; width: 30%; height: 10%; } .stream .game i:nth-child(2) { left: 18%; top: 55%; width: 18%; height: 18%; background: rgba(196,181,253,.4); } .stream .game i:nth-child(3) { left: 45%; top: 25%; width: 14%; height: 40%; background: rgba(240,171,252,.3); }
+    .stream .bubble { position: absolute; left: 34%; bottom: 14%; background: #fff; color: #10121f; font-weight: 800; font-size: .72rem; padding: 4px 8px; border-radius: 10px 10px 10px 2px; animation: pop 3.6s ease-in-out infinite; }
+    .arrow { font-size: 1.6rem; color: var(--neon); text-shadow: 0 0 12px rgba(126,232,250,.7); }
+    .clip { position: relative; aspect-ratio: 9/16; border-radius: 18px; overflow: hidden; border: 2px solid #000; box-shadow: 0 0 0 1px #c4b5fd, 0 0 40px rgba(196,181,253,.3), 0 20px 40px rgba(0,0,0,.5); background: linear-gradient(180deg, #2a1650, #1e2a4a); animation: glow 3.6s ease-in-out infinite; }
+    .clip-game { position: absolute; inset: 0 0 45% 0; } .clip-game i { position: absolute; border-radius: 4px; background: rgba(126,232,250,.4); } .clip-game i:nth-child(1) { left: 12%; top: 40%; width: 60%; height: 12%; } .clip-game i:nth-child(2) { left: 30%; top: 60%; width: 30%; height: 25%; background: rgba(196,181,253,.45); }
+    .clip-cam { position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: radial-gradient(circle at 50% 45%, #f0abfc 0 22%, #6b4fa8 23% 100%); border-top: 2px solid #000; }
+    .cap { position: absolute; left: 6%; right: 6%; top: 50%; transform: translateY(-50%); text-align: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: .8rem; color: #fff; text-shadow: 0 2px 0 #000, 0 0 6px #000; }
+    .cap b { color: #fde047; }
+    .clip-meta { position: absolute; left: 8px; right: 8px; bottom: 8px; font-size: .55rem; color: #fff; text-shadow: 0 1px 2px #000; } .clip-meta b { color: var(--neon); }
+    @keyframes pop { 0%, 15% { opacity: 0; transform: scale(.6); } 25%, 70% { opacity: 1; transform: none; } 85%, 100% { opacity: 0; } }
+    @keyframes glow { 0%, 25% { box-shadow: 0 0 0 1px #c4b5fd, 0 0 20px rgba(196,181,253,.15), 0 20px 40px rgba(0,0,0,.5); } 45%, 80% { box-shadow: 0 0 0 1px #7ee8fa, 0 0 50px rgba(126,232,250,.45), 0 20px 40px rgba(0,0,0,.5); } 100% { box-shadow: 0 0 0 1px #c4b5fd, 0 0 20px rgba(196,181,253,.15), 0 20px 40px rgba(0,0,0,.5); } }
+    @media (prefers-reduced-motion: reduce) { .stream .bubble, .clip { animation: none; } }
+    @media (max-width: 520px) { .mirror { grid-template-columns: 1fr 110px; } .arrow { display: none; } }
+  </style>
+</head>
+<body class="looking-glass">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="crumb"><div class="wrap">
+    <img src="../assets/logos/mad-tea-party.webp" alt="">
+    <span>A <a href="../index.html">Mad Tea Party Development</a> app · <a href="../index.html#menu">← Back to the Software Shop</a></span>
+  </div></div>
+
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="index.html"><span class="lg-mark"></span><span>Looking <em>Glass</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="guides.html">Guides</a>
+        <a href="faq.html" class="current" aria-current="page">FAQ</a>
+        <a class="btn small" data-buy="looking-glass" href="#">Buy · $14.99</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head"><div class="wrap">
+      <span class="eyebrow"><span class="dot"></span> FAQ</span>
+      <h1>Questions before you buy</h1>
+      <p>Every answer matches how the app works today.</p>
+    </div></section>
+    <section class="p-section"><div class="wrap"><div class="faq"><details><summary>Is it a subscription?</summary><p>No. One payment, yours to keep.</p></details>
+<details><summary>Does it post on its own?</summary><p>Only what you set it to: approve each clip, or turn on automatic approval. Going-live posts use your own words.</p></details>
+<details><summary>Does it download my Twitch VODs?</summary><p>Drop in your recording or VOD file and it clips it. Automatic Twitch downloading is an option you turn on yourself; it may break Twitch's terms.</p></details>
+<details><summary>Which streaming platforms?</summary><p>Any, because it works from the recording file. Going-live detection is for Twitch.</p></details>
+<details><summary>Which AI?</summary><p>Free open models on your PC through Ollama. Nothing goes to an AI company; no AI bill.</p></details>
+<details><summary>TikTok?</summary><p>Clips for TikTok come with a ready-to-post doc (title, description, tags, best time) to post by hand, or auto-post with your own TikTok developer sign-in.</p></details>
+<details><summary>Can I edit my clips?</summary><p>Every clip has a raw copy. Upload your own polished version and it replaces the generated one before it posts.</p></details>
+<details><summary>Can I edit the app?</summary><p>Yes, it's plain Python, for your own use (see the <a href="legal.html#eula">EULA</a>).</p></details>
+<details><summary>Mac?</summary><p>Windows only for now.</p></details>
+<details><summary>Refunds?</summary><p>See the <a href="legal.html#refunds">refund policy</a>.</p></details>
+<details><summary>Updates?</summary><p>Download the newest version from your Gumroad library; your settings and data stay.</p></details></div></div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon alt">Requirements</h2>
+      <div class="listbox reveal" id="requirements">
+  <div><h3>Requirements</h3><ul>
+    <li>Windows 10 or 11, 64-bit.</li>
+    <li>16 GB RAM recommended (8 GB works, slower).</li>
+    <li>About 10 GB free for the free AI models, plus room for recordings and clips (a full stream can be several GB).</li>
+    <li>An NVIDIA graphics card is optional: speech-to-text and clipping run much faster on it.</li>
+    <li>Your stream recordings (OBS or your platform's download). Automatic Twitch downloading is an off-by-default option.</li>
+    <li>For auto-posting: your own free developer sign-ins per platform (the Setup Guide walks through each). Without them, each clip comes with a ready-to-post doc.</li>
+  </ul></div>
+  <div><h3>What's in the download</h3><ul>
+    <li>The app and installer (double-click <b>Run Looking Glass</b>). A few MB.</li>
+    <li>Setup Guide and Operating Guide.</li>
+    <li>LICENSE (the EULA) and THIRD_PARTY_NOTICES.</li>
+  </ul>
+  <h3 style="margin-top:18px">Installed on first run, free</h3><ul>
+    <li>Python, ffmpeg, Ollama and its AI models, the speech-to-text model, and the libraries the app uses.</li>
+  </ul></div>
+</div>
+    </div></section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="index.html"><span class="lg-mark"></span><span>Looking <em>Glass</em></span></a>
+          <p>Every stream, clipped. A one-time purchase from Mad Tea Party Development.</p>
+        </div>
+        <div><h4>Looking Glass</h4><ul>
+          <li><a href="index.html">Home</a></li><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="guides.html">Guides</a></li><li><a href="faq.html">FAQ</a></li>
+        </ul></div>
+        <div><h4>Legal</h4><ul>
+          <li><a href="legal.html#eula">EULA</a></li><li><a href="legal.html#privacy">Privacy policy</a></li><li><a href="legal.html#notices">Third-party notices</a></li><li><a href="legal.html#refunds">Refund policy</a></li>
+        </ul></div>
+        <div><h4>Support</h4><ul>
+          <li><a data-support href="#">Email support</a></li>
+          <li><a href="../queens-court/index.html">Queens Court ($19.99)</a></li>
+          <li><a href="../index.html#menu">Software Shop</a></li>
+          <li><a href="../socials.html">Socials</a></li>
+        </ul></div>
+      </div>
+      <p class="cross" style="margin-top:26px">Want outreach to press and creators too? <a href="../queens-court/index.html">Queens Court</a> runs your whole launch for $19.99.</p>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../data/products.js"></script>
+  <script src="../assets/product.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Queens Court · Pricing</title>
+  <meta name="description" content="Queens Court finds the people who should hear about your work, writes every pitch, post and follow-up in your voice, and waits for your yes. $19.99 one time, Windows.">
+  <meta name="theme-color" content="#14060b">
+  <link rel="icon" href="../assets/icons/crown.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <style>
+    :root {
+      --bg: #12050a; --bg2: #1c0910;
+      --panel: #2a0d17; --panel2: #1a070e; --line: #5e1a2c;
+      --text: #fbeee6; --muted: #d4b4b8;
+      --a1: #d4183a; --a1d: #6e0717;
+      --a2: #c9952b; --a2d: #6a4a0c;
+      --a3: #4a1022; --a3d: #1a050b;
+      --neon: #f3c55a; --neon2: #ff4d6d;
+      --head: 'Playfair Display', Georgia, serif;
+      --body: 'DM Sans', system-ui, sans-serif;
+      --bevel: rgba(243,197,90,.32);
+      --title-shadow: 0 3px 0 #3a0610;
+      --hero: radial-gradient(ellipse 60% 70% at 78% 40%, rgba(212,24,58,.35), transparent 70%), radial-gradient(ellipse 50% 60% at 10% 0%, rgba(243,197,90,.12), transparent 70%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ctext x='8' y='30' font-size='22' fill='%23ffffff' fill-opacity='.035'%3E%E2%99%A5%3C/text%3E%3Ctext x='48' y='70' font-size='22' fill='%23ffffff' fill-opacity='.035'%3E%E2%99%A0%3C/text%3E%3C/svg%3E"), var(--bg);
+    }
+    body { background: var(--bg); }
+    .p-title, .a-hero h1, .page-head h1, .neon, .plan h3, .final h2 { font-weight: 900; }
+    .a-hero h1 { font-style: italic; }
+    .neon { font-family: 'Playfair Display', serif; font-weight: 900; text-transform: none; letter-spacing: .01em; border-radius: 4px; }
+    .wordmark { font-family: 'Playfair Display', serif; font-weight: 900; } .wordmark em { color: var(--neon); font-style: italic; }
+    .qc-mark { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe08a, #c9952b 70%); color: #3a0610; font-size: 1.25rem; box-shadow: 0 0 0 2px #000, 0 0 16px rgba(243,197,90,.4); }
+    .btn { border-radius: 10px; }
+    .card .ico { background: radial-gradient(circle at 35% 30%, #4a1022, #1a070e); border-color: var(--neon); }
+    .step::before { background: var(--a1); box-shadow: 0 4px 0 var(--a1d); font-family: 'Playfair Display', serif; }
+    .compare .hl { background: rgba(243,197,90,.08); }
+    /* phone + card deck */
+    .phone { position: relative; width: 270px; height: 520px; border-radius: 42px; background: #0b0306; border: 3px solid #000; box-shadow: 0 0 0 2px #5e1a2c, 0 0 0 9px #1a070e, 0 0 0 11px #3a0b18, 0 30px 60px rgba(0,0,0,.6), 0 0 80px rgba(212,24,58,.25); padding: 22px 16px; display: flex; flex-direction: column; transform: rotate(3deg); }
+    .phone-top { display: flex; justify-content: space-between; font-size: .8rem; color: var(--muted); padding: 4px 8px 12px; } .phone-top span:first-child { color: var(--neon); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .deck { position: relative; flex: 1; }
+    .pcard { position: absolute; inset: 0; border-radius: 18px; background: #fbf3e8; border: 2px solid #000; }
+    .pcard.back2 { transform: rotate(-7deg) translate(-8px, 6px); background: #d4183a; }
+    .pcard.back1 { transform: rotate(-3deg) translate(-3px, 3px); background: #f3c55a; }
+    .pcard.front { padding: 18px; color: #2a0d17; animation: deal 4.5s ease-in-out infinite; }
+    .pcard .suit { position: absolute; top: 10px; right: 14px; color: #d4183a; font-size: 1.6rem; }
+    .pc-kind { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: #8a3a4a; font-weight: 800; }
+    .pc-to { font-weight: 800; margin: 8px 0 6px; font-size: .95rem; }
+    .pc-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.05rem; line-height: 1.25; margin-bottom: 14px; }
+    .pc-lines i { display: block; height: 8px; border-radius: 4px; background: #e8d8c8; margin: 8px 0; } .pc-lines i.short { width: 60%; }
+    .phone-btns { display: flex; justify-content: space-around; padding-top: 16px; }
+    .phone-btns span { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.4rem; font-weight: 800; border: 2px solid #000; }
+    .phone-btns .no { background: #3a0b18; color: #ff8fa3; } .phone-btns .edit { background: #2a2a36; color: #fff; } .phone-btns .yes { background: #1f9c5c; color: #fff; box-shadow: 0 0 18px rgba(31,156,92,.5); }
+    @keyframes deal { 0%, 70%, 100% { transform: none; } 80% { transform: translateX(26px) rotate(6deg); } 90% { transform: translateX(-4px) rotate(-1deg); } }
+    @media (prefers-reduced-motion: reduce) { .pcard.front { animation: none; } }
+    @media (max-width: 900px) { .phone { transform: none; } }
+  </style>
+</head>
+<body class="queens-court">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="crumb"><div class="wrap">
+    <img src="../assets/logos/mad-tea-party.webp" alt="">
+    <span>A <a href="../index.html">Mad Tea Party Development</a> app · <a href="../index.html#menu">← Back to the Software Shop</a></span>
+  </div></div>
+
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="index.html"><span class="qc-mark">♛</span><span>Queens <em>Court</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="features.html">Features</a>
+        <a href="pricing.html" class="current" aria-current="page">Pricing</a>
+        <a href="guides.html">Guides</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn small" data-buy="queens-court" href="#">Buy · $19.99</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head"><div class="wrap">
+      <span class="eyebrow">♛ Pricing</span>
+      <h1>Two apps. One payment each.</h1>
+      <p>Looking Glass runs your social side. Queens Court runs your whole launch.</p>
+    </div></section>
+    <section class="p-section"><div class="wrap">
+      <div class="plans">
+<div class="plan reveal"><h3><a href="../looking-glass/index.html" style="color:inherit;text-decoration:none">Looking Glass</a></h3><div class="amt">$14.99</div><div class="once">one time · Windows</div><p>Runs your social side: clips from every stream, posts on 7 platforms, going-live posts and analytics.</p><a class="btn" data-buy="looking-glass" href="#">Buy · $14.99</a></div>
+<div class="plan this reveal"><span class="tag">You are here</span><br><h3><a href="../queens-court/index.html" style="color:inherit;text-decoration:none">Queens Court</a></h3><div class="amt">$19.99</div><div class="once">one time · Windows</div><p>Runs your whole launch: everything in Looking Glass, plus press, creators, pitches, follow-ups, grants and awards.</p><a class="btn" data-buy="queens-court" href="#">Buy · $19.99</a></div>
+</div>
+      <div class="compare-wrap reveal"><table class="compare">
+<thead><tr><th>What it does</th><th><a href="../looking-glass/index.html">Looking Glass</a></th><th class="hl"><a href="../queens-court/index.html">Queens Court</a></th></tr></thead>
+<tbody>
+<tr><td>Price (one time)</td><td><b>$14.99</b></td><td><b>$19.99</b></td></tr>
+<tr><td>Social posts on 7 platforms, hashtags, scheduling</td><td><span class="y">✓ Yes</span></td><td><span class="y">✓ Yes</span><small>turn on in the questionnaire</small></td></tr>
+<tr><td>Clips from recordings and VODs, captions, titles, tags</td><td><span class="y">✓ Yes</span></td><td><span class="y">✓ Yes</span><small>turn on in the questionnaire</small></td></tr>
+<tr><td>Going-live posts, weekly compilation</td><td><span class="y">✓ Yes</span></td><td><span class="y">✓ Yes</span></td></tr>
+<tr><td>Analytics and best posting times</td><td><span class="y">✓ Yes</span></td><td><span class="y">✓ Yes</span></td></tr>
+<tr><td>Finds press, creators and communities</td><td><span class="n">—</span></td><td><span class="y">✓ Yes</span></td></tr>
+<tr><td>Writes and sends pitches, follow-ups, replies</td><td><span class="n">—</span></td><td><span class="y">✓ Yes</span></td></tr>
+<tr><td>Contact forms, DMs, calls, texts</td><td><span class="n">—</span></td><td><span class="y">✓ Yes</span></td></tr>
+<tr><td>Grants and awards</td><td><span class="n">—</span></td><td><span class="y">✓ Yes</span></td></tr>
+<tr><td>Several projects at once</td><td><span class="y">✓ Yes</span></td><td><span class="y">✓ Yes</span></td></tr>
+<tr><td>Learns your taste</td><td><span class="y">✓ Yes</span></td><td><span class="y">✓ Yes</span></td></tr>
+</tbody></table></div>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon alt">Requirements</h2>
+      <div class="listbox reveal" id="requirements">
+  <div><h3>Requirements</h3><ul>
+    <li>Windows 10 or 11, 64-bit.</li>
+    <li>16 GB RAM recommended (8 GB works, slower).</li>
+    <li>About 10 GB free disk for the free AI models, plus room for clips.</li>
+    <li>An NVIDIA graphics card is optional: it makes clipping and fine-tuning faster.</li>
+    <li>Internet during install and while it works.</li>
+    <li>For emailing: an email account (Outlook, Gmail or any with SMTP/IMAP).</li>
+    <li>For auto-posting: your own free developer sign-ins per platform (the Setup Guide walks through each). Without them, every post comes with copy-and-post steps.</li>
+  </ul></div>
+  <div><h3>What's in the download</h3><ul>
+    <li>The Queens Court app and installer (double-click <b>Run Queens Court</b>). A few MB.</li>
+    <li>Setup Guide and Operating Guide.</li>
+    <li>LICENSE (the EULA) and THIRD_PARTY_NOTICES.</li>
+  </ul>
+  <h3 style="margin-top:18px">Installed on first run, free</h3><ul>
+    <li>Python, ffmpeg, Ollama and its AI models, and the libraries the app uses.</li>
+    <li>Optional: Docker Desktop for free, unlimited web search.</li>
+  </ul></div>
+</div>
+    </div></section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="index.html"><span class="qc-mark">♛</span><span>Queens <em>Court</em></span></a>
+          <p>Your launch team, on your own PC. A one-time purchase from Mad Tea Party Development.</p>
+        </div>
+        <div><h4>Queens Court</h4><ul>
+          <li><a href="index.html">Home</a></li><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="guides.html">Guides</a></li><li><a href="faq.html">FAQ</a></li>
+        </ul></div>
+        <div><h4>Legal</h4><ul>
+          <li><a href="legal.html#eula">EULA</a></li><li><a href="legal.html#privacy">Privacy policy</a></li><li><a href="legal.html#notices">Third-party notices</a></li><li><a href="legal.html#refunds">Refund policy</a></li>
+        </ul></div>
+        <div><h4>Support</h4><ul>
+          <li><a data-support href="#">Email support</a></li>
+          <li><a href="../looking-glass/index.html">Looking Glass ($14.99)</a></li>
+          <li><a href="../index.html#menu">Software Shop</a></li>
+          <li><a href="../socials.html">Socials</a></li>
+        </ul></div>
+      </div>
+      <p class="cross" style="margin-top:26px">Only need social posts and stream clips? <a href="../looking-glass/index.html">Looking Glass</a> does that half for $14.99.</p>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../data/products.js"></script>
+  <script src="../assets/product.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
