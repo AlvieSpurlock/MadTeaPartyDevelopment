@@ -1,4 +1,4 @@
-# Cohort Revenue Simulator media
+# Mobile Game Revenue Simulator media
 
 Capture every one of these from the shipped app (never mock-ups). Use exactly these names.
 
