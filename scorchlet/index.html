@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/app.css">
   <link rel="stylesheet" href="../assets/transparency.css">
   <style>
     :root {
@@ -43,17 +44,18 @@
     .taste b { display: block; font-family: var(--head); font-weight: 400; font-size: 1.3rem; }
     .notice { text-align: center; color: var(--neon2); font-weight: 800; margin: 0 0 6px; }
     .p-hero { background: linear-gradient(180deg, rgba(18,11,40,.25) 0%, rgba(18,11,40,.45) 60%, #120b28 100%), url(img/village.webp) center 30% / cover no-repeat; }
+    .a-hero { background: linear-gradient(90deg, rgba(18,11,40,.95) 0%, rgba(18,11,40,.8) 45%, rgba(18,11,40,.35) 100%), url(img/village.webp) center 30% / cover no-repeat; }
+    .a-hero h1 { color: #fff8ee; text-shadow: 0 3px 0 #2a1650; }
+    .game-logo { width: min(380px, 80%); }
   </style>
 </head>
 <body class="scorchlet">
   <a class="skip" href="#main">Skip to content</a>
 
-  <div class="crumb">
-    <div class="wrap">
-      <img src="../assets/logos/march-hare.webp" alt="">
-      <span>A <a href="../games.html">March Hare Games</a> release · <a href="../games.html">← Back to all games</a></span>
-    </div>
-  </div>
+  <div class="crumb"><div class="wrap">
+    <a class="crumb-home" href="../index.html"><img src="../assets/logos/march-hare.webp" alt=""><span>March Hare <small>Games</small></span></a>
+    <a class="crumb-back" href="../games.html#games">← Back to all games</a>
+  </div></div>
 
   <header class="p-nav">
     <div class="wrap">
@@ -73,25 +75,19 @@
 
   <main id="main">
     <!-- ============ HERO ============ -->
-    <section class="p-hero">
-      <div class="wrap">
-        <div class="panel reveal">
-          <img class="hero-logo" src="../assets/logos/scorchlet.webp" alt="">
-          <h1 class="sr-only">Scorchlet</h1>
-          <p class="tagline">Raise, play, and grow with your very own dragon companion!</p>
-          <div class="actions">
-            <a class="btn" href="https://marchharegames.itch.io/scorchlet" target="_blank" rel="noopener">Get Scorchlet</a>
-            <a class="btn b2" href="#dragon">Meet Your Dragon</a>
-            <a class="btn b3" href="#community">Support Its Growth</a>
-          </div>
+    <section class="a-hero"><div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow"><span>🐉</span> Scorchlet · Windows &amp; Linux</span>
+        <h1>Raise, play &amp; grow with your very own dragon.</h1>
+        <p class="lead">A cozy dragon companion game. Feed it, tickle it, take it flying and watch it sleep. You are its whole world, and it's yours.</p>
+        <div class="actions">
+          <a class="btn" href="https://marchharegames.itch.io/scorchlet" target="_blank" rel="noopener">Get it · $4.99+</a>
+          <a class="btn b2" href="#dragon">Meet your dragon</a>
         </div>
-        <aside class="store-card reveal" aria-label="Buy Scorchlet">
-          <span class="price">$4.99<small>OR MORE · ITCH.IO</small></span>
-          <a class="itch" href="https://marchharegames.itch.io/scorchlet" target="_blank" rel="noopener">Buy on itch.io</a>
-          <span class="note">Windows &amp; Linux<br>15% goes to OAR</span>
-        </aside>
+        <p class="hero-note">Pay what you want from $4.99 · 15% goes to the Organization for Autism Research</p>
       </div>
-    </section>
+      <div class="visual reveal"><img class="hero-logo game-logo" src="../assets/logos/scorchlet.webp" alt="Scorchlet"></div>
+    </div></section>
 
     <!-- ============ AT A GLANCE ============ -->
     <section class="glance">

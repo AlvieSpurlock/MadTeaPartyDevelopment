@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Creepster&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/app.css">
   <link rel="stylesheet" href="../assets/transparency.css">
   <style>
     :root {
@@ -44,17 +45,19 @@
     .scroll strong { color: #fff; letter-spacing: .06em; }
     .warning { text-align: center; font-family: 'Creepster', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); color: var(--neon2); letter-spacing: .06em; text-shadow: 0 0 18px rgba(224,30,60,.55); margin: 0 0 4px; }
     .first { display: inline-block; padding: 4px 12px; border: 1px solid var(--neon); color: var(--neon); border-radius: 999px; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+    .a-hero { background: linear-gradient(90deg, rgba(10,7,9,.95) 0%, rgba(10,7,9,.75) 50%, rgba(10,7,9,.45) 100%), url(img/castle.webp) center / cover no-repeat; }
+    .a-hero::after { content: ""; position: absolute; right: 18%; top: 45%; width: 380px; height: 380px; transform: translate(50%,-50%); border-radius: 50%; background: radial-gradient(circle, rgba(210,75,255,.35), transparent 65%); z-index: -1; }
+    .hi-title { font-family: 'Cinzel', serif !important; font-weight: 900; letter-spacing: .04em; text-shadow: 0 0 22px rgba(210,75,255,.55), 0 4px 0 #000; }
+    .hi-title span { display: block; font-family: 'Creepster', serif; font-weight: 400; color: var(--neon2); font-size: .55em; margin-top: 6px; text-shadow: 0 0 18px rgba(224,30,60,.6); }
   </style>
 </head>
 <body class="hero-impervious">
   <a class="skip" href="#main">Skip to content</a>
 
-  <div class="crumb">
-    <div class="wrap">
-      <img src="../assets/logos/march-hare.webp" alt="">
-      <span>A <a href="../games.html">March Hare Games</a> release · <a href="../games.html">← Back to all games</a></span>
-    </div>
-  </div>
+  <div class="crumb"><div class="wrap">
+    <a class="crumb-home" href="../index.html"><img src="../assets/logos/march-hare.webp" alt=""><span>March Hare <small>Games</small></span></a>
+    <a class="crumb-back" href="../games.html#games">← Back to all games</a>
+  </div></div>
 
   <header class="p-nav">
     <div class="wrap">
@@ -72,24 +75,19 @@
 
   <main id="main">
     <!-- ============ HERO ============ -->
-    <section class="p-hero">
-      <div class="wrap">
-        <div class="panel reveal">
-          <span class="first">The first March Hare game ever</span>
-          <h1 class="p-title">Hero Impervious<span>Earn the name</span></h1>
-          <p class="tagline">A twist on the typical RPG with simulation and arcade bite. Built from the ground up to be a rage game.</p>
-          <div class="actions">
-            <a class="btn" href="https://marchharegames.itch.io/hero-impervious" target="_blank" rel="noopener">Enter the Castle</a>
-            <a class="btn b2" href="#story">Read the Legend</a>
-          </div>
+    <section class="a-hero"><div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">⚔ The first March Hare game ever · Windows</span>
+        <h1 class="hi-title">Hero Impervious<span>Earn the name</span></h1>
+        <p class="lead">A twist on the typical RPG with simulation and arcade bite. You've become a ball, trapped in a twisted castle. Built from the ground up to be a rage game.</p>
+        <div class="actions">
+          <a class="btn" href="https://marchharegames.itch.io/hero-impervious" target="_blank" rel="noopener">Get it · $1+</a>
+          <a class="btn b2" href="#story">Read the legend</a>
         </div>
-        <aside class="store-card reveal" aria-label="Buy Hero Impervious">
-          <span class="price">$1<small>OR MORE · ITCH.IO</small></span>
-          <a class="itch" href="https://marchharegames.itch.io/hero-impervious" target="_blank" rel="noopener">Buy on itch.io</a>
-          <span class="note">Windows<br>15% goes to the IGDA Foundation</span>
-        </aside>
+        <p class="hero-note">Pay what you want from $1 · 15% goes to the IGDA Foundation</p>
       </div>
-    </section>
+      <div class="visual reveal"><figure class="shot hero-shot"><img src="img/cover.webp" alt="Hero Impervious"></figure></div>
+    </div></section>
 
     <!-- ============ AT A GLANCE ============ -->
     <section class="glance">

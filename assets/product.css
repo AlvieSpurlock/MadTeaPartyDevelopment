@@ -172,3 +172,14 @@ a { color: var(--neon); text-underline-offset: 3px; }
 .giving-intro { text-align: center; color: var(--muted); max-width: 720px; margin: 0 auto 22px; font-size: 1.05rem; }
 .giving-intro b { color: var(--neon2); font-size: 1.15em; }
 .giving-intro a { color: var(--neon); font-weight: 700; }
+
+/* ---------- Return bar (every product site, brand-wide) ---------- */
+.crumb { background: #07060a; border-bottom: 1px solid rgba(255,255,255,.08); font-size: .9rem; }
+.crumb .wrap { min-height: 46px; justify-content: space-between; gap: 14px; }
+.crumb-home { display: inline-flex; align-items: center; gap: 10px; color: #f1e6cc; text-decoration: none; font-family: "IM Fell English SC", Georgia, serif; font-size: 1.05rem; line-height: 1; }
+.crumb-home img { width: 30px; height: 30px; border-radius: 50%; box-shadow: 0 0 10px rgba(176,136,255,.45); }
+.crumb-home small { display: block; font-family: system-ui, sans-serif; font-size: .58rem; letter-spacing: .3em; color: #8dffc1; margin-top: 2px; }
+.crumb-home:hover { color: #fff; }
+.crumb-back { display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 999px; color: #fff; text-decoration: none; font-weight: 700; font-size: .85rem; background: rgba(176,136,255,.18); border: 1px solid rgba(176,136,255,.55); transition: background .2s, transform .2s; white-space: nowrap; }
+.crumb-back:hover { background: rgba(176,136,255,.35); transform: translateX(-2px); }
+@media (max-width: 480px) { .crumb-home span { display: none; } }

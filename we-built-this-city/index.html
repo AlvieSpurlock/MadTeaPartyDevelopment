@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/app.css">
   <link rel="stylesheet" href="../assets/transparency.css">
   <style>
     :root {
@@ -59,17 +60,23 @@
     .made-before { display: inline-block; font-size: .85rem; padding: 4px 12px; border-radius: 999px; background: #fff3d1; border: 1px solid #c9a868; color: #6b5434; margin-bottom: 10px; }
     .gallery button { border-color: #6b4a22; }
     .p-footer { background: #142012; } .p-footer .wordmark { color: #fff8ea; }
+    .a-hero { background: linear-gradient(180deg, #8fd3ff 0%, #c7ecff 70%, #7ed36a 70%, #4caf43 100%); }
+    .a-hero h1 { color: #3a2a15; text-shadow: 0 2px 0 rgba(255,255,255,.6); }
+    .a-hero .lead, .a-hero .hero-note { color: #4a3a22; }
+    .a-hero .eyebrow { color: #1b5f99; }
+    .hero-shot { border-color: #6b4a22; box-shadow: 0 8px 0 #4a3216, 0 20px 30px rgba(0,0,0,.25); }
+    .p-footer p, .p-footer ul a, .p-footer .legal, .p-footer .legal a { color: #e7f0d8; }
+    .p-footer ul a:hover { color: #fff; }
+    .p-footer .wordmark span { color: #fff8ea; }
   </style>
 </head>
 <body class="we-built-this-city">
   <a class="skip" href="#main">Skip to content</a>
 
-  <div class="crumb">
-    <div class="wrap">
-      <img src="../assets/logos/march-hare.webp" alt="">
-      <span>A <a href="../games.html">March Hare Games</a> release · <a href="../games.html">← Back to all games</a></span>
-    </div>
-  </div>
+  <div class="crumb"><div class="wrap">
+    <a class="crumb-home" href="../index.html"><img src="../assets/logos/march-hare.webp" alt=""><span>March Hare <small>Games</small></span></a>
+    <a class="crumb-back" href="../games.html#games">← Back to all games</a>
+  </div></div>
 
   <header class="p-nav">
     <div class="wrap">
@@ -88,25 +95,19 @@
 
   <main id="main">
     <!-- ============ HERO ============ -->
-    <section class="p-hero">
-      <div class="wrap">
-        <div class="panel reveal">
-          <img class="hero-logo" src="img/banner.webp" alt="">
-          <h1 class="sr-only">We Built This City: Farmer Edition</h1>
-          <p class="tagline">Rome might not have been built in a day, but it certainly wasn't built on an empty stomach.</p>
-          <div class="actions">
-            <a class="btn" href="https://marchharegames.itch.io/we-built-this-city-farmer" target="_blank" rel="noopener">Download Free</a>
-            <a class="btn b2" href="#farm">Tour the Farm</a>
-            <a class="btn b3" href="#project">The Big Plan</a>
-          </div>
+    <section class="a-hero"><div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">🌾 Farmer Edition · Windows</span>
+        <h1>Rome wasn't built on an empty stomach.</h1>
+        <p class="lead">A farming sim with all four seasons, a day and night cycle, and a whole year in one hour. Grow three food groups and sell into a balanced economy.</p>
+        <div class="actions">
+          <a class="btn" href="https://marchharegames.itch.io/we-built-this-city-farmer" target="_blank" rel="noopener">Download free</a>
+          <a class="btn b2" href="#farm">Tour the farm</a>
         </div>
-        <aside class="store-card reveal" aria-label="Download We Built This City">
-          <span class="price">Free<small>NAME YOUR PRICE · ITCH.IO</small></span>
-          <a class="itch" href="https://marchharegames.itch.io/we-built-this-city-farmer" target="_blank" rel="noopener">Download on itch.io</a>
-          <span class="note">Windows · Pay what you want<br>15% goes to the IGDA Foundation</span>
-        </aside>
+        <p class="hero-note">Name your own price · 15% goes to the IGDA Foundation</p>
       </div>
-    </section>
+      <div class="visual reveal"><figure class="shot hero-shot"><img src="img/banner.webp" alt="We Built This City"></figure></div>
+    </div></section>
 
     <!-- ============ AT A GLANCE ============ -->
     <section class="glance">

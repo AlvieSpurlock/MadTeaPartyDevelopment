@@ -30,6 +30,8 @@
     body { background: var(--bg); }
     .p-title, .a-hero h1, .page-head h1, .neon, .plan h3, .final h2 { font-weight: 900; }
     .a-hero h1 { font-style: italic; }
+    .p-title { font-family: 'Playfair Display', serif; font-weight: 900; color: #fbeee6; text-shadow: 0 3px 0 #3a0610, 0 0 30px rgba(212,24,58,.45); }
+    .p-title span { font-style: italic; font-weight: 700; color: var(--neon); text-shadow: 0 2px 0 #3a0610; }
     .neon { font-family: 'Playfair Display', serif; font-weight: 900; text-transform: none; letter-spacing: .01em; border-radius: 4px; }
     .wordmark { font-family: 'Playfair Display', serif; font-weight: 900; } .wordmark em { color: var(--neon); font-style: italic; }
     .qc-mark { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe08a, #c9952b 70%); color: #3a0610; font-size: 1.25rem; box-shadow: 0 0 0 2px #000, 0 0 16px rgba(243,197,90,.4); }
@@ -61,8 +63,8 @@
 <body class="queens-court">
   <a class="skip" href="#main">Skip to content</a>
   <div class="crumb"><div class="wrap">
-    <img src="../assets/logos/mad-tea-party.webp" alt="">
-    <span>A <a href="../index.html">Mad Tea Party Development</a> app · <a href="../index.html#menu">← Back to the Software Shop</a></span>
+    <a class="crumb-home" href="../index.html"><img src="../assets/logos/mad-tea-party.webp" alt=""><span>Mad Tea Party <small>Development</small></span></a>
+    <a class="crumb-back" href="../index.html#menu">← Back to the Software Shop</a>
   </div></div>
 
   <header class="p-nav">
@@ -74,7 +76,7 @@
         <a href="pricing.html">Pricing</a>
         <a href="guides.html">Guides</a>
         <a href="faq.html">FAQ</a>
-        <a class="btn small" data-buy="queens-court" href="#">Buy · $19.99</a>
+        <a class="btn small" data-buy="queens-court" href="#">Get it · $19.99</a>
       </nav>
     </div>
   </header>

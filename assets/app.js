@@ -3,12 +3,12 @@
   const P = window.PRODUCTS || {};
   document.querySelectorAll("[data-buy]").forEach(btn => {
     const p = P[btn.dataset.buy]; if (!p) return;
-    const label = btn.dataset.label || `Buy · ${p.price}`;
+    const label = btn.dataset.label || `Get it · ${p.price}`;
     if (p.buy) {
       btn.href = p.buy; btn.target = "_blank"; btn.rel = "noopener"; btn.textContent = label;
     } else {
       btn.removeAttribute("href"); btn.classList.add("soon"); btn.setAttribute("aria-disabled", "true");
-      btn.textContent = `Coming soon · ${p.price}`;
+      btn.textContent = btn.classList.contains("gum") ? "Coming soon to Gumroad" : `Coming soon · ${p.price}`;
     }
   });
   // Demo video: YouTube embed once an ID is set in data/products.js
