@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Queens Court · Your launch team, on your own PC</title>
+  <meta name="description" content="Queens Court finds the people who should hear about your work, writes every pitch, post and follow-up in your voice, and waits for your yes. $19.99 one time, Windows.">
+  <meta name="theme-color" content="#14060b">
+  <link rel="icon" href="../assets/icons/crown.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <style>
+    :root {
+      --bg: #12050a; --bg2: #1c0910;
+      --panel: #2a0d17; --panel2: #1a070e; --line: #5e1a2c;
+      --text: #fbeee6; --muted: #d4b4b8;
+      --a1: #d4183a; --a1d: #6e0717;
+      --a2: #c9952b; --a2d: #6a4a0c;
+      --a3: #4a1022; --a3d: #1a050b;
+      --neon: #f3c55a; --neon2: #ff4d6d;
+      --head: 'Playfair Display', Georgia, serif;
+      --body: 'DM Sans', system-ui, sans-serif;
+      --bevel: rgba(243,197,90,.32);
+      --title-shadow: 0 3px 0 #3a0610;
+      --hero: radial-gradient(ellipse 60% 70% at 78% 40%, rgba(212,24,58,.35), transparent 70%), radial-gradient(ellipse 50% 60% at 10% 0%, rgba(243,197,90,.12), transparent 70%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ctext x='8' y='30' font-size='22' fill='%23ffffff' fill-opacity='.035'%3E%E2%99%A5%3C/text%3E%3Ctext x='48' y='70' font-size='22' fill='%23ffffff' fill-opacity='.035'%3E%E2%99%A0%3C/text%3E%3C/svg%3E"), var(--bg);
+    }
+    body { background: var(--bg); }
+    .p-title, .a-hero h1, .page-head h1, .neon, .plan h3, .final h2 { font-weight: 900; }
+    .a-hero h1 { font-style: italic; }
+    .p-title { font-family: 'Playfair Display', serif; font-weight: 900; color: #fbeee6; text-shadow: 0 3px 0 #3a0610, 0 0 30px rgba(212,24,58,.45); }
+    .p-title span { font-style: italic; font-weight: 700; color: var(--neon); text-shadow: 0 2px 0 #3a0610; }
+    .neon { font-family: 'Playfair Display', serif; font-weight: 900; text-transform: none; letter-spacing: .01em; border-radius: 4px; }
+    .wordmark { font-family: 'Playfair Display', serif; font-weight: 900; } .wordmark em { color: var(--neon); font-style: italic; }
+    .qc-mark { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe08a, #c9952b 70%); color: #3a0610; font-size: 1.25rem; box-shadow: 0 0 0 2px #000, 0 0 16px rgba(243,197,90,.4); }
+    .btn { border-radius: 10px; }
+    .card .ico { background: radial-gradient(circle at 35% 30%, #4a1022, #1a070e); border-color: var(--neon); }
+    .step::before { background: var(--a1); box-shadow: 0 4px 0 var(--a1d); font-family: 'Playfair Display', serif; }
+    .compare .hl { background: rgba(243,197,90,.08); }
+    /* phone + card deck */
+    .phone { position: relative; width: 270px; height: 520px; border-radius: 42px; background: #0b0306; border: 3px solid #000; box-shadow: 0 0 0 2px #5e1a2c, 0 0 0 9px #1a070e, 0 0 0 11px #3a0b18, 0 30px 60px rgba(0,0,0,.6), 0 0 80px rgba(212,24,58,.25); padding: 22px 16px; display: flex; flex-direction: column; transform: rotate(3deg); }
+    .phone-top { display: flex; justify-content: space-between; font-size: .8rem; color: var(--muted); padding: 4px 8px 12px; } .phone-top span:first-child { color: var(--neon); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .deck { position: relative; flex: 1; }
+    .pcard { position: absolute; inset: 0; border-radius: 18px; background: #fbf3e8; border: 2px solid #000; }
+    .pcard.back2 { transform: rotate(-7deg) translate(-8px, 6px); background: #d4183a; }
+    .pcard.back1 { transform: rotate(-3deg) translate(-3px, 3px); background: #f3c55a; }
+    .pcard.front { padding: 18px; color: #2a0d17; animation: deal 4.5s ease-in-out infinite; }
+    .pcard .suit { position: absolute; top: 10px; right: 14px; color: #d4183a; font-size: 1.6rem; }
+    .pc-kind { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: #8a3a4a; font-weight: 800; }
+    .pc-to { font-weight: 800; margin: 8px 0 6px; font-size: .95rem; }
+    .pc-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.05rem; line-height: 1.25; margin-bottom: 14px; }
+    .pc-lines i { display: block; height: 8px; border-radius: 4px; background: #e8d8c8; margin: 8px 0; } .pc-lines i.short { width: 60%; }
+    .phone-btns { display: flex; justify-content: space-around; padding-top: 16px; }
+    .phone-btns span { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.4rem; font-weight: 800; border: 2px solid #000; }
+    .phone-btns .no { background: #3a0b18; color: #ff8fa3; } .phone-btns .edit { background: #2a2a36; color: #fff; } .phone-btns .yes { background: #1f9c5c; color: #fff; box-shadow: 0 0 18px rgba(31,156,92,.5); }
+    @keyframes deal { 0%, 70%, 100% { transform: none; } 80% { transform: translateX(26px) rotate(6deg); } 90% { transform: translateX(-4px) rotate(-1deg); } }
+    @media (prefers-reduced-motion: reduce) { .pcard.front { animation: none; } }
+    @media (max-width: 900px) { .phone { transform: none; } }
+  </style>
+</head>
+<body class="queens-court">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="crumb"><div class="wrap">
+    <a class="crumb-home" href="../index.html"><img src="../assets/logos/mad-tea-party.webp" alt=""><span>Mad Tea Party <small>Development</small></span></a>
+    <a class="crumb-back" href="../index.html#menu">← Back to the Software Shop</a>
+  </div></div>
+
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="index.html"><span class="qc-mark">♛</span><span>Queens <em>Court</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="guides.html">Guides</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn small" data-buy="queens-court" href="#">Get it · $19.99</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="a-hero"><div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow"><span>♛</span> Queens Court · for Windows</span>
+        <h1>Your launch team, on your own PC.</h1>
+        <p class="lead">Queens Court finds the people who should hear about your game, product or business, writes every pitch, post and follow-up in your voice, and waits for your yes before anything goes out.</p>
+        <div class="actions">
+          <a class="btn" data-buy="queens-court" href="#">Get it · $19.99</a>
+          <a class="btn b2" href="#demo">See it work</a>
+        </div>
+        <p class="hero-note">One-time purchase · No subscription · Your data stays on your PC</p>
+      </div>
+      <div class="visual reveal" aria-hidden="true">
+  <div class="phone">
+    <div class="phone-top"><span>Swipe</span><span>3 of 12</span></div>
+    <div class="deck">
+      <div class="pcard back2"></div><div class="pcard back1"></div>
+      <div class="pcard front">
+        <span class="suit">♥</span>
+        <div class="pc-kind">Pitch · Email</div>
+        <div class="pc-to">To: an indie games podcast</div>
+        <div class="pc-sub">"A cozy dragon game built for every kind of player"</div>
+        <div class="pc-lines"><i></i><i></i><i></i><i class="short"></i></div>
+      </div>
+    </div>
+    <div class="phone-btns"><span class="no">✕</span><span class="edit">✎</span><span class="yes">✓</span></div>
+  </div>
+  <video data-optional autoplay muted loop playsinline src="media/hero-swipe.mp4"></video>
+</div>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <div class="problem">
+        <div class="reveal"><b>Promotion is a second full-time job.</b></div>
+        <div class="reveal">Agencies cost hundreds a month. Social tools cost a subscription and still leave the writing to you.</div>
+        <div class="reveal">Queens Court is a one-time purchase that does the legwork while you're away.</div>
+      </div>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon">How It Works</h2>
+      <div class="steps">
+        <div class="card step reveal"><h3>Tell it about you</h3><p>Answer a short questionnaire: what you promote, who you want to reach, your voice.</p></div>
+        <div class="card step reveal"><h3>Click Sign Off</h3><p>It finds outlets, creators and communities, looks up how to reach them, and writes drafts.</p></div>
+        <div class="card step reveal"><h3>Swipe on your phone</h3><p>Go through everything: approve, edit or reject.</p></div>
+        <div class="card step reveal"><h3>It goes out, safely</h3><p>Approved emails go out at a safe pace, posts at the best times. Replies land in one inbox.</p></div>
+      </div>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon alt">See It Work</h2>
+      <div class="demo reveal" id="demo" data-demo="queens-court"><div><div class="play">▶</div><div class="demo-t">Demo video coming soon</div><div class="demo-s">The questionnaire, Sign Off, Swipe, a sent pitch and a scheduled post, in about three minutes.</div></div></div>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon">What It Does</h2>
+      <div class="cards"><a class="card reveal" href="features.html#finds" style="text-decoration:none;color:inherit"><div class="ico">🔎</div><h3>Finds outlets</h3><p>Press, creators, blogs, podcasts, organizations and communities.</p></a>
+<a class="card reveal" href="features.html#writes" style="text-decoration:none;color:inherit"><div class="ico">🪶</div><h3>Writes in your voice</h3><p>Learns from every approve, edit and reject.</p></a>
+<a class="card reveal" href="features.html#channels" style="text-decoration:none;color:inherit"><div class="ico">📬</div><h3>Every channel</h3><p>Emails, contact forms, DMs, call scripts and texts, all in one place.</p></a>
+<a class="card reveal" href="features.html#social" style="text-decoration:none;color:inherit"><div class="ico">📣</div><h3>Posts on 7 platforms</h3><p>X, Bluesky, Threads, Instagram, Facebook, Mastodon and Tumblr, with hashtags picked for reach.</p></a>
+<a class="card reveal" href="features.html#clips" style="text-decoration:none;color:inherit"><div class="ico">🎬</div><h3>Clips your streams</h3><p>Drop in a recording, get captioned vertical clips with titles, tags and post times.</p></a>
+<a class="card reveal" href="features.html#grants" style="text-decoration:none;color:inherit"><div class="ico">🏆</div><h3>Grants and awards</h3><p>Finds them, breaks them down and drafts your answers.</p></a></div><a class="more-link" href="features.html">Every feature, in detail →</a>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon alt">You Stay in Control</h2>
+      <div class="trust">
+        <div class="reveal"><span class="ic">✋</span><b>Nothing goes out without you</b><p>Nothing is sent or posted without your approval.</p></div>
+        <div class="reveal"><span class="ic">🖥️</span><b>The AI runs on your PC</b><p>Your contacts and drafts never go to an AI company.</p></div>
+        <div class="reveal"><span class="ic">🗝️</span><b>Yours, all of it</b><p>Your accounts, your API keys, your data, in a folder you own.</p></div>
+      </div>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon">Why I Built It</h2><p class="lede">Honestly? So I could keep making games and still be home for dinner.</p>
+      <div class="panel reveal why">
+        <p class="why-lead">Mad Tea Party is one person. Marketing well is a full-time job on its own, and I couldn't do it, keep building games and software, provide for my family, <em>and</em> still have time to be with them. So I built Queens Court to carry the outreach while I build.</p>
+        <p class="why-promise"><b>It's a stand-in, not a replacement.</b> As soon as I can afford to, I'll hire real people for these roles, and the day a role is filled, I stop using Queens Court for that job in my own studio.</p>
+      </div>
+      <div class="listbox reveal" style="margin-top:22px"><div><h3>Roles I plan to hire for</h3><ul><li>PR and press outreach coordinator</li><li>Community manager</li><li>Social media manager</li><li>Marketing copywriter</li><li>Creator and influencer partnerships coordinator</li><li>Grant writer</li></ul></div><div><h3>What that means for you</h3><ul>
+        <li>Your copy is yours to keep and use however you like. This promise is about how I run my own studio.</li>
+        <li>Every sale helps bring those hires closer.</li>
+        <li>Nothing goes out without a human saying yes, in my studio or yours.</li>
+      </ul></div></div>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon">One Price, Once</h2>
+      <div class="plans">
+<div class="plan reveal"><h3><a href="../looking-glass/index.html" style="color:inherit;text-decoration:none">Looking Glass</a></h3><div class="amt">$14.99</div><div class="once">one time · Windows</div><p>Runs your social side: clips from every stream, posts on 7 platforms, going-live posts and analytics.</p><a class="btn" data-buy="looking-glass" href="#">Get it · $14.99</a></div>
+<div class="plan this reveal"><span class="tag">You are here</span><br><h3><a href="../queens-court/index.html" style="color:inherit;text-decoration:none">Queens Court</a></h3><div class="amt">$19.99</div><div class="once">one time · Windows</div><p>Runs your whole launch: everything in Looking Glass, plus press, creators, pitches, follow-ups, grants and awards.</p><a class="btn" data-buy="queens-court" href="#">Get it · $19.99</a></div>
+</div><a class="more-link" href="pricing.html">Compare them side by side →</a>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon alt">Will It Run on My PC?</h2>
+      <div class="reqs reveal">
+  <div><b>Windows 10 / 11</b><span>64-bit</span></div>
+  <div><b>16 GB RAM</b><span>recommended (8 GB works, slower)</span></div>
+  <div><b>~10 GB free</b><span>for the free AI models, plus room for clips</span></div>
+  <div><b>NVIDIA GPU</b><span>optional: faster clipping and fine-tuning</span></div>
+</div><a class="more-link" href="pricing.html#requirements">Full requirements and what's in the download →</a>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon">Questions</h2>
+      <div class="faq"><details><summary>Is it a subscription?</summary><p>No. One payment, yours to keep.</p></details>
+<details><summary>Does it send things on its own?</summary><p>Only what you approved. Emails go out at a safe pace; posts go out at their scheduled times.</p></details>
+<details><summary>Which AI does it use?</summary><p>Free open models that run on your PC through Ollama. Nothing is sent to an AI company, and there's no AI bill.</p></details>
+<details><summary>Where is my data?</summary><p>In the Queens Court folder on your PC. Nothing is uploaded to us.</p></details></div><a class="more-link" href="faq.html">All questions →</a>
+    </div></section>
+    <section class="p-section"><div class="wrap">
+      <div class="panel final reveal">
+        <h2>Stop doing promotion by hand.</h2>
+        <p>One payment. Your launch team, ready whenever you are.</p>
+        <a class="btn" data-buy="queens-court" href="#">Get Queens Court · $19.99</a>
+      </div>
+    </div></section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="index.html"><span class="qc-mark">♛</span><span>Queens <em>Court</em></span></a>
+          <p>Your launch team, on your own PC. A one-time purchase from Mad Tea Party Development.</p>
+        </div>
+        <div><h4>Queens Court</h4><ul>
+          <li><a href="index.html">Home</a></li><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="guides.html">Guides</a></li><li><a href="faq.html">FAQ</a></li>
+        </ul></div>
+        <div><h4>Legal</h4><ul>
+          <li><a href="legal.html#eula">EULA</a></li><li><a href="legal.html#privacy">Privacy policy</a></li><li><a href="legal.html#notices">Third-party notices</a></li><li><a href="legal.html#refunds">Refund policy</a></li>
+        </ul></div>
+        <div><h4>Support</h4><ul>
+          <li><a data-support href="#">Email support</a></li>
+          <li><a href="../looking-glass/index.html">Looking Glass ($14.99)</a></li>
+          <li><a href="../index.html#menu">Software Shop</a></li>
+          <li><a href="../socials.html">Socials</a></li>
+        </ul></div>
+      </div>
+      <p class="cross" style="margin-top:26px">Only need social posts and stream clips? <a href="../looking-glass/index.html">Looking Glass</a> does that half for $14.99.</p>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../data/products.js"></script>
+  <script src="../assets/product.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

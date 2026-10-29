@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Game Revenue Simulator · FAQ</title>
+  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment and multi-game portfolios. Models your assumptions; doesn&#x27;t predict.">
+  <meta name="theme-color" content="#0B0D10">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314171B'/><rect x='6' y='18' width='4' height='8' fill='%237FBF7F'/><rect x='12' y='13' width='4' height='13' fill='%237FBF7F'/><rect x='18' y='9' width='4' height='17' fill='%23E8A33D'/><rect x='24' y='5' width='4' height='21' fill='%237FBF7F'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <style>
+    :root {
+      --bg: #0B0D10; --bg2: #101317;
+      --panel: #14171B; --panel2: #101317; --line: #2a2f37;
+      --text: #e9e6df; --muted: #a3a7ad;
+      --a1: #E8A33D; --a1d: #7a5414;
+      --a2: #2f6f9a; --a2d: #173a52;
+      --a3: #C43B4E; --a3d: #5e1520;
+      --neon: #E8A33D; --neon2: #7FBF7F;
+      --rev: #7FBF7F; --spend: #C43B4E;
+      --head: 'IBM Plex Sans', system-ui, sans-serif;
+      --body: 'IBM Plex Sans', system-ui, sans-serif;
+      --mono: 'IBM Plex Mono', Consolas, monospace;
+      --bevel: rgba(232,163,61,.22);
+      --title-shadow: none;
+      --hero: radial-gradient(ellipse 55% 60% at 80% 35%, rgba(232,163,61,.10), transparent 70%), linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 100% 40px, linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 40px 100%, var(--bg);
+    }
+    body { background: var(--bg); }
+    .a-hero h1, .page-head h1, .final h2, .plan h3, .wordmark { font-weight: 700; letter-spacing: -.015em; }
+    .a-hero h1 em { font-style: normal; color: var(--a1); }
+    .neon { font-family: var(--mono); font-weight: 600; font-size: clamp(1.2rem, 3vw, 1.7rem); text-transform: uppercase; letter-spacing: .12em; border-radius: 6px; border-width: 2px; text-shadow: none; box-shadow: none; padding: 8px 18px; }
+    .neon.alt { border-color: var(--rev); color: var(--rev); text-shadow: none; box-shadow: none; }
+    .neon { color: var(--a1); }
+    .eyebrow, .tile span, .compare th, .mono, .faq summary::after { font-family: var(--mono); }
+    .eyebrow { color: var(--a1); }
+    .wordmark { font-size: 1.15rem; } .wordmark em { font-style: normal; color: var(--a1); }
+    .crs-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--panel); border: 1px solid var(--line); display: flex; align-items: flex-end; justify-content: center; gap: 3px; padding: 6px; }
+    .crs-mark i { display: block; width: 3px; border-radius: 1px; background: var(--rev); } .crs-mark i:nth-child(1){height:6px} .crs-mark i:nth-child(2){height:10px} .crs-mark i:nth-child(3){height:14px;background:var(--a1)} .crs-mark i:nth-child(4){height:18px}
+    .btn { border-radius: 8px; text-shadow: none; } .btn:not(.dark):not(.ghost):not(.soon) { color: #17110a; } .btn:not(.dark):not(.ghost):not(.soon):hover { color: #17110a; }
+    .btn.b2 { color: #fff !important; }
+    .card, .panel { border-radius: 12px; } .card .ico { border-radius: 10px; background: rgba(232,163,61,.08); border-color: rgba(232,163,61,.4); }
+    .panel::before, .panel::after { display: none; }
+    .panel { outline: 0; border: 1px solid var(--line); box-shadow: 0 16px 34px rgba(0,0,0,.4); }
+    .step::before { background: var(--a1); color: #17110a; box-shadow: 0 4px 0 var(--a1d); font-family: var(--mono); }
+    .tile { border-color: var(--line) !important; } .tile b { text-shadow: none; font-family: var(--mono); }
+    .problem div:last-child { border-color: var(--a1); background: rgba(232,163,61,.07); }
+    /* data styling */
+    .data { width: 100%; border-collapse: collapse; font-size: .95rem; }
+    .data th, .data td { padding: 10px 14px; border-bottom: 1px solid var(--line); text-align: left; }
+    .data th { font-family: var(--mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); background: rgba(0,0,0,.25); }
+    .data td.n { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+    .data .rev { color: var(--rev); } .data .spend { color: var(--spend); }
+    .data-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+    .data-wrap .data { min-width: 460px; }
+    .caption { font-family: var(--mono); font-size: .8rem; color: var(--muted); margin: 10px 2px 0; }
+    .caption b { color: var(--a1); font-weight: 600; }
+    .stat-row { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); margin-bottom: 14px; }
+    .stat { padding: 16px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
+    .stat span { display: block; font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .stat b { display: block; font-family: var(--mono); font-size: clamp(1.4rem, 3vw, 2rem); margin-top: 4px; }
+    .stat.rev b { color: var(--rev); } .stat.spend b { color: var(--spend); }
+    @media (max-width: 640px) { .stat-row { grid-template-columns: 1fr; } }
+    .eqs { display: grid; gap: 14px; }
+    .eq { padding: 18px 20px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
+    .eq .f { font-family: 'Cambria Math', 'STIX Two Math', Georgia, serif; font-size: 1.35rem; color: #fff; overflow-x: auto; white-space: nowrap; }
+    .eq .f i { font-style: italic; } .eq .sig { font-size: 1.6em; vertical-align: -.15em; margin: 0 2px; }
+    .frac { display: inline-grid; vertical-align: middle; text-align: center; margin: 0 4px; } .frac > span:first-child { border-bottom: 1px solid #fff; padding: 0 6px 2px; } .frac > span:last-child { padding: 2px 6px 0; }
+    .eq p { margin: 8px 0 0; color: var(--muted); font-size: .92rem; }
+    .callout { padding: 18px 20px; border-radius: 10px; border-left: 4px solid var(--a1); background: rgba(232,163,61,.07); }
+    .callout.warn { border-left-color: var(--spend); background: rgba(196,59,78,.08); }
+    .callout.ok { border-left-color: var(--rev); background: rgba(127,191,127,.07); }
+    .callout b { color: var(--text); } .callout p { margin: 6px 0 0; color: var(--muted); }
+    .not-for { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); }
+    .not-for div { padding: 14px 16px; border-radius: 10px; background: rgba(196,59,78,.06); border: 1px solid rgba(196,59,78,.35); color: var(--muted); font-size: .93rem; }
+    .not-for b { display: block; color: var(--text); margin-bottom: 2px; }
+    .for-who { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
+    .for-who div { padding: 14px 16px; border-radius: 10px; background: rgba(127,191,127,.06); border: 1px solid rgba(127,191,127,.3); color: var(--muted); font-size: .93rem; }
+    .not-for.four { grid-template-columns: repeat(4, 1fr); }
+    .how-steps { color: var(--muted); display: grid; gap: 12px; padding-left: 22px; max-width: 880px; margin: 0 auto; }
+    .how-steps b { color: var(--text); }
+    .code { white-space: pre; overflow-x: auto; font-size: .82rem; }
+    @media (max-width: 1000px) { .not-for.four { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 860px) { .not-for, .not-for.four, .for-who { grid-template-columns: 1fr; } }
+    .levels .card { text-align: left; } .levels .card .ico { margin: 0 0 10px; }
+    .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
+    body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
+    body.revenue-simulator .cards.three { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three { grid-template-columns: 1fr; } }
+    .faq summary::after { color: var(--a1); }
+    .p-footer h4 { color: var(--a1); font-family: var(--mono); }
+  </style>
+</head>
+<body class="revenue-simulator">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="crumb"><div class="wrap">
+    <a class="crumb-home" href="../index.html"><img src="../assets/logos/mad-tea-party.webp" alt=""><span>Mad Tea Party <small>Development</small></span></a>
+    <a class="crumb-back" href="../index.html#menu">← Back to the Software Shop</a>
+  </div></div>
+
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="index.html"><span class="crs-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Mobile Game Revenue <em>Simulator</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="what-it-does.html">What It Does</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="accuracy.html">Accuracy</a>
+        <a href="customize.html">Customize</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html" class="current" aria-current="page">FAQ</a>
+        <a class="btn small" data-buy="revenue-simulator" href="pricing.html">Get it</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head"><div class="wrap">
+      <span class="eyebrow">▮▮▮ FAQ</span>
+      <h1>Questions before you buy</h1>
+      <p>Straight answers, including what it can't do.</p>
+    </div></section>
+    <section class="p-section"><div class="wrap"><div class="faq"><details><summary>Does it need the internet?</summary><p>No. The charts library is bundled and the app's own code makes no network requests.</p></details>
+<details><summary>Why does Windows warn me when I open it?</summary><p>The app isn't code-signed, so Windows SmartScreen shows a warning on first launch. Choose <b>More info</b>, then <b>Run anyway</b>.</p></details>
+<details><summary>How accurate is it?</summary><p>The math is exact and you can check it by hand. Forecasts depend on your assumptions and have not been validated against live games. The starting values are rough estimates. See <a href="accuracy.html">Accuracy and limits</a>.</p></details>
+<details><summary>Can I save my scenarios?</summary><p>Not in version 1.0, and there's no export yet; closing the app clears your inputs. You can set your own starting values in config.js so new games open with your base case.</p></details>
+<details><summary>Can I resell it, share it, or run it for my clients?</summary><p>No. The license covers one business, for its own internal use. Each client business needs its own license. Selling, sharing, publishing or building a competing product from it is not allowed. See the <a href="legal.html#license">license</a>.</p></details>
+<details><summary>Does it include real CPI and ARPDAU data?</summary><p>No. The market CPIs and the starting values are rough estimates meant to be replaced with your own numbers.</p></details>
+<details><summary>Can I use it for apps that aren&#x27;t games?</summary><p>The model is generic: any app with installs, retention and ad revenue per user fits. The wording and presets are written for mobile games.</p></details>
+<details><summary>Can I change it?</summary><p>Yes, for your own use. See <a href="customize.html">Customize and extend</a> and the <a href="legal.html#license">license</a>.</p></details>
+<details><summary>Does it handle in-app purchases?</summary><p>No. It models ad revenue per user only.</p></details>
+<details><summary>Which currencies work?</summary><p>Eight, including US dollars, euros and pounds. The exchange rates are set in a settings file and are not live; update them yourself. Changing currency never changes the results.</p></details>
+<details><summary>Does it work on Mac or Linux?</summary><p>Not in this release. It's Windows only.</p></details>
+<details><summary>Updates and support?</summary><p>See <a href="support.html">Support</a>.</p></details></div></div></section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="index.html"><span class="crs-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Mobile Game Revenue <em>Simulator</em></span></a>
+          <p>Model your mobile game's players and ad revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
+        </div>
+        <div><h4>Product</h4><ul>
+          <li><a href="what-it-does.html">What it does</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="accuracy.html">Accuracy and limits</a></li><li><a href="customize.html">Customize and extend</a></li>
+        </ul></div>
+        <div><h4>Buy</h4><ul>
+          <li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li><li><a href="support.html">Support</a></li>
+        </ul></div>
+        <div><h4>Legal</h4><ul>
+          <li><a href="legal.html#license">License</a></li><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#refunds">Refunds</a></li><li><a data-support href="#">Email support</a></li>
+        </ul></div>
+      </div>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../data/products.js"></script>
+  <script src="../assets/product.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

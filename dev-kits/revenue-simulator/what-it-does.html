@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Game Revenue Simulator · What It Does</title>
+  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment and multi-game portfolios. Models your assumptions; doesn&#x27;t predict.">
+  <meta name="theme-color" content="#0B0D10">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314171B'/><rect x='6' y='18' width='4' height='8' fill='%237FBF7F'/><rect x='12' y='13' width='4' height='13' fill='%237FBF7F'/><rect x='18' y='9' width='4' height='17' fill='%23E8A33D'/><rect x='24' y='5' width='4' height='21' fill='%237FBF7F'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <style>
+    :root {
+      --bg: #0B0D10; --bg2: #101317;
+      --panel: #14171B; --panel2: #101317; --line: #2a2f37;
+      --text: #e9e6df; --muted: #a3a7ad;
+      --a1: #E8A33D; --a1d: #7a5414;
+      --a2: #2f6f9a; --a2d: #173a52;
+      --a3: #C43B4E; --a3d: #5e1520;
+      --neon: #E8A33D; --neon2: #7FBF7F;
+      --rev: #7FBF7F; --spend: #C43B4E;
+      --head: 'IBM Plex Sans', system-ui, sans-serif;
+      --body: 'IBM Plex Sans', system-ui, sans-serif;
+      --mono: 'IBM Plex Mono', Consolas, monospace;
+      --bevel: rgba(232,163,61,.22);
+      --title-shadow: none;
+      --hero: radial-gradient(ellipse 55% 60% at 80% 35%, rgba(232,163,61,.10), transparent 70%), linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 100% 40px, linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 40px 100%, var(--bg);
+    }
+    body { background: var(--bg); }
+    .a-hero h1, .page-head h1, .final h2, .plan h3, .wordmark { font-weight: 700; letter-spacing: -.015em; }
+    .a-hero h1 em { font-style: normal; color: var(--a1); }
+    .neon { font-family: var(--mono); font-weight: 600; font-size: clamp(1.2rem, 3vw, 1.7rem); text-transform: uppercase; letter-spacing: .12em; border-radius: 6px; border-width: 2px; text-shadow: none; box-shadow: none; padding: 8px 18px; }
+    .neon.alt { border-color: var(--rev); color: var(--rev); text-shadow: none; box-shadow: none; }
+    .neon { color: var(--a1); }
+    .eyebrow, .tile span, .compare th, .mono, .faq summary::after { font-family: var(--mono); }
+    .eyebrow { color: var(--a1); }
+    .wordmark { font-size: 1.15rem; } .wordmark em { font-style: normal; color: var(--a1); }
+    .crs-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--panel); border: 1px solid var(--line); display: flex; align-items: flex-end; justify-content: center; gap: 3px; padding: 6px; }
+    .crs-mark i { display: block; width: 3px; border-radius: 1px; background: var(--rev); } .crs-mark i:nth-child(1){height:6px} .crs-mark i:nth-child(2){height:10px} .crs-mark i:nth-child(3){height:14px;background:var(--a1)} .crs-mark i:nth-child(4){height:18px}
+    .btn { border-radius: 8px; text-shadow: none; } .btn:not(.dark):not(.ghost):not(.soon) { color: #17110a; } .btn:not(.dark):not(.ghost):not(.soon):hover { color: #17110a; }
+    .btn.b2 { color: #fff !important; }
+    .card, .panel { border-radius: 12px; } .card .ico { border-radius: 10px; background: rgba(232,163,61,.08); border-color: rgba(232,163,61,.4); }
+    .panel::before, .panel::after { display: none; }
+    .panel { outline: 0; border: 1px solid var(--line); box-shadow: 0 16px 34px rgba(0,0,0,.4); }
+    .step::before { background: var(--a1); color: #17110a; box-shadow: 0 4px 0 var(--a1d); font-family: var(--mono); }
+    .tile { border-color: var(--line) !important; } .tile b { text-shadow: none; font-family: var(--mono); }
+    .problem div:last-child { border-color: var(--a1); background: rgba(232,163,61,.07); }
+    /* data styling */
+    .data { width: 100%; border-collapse: collapse; font-size: .95rem; }
+    .data th, .data td { padding: 10px 14px; border-bottom: 1px solid var(--line); text-align: left; }
+    .data th { font-family: var(--mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); background: rgba(0,0,0,.25); }
+    .data td.n { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+    .data .rev { color: var(--rev); } .data .spend { color: var(--spend); }
+    .data-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+    .data-wrap .data { min-width: 460px; }
+    .caption { font-family: var(--mono); font-size: .8rem; color: var(--muted); margin: 10px 2px 0; }
+    .caption b { color: var(--a1); font-weight: 600; }
+    .stat-row { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); margin-bottom: 14px; }
+    .stat { padding: 16px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
+    .stat span { display: block; font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .stat b { display: block; font-family: var(--mono); font-size: clamp(1.4rem, 3vw, 2rem); margin-top: 4px; }
+    .stat.rev b { color: var(--rev); } .stat.spend b { color: var(--spend); }
+    @media (max-width: 640px) { .stat-row { grid-template-columns: 1fr; } }
+    .eqs { display: grid; gap: 14px; }
+    .eq { padding: 18px 20px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
+    .eq .f { font-family: 'Cambria Math', 'STIX Two Math', Georgia, serif; font-size: 1.35rem; color: #fff; overflow-x: auto; white-space: nowrap; }
+    .eq .f i { font-style: italic; } .eq .sig { font-size: 1.6em; vertical-align: -.15em; margin: 0 2px; }
+    .frac { display: inline-grid; vertical-align: middle; text-align: center; margin: 0 4px; } .frac > span:first-child { border-bottom: 1px solid #fff; padding: 0 6px 2px; } .frac > span:last-child { padding: 2px 6px 0; }
+    .eq p { margin: 8px 0 0; color: var(--muted); font-size: .92rem; }
+    .callout { padding: 18px 20px; border-radius: 10px; border-left: 4px solid var(--a1); background: rgba(232,163,61,.07); }
+    .callout.warn { border-left-color: var(--spend); background: rgba(196,59,78,.08); }
+    .callout.ok { border-left-color: var(--rev); background: rgba(127,191,127,.07); }
+    .callout b { color: var(--text); } .callout p { margin: 6px 0 0; color: var(--muted); }
+    .not-for { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); }
+    .not-for div { padding: 14px 16px; border-radius: 10px; background: rgba(196,59,78,.06); border: 1px solid rgba(196,59,78,.35); color: var(--muted); font-size: .93rem; }
+    .not-for b { display: block; color: var(--text); margin-bottom: 2px; }
+    .for-who { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
+    .for-who div { padding: 14px 16px; border-radius: 10px; background: rgba(127,191,127,.06); border: 1px solid rgba(127,191,127,.3); color: var(--muted); font-size: .93rem; }
+    .not-for.four { grid-template-columns: repeat(4, 1fr); }
+    .how-steps { color: var(--muted); display: grid; gap: 12px; padding-left: 22px; max-width: 880px; margin: 0 auto; }
+    .how-steps b { color: var(--text); }
+    .code { white-space: pre; overflow-x: auto; font-size: .82rem; }
+    @media (max-width: 1000px) { .not-for.four { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 860px) { .not-for, .not-for.four, .for-who { grid-template-columns: 1fr; } }
+    .levels .card { text-align: left; } .levels .card .ico { margin: 0 0 10px; }
+    .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
+    body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
+    body.revenue-simulator .cards.three { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three { grid-template-columns: 1fr; } }
+    .faq summary::after { color: var(--a1); }
+    .p-footer h4 { color: var(--a1); font-family: var(--mono); }
+  </style>
+</head>
+<body class="revenue-simulator">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="crumb"><div class="wrap">
+    <a class="crumb-home" href="../index.html"><img src="../assets/logos/mad-tea-party.webp" alt=""><span>Mad Tea Party <small>Development</small></span></a>
+    <a class="crumb-back" href="../index.html#menu">← Back to the Software Shop</a>
+  </div></div>
+
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="index.html"><span class="crs-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Mobile Game Revenue <em>Simulator</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="what-it-does.html" class="current" aria-current="page">What It Does</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="accuracy.html">Accuracy</a>
+        <a href="customize.html">Customize</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn small" data-buy="revenue-simulator" href="pricing.html">Get it</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head"><div class="wrap">
+      <span class="eyebrow">▮▮▮ What it does</span>
+      <h1>Every control, every result</h1>
+      <p>A Windows desktop app that simulates how many players a mobile game keeps and the ad revenue they generate, given the installs, budget and reinvestment rules you choose.</p>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon">What You Control</h2>
+      <div class="data-wrap reveal"><table class="data"><thead><tr><th>Feature</th><th>What you set</th><th>What the model does with it</th></tr></thead><tbody>
+<tr><td><b>Games</b></td><td>Add, rename, duplicate or remove game tabs; a launch day for each</td><td>Each game runs on one shared timeline and shows zero before its launch day</td></tr>
+<tr><td><b>Free installs</b></td><td>Launch installs (slider to 100,000); optional recurring installs every 30 days (slider to 20,000)</td><td>Costs nothing; each wave becomes its own cohort</td></tr>
+<tr><td><b>Paid installs</b></td><td>A market preset with its CPI, or a custom CPI; an initial spend</td><td>Installs = spend ÷ CPI for that wave</td></tr>
+<tr><td><b>Reinvestment</b></td><td>A push percentage for N months, then a sustain percentage that continues</td><td>Every 30 days, spends that share of the previous 30 days' net revenue on a new paid wave</td></tr>
+<tr><td><b>Retention</b></td><td>Percent still active on day 1, 7, 30, 60, 90, 120, 160 and 180</td><td>Smooth curve between points; held flat after day 180</td></tr>
+<tr><td><b>Paid-install retention</b></td><td>A second set of the same eight points</td><td>Installs bought with paid UA use this curve; free, organic and cross-promo installs use the main one</td></tr>
+<tr><td><b>Ad revenue</b></td><td>ARPDAU (revenue per daily active user)</td><td>Daily revenue = active users × ARPDAU, adjusted by the options below</td></tr>
+<tr><td><b>Revenue cut</b></td><td>A percentage</td><td>Removes that share of ad revenue first; reinvestment is taken from what's left</td></tr>
+<tr><td><b>Costs</b></td><td>Running cost per month; one-time dev or launch cost</td><td>Charged from launch; included in breakeven, profit and the cost chart</td></tr>
+<tr><td><b>Ad-network warm-up</b></td><td>A starting percentage and a number of days</td><td>ARPDAU starts at that share of full and climbs to 100%</td></tr>
+<tr><td><b>ARPDAU drift</b></td><td>A percentage per 30 days</td><td>Ad revenue per user ramps up or decays over time</td></tr>
+<tr><td><b>Seasonality</b></td><td>A built-in shape or 12 custom monthly multipliers for ad revenue and for CPI; the starting calendar month</td><td>Multiplies ad revenue and CPI by month</td></tr>
+<tr><td><b>CPI scaling</b></td><td>A percentage per doubling, counted from a spend you choose</td><td>Large paid waves cost more per install</td></tr>
+<tr><td><b>Cross-promo</b></td><td>A preset from None to Very Aggressive, or a custom percentage; an optional chaining switch</td><td>Sends a share of each game's users to every other launched game as free installs</td></tr>
+<tr><td><b>Tax</b></td><td>A flat percentage</td><td>Estimated on total positive profit only</td></tr>
+<tr><td><b>Currency</b></td><td>Eight currencies, rates set in the settings file</td><td>Changes what you see and type; results don't change</td></tr>
+<tr><td><b>Timeline</b></td><td>Simulation length, 30 to 360 days</td><td>Shared by all games</td></tr>
+</tbody></table></div><p class="caption">Slider limits, market presets and starting values are all editable in a settings file (<a href="customize.html">Customize and extend</a>).</p>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon alt">What You See</h2>
+      <div class="row reveal" style="align-items:start">
+        <div><ul style="color:var(--muted);display:grid;gap:8px;padding-left:20px;margin:0">
+          <li>A daily active users chart for every game, plus the combined total</li>
+          <li>Cumulative net revenue against cumulative costs</li>
+          <li>Headline cards: end DAU, net revenue, paid spend, dev and running costs, breakeven day (the first day net revenue covers all costs), net profit before tax, profit after tax, free installs and paid installs</li>
+          <li>A per-game table: end DAU, net revenue, spend, return on spend, average paid CPI and cross-promo installs received</li>
+          <li>A monthly net revenue table by 30-day month, with a combined row</li>
+          <li>A monthly take-home table: net revenue minus the money already committed to the next paid wave, minus dev and running costs</li>
+          <li>A Resim button that recalculates everything</li>
+        </ul></div>
+        <div class="row-media"><figure class="shot reveal" data-need="Screenshot: the realism settings open (revenue cut, costs, warm-up, drift, seasonality, CPI scaling, tax)"><img src="media/realism-settings.png" alt="The realism settings" loading="lazy"><figcaption>The realism settings</figcaption></figure></div>
+      </div>
+      <div class="shots" style="margin-top:26px"><figure class="shot reveal" data-need="Screenshot: cumulative net revenue against costs"><img src="media/revenue-vs-costs.png" alt="Net revenue against costs" loading="lazy"><figcaption>Net revenue against costs</figcaption></figure><figure class="shot reveal" data-need="Screenshot: the DAU chart"><img src="media/dau-chart.png" alt="Daily active users · Screenshot from an earlier build: three games launching on day 0, before the realism settings were added." loading="lazy"><figcaption>Daily active users · Screenshot from an earlier build: three games launching on day 0, before the realism settings were added.</figcaption></figure><figure class="shot reveal" data-need="Screenshot: the monthly tables"><img src="media/monthly-tables.png" alt="Monthly tables · Screenshot from an earlier build: three games launching on day 0, before the realism settings were added." loading="lazy"><figcaption>Monthly tables · Screenshot from an earlier build: three games launching on day 0, before the realism settings were added.</figcaption></figure></div>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon">Not in Version 1.0</h2>
+      <div class="callout warn reveal"><b>No saving or exporting yet.</b><p>Closing the app clears your inputs. Also not included: in-app purchase and subscription revenue, separate markets inside one game (a game has one market for its paid waves), live currency rates, and Mac, Linux or mobile versions. <a href="accuracy.html">Accuracy and limits</a> lists what the model leaves out.</p></div>
+    </div></section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="index.html"><span class="crs-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Mobile Game Revenue <em>Simulator</em></span></a>
+          <p>Model your mobile game's players and ad revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
+        </div>
+        <div><h4>Product</h4><ul>
+          <li><a href="what-it-does.html">What it does</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="accuracy.html">Accuracy and limits</a></li><li><a href="customize.html">Customize and extend</a></li>
+        </ul></div>
+        <div><h4>Buy</h4><ul>
+          <li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li><li><a href="support.html">Support</a></li>
+        </ul></div>
+        <div><h4>Legal</h4><ul>
+          <li><a href="legal.html#license">License</a></li><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#refunds">Refunds</a></li><li><a data-support href="#">Email support</a></li>
+        </ul></div>
+      </div>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../data/products.js"></script>
+  <script src="../assets/product.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

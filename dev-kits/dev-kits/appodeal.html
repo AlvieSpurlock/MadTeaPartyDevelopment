@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Appodeal for Unity · Game Dev Kits · Mad Tea Party Development</title>
+  <meta name="description" content="Appodeal for Unity: A Unity plugin for working with Appodeal ads in your game.">
+  <meta name="theme-color" content="#0b0f14">
+  <link rel="icon" href="../assets/icons/key_gold.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <style>
+    :root {
+      --bg: #0b0f14; --bg2: #10161d;
+      --panel: #161e27; --panel2: #10161d; --line: #2a3644;
+      --text: #e9eef4; --muted: #a2afbd;
+      --a1: #8dffc1; --a1d: #2f8a5c;
+      --a2: #b088ff; --a2d: #4f2e99;
+      --a3: #f3c85e; --a3d: #7a5a12;
+      --neon: #8dffc1; --neon2: #b088ff;
+      --head: 'Space Grotesk', system-ui, sans-serif;
+      --body: 'Inter', system-ui, sans-serif;
+      --bevel: rgba(141,255,193,.22);
+      --title-shadow: none;
+      --hero: radial-gradient(ellipse 55% 60% at 80% 35%, rgba(176,136,255,.16), transparent 70%), radial-gradient(ellipse 45% 50% at 10% 10%, rgba(141,255,193,.10), transparent 70%), var(--bg);
+    }
+    body { background: var(--bg); }
+    .a-hero h1, .page-head h1, .wordmark, .final h2 { font-weight: 700; letter-spacing: -.015em; }
+    .wordmark em { font-style: normal; color: var(--a1); }
+    .btn:not(.dark):not(.ghost):not(.soon) { color: #08130d; text-shadow: none; }
+    .btn.b2 { color: #fff !important; }
+    .neon { text-transform: none; border-radius: 12px; font-weight: 700; }
+    .kit-icon { width: min(260px, 70%); filter: drop-shadow(0 18px 24px rgba(0,0,0,.5)) drop-shadow(0 0 30px rgba(141,255,193,.18)); animation: kitbob 5s ease-in-out infinite; }
+    @keyframes kitbob { 50% { transform: translateY(-10px) rotate(-3deg); } }
+    @media (prefers-reduced-motion: reduce) { .kit-icon { animation: none; } }
+    .unity-chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); font-size: .8rem; margin-left: 6px; }
+    .stores { display: flex; flex-wrap: wrap; gap: 12px; }
+    .callout { padding: 18px 20px; border-radius: 12px; border-left: 4px solid var(--a3); background: rgba(243,200,94,.08); }
+    .callout b { color: var(--text); } .callout p { margin: 6px 0 0; color: var(--muted); }
+    .callout .actions { justify-content: flex-start; margin-top: 12px; }
+    .kits { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .kit-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 22px 16px; border-radius: 14px; background: linear-gradient(180deg, var(--panel), var(--panel2)); border: 1px solid var(--line); text-decoration: none; color: var(--text); transition: transform .2s, border-color .2s; }
+    .kit-card:hover { transform: translateY(-4px); border-color: var(--a1); }
+    .kit-card img { width: 72px; }
+    .kit-card b { font-family: var(--head); font-size: 1.1rem; } .kit-card span { color: var(--muted); font-size: .88rem; }
+    .kit-card.here { border-color: var(--a2); }
+    .badge-untested { display: inline-block; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: rgba(243,200,94,.15); color: var(--a3); border: 1px solid rgba(243,200,94,.4); }
+    iframe.gform { width: 100%; height: 1400px; border: 0; border-radius: 14px; background: #fff; }
+    .disclaimer { font-size: .82rem; color: var(--muted); text-align: center; margin-top: 18px; }
+  </style>
+</head>
+<body class="dev-kits">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="crumb"><div class="wrap">
+    <a class="crumb-home" href="../index.html"><img src="../assets/logos/mad-tea-party.webp" alt=""><span>Mad Tea Party <small>Development</small></span></a>
+    <a class="crumb-back" href="../index.html#dev-kits">← Back to the Software Shop</a>
+  </div></div>
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="index.html"><img src="../assets/icons/key_gold.webp" alt=""><span>Game Dev <em>Kits</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="index.html">All Kits</a>
+        <a href="levelplay.html">LevelPlay</a>
+        <a href="appodeal.html" class="current" aria-current="page">Appodeal</a>
+        <a href="admob.html">Google AdMob</a>
+        <a href="localization.html">Localization</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="a-hero"><div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Game Dev Kit · Unity plugin <span class="unity-chip">Ads mediation</span></span>
+        <h1>Appodeal for Unity</h1>
+        <p class="lead">A Unity plugin for working with Appodeal ads in your game. Full details are on the way.</p>
+        <div class="stores">
+          <a class="btn" data-kit="appodeal" data-store="fab" href="#">Fab</a>
+          <a class="btn b2" data-kit="appodeal" data-store="unity" href="#">Unity Asset Store</a>
+          <a class="btn dark" data-kit="appodeal" data-store="gumroad" href="#">Gumroad</a>
+        </div>
+        <p class="hero-note">Unity plugin · On Fab, the Unity Asset Store and Gumroad</p>
+      </div>
+      <div class="visual reveal"><img class="kit-icon" src="../assets/icons/piggy.webp" alt=""></div>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <div class="panel final reveal">
+        <h2>Full details coming soon</h2>
+        <p>Features, setup steps, screenshots and requirements will be posted here. Questions before then? Use the support form.</p>
+        <div class="actions"><a class="btn b2" href="support.html">Ask a question</a></div>
+      </div>
+      <p class="disclaimer">Appodeal is a trademark of its owner. This kit is an independent plugin and is not made, affiliated with or endorsed by them.</p>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon alt">All Game Dev Kits</h2>
+      <div class="kits"><a class="kit-card reveal" href="levelplay.html"><img src="../assets/icons/megaphone.webp" alt=""><b>LevelPlay for Unity</b><span>Ads mediation · <em class="badge-untested">Untested</em></span></a><a class="kit-card reveal here" href="appodeal.html"><img src="../assets/icons/piggy.webp" alt=""><b>Appodeal for Unity</b><span>Ads mediation</span></a><a class="kit-card reveal" href="admob.html"><img src="../assets/icons/tv.webp" alt=""><b>Google AdMob for Unity</b><span>Mobile ads · <em class="badge-untested">Untested</em></span></a><a class="kit-card reveal" href="localization.html"><img src="../assets/icons/book.webp" alt=""><b>Localization for Unity</b><span>Localization</span></a></div>
+    </div></section>
+  </main>
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="index.html"><img src="../assets/icons/key_gold.webp" alt=""><span>Game Dev <em>Kits</em></span></a>
+          <p>Unity plugins from the workshop that builds March Hare Games. On Fab, the Unity Asset Store and Gumroad.</p>
+        </div>
+        <div><h4>Kits</h4><ul>
+          <li><a href="levelplay.html">LevelPlay for Unity</a></li><li><a href="appodeal.html">Appodeal for Unity</a></li><li><a href="admob.html">Google AdMob for Unity</a></li><li><a href="localization.html">Localization for Unity</a></li>
+        </ul></div>
+        <div><h4>Help</h4><ul>
+          <li><a href="support.html">Support form</a></li><li><a data-support href="#">Email support</a></li>
+        </ul></div>
+        <div><h4>Studio</h4><ul>
+          <li><a href="../index.html#menu">Software Shop</a></li><li><a href="../games.html">March Hare Games</a></li><li><a href="../socials.html">Socials</a></li>
+        </ul></div>
+      </div>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../data/products.js"></script>
+  <script src="../assets/product.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
