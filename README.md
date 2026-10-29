@@ -99,7 +99,7 @@ Unity plugin pages: LevelPlay, Appodeal, Google AdMob, Localization, plus a supp
 
 Every dev tool and kit site has a "Used In" / "Used By" section on its landing page (first 3 projects)
 and its own page listing all of them:
-- Queens Court, Looking Glass, Mobile Game Revenue Simulator, Asset Logger: `<site>/used-in.html`
+- Queens Court, Looking Glass, Asset Logger: `<site>/used-in.html` (the simulator is a studio-wide tool, so it has none)
 - Game Dev Kits: a section on each kit page and on dev-kits/index.html, plus dev-kits/used-in.html grouped by kit
 
 All of it comes from one file: **`data/used-in.js`**. Add a project by copying a `{ name, by, url, logo, how }`
