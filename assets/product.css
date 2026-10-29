@@ -190,3 +190,11 @@ a { color: var(--neon); text-underline-offset: 3px; }
 .asis-note .asis-ic { font-size: 1.6rem; line-height: 1; }
 .asis-note b { display: block; font-size: 1.05rem; margin-bottom: 4px; color: #ffe7b0; }
 .asis-note p { margin: 0; color: #f1e6cf; line-height: 1.6; }
+
+/* Press feature card */
+.press-feature { display: block; max-width: 760px; margin: 0 auto 26px; padding: 22px 26px; border-radius: 16px; text-align: center; text-decoration: none; color: var(--text); background: var(--panel); border: 2px solid var(--line); box-shadow: 0 14px 28px rgba(0,0,0,.35); transition: transform .15s, border-color .15s; }
+.press-feature:hover { transform: translateY(-2px); border-color: var(--neon, var(--line)); }
+.press-feature .pf-label { display: block; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.press-feature .pf-title { display: block; font-family: var(--head); font-size: 1.45rem; line-height: 1.3; }
+.press-feature .pf-src { display: block; margin-top: 8px; color: var(--muted); font-size: .95rem; }
+.press-feature .pf-quote { display: block; margin-top: 12px; font-style: italic; color: var(--text); opacity: .92; font-size: 1.05rem; }
