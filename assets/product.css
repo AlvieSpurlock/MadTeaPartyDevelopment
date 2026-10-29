@@ -183,3 +183,10 @@ a { color: var(--neon); text-underline-offset: 3px; }
 .crumb-back { display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 999px; color: #fff; text-decoration: none; font-weight: 700; font-size: .85rem; background: rgba(176,136,255,.18); border: 1px solid rgba(176,136,255,.55); transition: background .2s, transform .2s; white-space: nowrap; }
 .crumb-back:hover { background: rgba(176,136,255,.35); transform: translateX(-2px); }
 @media (max-width: 480px) { .crumb-home span { display: none; } }
+
+/* As-is note (first games: no files, no patches) */
+.asis-wrap { padding-top: 10px; padding-bottom: 90px; }
+.asis-note { display: flex; gap: 16px; align-items: flex-start; max-width: 900px; margin: 0 auto; padding: 18px 22px; border-radius: 14px; border: 2px solid #e0b252; border-left-width: 6px; background: rgba(22,14,6,.88); box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+.asis-note .asis-ic { font-size: 1.6rem; line-height: 1; }
+.asis-note b { display: block; font-size: 1.05rem; margin-bottom: 4px; color: #ffe7b0; }
+.asis-note p { margin: 0; color: #f1e6cf; line-height: 1.6; }
