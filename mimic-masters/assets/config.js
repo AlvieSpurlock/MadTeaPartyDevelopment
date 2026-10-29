@@ -10,7 +10,18 @@ window.SITE={
   appleFocused:false,   // logo order when the visitors platform cannot be detected: true = Apple first, false = Android first
   stores:{
     ios:"",       // e.g. https://apps.apple.com/app/idXXXXXXXXX
-    android:""    // e.g. https://play.google.com/store/apps/details?id=com.yourpackage
+    android:"",   // e.g. https://play.google.com/store/apps/details?id=com.yourpackage
+    itch:"https://marchharegames.itch.io/mimic-masters"   // the paid, ad-free version
+  },
+  itchPrice:"$2.99",
+  // "Play Free" page (play.html): the FULL game in the browser for a few minutes, then the store panel.
+  // Put your Unity WebGL build's Build folder at mimic-masters/play/Build (see play/README.md).
+  webPlay:{
+    buildName:"MimicMasters",   // the start of your build's file names, e.g. MimicMasters.loader.js
+    fileSuffix:"",              // "" if Compression is Disabled; ".unityweb" with Decompression Fallback; ".gz" or ".br" otherwise
+    freeMinutes:5,              // minutes of free play before the store panel
+    graceSeconds:60,            // after time is up, how long the current round gets to finish
+    aspect:"9 / 16"             // the game's shape: "9 / 16" portrait, "16 / 9" landscape
   },
   // Optional live data: Google Sheets > File > Share > Publish to web > CSV link.
   // If set, it is used instead of data/stores.csv / data/games.csv (falls back to them on failure).

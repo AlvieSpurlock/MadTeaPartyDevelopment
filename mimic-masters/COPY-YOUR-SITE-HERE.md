@@ -2,7 +2,9 @@
 
 This folder already holds the files I changed or added for Mimic Masters:
 the new **Transparency** page, the Charity menu in the nav, the Made / Given / Kept
-trackers, and the CSV hookup in `assets/donations.js` and `assets/config.js`.
+trackers, and the CSV hookup in `assets/donations.js` and `assets/config.js`, and the new
+**Play Free** page (`play.html`, `assets/play.js`, `assets/play.css`, `play/`) with a
+"Play Free" link in every page's menu. See `play/README.md` for adding your web build.
 
 1. Copy everything from your MimicMastersWebsite repo into this folder,
    **except** the `.git` and `.github` folders. The privacy-sync bot already

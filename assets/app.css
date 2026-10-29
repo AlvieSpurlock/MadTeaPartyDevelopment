@@ -157,3 +157,9 @@ body.dnd-combat-balancer .cards, body.asset-logger .cards { grid-template-column
 .plans.single { grid-template-columns: 1fr; max-width: 480px; }
 .plan .actions { justify-content: center; }
 .btn.ghost, .btn.ghost:hover { color: var(--text) !important; text-shadow: none; }
+
+/* Why I Built It (Queens Court, Looking Glass) */
+.why { max-width: 880px; margin: 0 auto; }
+.why p { margin: 0 0 14px; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
+.why p:last-child { margin-bottom: 0; }
+.why b, .why em { color: var(--text); }
