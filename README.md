@@ -81,3 +81,16 @@ The bot that copies the privacy policy from the Google Doc now lives at `.github
 - **Mimic Masters badges** point to the tester sign-up pages; swap in the real store links when they're live.
 
 Fonts: IM Fell English (storybook) and Alata (the kit's recommended UI font), loaded from Google Fonts.
+
+## Game Dev Kits (dev-kits/)
+
+Unity plugin pages: LevelPlay, Appodeal, Google AdMob, Localization, plus a support page.
+
+- Store links: `data/products.js` → `devkits` → each kit's `fab`, `unity`, `gumroad`. Empty = "Coming soon" button.
+- Support form: `data/products.js` → `supportForm` (embedded on dev-kits/support.html, linked from the "Untested" notes on LevelPlay and AdMob).
+- To remove an "Untested" note once a kit is tested, delete the `.callout` block on that kit's page and the "Untested" chip on its Shop card (index.html, #dev-kits).
+
+## Mobile Game Revenue Simulator (revenue-simulator/)
+
+- Buy link and demo video: `data/products.js` → `revenue-simulator`.
+- Screenshots go in `revenue-simulator/media/`; see the README there for the exact file names. Empty slots show a labeled placeholder until the file exists.

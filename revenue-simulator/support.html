@@ -79,7 +79,12 @@
     .not-for b { display: block; color: var(--text); margin-bottom: 2px; }
     .for-who { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
     .for-who div { padding: 14px 16px; border-radius: 10px; background: rgba(127,191,127,.06); border: 1px solid rgba(127,191,127,.3); color: var(--muted); font-size: .93rem; }
-    @media (max-width: 860px) { .not-for, .for-who { grid-template-columns: 1fr; } }
+    .not-for.four { grid-template-columns: repeat(4, 1fr); }
+    .how-steps { color: var(--muted); display: grid; gap: 12px; padding-left: 22px; max-width: 880px; margin: 0 auto; }
+    .how-steps b { color: var(--text); }
+    .code { white-space: pre; overflow-x: auto; font-size: .82rem; }
+    @media (max-width: 1000px) { .not-for.four { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 860px) { .not-for, .not-for.four, .for-who { grid-template-columns: 1fr; } }
     .levels .card { text-align: left; } .levels .card .ico { margin: 0 0 10px; }
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
@@ -122,7 +127,7 @@
       <div class="panel reveal">
         <section><h2>Email</h2><p>Write to <a data-support href="#"></a>. Include your Windows version and, if something broke, what you changed last (the View menu's Developer Tools show any errors).</p></section>
         <section><h2>Updates <span class="pending">Policy posted before launch</span></h2><p>How long updates are included, and how to get them, will be posted here before launch.</p></section>
-        <section><h2>Edited copies</h2><p>If an edit breaks the app, File → Restore Default Settings puts config.js back to the original. Whether edited versions are supported will be stated here before launch.</p></section>
+        <section><h2>Edited copies</h2><p>If an edit breaks the app, File → Restore Default Settings puts config.js back to the original.</p></section>
       </div>
     </div></section>
   </main>

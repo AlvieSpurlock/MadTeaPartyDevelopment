@@ -79,7 +79,12 @@
     .not-for b { display: block; color: var(--text); margin-bottom: 2px; }
     .for-who { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
     .for-who div { padding: 14px 16px; border-radius: 10px; background: rgba(127,191,127,.06); border: 1px solid rgba(127,191,127,.3); color: var(--muted); font-size: .93rem; }
-    @media (max-width: 860px) { .not-for, .for-who { grid-template-columns: 1fr; } }
+    .not-for.four { grid-template-columns: repeat(4, 1fr); }
+    .how-steps { color: var(--muted); display: grid; gap: 12px; padding-left: 22px; max-width: 880px; margin: 0 auto; }
+    .how-steps b { color: var(--text); }
+    .code { white-space: pre; overflow-x: auto; font-size: .82rem; }
+    @media (max-width: 1000px) { .not-for.four { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 860px) { .not-for, .not-for.four, .for-who { grid-template-columns: 1fr; } }
     .levels .card { text-align: left; } .levels .card .ico { margin: 0 0 10px; }
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
@@ -116,15 +121,15 @@
     <section class="page-head"><div class="wrap">
       <span class="eyebrow">▮▮▮ Customize and extend</span>
       <h1>You get the files, not a locked program</h1>
-      <p>Change the settings, the look, or the model itself.</p>
+      <p>Change the settings, the look, or the model itself, for your own use.</p>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon">Three Levels of Editing</h2>
       <div class="cards three levels">
-        <div class="card reveal"><div class="ico">⚙️</div><span class="mini">SETTINGS · A TEXT EDITOR</span><h3>config.js</h3><p>App name and header text, market presets and CPIs, cross-promo presets, game colors, starting values for new games, slider ranges. Edit, then press Ctrl+R.</p></div>
+        <div class="card reveal"><div class="ico">⚙️</div><span class="mini">SETTINGS · A TEXT EDITOR</span><h3>config.js</h3><p>App name and header text, market presets and CPIs, cross-promo presets, currencies and rates, seasonality shapes, game colors, starting values for new games, slider ranges. Edit, then press Ctrl+R.</p></div>
         <div class="card reveal"><div class="ico">🎨</div><span class="mini">LOOK · BASIC CSS</span><h3>styles.css</h3><p>Colors, fonts and layout. Edit, then press Ctrl+R.</p></div>
-        <div class="card reveal"><div class="ico">🧮</div><span class="mini">MODEL · JAVASCRIPT</span><h3>app.js</h3><p>Retention curve, reinvestment rules, cross-promo, charts and tables. Edit, press Ctrl+R; build an installer with Node.js if you like.</p></div>
+        <div class="card reveal"><div class="ico">🧮</div><span class="mini">MODEL · JAVASCRIPT</span><h3>app.js</h3><p>Retention, reinvestment, cross-promo, costs, charts and tables. Edit, press Ctrl+R; an installer can be built with Node.js.</p></div>
       </div>
     </div></section>
 
@@ -149,10 +154,14 @@
     <section class="p-section"><div class="wrap">
       <h2 class="neon alt">Ideas You Could Add</h2>
       <p class="lede">Ideas, not promises: things the files make possible if you want to build them.</p>
-      <div class="for-who reveal" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
-        <div>Saving and loading scenarios</div><div>CSV export</div><div>CPI that rises with spend</div><div>ARPDAU that ramps over time</div><div>Separate retention for paid users</div>
+      <div class="for-who reveal">
+        <div>Saving and loading scenarios</div><div>CSV export</div><div>A per-market paid-install split</div><div>ARPDAU by country</div>
       </div>
-      <p class="caption" style="text-align:center;margin-top:18px">Chart.js is MIT licensed and ships inside the app with its license file.</p>
+    </div></section>
+
+    <section class="p-section"><div class="wrap">
+      <h2 class="neon">What the License Allows</h2>
+      <div class="callout reveal"><b>What the license allows.</b><p>One business, for its own internal use. Edit the files for your own use inside your own business. You may not sell, share or publish the app or your modified version, build a competing product from it, run it for clients or other businesses, or use it to train AI models. <a href="legal.html#license">Read the license</a></p></div><p class="caption" style="text-align:center;margin-top:14px">The charting library inside (Chart.js) is MIT licensed and keeps its own license file.</p>
     </div></section>
   </main>
 

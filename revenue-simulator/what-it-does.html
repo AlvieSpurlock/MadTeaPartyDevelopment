@@ -79,7 +79,12 @@
     .not-for b { display: block; color: var(--text); margin-bottom: 2px; }
     .for-who { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
     .for-who div { padding: 14px 16px; border-radius: 10px; background: rgba(127,191,127,.06); border: 1px solid rgba(127,191,127,.3); color: var(--muted); font-size: .93rem; }
-    @media (max-width: 860px) { .not-for, .for-who { grid-template-columns: 1fr; } }
+    .not-for.four { grid-template-columns: repeat(4, 1fr); }
+    .how-steps { color: var(--muted); display: grid; gap: 12px; padding-left: 22px; max-width: 880px; margin: 0 auto; }
+    .how-steps b { color: var(--text); }
+    .code { white-space: pre; overflow-x: auto; font-size: .82rem; }
+    @media (max-width: 1000px) { .not-for.four { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 860px) { .not-for, .not-for.four, .for-who { grid-template-columns: 1fr; } }
     .levels .card { text-align: left; } .levels .card .ico { margin: 0 0 10px; }
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
@@ -123,12 +128,21 @@
       <h2 class="neon">What You Control</h2>
       <div class="data-wrap reveal"><table class="data"><thead><tr><th>Feature</th><th>What you set</th><th>What the model does with it</th></tr></thead><tbody>
 <tr><td><b>Games</b></td><td>Add, rename, duplicate or remove game tabs; a launch day for each</td><td>Each game runs on one shared timeline and shows zero before its launch day</td></tr>
-<tr><td><b>Free installs</b></td><td>Launch installs (slider to 100,000), optional recurring installs every 30 days (slider to 20,000)</td><td>Costs nothing; each wave becomes its own cohort</td></tr>
-<tr><td><b>Paid installs</b></td><td>A market preset with its CPI, or a custom CPI; an initial spend</td><td>Installs = spend ÷ CPI</td></tr>
-<tr><td><b>Reinvestment</b></td><td>A push percentage for N months, then a sustain percentage that continues</td><td>Every 30 days, spends that share of the previous 30 days' revenue on a new paid wave</td></tr>
-<tr><td><b>Retention</b></td><td>Percent still active on day 1, 7, 30, 60, 90, 120, 160 and 180</td><td>Draws a smooth curve between those points and holds the last value flat</td></tr>
-<tr><td><b>Ad revenue</b></td><td>One ARPDAU (revenue per daily active user) per game</td><td>Daily revenue = active users × ARPDAU</td></tr>
-<tr><td><b>Cross-promo</b></td><td>A preset from None to Very Aggressive, or a custom percentage</td><td>Sends a share of each game's users to every other launched game as free installs</td></tr>
+<tr><td><b>Free installs</b></td><td>Launch installs (slider to 100,000); optional recurring installs every 30 days (slider to 20,000)</td><td>Costs nothing; each wave becomes its own cohort</td></tr>
+<tr><td><b>Paid installs</b></td><td>A market preset with its CPI, or a custom CPI; an initial spend</td><td>Installs = spend ÷ CPI for that wave</td></tr>
+<tr><td><b>Reinvestment</b></td><td>A push percentage for N months, then a sustain percentage that continues</td><td>Every 30 days, spends that share of the previous 30 days' net revenue on a new paid wave</td></tr>
+<tr><td><b>Retention</b></td><td>Percent still active on day 1, 7, 30, 60, 90, 120, 160 and 180</td><td>Smooth curve between points; held flat after day 180</td></tr>
+<tr><td><b>Paid-install retention</b></td><td>A second set of the same eight points</td><td>Installs bought with paid UA use this curve; free, organic and cross-promo installs use the main one</td></tr>
+<tr><td><b>Ad revenue</b></td><td>ARPDAU (revenue per daily active user)</td><td>Daily revenue = active users × ARPDAU, adjusted by the options below</td></tr>
+<tr><td><b>Revenue cut</b></td><td>A percentage</td><td>Removes that share of ad revenue first; reinvestment is taken from what's left</td></tr>
+<tr><td><b>Costs</b></td><td>Running cost per month; one-time dev or launch cost</td><td>Charged from launch; included in breakeven, profit and the cost chart</td></tr>
+<tr><td><b>Ad-network warm-up</b></td><td>A starting percentage and a number of days</td><td>ARPDAU starts at that share of full and climbs to 100%</td></tr>
+<tr><td><b>ARPDAU drift</b></td><td>A percentage per 30 days</td><td>Ad revenue per user ramps up or decays over time</td></tr>
+<tr><td><b>Seasonality</b></td><td>A built-in shape or 12 custom monthly multipliers for ad revenue and for CPI; the starting calendar month</td><td>Multiplies ad revenue and CPI by month</td></tr>
+<tr><td><b>CPI scaling</b></td><td>A percentage per doubling, counted from a spend you choose</td><td>Large paid waves cost more per install</td></tr>
+<tr><td><b>Cross-promo</b></td><td>A preset from None to Very Aggressive, or a custom percentage; an optional chaining switch</td><td>Sends a share of each game's users to every other launched game as free installs</td></tr>
+<tr><td><b>Tax</b></td><td>A flat percentage</td><td>Estimated on total positive profit only</td></tr>
+<tr><td><b>Currency</b></td><td>Eight currencies, rates set in the settings file</td><td>Changes what you see and type; results don't change</td></tr>
 <tr><td><b>Timeline</b></td><td>Simulation length, 30 to 360 days</td><td>Shared by all games</td></tr>
 </tbody></table></div><p class="caption">Slider limits, market presets and starting values are all editable in a settings file (<a href="customize.html">Customize and extend</a>).</p>
     </div></section>
@@ -138,21 +152,21 @@
       <div class="row reveal" style="align-items:start">
         <div><ul style="color:var(--muted);display:grid;gap:8px;padding-left:20px;margin:0">
           <li>A daily active users chart for every game, plus the combined total</li>
-          <li>Cumulative revenue against cumulative paid spend</li>
-          <li>Headline cards: end DAU, revenue, paid spend, breakeven day (the first day revenue catches spend), net profit (revenue minus spend), and total free and paid installs</li>
-          <li>A per-game table: end DAU, revenue, spend, return on spend (ROAS) and cross-promo installs received</li>
-          <li>A monthly revenue table by 30-day month, with a combined row</li>
-          <li>A monthly take-home profit table: revenue minus the money already committed to the next paid wave</li>
+          <li>Cumulative net revenue against cumulative costs</li>
+          <li>Headline cards: end DAU, net revenue, paid spend, dev and running costs, breakeven day (the first day net revenue covers all costs), net profit before tax, profit after tax, free installs and paid installs</li>
+          <li>A per-game table: end DAU, net revenue, spend, return on spend, average paid CPI and cross-promo installs received</li>
+          <li>A monthly net revenue table by 30-day month, with a combined row</li>
+          <li>A monthly take-home table: net revenue minus the money already committed to the next paid wave, minus dev and running costs</li>
           <li>A Resim button that recalculates everything</li>
         </ul></div>
-        <div class="row-media"><figure class="shot reveal" data-need="Screenshot: the DAU chart, every game plus the combined total"><img src="media/dau-chart.png" alt="Daily active users" loading="lazy"><figcaption>Daily active users</figcaption></figure></div>
+        <div class="row-media"><figure class="shot reveal" data-need="Screenshot: the realism settings open (revenue cut, costs, warm-up, drift, seasonality, CPI scaling, tax)"><img src="media/realism-settings.png" alt="The realism settings" loading="lazy"><figcaption>The realism settings</figcaption></figure></div>
       </div>
-      <div class="shots" style="margin-top:26px"><figure class="shot reveal" data-need="Screenshot: cumulative revenue against paid spend"><img src="media/revenue-vs-spend.png" alt="Revenue against spend" loading="lazy"><figcaption>Revenue against spend</figcaption></figure><figure class="shot reveal" data-need="Screenshot: the monthly revenue and take-home profit tables"><img src="media/monthly-tables.png" alt="Monthly tables" loading="lazy"><figcaption>Monthly tables</figcaption></figure></div>
+      <div class="shots" style="margin-top:26px"><figure class="shot reveal" data-need="Screenshot: cumulative net revenue against costs"><img src="media/revenue-vs-costs.png" alt="Net revenue against costs" loading="lazy"><figcaption>Net revenue against costs</figcaption></figure><figure class="shot reveal" data-need="Screenshot: the DAU chart"><img src="media/dau-chart.png" alt="Daily active users · Screenshot from an earlier build: three games launching on day 0, before the realism settings were added." loading="lazy"><figcaption>Daily active users · Screenshot from an earlier build: three games launching on day 0, before the realism settings were added.</figcaption></figure><figure class="shot reveal" data-need="Screenshot: the monthly tables"><img src="media/monthly-tables.png" alt="Monthly tables · Screenshot from an earlier build: three games launching on day 0, before the realism settings were added." loading="lazy"><figcaption>Monthly tables · Screenshot from an earlier build: three games launching on day 0, before the realism settings were added.</figcaption></figure></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon">Not in Version 1.0</h2>
-      <div class="callout warn reveal"><b>No saving or exporting yet.</b><p>Saving scenarios and exporting results aren't built yet; closing the app clears your inputs. <a href="accuracy.html">Accuracy and limits</a> lists what the model leaves out.</p></div>
+      <div class="callout warn reveal"><b>No saving or exporting yet.</b><p>Closing the app clears your inputs. Also not included: in-app purchase and subscription revenue, separate markets inside one game (a game has one market for its paid waves), live currency rates, and Mac, Linux or mobile versions. <a href="accuracy.html">Accuracy and limits</a> lists what the model leaves out.</p></div>
     </div></section>
   </main>
 

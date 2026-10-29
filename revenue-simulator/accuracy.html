@@ -79,7 +79,12 @@
     .not-for b { display: block; color: var(--text); margin-bottom: 2px; }
     .for-who { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
     .for-who div { padding: 14px 16px; border-radius: 10px; background: rgba(127,191,127,.06); border: 1px solid rgba(127,191,127,.3); color: var(--muted); font-size: .93rem; }
-    @media (max-width: 860px) { .not-for, .for-who { grid-template-columns: 1fr; } }
+    .not-for.four { grid-template-columns: repeat(4, 1fr); }
+    .how-steps { color: var(--muted); display: grid; gap: 12px; padding-left: 22px; max-width: 880px; margin: 0 auto; }
+    .how-steps b { color: var(--text); }
+    .code { white-space: pre; overflow-x: auto; font-size: .82rem; }
+    @media (max-width: 1000px) { .not-for.four { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 860px) { .not-for, .not-for.four, .for-who { grid-template-columns: 1fr; } }
     .levels .card { text-align: left; } .levels .card .ico { margin: 0 0 10px; }
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
@@ -129,22 +134,24 @@
           <tr><td class="n">7</td><td class="n">33%</td><td class="n">825</td><td class="n rev">$70.13</td></tr>
           <tr><td class="n">30</td><td class="n">25%</td><td class="n">625</td><td class="n rev">$53.13</td></tr>
         </tbody></table></div>
-      <p class="caption">One cohort: 2,500 free launch installs, no paid UA, $0.085 ARPDAU, the default retention curve. Active users × $0.085 = revenue. These match the app's own calculation, checked during development; no independent audit has been done.</p>
+      <p class="caption">One cohort: 2,500 free launch installs, no paid UA, $0.085 ARPDAU, the default retention curve, every realism setting switched off. Active users × $0.085 = revenue.</p>
+      <div class="callout reveal" style="margin-top:16px"><b>How the settings stack.</b><p>With the starting realism settings on, day 0 becomes 2,500 × $0.085 × 70% warm-up × 95% (after the 5% revenue cut) = $141.31.</p></div>
+      <p class="caption">These figures match the app's own calculation, checked during development. No independent audit has been done.</p>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon alt">Forecast Accuracy: Unproven</h2>
-      <div class="callout warn reveal"><b>Not compared with real games.</b><p>The app hasn't been compared with the real results of live games. The default retention, ARPDAU and CPI values are rough, illustrative estimates, not measured data. Never treat outputs from the defaults as expected results.</p></div>
+      <div class="callout warn reveal"><b>Not compared with real games.</b><p>The app hasn't been compared with the real results of live games. The starting values for retention, ARPDAU, CPI, revenue cut, running cost, warm-up, CPI scaling and paid-install retention are rough, deliberately modest estimates, not measured data and not benchmarks. The built-in holiday seasonality shape is illustrative only, and the currency rates are placeholders. Never treat output from the starting values as expected results.</p></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon">What Moves the Answer Most</h2>
       <div class="data-wrap reveal"><table class="data"><thead><tr><th>Input</th><th>Why it matters</th><th>What the app does about it</th></tr></thead><tbody>
-<tr><td><b>Retention curve</b></td><td>The biggest driver; small changes in the first week compound across every cohort</td><td>You set eight points per game; no single typical curve is claimed</td></tr>
-<tr><td><b>ARPDAU</b></td><td>Ad revenue per user varies by country, ad network, ad format and season</td><td>One flat value per game; it doesn't ramp or change over time</td></tr>
-<tr><td><b>CPI</b></td><td>Real CPI differs by country and platform and tends to rise as you spend more</td><td>Fixed per market preset (editable) and flat for the whole run</td></tr>
+<tr><td><b>Retention curve</b></td><td>The biggest driver; small differences in week one compound across every cohort</td><td>You set eight points per game, and a second set for paid installs; no single typical curve is claimed</td></tr>
+<tr><td><b>ARPDAU</b></td><td>Varies by country, network, ad format and season</td><td>One value per game, adjustable with warm-up, drift and seasonality</td></tr>
+<tr><td><b>CPI</b></td><td>Differs by country and platform and tends to rise as you spend more</td><td>Market presets you can edit, plus a CPI-rise-per-doubling setting; no real market data is bundled</td></tr>
 <tr><td><b>Free installs</b></td><td>Streamer and organic traffic is hard to predict</td><td>You enter a number; the app doesn't estimate it</td></tr>
-<tr><td><b>Paid vs free retention</b></td><td>Paid users can retain differently from organic ones</td><td>One retention curve per game applies to every cohort; duplicate the game with a different curve to compare</td></tr>
+<tr><td><b>Paid vs free retention</b></td><td>Bought users can retain differently</td><td>An optional second curve per game; not separated by market or campaign</td></tr>
 </tbody></table></div>
     </div></section>
 
@@ -152,12 +159,12 @@
       <h2 class="neon alt">What the Model Leaves Out</h2>
       <div class="listbox reveal"><div><ul>
         <li>In-app purchases and subscriptions</li>
-        <li>Platform and ad-network revenue shares, taxes, development and running costs. The only cost is UA spend, so enter ARPDAU net of any shares if you want net figures.</li>
-        <li>Seasonality, ad-network calibration periods, and CPI that rises with scale</li>
+        <li>Taxes beyond a flat rate on total profit, with no loss carry-forward; no other business or platform costs unless you enter them as running or dev cost</li>
+        <li>Separate retention for individual campaigns, markets or channels inside one game</li>
       </ul></div><div><ul>
-        <li>Separate retention for paid and free users inside one game</li>
-        <li>Chained cross-promo (promoted installs don't themselves promote)</li>
-        <li>Currencies other than dollars</li>
+        <li>Live exchange rates and currency risk</li>
+        <li>Cross-promo beyond an even split between launched games, and no limit on how many installs a game can absorb</li>
+        <li>Anything random: no variance, ranges or confidence intervals. Compare scenarios instead</li>
       </ul></div></div>
     </div></section>
 
@@ -165,8 +172,8 @@
       <h2 class="neon">How to Use It Responsibly</h2>
       <div class="steps">
         <div class="card step reveal"><h3>Run three cases</h3><p>Low, base and high: duplicate the game tab and change retention and ARPDAU.</p></div>
-        <div class="card step reveal"><h3>Use your own numbers</h3><p>Replace the defaults with your soft-launch numbers as soon as you have them.</p></div>
-        <div class="card step reveal"><h3>Read ranges</h3><p>Compare scenarios with each other; never quote a single run as a forecast.</p></div>
+        <div class="card step reveal"><h3>Use your own numbers</h3><p>Replace every starting value with your soft-launch numbers as soon as you have them.</p></div>
+        <div class="card step reveal"><h3>Read ranges</h3><p>Compare scenarios with each other. Never quote a single run as a forecast.</p></div>
       </div>
     </div></section>
   </main>

@@ -79,7 +79,12 @@
     .not-for b { display: block; color: var(--text); margin-bottom: 2px; }
     .for-who { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
     .for-who div { padding: 14px 16px; border-radius: 10px; background: rgba(127,191,127,.06); border: 1px solid rgba(127,191,127,.3); color: var(--muted); font-size: .93rem; }
-    @media (max-width: 860px) { .not-for, .for-who { grid-template-columns: 1fr; } }
+    .not-for.four { grid-template-columns: repeat(4, 1fr); }
+    .how-steps { color: var(--muted); display: grid; gap: 12px; padding-left: 22px; max-width: 880px; margin: 0 auto; }
+    .how-steps b { color: var(--text); }
+    .code { white-space: pre; overflow-x: auto; font-size: .82rem; }
+    @media (max-width: 1000px) { .not-for.four { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 860px) { .not-for, .not-for.four, .for-who { grid-template-columns: 1fr; } }
     .levels .card { text-align: left; } .levels .card .ico { margin: 0 0 10px; }
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
@@ -123,38 +128,39 @@
           <a class="btn" data-buy="revenue-simulator" href="pricing.html">Get it</a>
           <a class="btn b2" href="#how">See how it works</a>
         </div>
-        <p class="hero-note mono">Windows 10 or 11 · Works offline · Editable source included</p>
+        <p class="hero-note mono">Windows 10 or 11 · Works offline · Editable files included</p>
       </div>
-      <div class="visual reveal"><figure class="shot reveal" data-need="Screenshot: the app with the three-game example loaded"><img src="media/dashboard.png" alt="The three-game example run" loading="lazy"><figcaption>The three-game example run</figcaption></figure></div>
+      <div class="visual reveal"><figure class="shot reveal" data-need="Screenshot: the app with the three-game example loaded"><img src="media/dashboard.png" alt="Screenshot from an earlier build: three games launching on day 0, before the realism settings were added." loading="lazy"><figcaption>Screenshot from an earlier build: three games launching on day 0, before the realism settings were added.</figcaption></figure></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <div class="problem">
         <div class="reveal"><b>Paid installs rarely pay for themselves in the first month.</b></div>
-        <div class="reveal">Whether they ever do depends on retention, ad revenue per user, and how much of your earnings you put back in.</div>
+        <div class="reveal">Whether they ever do depends on retention, ad revenue per user, what the network and platform keep, how much a big wave of installs costs, and how much you put back in.</div>
         <div class="reveal">That's a lot of moving parts for a spreadsheet, and more so with several games.</div>
       </div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon">What It Does</h2>
-      <div class="cards">
-        <a class="card reveal" href="what-it-does.html" style="text-decoration:none;color:inherit"><div class="ico">📉</div><h3>Cohorts and retention</h3><p>Every install wave becomes a cohort that decays along an eight-point retention curve you set.</p></a>
-        <a class="card reveal" href="what-it-does.html" style="text-decoration:none;color:inherit"><div class="ico">💸</div><h3>Free and paid installs</h3><p>Set free installs and a paid budget at a market CPI, then reinvest a percentage of revenue.</p></a>
-        <a class="card reveal" href="what-it-does.html" style="text-decoration:none;color:inherit"><div class="ico">🗓️</div><h3>Many games, one timeline</h3><p>Stagger launch days and cross-promote between games.</p></a>
-        <a class="card reveal" href="what-it-does.html" style="text-decoration:none;color:inherit"><div class="ico">📊</div><h3>Plain results</h3><p>Daily active users, revenue against spend, return on spend, monthly revenue and monthly take-home profit.</p></a>
-      </div>
+      <div class="cards three"><a class="card reveal" href="what-it-does.html" style="text-decoration:none;color:inherit"><div class="ico">📉</div><h3>Cohorts and retention</h3><p>Every install wave becomes a cohort that decays along an eight-point retention curve you set (days 1, 7, 30, 60, 90, 120, 160, 180).</p></a><a class="card reveal" href="what-it-does.html" style="text-decoration:none;color:inherit"><div class="ico">💸</div><h3>Free and paid installs</h3><p>Set free installs and a paid budget at a market CPI, then reinvest a percentage of revenue into more paid installs.</p></a><a class="card reveal" href="what-it-does.html" style="text-decoration:none;color:inherit"><div class="ico">🎯</div><h3>Paid users that retain differently</h3><p>Give bought installs their own retention curve.</p></a><a class="card reveal" href="what-it-does.html" style="text-decoration:none;color:inherit"><div class="ico">🧾</div><h3>Real-world costs</h3><p>Revenue cut, running costs, one-time dev cost, ad-network warm-up, ARPDAU drift, seasonality, CPI that rises with spend, and a flat tax estimate.</p></a><a class="card reveal" href="what-it-does.html" style="text-decoration:none;color:inherit"><div class="ico">🗓️</div><h3>Many games, one timeline</h3><p>Stagger launch days, cross-promote between games, and optionally chain the cross-promo.</p></a><a class="card reveal" href="what-it-does.html" style="text-decoration:none;color:inherit"><div class="ico">📊</div><h3>Plain results</h3><p>DAU, revenue against costs, breakeven day, return on spend, monthly revenue and monthly take-home profit, in eight currencies.</p></a></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
-      <h2 class="neon alt">Real Example Output</h2><p class="lede">One run of the app, shown exactly as it came out.</p>
-      <div class="stat-row">
-        <div class="stat rev reveal"><span>Combined revenue</span><b>$149,083</b></div>
-        <div class="stat spend reveal"><span>Combined paid UA spend</span><b>$96,655</b></div>
-        <div class="stat reveal"><span>Breakeven</span><b>Day 19</b></div>
-      </div>
-      <figure class="shot reveal" data-need="Chart: cumulative revenue against paid spend"><img src="media/revenue-vs-spend.png" alt="Cumulative revenue against paid spend, with the headline cards, from this run" loading="lazy"><figcaption>Cumulative revenue against paid spend, with the headline cards, from this run</figcaption></figure>
-      <p class="caption"><b>Example output under the app's default assumptions. Not a forecast.</b> Settings: Three identical games all launching on day 0, each with 2,500 free launch installs and a $3,000 initial paid spend in Tier 1 ($1.20 CPI), 100% reinvestment for 3 months then 60%, ad revenue of $0.085 per user per day, the default retention curve, no cross-promo, 180 days.</p>
+      <h2 class="neon alt">Real Example Output</h2><p class="lede">One run of the current app, shown exactly as it came out, twice: once with the starting values and once with every realism setting off.</p>
+      <div class="data-wrap reveal"><table class="data">
+        <thead><tr><th>Result after 180 days</th><th>Starting values</th><th>Every realism setting off</th></tr></thead>
+        <tbody>
+<tr><td>Net revenue</td><td class="n rev">$55,574</td><td class="n rev">$113,865</td></tr>
+<tr><td>Paid UA spend</td><td class="n spend">$46,862</td><td class="n spend">$77,689</td></tr>
+<tr><td>Dev and running costs</td><td class="n spend">$750</td><td class="n spend">$0</td></tr>
+<tr><td>Net profit before tax</td><td class="n ">$7,961</td><td class="n ">$36,176</td></tr>
+<tr><td>Breakeven day</td><td class="n ">Day 58</td><td class="n ">Day 19</td></tr>
+<tr><td>Daily active users on day 180</td><td class="n ">4,389</td><td class="n ">10,687</td></tr>
+        </tbody></table></div>
+      <p class="caption"><b>Example output under the app's starting values, which are rough estimates. Not a forecast.</b> The right column shows the same three games with every realism setting switched off, to show how much your assumptions move the result. In this example the starting values cut net profit by about 78%.</p>
+      <p class="caption">Settings: Three copies of a game launching on day 0, day 30 and day 60, with the app's starting values, no cross-promo, 180 days, in US dollars. Each game starts with 2,500 free installs and a $3,000 paid launch wave (Tier 1 market, $1.20 CPI), reinvests 100% of net revenue for 3 months and then 60%, and earns $0.085 per user per day before the realism settings.</p>
+      <div style="margin-top:22px"><figure class="shot reveal" data-need="Chart: cumulative revenue against costs, from this same three-game run"><img src="media/revenue-vs-costs.png" alt="Cumulative net revenue against costs, same run" loading="lazy"><figcaption>Cumulative net revenue against costs, same run</figcaption></figure></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
@@ -163,55 +169,56 @@
     </div></section>
 
     <section class="p-section" id="how"><div class="wrap">
-      <h2 class="neon">How It Works</h2>
+      <h2 class="neon alt">How It Works</h2>
       <div class="steps">
-        <div class="card step reveal"><h3>Set your assumptions</h3><p>Installs, budget, market, ad revenue per user and retention.</p></div>
+        <div class="card step reveal"><h3>Set your assumptions</h3><p>Installs, budget, market, ad revenue per user, retention and costs.</p></div>
         <div class="card step reveal"><h3>Watch it update</h3><p>The charts and tables update as you move the sliders.</p></div>
         <div class="card step reveal"><h3>Compare cases</h3><p>Duplicate a game tab to compare a low, base and high case side by side.</p></div>
       </div><a class="more-link" href="how-it-works.html">The full model, step by step →</a>
     </div></section>
     <section class="p-section"><div class="wrap">
-      <div class="callout reveal"><b>A calculator for your assumptions, not a crystal ball.</b><p>The arithmetic is exact and you can check it by hand; the result is only as good as the retention, ad revenue and CPI numbers you put in. <a href="accuracy.html">Read the full limits →</a></p></div>
-      <div class="callout ok reveal" style="margin-top:14px"><b>Open the files.</b><p>Change markets, defaults and the app's name in a plain text file, or edit the model itself. Source included. <a href="customize.html">Customize and extend →</a></p></div>
+      <div class="callout reveal"><b>A calculator for your assumptions, not a crystal ball.</b><p>The arithmetic is exact and you can check it by hand. The result is only as good as the retention, ad revenue and CPI numbers you put in, and the starting values are rough estimates. <a href="accuracy.html">Read the full limits →</a></p></div>
+      <div class="callout ok reveal" style="margin-top:14px"><b>Open the files.</b><p>Change markets, defaults, currencies and seasonality in a plain text file, or edit the model itself, for your own use. Source included. <a href="customize.html">Customize and extend →</a></p></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
-      <h2 class="neon alt">Who It's For</h2>
+      <h2 class="neon">Who It's For</h2>
       <div class="for-who reveal">
         <div>Indie developers and small studios running ad-monetized mobile games</div>
         <div>Developers deciding how much revenue to put back into paid UA</div>
-        <div>Publishers planning several staggered launches who want one combined view</div>
-        <div>Anyone who wants to open the files and change the model</div>
+        <div>Developers planning several staggered launches who want one combined view</div>
+        <div>Buyers who want to open the files and change the model for their own use</div>
       </div>
       <h3 style="text-align:center;margin:34px 0 14px;font-family:var(--mono);font-size:.9rem;letter-spacing:.12em;color:var(--spend)">NOT FOR</h3>
-      <div class="not-for reveal">
+      <div class="not-for four reveal">
         <div><b>A forecast to bank on</b>It turns your assumptions into numbers. It doesn't predict.</div>
-        <div><b>In-app-purchase games</b>One ad-revenue-per-user value per game, no purchase revenue.</div>
+        <div><b>In-app purchase games</b>Ad revenue per user only, no purchase or subscription revenue.</div>
         <div><b>Mac, Linux, iOS or Android</b>This release is Windows only.</div>
+        <div><b>Consultants and agencies</b>Each business needs its own license, so it can't be run for clients.</div>
       </div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
-      <h2 class="neon">One Price, Once</h2>
+      <h2 class="neon alt">One Price, Once</h2>
       <div class="plans single">
         <div class="plan this reveal"><h3>Mobile Game Revenue Simulator</h3><div class="amt" data-price="revenue-simulator">$14.99</div><div class="once">one time · Gumroad · Windows</div>
-          <p>The portable app, the editable files, an editing guide and the full source project.</p>
+          <p>The portable app, the editable settings, look and model files, an editing guide, the license, and the full source project. Single business, internal use.</p>
           <div class="actions"><a class="btn" data-buy="revenue-simulator" href="#">Get it</a><a class="btn ghost" href="accuracy.html">Read the limits first</a></div></div>
-      </div><div style="margin-top:22px"><div class="callout warn reveal"><b>Before you buy: Windows will show a warning the first time.</b><p>The app isn't code-signed, so Windows SmartScreen warns you on first launch. Choose <b>More info</b>, then <b>Run anyway</b>.</p></div></div><div style="margin-top:22px"><div class="reqs reveal">
+      </div><div style="margin-top:22px"><div class="callout reveal"><b>What the license allows.</b><p>One business, for its own internal use. Edit the files for your own use inside your own business. You may not sell, share or publish the app or your modified version, build a competing product from it, run it for clients or other businesses, or use it to train AI models. <a href="legal.html#license">Read the license</a></p></div></div><div style="margin-top:14px"><div class="callout warn reveal"><b>Before you buy: Windows will show a warning the first time.</b><p>The app isn't code-signed, so Windows SmartScreen warns you on first launch. Choose <b>More info</b>, then <b>Run anyway</b>.</p></div></div><div style="margin-top:22px"><div class="reqs reveal">
         <div><b>Windows 10 / 11</b><span>64-bit</span></div>
         <div><b>Works offline</b><span>no network requests</span></div>
-        <div><b>~155 MB</b><span>zip · ~380 MB unzipped</span></div>
-        <div><b>Source included</b><span>edit settings, look or model</span></div>
+        <div><b>~160 MB</b><span>zip · ~380 MB unzipped</span></div>
+        <div><b>Editable files</b><span>for your own use</span></div>
       </div></div><a class="more-link" href="pricing.html">What's in the box →</a>
     </div></section>
 
     <section class="p-section"><div class="wrap">
-      <h2 class="neon alt">Questions</h2>
+      <h2 class="neon">Questions</h2>
       <div class="faq"><details><summary>Does it need the internet?</summary><p>No. The charts library is bundled and the app's own code makes no network requests.</p></details>
 <details><summary>Why does Windows warn me when I open it?</summary><p>The app isn't code-signed, so Windows SmartScreen shows a warning on first launch. Choose <b>More info</b>, then <b>Run anyway</b>.</p></details>
-<details><summary>How accurate is it?</summary><p>The math is exact and you can check it by hand. Forecasts depend on your assumptions and have not been validated against live games. See <a href="accuracy.html">Accuracy and limits</a>.</p></details>
+<details><summary>How accurate is it?</summary><p>The math is exact and you can check it by hand. Forecasts depend on your assumptions and have not been validated against live games. The starting values are rough estimates. See <a href="accuracy.html">Accuracy and limits</a>.</p></details>
 <details><summary>Can I save my scenarios?</summary><p>Not in version 1.0, and there's no export yet; closing the app clears your inputs. You can set your own starting values in config.js so new games open with your base case.</p></details>
-<details><summary>Does it include real CPI and ARPDAU data?</summary><p>No. The market CPIs and the default ARPDAU are rough estimates meant to be replaced with your own numbers.</p></details></div><a class="more-link" href="faq.html">All questions →</a>
+<details><summary>Can I resell it, share it, or run it for my clients?</summary><p>No. The license covers one business, for its own internal use. Each client business needs its own license. Selling, sharing, publishing or building a competing product from it is not allowed. See the <a href="legal.html#license">license</a>.</p></details></div><a class="more-link" href="faq.html">All questions →</a>
     </div></section>
     <section class="p-section"><div class="wrap">
       <div class="panel final reveal">

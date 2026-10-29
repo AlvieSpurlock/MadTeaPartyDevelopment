@@ -79,7 +79,12 @@
     .not-for b { display: block; color: var(--text); margin-bottom: 2px; }
     .for-who { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
     .for-who div { padding: 14px 16px; border-radius: 10px; background: rgba(127,191,127,.06); border: 1px solid rgba(127,191,127,.3); color: var(--muted); font-size: .93rem; }
-    @media (max-width: 860px) { .not-for, .for-who { grid-template-columns: 1fr; } }
+    .not-for.four { grid-template-columns: repeat(4, 1fr); }
+    .how-steps { color: var(--muted); display: grid; gap: 12px; padding-left: 22px; max-width: 880px; margin: 0 auto; }
+    .how-steps b { color: var(--text); }
+    .code { white-space: pre; overflow-x: auto; font-size: .82rem; }
+    @media (max-width: 1000px) { .not-for.four { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 860px) { .not-for, .not-for.four, .for-who { grid-template-columns: 1fr; } }
     .levels .card { text-align: left; } .levels .card .ico { margin: 0 0 10px; }
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
@@ -120,14 +125,15 @@
     </div></section>
     <section class="p-section"><div class="wrap"><div class="faq"><details><summary>Does it need the internet?</summary><p>No. The charts library is bundled and the app's own code makes no network requests.</p></details>
 <details><summary>Why does Windows warn me when I open it?</summary><p>The app isn't code-signed, so Windows SmartScreen shows a warning on first launch. Choose <b>More info</b>, then <b>Run anyway</b>.</p></details>
-<details><summary>How accurate is it?</summary><p>The math is exact and you can check it by hand. Forecasts depend on your assumptions and have not been validated against live games. See <a href="accuracy.html">Accuracy and limits</a>.</p></details>
+<details><summary>How accurate is it?</summary><p>The math is exact and you can check it by hand. Forecasts depend on your assumptions and have not been validated against live games. The starting values are rough estimates. See <a href="accuracy.html">Accuracy and limits</a>.</p></details>
 <details><summary>Can I save my scenarios?</summary><p>Not in version 1.0, and there's no export yet; closing the app clears your inputs. You can set your own starting values in config.js so new games open with your base case.</p></details>
-<details><summary>Does it include real CPI and ARPDAU data?</summary><p>No. The market CPIs and the default ARPDAU are rough estimates meant to be replaced with your own numbers.</p></details>
-<details><summary>Does it handle in-app purchases?</summary><p>No. The model has one ad-revenue-per-user value per game and no purchase revenue, so it suits ad-monetized games.</p></details>
+<details><summary>Can I resell it, share it, or run it for my clients?</summary><p>No. The license covers one business, for its own internal use. Each client business needs its own license. Selling, sharing, publishing or building a competing product from it is not allowed. See the <a href="legal.html#license">license</a>.</p></details>
+<details><summary>Does it include real CPI and ARPDAU data?</summary><p>No. The market CPIs and the starting values are rough estimates meant to be replaced with your own numbers.</p></details>
 <details><summary>Can I use it for apps that aren&#x27;t games?</summary><p>The model is generic: any app with installs, retention and ad revenue per user fits. The wording and presets are written for mobile games.</p></details>
-<details><summary>Mac or Linux?</summary><p>Not in this release. It's Windows only.</p></details>
-<details><summary>Can I edit it?</summary><p>Yes. You get the editable files and the full source project. See <a href="customize.html">Customize and extend</a>.</p></details>
-<details><summary>Can I resell or share my edited copy?</summary><p>See the <a href="legal.html#license">license</a>. The terms will be posted before launch.</p></details>
+<details><summary>Can I change it?</summary><p>Yes, for your own use. See <a href="customize.html">Customize and extend</a> and the <a href="legal.html#license">license</a>.</p></details>
+<details><summary>Does it handle in-app purchases?</summary><p>No. It models ad revenue per user only.</p></details>
+<details><summary>Which currencies work?</summary><p>Eight, including US dollars, euros and pounds. The exchange rates are set in a settings file and are not live; update them yourself. Changing currency never changes the results.</p></details>
+<details><summary>Does it work on Mac or Linux?</summary><p>Not in this release. It's Windows only.</p></details>
 <details><summary>Updates and support?</summary><p>See <a href="support.html">Support</a>.</p></details></div></div></section>
   </main>
 

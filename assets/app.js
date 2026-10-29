@@ -30,6 +30,16 @@
     const gone = () => v.remove();
     v.addEventListener("error", gone, true); v.querySelectorAll("source").forEach(s => s.addEventListener("error", gone));
   });
+  // Game Dev Kit store buttons: data-kit="admob" data-store="fab|unity|gumroad"
+  const STORE = { fab: "Fab", unity: "Unity Asset Store", gumroad: "Gumroad" };
+  document.querySelectorAll("[data-kit][data-store]").forEach(b => {
+    const k = (P.devkits || {})[b.dataset.kit]; if (!k) return;
+    const url = k[b.dataset.store], name = STORE[b.dataset.store] || b.dataset.store;
+    if (url) { b.href = url; b.target = "_blank"; b.rel = "noopener"; b.textContent = `Get it on ${name}`; b.classList.remove("soon"); }
+    else { b.removeAttribute("href"); b.classList.add("soon"); b.setAttribute("aria-disabled", "true"); b.textContent = `${name} · Coming soon`; }
+  });
+  document.querySelectorAll("iframe[data-form]").forEach(f => { if (P.supportForm) f.src = P.supportForm; });
+  document.querySelectorAll("a[data-form]").forEach(a => { if (P.supportForm) a.href = P.supportForm; });
   document.querySelectorAll("[data-price]").forEach(el => { const p = P[el.dataset.price]; if (p && p.price) el.textContent = p.price; });
   document.querySelectorAll("[data-support]").forEach(a => {
     if (P.supportEmail) { a.href = "mailto:" + P.supportEmail; if (!a.textContent.trim()) a.textContent = P.supportEmail; }

@@ -79,7 +79,12 @@
     .not-for b { display: block; color: var(--text); margin-bottom: 2px; }
     .for-who { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
     .for-who div { padding: 14px 16px; border-radius: 10px; background: rgba(127,191,127,.06); border: 1px solid rgba(127,191,127,.3); color: var(--muted); font-size: .93rem; }
-    @media (max-width: 860px) { .not-for, .for-who { grid-template-columns: 1fr; } }
+    .not-for.four { grid-template-columns: repeat(4, 1fr); }
+    .how-steps { color: var(--muted); display: grid; gap: 12px; padding-left: 22px; max-width: 880px; margin: 0 auto; }
+    .how-steps b { color: var(--text); }
+    .code { white-space: pre; overflow-x: auto; font-size: .82rem; }
+    @media (max-width: 1000px) { .not-for.four { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 860px) { .not-for, .not-for.four, .for-who { grid-template-columns: 1fr; } }
     .levels .card { text-align: left; } .levels .card .ico { margin: 0 0 10px; }
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
@@ -116,15 +121,15 @@
     <section class="page-head"><div class="wrap">
       <span class="eyebrow">▮▮▮ Pricing</span>
       <h1>One price, once</h1>
-      <p>Checkout is handled by Gumroad. <a href="accuracy.html">Read the limits</a> before you buy.</p>
+      <p>Checkout is handled by Gumroad. <a href="accuracy.html">Read the limits</a> and the <a href="legal.html#license">license</a> before you buy.</p>
     </div></section>
     <section class="p-section"><div class="wrap">
       <div class="plans single">
         <div class="plan this reveal"><h3>Mobile Game Revenue Simulator</h3><div class="amt" data-price="revenue-simulator">$14.99</div><div class="once">one time · Gumroad · Windows</div>
-          <p>The portable app, the editable files, an editing guide and the full source project.</p>
+          <p>The portable app, the editable settings, look and model files, an editing guide, the license, and the full source project. Single business, internal use.</p>
           <div class="actions"><a class="btn" data-buy="revenue-simulator" href="#">Get it</a><a class="btn ghost" href="accuracy.html">Read the limits first</a></div></div>
       </div>
-      <div style="max-width:720px;margin:24px auto 0"><div class="callout warn reveal"><b>Before you buy: Windows will show a warning the first time.</b><p>The app isn't code-signed, so Windows SmartScreen warns you on first launch. Choose <b>More info</b>, then <b>Run anyway</b>.</p></div></div>
+      <div style="max-width:760px;margin:24px auto 0;display:grid;gap:14px"><div class="callout reveal"><b>What the license allows.</b><p>One business, for its own internal use. Edit the files for your own use inside your own business. You may not sell, share or publish the app or your modified version, build a competing product from it, run it for clients or other businesses, or use it to train AI models. <a href="legal.html#license">Read the license</a></p></div><div class="callout warn reveal"><b>Before you buy: Windows will show a warning the first time.</b><p>The app isn't code-signed, so Windows SmartScreen warns you on first launch. Choose <b>More info</b>, then <b>Run anyway</b>.</p></div></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
@@ -133,18 +138,20 @@
         <li>The portable Windows app: unzip and run the .exe, no installer</li>
         <li>The editable files for settings, look and model (config.js, styles.css, app.js)</li>
         <li>An editing guide</li>
-        <li>The full source project as a zip, for building your own installer on Windows</li>
+        <li>The license agreement (LICENSE.txt)</li>
+        <li>The full source project as a zip, for building your own installer for your own computers</li>
       </ul></div><div><h3>Requirements</h3><ul>
         <li>Windows 10 or 11, 64-bit</li>
-        <li>About a 155 MB zip; about 380 MB once unzipped</li>
+        <li>About a 160 MB zip; about 380 MB once unzipped</li>
         <li>No internet needed: the app's own code makes no network requests</li>
+        <li>License: single business, internal use</li>
         <li>Refunds: see the <a href="legal.html#refunds">refund policy</a></li>
       </ul></div></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon">Before You Buy</h2>
-      <div class="callout reveal"><b>It models your assumptions. It doesn't predict your revenue.</b><p>The math is exact; the defaults are rough estimates; forecasts haven't been validated against live games. <a href="accuracy.html">Accuracy and limits →</a></p></div>
+      <div class="callout reveal"><b>It models your assumptions. It doesn't predict your revenue.</b><p>The math is exact; the starting values are rough estimates; forecasts haven't been validated against live games. <a href="accuracy.html">Accuracy and limits →</a></p></div>
     </div></section>
   </main>
 
