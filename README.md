@@ -94,3 +94,13 @@ Unity plugin pages: LevelPlay, Appodeal, Google AdMob, Localization, plus a supp
 
 - Buy link and demo video: `data/products.js` → `revenue-simulator`.
 - Screenshots go in `revenue-simulator/media/`; see the README there for the exact file names. Empty slots show a labeled placeholder until the file exists.
+
+## Used In / Used By (dev tools and Game Dev Kits)
+
+Every dev tool and kit site has a "Used In" / "Used By" section on its landing page (first 3 projects)
+and its own page listing all of them:
+- Queens Court, Looking Glass, Mobile Game Revenue Simulator, Asset Logger: `<site>/used-in.html`
+- Game Dev Kits: a section on each kit page and on dev-kits/index.html, plus dev-kits/used-in.html grouped by kit
+
+All of it comes from one file: **`data/used-in.js`**. Add a project by copying a `{ name, by, url, logo, how }`
+line into the right list. An empty list shows a "Your project could be first" note with an email link.

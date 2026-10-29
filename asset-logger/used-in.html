@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asset Logger · Used By</title>
+  <meta name="description" content="Asset Logger documents every third-party asset in your game and exports a clean, submission-ready CSV for Steam and other platforms. $1.99 one-time, Windows.">
+  <meta name="theme-color" content="#0e1116">
+  <link rel="icon" href="../assets/covers/asset-logger.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="stylesheet" href="../assets/used-in.css">
+  <style>
+    :root {
+      --bg: #0e1116; --bg2: #141922;
+      --panel: #18202b; --panel2: #121820; --line: #2b3a4a;
+      --text: #e8eef5; --muted: #9fb0c2;
+      --a1: #f2b134; --a1d: #94650c;
+      --a2: #20c6d6; --a2d: #0d6f78;
+      --a3: #b8e04a; --a3d: #5f7a14;
+      --neon: #20d6e6; --neon2: #c8f04f;
+      --head: 'Space Grotesk', system-ui, sans-serif;
+      --body: 'Inter', system-ui, sans-serif;
+      --bevel: rgba(32,214,230,.28);
+      --title-shadow: none;
+    }
+    body { background: radial-gradient(ellipse 60% 40% at 80% 0%, rgba(32,214,230,.12), transparent 70%), radial-gradient(ellipse 50% 40% at 0% 30%, rgba(200,240,79,.08), transparent 70%), linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 100% 32px, var(--bg); }
+    .p-hero { background: linear-gradient(180deg, transparent, var(--bg)); }
+    .p-hero .panel { text-align: left; display: grid; grid-template-columns: 1fr 260px; gap: 30px; align-items: center; }
+    .p-hero .panel .actions { justify-content: flex-start; }
+    .p-hero .tagline { margin-left: 0; }
+    .p-hero .cover { border-radius: 16px; border: 3px solid #000; box-shadow: 0 0 0 2px var(--line), 0 0 40px rgba(32,214,230,.25); }
+    @media (max-width: 760px) { .p-hero .panel { grid-template-columns: 1fr; text-align: center; } .p-hero .panel .actions { justify-content: center; } .p-hero .cover { max-width: 240px; margin: 0 auto; } }
+    .p-title { font-weight: 700; letter-spacing: -.02em; }
+    .p-title em { font-style: normal; color: var(--neon); }
+    .wordmark { font-weight: 700; letter-spacing: -.01em; } .wordmark em { color: var(--neon); }
+    .neon { font-weight: 700; border-radius: 12px; letter-spacing: .02em; }
+    .btn { border-radius: 10px; } .btn:not(.dark) { color: #0b0f14; text-shadow: none; } .btn:not(.dark):hover { color: #0b0f14; }
+    .card { text-align: left; } .card .ico { margin: 0 0 12px; border-radius: 12px; width: 54px; height: 54px; font-size: 1.5rem; background: rgba(32,214,230,.1); border-color: rgba(32,214,230,.4); }
+    .for { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .for div { padding: 14px 16px; border-radius: 12px; background: rgba(200,240,79,.06); border: 1px solid rgba(200,240,79,.25); }
+    .for div::before { content: "→ "; color: var(--neon2); font-weight: 700; }
+    .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .vs > div { border-radius: 14px; padding: 18px 20px; }
+    .vs .old { background: rgba(255,90,90,.06); border: 1px solid rgba(255,90,90,.3); }
+    .vs .new { background: rgba(32,214,230,.07); border: 1px solid rgba(32,214,230,.4); }
+    .vs h3 { font-family: var(--head); margin: 0 0 8px; }
+    .vs ul { margin: 0; padding-left: 18px; color: var(--muted); display: grid; gap: 4px; }
+    @media (max-width: 700px) { .vs { grid-template-columns: 1fr; } }
+    .a-hero { background: var(--hero-bg, linear-gradient(180deg, color-mix(in srgb, var(--neon) 8%, var(--bg)), var(--bg))); }
+    .a-hero h1 { font-family: var(--head); }
+    .glance { margin-top: 0; }
+  </style>
+</head>
+<body class="asset-logger">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="crumb"><div class="wrap">
+    <a class="crumb-home" href="../index.html"><img src="../assets/logos/mad-tea-party.webp" alt=""><span>Mad Tea Party <small>Development</small></span></a>
+    <a class="crumb-back" href="../index.html#menu">← Back to the Software Shop</a>
+  </div></div>
+
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="#main"><span>Asset<em>Logger</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="index.html#how">How It Works</a>
+        <a href="index.html#workflow">See It Work</a>
+        <a href="index.html#features">What It Does</a>
+        <a href="used-in.html">Used By</a>
+        <a href="index.html#faq">FAQ</a>
+        <a class="btn small" href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Get it · $1.99</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head"><div class="wrap">
+      <span class="eyebrow">Used By</span>
+      <h1>Documented with Asset Logger</h1>
+      <p>Every game I know of that used Asset Logger to document its third-party assets.</p>
+    </div></section>
+    <section class="p-section"><div class="wrap">
+      <div data-used-in="asset-logger" data-root="../" data-product="Asset Logger"></div>
+      <p class="ui-submit">Shipped a game with it? <a href="mailto:madteapartydevelopment@outlook.com?subject=Used%20By%20listing:%20Asset%20Logger">Tell me about it</a> and I'll add it here, with a link back to your game.</p>
+    </div></section>
+
+
+    <section class="p-section community" id="community">
+      <div class="wrap">
+        <div class="panel reveal">
+          <h2>Ship with confidence</h2>
+          <p>Prepping a Steam submission? Have a field you wish it tracked? Come hang out, ask questions, and help shape the next version. It's your code too.</p>
+          <div class="socials">
+            <a href="https://www.youtube.com/@HattersMania" target="_blank" rel="noopener" aria-label="YouTube"><img src="../assets/social/youtube.webp" alt=""></a>
+<a href="https://www.twitch.tv/hattersmania" target="_blank" rel="noopener" aria-label="Twitch"><img src="../assets/social/twitch.webp" alt=""></a>
+<a href="https://bsky.app/profile/alviespurlock.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky"><img src="../assets/social/bluesky.webp" alt=""></a>
+<a href="https://mastodon.social/@alviespurlock" target="_blank" rel="me noopener" aria-label="Mastodon"><img src="../assets/social/mastodon.svg" alt=""></a>
+<a href="https://www.instagram.com/hattersmania/" target="_blank" rel="noopener" aria-label="Instagram"><img src="../assets/social/instagram.webp" alt=""></a>
+<a href="https://www.facebook.com/profile.php?id=61559210605002" target="_blank" rel="noopener" aria-label="Facebook"><img src="../assets/social/facebook.webp" alt=""></a>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Get it on itch.io</a>
+            <a class="btn b2" href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Try the Proof of Concept</a>
+            <a class="btn dark" href="../index.html#menu">More Tools</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="#main"><span>Asset<em>Logger</em></span></a>
+          <p>Clean asset documentation without the spreadsheet headache.</p>
+        </div>
+        <div>
+          <h4>Tool</h4>
+          <ul>
+            <li><a href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Get it · $1.99</a></li>
+            <li><a href="index.html#how">How it works</a></li>
+            <li><a href="index.html#workflow">See it work</a></li>
+            <li><a href="index.html#features">What it does</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="../index.html#menu">Software Shop</a></li>
+            <li><a href="../index.html#rules">House Rules</a></li>
+            <li><a href="../queens-court/index.html">Queens Court</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="../socials.html">All socials</a></li>
+            <li><a href="https://marchharegames.itch.io" target="_blank" rel="noopener">itch.io</a></li>
+            <li><a href="../index.html">Mad Tea Party</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../data/used-in.js"></script>
+  <script src="../assets/product.js"></script>
+  <script src="../assets/used-in.js"></script>
+</body>
+</html>
