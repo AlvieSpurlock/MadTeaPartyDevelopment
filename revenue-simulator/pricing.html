@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mobile Game Revenue Simulator · Pricing</title>
-  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment and multi-game portfolios. Models your assumptions; doesn&#x27;t predict.">
+  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment, purchases and multi-game portfolios, with a range analysis. Models your assumptions; doesn&#x27;t predict.">
   <meta name="theme-color" content="#0B0D10">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314171B'/><rect x='6' y='18' width='4' height='8' fill='%237FBF7F'/><rect x='12' y='13' width='4' height='13' fill='%237FBF7F'/><rect x='18' y='9' width='4' height='17' fill='%23E8A33D'/><rect x='24' y='5' width='4' height='21' fill='%237FBF7F'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,7 +89,11 @@
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
     body.revenue-simulator .cards.three { grid-template-columns: repeat(3, 1fr); }
-    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three { grid-template-columns: 1fr; } }
+    body.revenue-simulator .cards.four { grid-template-columns: repeat(4, 1fr); }
+    body.revenue-simulator .steps.four { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 1100px) { body.revenue-simulator .cards.four, body.revenue-simulator .steps.four { grid-template-columns: repeat(2, 1fr); } }
+    .ex-h { text-align: center; margin: 34px 0 6px; font-family: var(--mono); font-size: .95rem; letter-spacing: .08em; color: var(--a1); }
+    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three, body.revenue-simulator .cards.four, body.revenue-simulator .steps.four { grid-template-columns: 1fr; } }
     .faq summary::after { color: var(--a1); }
     .p-footer h4 { color: var(--a1); font-family: var(--mono); }
   </style>
@@ -139,19 +143,19 @@
         <li>The editable files for settings, look and model (config.js, styles.css, app.js)</li>
         <li>An editing guide</li>
         <li>The license agreement (LICENSE.txt)</li>
-        <li>The full source project as a zip, for building your own installer for your own computers</li>
+        <li>The full source project as a zip, for building your own installer on Windows for your own computers</li>
       </ul></div><div><h3>Requirements</h3><ul>
         <li>Windows 10 or 11, 64-bit</li>
         <li>About a 160 MB zip; about 380 MB once unzipped</li>
-        <li>No internet needed: the app's own code makes no network requests</li>
-        <li>License: single business, internal use</li>
+        <li>No internet needed. One optional button, Fetch current rates, uses the internet only when you press it</li>
+        <li>License: single business, internal use, source included</li>
         <li>Refunds: see the <a href="legal.html#refunds">refund policy</a></li>
       </ul></div></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon">Before You Buy</h2>
-      <div class="callout reveal"><b>It models your assumptions. It doesn't predict your revenue.</b><p>The math is exact; the starting values are rough estimates; forecasts haven't been validated against live games. <a href="accuracy.html">Accuracy and limits →</a></p></div>
+      <div class="callout reveal"><b>It models your assumptions. It doesn't predict your revenue.</b><p>The math is exact; the starting values are rough estimates; forecasts haven't been validated against live games; the range analysis shows sensitivity to spreads you set, not real-world odds. <a href="accuracy.html">Accuracy and limits →</a></p></div>
     </div></section>
   </main>
 
@@ -160,7 +164,7 @@
       <div class="cols">
         <div>
           <a class="wordmark" href="index.html"><span class="crs-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Mobile Game Revenue <em>Simulator</em></span></a>
-          <p>Model your mobile game's players and ad revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
+          <p>Model your mobile game's players and revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
         </div>
         <div><h4>Product</h4><ul>
           <li><a href="what-it-does.html">What it does</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="accuracy.html">Accuracy and limits</a></li><li><a href="customize.html">Customize and extend</a></li>

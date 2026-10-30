@@ -104,3 +104,17 @@ and its own page listing all of them:
 
 All of it comes from one file: **`data/used-in.js`**. Add a project by copying a `{ name, by, url, logo, how }`
 line into the right list. An empty list shows a "Your project could be first" note with an email link.
+
+## Traffic per site and page
+
+Every studio page, product site and the Mimic Masters copy load `assets/traffic.js` (through `main.js` or
+`assets/product.js`, or directly on the Mimic Masters pages). It sends page views to the same Google Sheet as the
+standalone Mimic Masters site, using the same rules: no cookies, no visitor ID, skips Do Not Track, bots and
+`?notrack=1` devices.
+
+Each row names the site and the page: `studio.index.html`, `queens-court.pricing.html`, `dev-kits.admob.html`,
+`mimic-masters.play.html` and so on (the standalone Mimic Masters site keeps its plain names like `index.html`).
+Tag any link you hand out with `?src=name` to see it as its own source.
+
+To group the new pages in the Sheet's Totals tab, add their names to the PAGES array in TrafficReceiver.gs and
+run setup() again. Until then they show under "Other pages".

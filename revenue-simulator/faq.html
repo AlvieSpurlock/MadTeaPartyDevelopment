@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mobile Game Revenue Simulator · FAQ</title>
-  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment and multi-game portfolios. Models your assumptions; doesn&#x27;t predict.">
+  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment, purchases and multi-game portfolios, with a range analysis. Models your assumptions; doesn&#x27;t predict.">
   <meta name="theme-color" content="#0B0D10">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314171B'/><rect x='6' y='18' width='4' height='8' fill='%237FBF7F'/><rect x='12' y='13' width='4' height='13' fill='%237FBF7F'/><rect x='18' y='9' width='4' height='17' fill='%23E8A33D'/><rect x='24' y='5' width='4' height='21' fill='%237FBF7F'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,7 +89,11 @@
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
     body.revenue-simulator .cards.three { grid-template-columns: repeat(3, 1fr); }
-    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three { grid-template-columns: 1fr; } }
+    body.revenue-simulator .cards.four { grid-template-columns: repeat(4, 1fr); }
+    body.revenue-simulator .steps.four { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 1100px) { body.revenue-simulator .cards.four, body.revenue-simulator .steps.four { grid-template-columns: repeat(2, 1fr); } }
+    .ex-h { text-align: center; margin: 34px 0 6px; font-family: var(--mono); font-size: .95rem; letter-spacing: .08em; color: var(--a1); }
+    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three, body.revenue-simulator .cards.four, body.revenue-simulator .steps.four { grid-template-columns: 1fr; } }
     .faq summary::after { color: var(--a1); }
     .p-footer h4 { color: var(--a1); font-family: var(--mono); }
   </style>
@@ -123,16 +127,18 @@
       <h1>Questions before you buy</h1>
       <p>Straight answers, including what it can't do.</p>
     </div></section>
-    <section class="p-section"><div class="wrap"><div class="faq"><details><summary>Does it need the internet?</summary><p>No. The charts library is bundled and the app's own code makes no network requests.</p></details>
+    <section class="p-section"><div class="wrap"><div class="faq"><details><summary>Does it need the internet?</summary><p>No. The charts library is bundled and the app runs offline. The one exception is an optional <b>Fetch current rates</b> button for exchange rates, which contacts an exchange-rate service only when you press it.</p></details>
 <details><summary>Why does Windows warn me when I open it?</summary><p>The app isn't code-signed, so Windows SmartScreen shows a warning on first launch. Choose <b>More info</b>, then <b>Run anyway</b>.</p></details>
-<details><summary>How accurate is it?</summary><p>The math is exact and you can check it by hand. Forecasts depend on your assumptions and have not been validated against live games. The starting values are rough estimates. See <a href="accuracy.html">Accuracy and limits</a>.</p></details>
+<details><summary>How accurate is it?</summary><p>The math is exact and you can check it by hand. Forecasts depend on your assumptions and have not been validated against live games. The starting values are rough estimates. The range analysis shows how far the result moves if your inputs are off by amounts you choose. See <a href="accuracy.html">Accuracy and limits</a>.</p></details>
+<details><summary>What does the range analysis tell me?</summary><p>It re-runs your portfolio 200 times with four inputs (retention, revenue per user, CPI and free installs) nudged within the spreads you set, and shows the low, middle and high results. It measures how sensitive your plan is to those guesses. It is not a probability of success in the real world.</p></details>
 <details><summary>Can I save my scenarios?</summary><p>Not in version 1.0, and there's no export yet; closing the app clears your inputs. You can set your own starting values in config.js so new games open with your base case.</p></details>
+<details><summary>Does it handle in-app purchases and subscriptions?</summary><p>Yes, as averages: purchase revenue per daily user, plus a subscriber share and monthly price, with a store fee taken out. It doesn't model individual payer behavior or purchase funnels.</p></details>
+<details><summary>Can I test several markets at once?</summary><p>Yes. Each game can split its paid budget across up to three markets, each with its own cost per install and retention scale.</p></details>
 <details><summary>Can I resell it, share it, or run it for my clients?</summary><p>No. The license covers one business, for its own internal use. Each client business needs its own license. Selling, sharing, publishing or building a competing product from it is not allowed. See the <a href="legal.html#license">license</a>.</p></details>
 <details><summary>Does it include real CPI and ARPDAU data?</summary><p>No. The market CPIs and the starting values are rough estimates meant to be replaced with your own numbers.</p></details>
-<details><summary>Can I use it for apps that aren&#x27;t games?</summary><p>The model is generic: any app with installs, retention and ad revenue per user fits. The wording and presets are written for mobile games.</p></details>
+<details><summary>Can I use it for apps that aren&#x27;t games?</summary><p>The model is generic: any app with installs, retention and revenue per user fits. The wording and presets are written for mobile games.</p></details>
 <details><summary>Can I change it?</summary><p>Yes, for your own use. See <a href="customize.html">Customize and extend</a> and the <a href="legal.html#license">license</a>.</p></details>
-<details><summary>Does it handle in-app purchases?</summary><p>No. It models ad revenue per user only.</p></details>
-<details><summary>Which currencies work?</summary><p>Eight, including US dollars, euros and pounds. The exchange rates are set in a settings file and are not live; update them yourself. Changing currency never changes the results.</p></details>
+<details><summary>Which currencies work?</summary><p>Eight, including US dollars, euros and pounds. The rates are placeholders until you edit them in the app or in the settings file, or press Fetch current rates. Changing currency never changes the results.</p></details>
 <details><summary>Does it work on Mac or Linux?</summary><p>Not in this release. It's Windows only.</p></details>
 <details><summary>Updates and support?</summary><p>See <a href="support.html">Support</a>.</p></details></div></div></section>
   </main>
@@ -142,7 +148,7 @@
       <div class="cols">
         <div>
           <a class="wordmark" href="index.html"><span class="crs-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Mobile Game Revenue <em>Simulator</em></span></a>
-          <p>Model your mobile game's players and ad revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
+          <p>Model your mobile game's players and revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
         </div>
         <div><h4>Product</h4><ul>
           <li><a href="what-it-does.html">What it does</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="accuracy.html">Accuracy and limits</a></li><li><a href="customize.html">Customize and extend</a></li>

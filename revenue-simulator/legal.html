@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mobile Game Revenue Simulator · Legal</title>
-  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment and multi-game portfolios. Models your assumptions; doesn&#x27;t predict.">
+  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment, purchases and multi-game portfolios, with a range analysis. Models your assumptions; doesn&#x27;t predict.">
   <meta name="theme-color" content="#0B0D10">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314171B'/><rect x='6' y='18' width='4' height='8' fill='%237FBF7F'/><rect x='12' y='13' width='4' height='13' fill='%237FBF7F'/><rect x='18' y='9' width='4' height='17' fill='%23E8A33D'/><rect x='24' y='5' width='4' height='21' fill='%237FBF7F'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,7 +89,11 @@
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
     body.revenue-simulator .cards.three { grid-template-columns: repeat(3, 1fr); }
-    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three { grid-template-columns: 1fr; } }
+    body.revenue-simulator .cards.four { grid-template-columns: repeat(4, 1fr); }
+    body.revenue-simulator .steps.four { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 1100px) { body.revenue-simulator .cards.four, body.revenue-simulator .steps.four { grid-template-columns: repeat(2, 1fr); } }
+    .ex-h { text-align: center; margin: 34px 0 6px; font-family: var(--mono); font-size: .95rem; letter-spacing: .08em; color: var(--a1); }
+    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three, body.revenue-simulator .cards.four, body.revenue-simulator .steps.four { grid-template-columns: 1fr; } }
     .faq summary::after { color: var(--a1); }
     .p-footer h4 { color: var(--a1); font-family: var(--mono); }
   </style>
@@ -130,7 +134,7 @@
           <p>The full license agreement (LICENSE.txt) ships with the app. In short:</p>
           <ul><li>One business, for its own internal use.</li><li>Edit the files for your own use inside your own business (section 2.1).</li><li>You may not sell, share or publish the app or your modified version, build a competing product from it, run it for clients or other businesses, or use it to train AI models (section 3).</li><li>Each client business needs its own license (section 3.5).</li></ul>
           <p>The charting library inside (Chart.js) is MIT licensed and keeps its own license file.</p></section>
-        <section id="privacy"><h2>Privacy</h2><p>The app runs on your PC and its own code makes no network requests. Gumroad's checkout collects only what a purchase needs.</p></section>
+        <section id="privacy"><h2>Privacy</h2><p>The app runs on your PC and works offline. The one exception is the optional <b>Fetch current rates</b> button, which contacts an exchange-rate service only when you press it. Gumroad's checkout collects only what a purchase needs.</p></section>
         <section id="refunds"><h2>Refunds <span class="pending">Posted before launch</span></h2><p>The refund policy will be posted here and will match the Gumroad product's setting.</p></section>
       </div>
     </div></section>
@@ -141,7 +145,7 @@
       <div class="cols">
         <div>
           <a class="wordmark" href="index.html"><span class="crs-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Mobile Game Revenue <em>Simulator</em></span></a>
-          <p>Model your mobile game's players and ad revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
+          <p>Model your mobile game's players and revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
         </div>
         <div><h4>Product</h4><ul>
           <li><a href="what-it-does.html">What it does</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="accuracy.html">Accuracy and limits</a></li><li><a href="customize.html">Customize and extend</a></li>

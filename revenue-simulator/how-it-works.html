@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mobile Game Revenue Simulator · How It Works</title>
-  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment and multi-game portfolios. Models your assumptions; doesn&#x27;t predict.">
+  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment, purchases and multi-game portfolios, with a range analysis. Models your assumptions; doesn&#x27;t predict.">
   <meta name="theme-color" content="#0B0D10">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314171B'/><rect x='6' y='18' width='4' height='8' fill='%237FBF7F'/><rect x='12' y='13' width='4' height='13' fill='%237FBF7F'/><rect x='18' y='9' width='4' height='17' fill='%23E8A33D'/><rect x='24' y='5' width='4' height='21' fill='%237FBF7F'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,7 +89,11 @@
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
     body.revenue-simulator .cards.three { grid-template-columns: repeat(3, 1fr); }
-    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three { grid-template-columns: 1fr; } }
+    body.revenue-simulator .cards.four { grid-template-columns: repeat(4, 1fr); }
+    body.revenue-simulator .steps.four { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 1100px) { body.revenue-simulator .cards.four, body.revenue-simulator .steps.four { grid-template-columns: repeat(2, 1fr); } }
+    .ex-h { text-align: center; margin: 34px 0 6px; font-family: var(--mono); font-size: .95rem; letter-spacing: .08em; color: var(--a1); }
+    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three, body.revenue-simulator .cards.four, body.revenue-simulator .steps.four { grid-template-columns: 1fr; } }
     .faq summary::after { color: var(--a1); }
     .p-footer h4 { color: var(--a1); font-family: var(--mono); }
   </style>
@@ -121,26 +125,28 @@
     <section class="page-head"><div class="wrap">
       <span class="eyebrow">▮▮▮ How it works</span>
       <h1>A short chain of arithmetic</h1>
-      <p>No random numbers, no hidden adjustments: the same inputs always give the same outputs.</p>
+      <p>No hidden adjustments: the same inputs always give the same outputs, including the range analysis, whose random draws are seeded.</p>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon">The Steps, in Plain Words</h2>
-      <ol class="reveal how-steps"><li>Every install wave (launch, recurring free, paid, cross-promo) becomes a <b>cohort</b> that starts on its install day at 100% active.</li><li>Each cohort shrinks along the retention curve. Free cohorts use the main curve; paid cohorts use the paid curve if you turned it on. Between your eight points the curve is smoothed on a log scale; after day 180 it stays flat.</li><li><b>Daily active users</b> on any day is the sum of every cohort's size times its retention at that cohort's age.</li><li><b>Revenue per user</b> on a day is your ARPDAU, adjusted for ad-network warm-up, monthly drift and that calendar month's seasonality. Net revenue is DAU times that, minus your revenue cut.</li><li>Every 30 days after a game launches, any recurring free installs arrive, and the game spends its reinvestment share of the previous 30 days' net revenue on a new paid cohort: the push percentage for the first N months, then the sustain percentage.</li><li>The <b>cost per install</b> of a paid wave is the market CPI, adjusted for that month's seasonality and for the size of the wave (CPI scaling). Installs = budget ÷ that CPI.</li><li><b>Cross-promo</b> runs in passes. First every game is simulated alone. Then, at each 30-day mark, a share of each game's average DAU over the previous 30 days is split evenly across the other launched games as free installs, and every game is simulated again. With chaining on, this repeats six times so received installs also promote the others; the effect fades quickly, and in testing six passes matched fifteen.</li><li><b>Costs:</b> the paid spend, the one-time dev cost on launch day, and the running cost spread evenly across each 30 days from launch. Profit before tax is net revenue minus all of them. Tax is your flat rate times total profit, if positive.</li><li>The <b>monthly take-home</b> table subtracts from each 30-day period's net revenue the money committed from it to the next paid wave (and the first wave's upfront spend in month 1), plus that period's dev and running costs. The last period shows no commitment because the window ends before the next wave would be bought, so it often looks higher.</li></ol>
+      <ol class="reveal how-steps"><li>Every install wave (launch, recurring free, paid, cross-promo) becomes a <b>cohort</b> that starts on its install day at 100% active.</li><li>Each cohort shrinks along the retention curve. Free cohorts use the main curve; paid cohorts use the paid curve if you turned it on, scaled by their channel's retention scale. Between your eight points the curve is smoothed on a log scale; after day 180 it stays flat.</li><li><b>Daily active users</b> on any day is the sum of every cohort's size times its retention at that cohort's age.</li><li><b>Revenue per user</b> on a day is your ad ARPDAU, adjusted for ad-network warm-up, monthly drift and that calendar month's seasonality, plus purchase and subscription revenue per user. What you keep is the ad part after your revenue cut plus the purchase and subscription part after the store fee. Net revenue is DAU times that.</li><li>Every 30 days after a game launches, any recurring free installs arrive, and the game spends its reinvestment share of the previous 30 days' net revenue on a new paid wave: the push percentage for the first N months, then the sustain percentage.</li><li>The paid budget is split across <b>channels</b> by share. Each channel's cost per install is its market CPI, adjusted for that month's seasonality and for the size of that channel's wave (CPI scaling). Installs = channel budget ÷ that CPI.</li><li><b>Cross-promo</b> runs in passes. First every game is simulated alone. Then, at each 30-day mark, a share of each game's average DAU over the previous 30 days is divided among the other games in proportion to their share-received weights (games that haven't launched get nothing), and each game's total is limited by its cap. Every game is simulated again with those installs. With chaining on, this repeats six times so received installs also promote the others; the effect fades quickly, and in testing six passes matched fifteen.</li><li><b>Costs:</b> the paid spend, the one-time dev cost on launch day, the running cost spread evenly across each 30 days from launch, and studio overhead spread evenly from day 0. Profit before tax is net revenue minus all of them.</li><li><b>Tax.</b> With the flat method, tax is your rate times total profit if it's positive. With the month-by-month method, each 30-day month's profit or loss is worked out, losses are carried forward against later profitable months, and the rate applies to what's left. Neither method is tax advice.</li><li>The <b>monthly take-home</b> table subtracts from each 30-day period's net revenue the money committed from it to the next paid wave (and the first wave's upfront spend in month 1), plus that period's dev and running costs. The last period shows no commitment because the window ends before the next wave would be bought, so it often looks higher.</li><li><b>Range analysis.</b> 200 times, every uncertain input (retention, revenue per user, CPI, free installs) is multiplied by a number drawn uniformly within its spread, the whole portfolio is re-run, and the results are sorted. The low and high figures are the 10th and 90th percentiles. The draws come from a fixed seed, so pressing Run twice gives the same answer.</li></ol>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon alt">The Equations</h2>
-      <div class="code reveal">DAU(d)            = sum over cohorts c of  N_c × R(d − s_c)
-Revenue per user  = ARPDAU × warm-up(d) × (1 + drift)^((d − launch) / 30) × season(month)
-Net revenue(d)    = DAU(d) × Revenue per user × (1 − revenue cut)
-Paid budget       = reinvestment % × net revenue of the previous 30 days
-Paid installs     = budget ÷ CPI_wave
-CPI_wave          = market CPI × season_cpi(month) × (1 + k × log2(budget ÷ reference))   <span class="c">[only when budget &gt; reference]</span>
-Cross-promo i→j   = rate_i × average DAU_i over the previous 30 days ÷ (games − 1)
-Profit            = total net revenue − paid spend − dev cost − running costs
-Tax               = tax rate × max(0, profit)</div>
-      <p class="caption">N is cohort size, s is its start day, R is the retention curve, k is the CPI rise per doubling.</p><a class="more-link" href="accuracy.html">What these equations leave out →</a>
+      <div class="code reveal">DAU(d)             = sum over cohorts c of  N_c × R_c(d − s_c)
+Ad revenue/user    = ARPDAU × warm-up(d) × (1 + drift)^((d − launch) / 30) × season(month)
+Other revenue/user = purchases per user + (subscriber share × monthly price ÷ 30)
+Net revenue(d)     = DAU(d) × [ ad × (1 − revenue cut) + other × (1 − store fee) ]
+Paid budget        = reinvestment % × net revenue of the previous 30 days
+Paid installs      = sum over channels i of  budget × share_i ÷ CPI_i
+CPI_i              = market CPI × season_cpi(month) × (1 + k × log2(spend_i ÷ reference))   <span class="c">[only when spend_i &gt; reference]</span>
+Cross-promo i→j    = min( cap_j , rate_i × average DAU_i over previous 30 days × weight_j ÷ sum of other weights )
+Profit             = total net revenue − paid spend − dev − running − overhead
+Tax (flat)         = tax rate × max(0, profit)
+Tax (carry-fwd)    = tax rate × taxable profit after losses carried forward month to month</div>
+      <p class="caption">N is cohort size, s is its start day, R is that cohort's retention curve, k is the CPI rise per doubling.</p><a class="more-link" href="accuracy.html">What these equations leave out →</a>
     </div></section>
   </main>
 
@@ -149,7 +155,7 @@ Tax               = tax rate × max(0, profit)</div>
       <div class="cols">
         <div>
           <a class="wordmark" href="index.html"><span class="crs-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Mobile Game Revenue <em>Simulator</em></span></a>
-          <p>Model your mobile game's players and ad revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
+          <p>Model your mobile game's players and revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
         </div>
         <div><h4>Product</h4><ul>
           <li><a href="what-it-does.html">What it does</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="accuracy.html">Accuracy and limits</a></li><li><a href="customize.html">Customize and extend</a></li>

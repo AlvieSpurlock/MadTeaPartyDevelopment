@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mobile Game Revenue Simulator · Accuracy</title>
-  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment and multi-game portfolios. Models your assumptions; doesn&#x27;t predict.">
+  <meta name="description" content="A Windows desktop simulator for retention, free and paid installs, reinvestment, purchases and multi-game portfolios, with a range analysis. Models your assumptions; doesn&#x27;t predict.">
   <meta name="theme-color" content="#0B0D10">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314171B'/><rect x='6' y='18' width='4' height='8' fill='%237FBF7F'/><rect x='12' y='13' width='4' height='13' fill='%237FBF7F'/><rect x='18' y='9' width='4' height='17' fill='%23E8A33D'/><rect x='24' y='5' width='4' height='21' fill='%237FBF7F'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,7 +89,11 @@
     .mini { font-family: var(--mono); font-size: .78rem; color: var(--a1); letter-spacing: .06em; }
     body.revenue-simulator .cards { grid-template-columns: repeat(2, 1fr); }
     body.revenue-simulator .cards.three { grid-template-columns: repeat(3, 1fr); }
-    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three { grid-template-columns: 1fr; } }
+    body.revenue-simulator .cards.four { grid-template-columns: repeat(4, 1fr); }
+    body.revenue-simulator .steps.four { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 1100px) { body.revenue-simulator .cards.four, body.revenue-simulator .steps.four { grid-template-columns: repeat(2, 1fr); } }
+    .ex-h { text-align: center; margin: 34px 0 6px; font-family: var(--mono); font-size: .95rem; letter-spacing: .08em; color: var(--a1); }
+    @media (max-width: 760px) { body.revenue-simulator .cards, body.revenue-simulator .cards.three, body.revenue-simulator .cards.four, body.revenue-simulator .steps.four { grid-template-columns: 1fr; } }
     .faq summary::after { color: var(--a1); }
     .p-footer h4 { color: var(--a1); font-family: var(--mono); }
   </style>
@@ -136,43 +140,46 @@
         </tbody></table></div>
       <p class="caption">One cohort: 2,500 free launch installs, no paid UA, $0.085 ARPDAU, the default retention curve, every realism setting switched off. Active users × $0.085 = revenue.</p>
       <div class="callout reveal" style="margin-top:16px"><b>How the settings stack.</b><p>With the starting realism settings on, day 0 becomes 2,500 × $0.085 × 70% warm-up × 95% (after the 5% revenue cut) = $141.31.</p></div>
-      <p class="caption">These figures match the app's own calculation, checked during development. No independent audit has been done.</p>
+      <p class="caption">These figures match the app's own calculation, checked during development, along with automated checks of every feature: warm-up, drift, seasonality, CPI scaling, channels, purchases, overhead, both tax methods, cross-promo weights and caps, chaining, the range analysis and currency conversion. No independent audit has been done.</p>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon alt">Forecast Accuracy: Unproven</h2>
-      <div class="callout warn reveal"><b>Not compared with real games.</b><p>The app hasn't been compared with the real results of live games. The starting values for retention, ARPDAU, CPI, revenue cut, running cost, warm-up, CPI scaling and paid-install retention are rough, deliberately modest estimates, not measured data and not benchmarks. The built-in holiday seasonality shape is illustrative only, and the currency rates are placeholders. Never treat output from the starting values as expected results.</p></div>
+      <div class="callout warn reveal"><b>Not compared with real games.</b><p>The app hasn't been compared with the real results of live games. The starting values for retention, ARPDAU, CPI, revenue cut, running cost, warm-up, CPI scaling, paid-install retention, store fee and the range spreads are rough, deliberately modest estimates, not measured data and not benchmarks. The built-in holiday seasonality shape is illustrative only, and the currency rates are placeholders until you set or fetch real ones. Never treat output from the starting values as expected results.</p></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon">What Moves the Answer Most</h2>
       <div class="data-wrap reveal"><table class="data"><thead><tr><th>Input</th><th>Why it matters</th><th>What the app does about it</th></tr></thead><tbody>
-<tr><td><b>Retention curve</b></td><td>The biggest driver; small differences in week one compound across every cohort</td><td>You set eight points per game, and a second set for paid installs; no single typical curve is claimed</td></tr>
+<tr><td><b>Retention curve</b></td><td>The biggest driver; small differences in week one compound across every cohort</td><td>You set eight points per game, a second set for paid installs, and a scale per channel; no single typical curve is claimed</td></tr>
 <tr><td><b>ARPDAU</b></td><td>Varies by country, network, ad format and season</td><td>One value per game, adjustable with warm-up, drift and seasonality</td></tr>
-<tr><td><b>CPI</b></td><td>Differs by country and platform and tends to rise as you spend more</td><td>Market presets you can edit, plus a CPI-rise-per-doubling setting; no real market data is bundled</td></tr>
+<tr><td><b>CPI</b></td><td>Differs by country and platform and tends to rise as you spend more</td><td>Market presets you can edit, up to three channels, and a CPI-rise-per-doubling setting; no real market data is bundled</td></tr>
 <tr><td><b>Free installs</b></td><td>Streamer and organic traffic is hard to predict</td><td>You enter a number; the app doesn't estimate it</td></tr>
-<tr><td><b>Paid vs free retention</b></td><td>Bought users can retain differently</td><td>An optional second curve per game; not separated by market or campaign</td></tr>
+<tr><td><b>Everything at once</b></td><td>Assumptions are wrong together, not one at a time</td><td>The range analysis moves four inputs at once and shows the spread</td></tr>
 </tbody></table></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon alt">What the Model Leaves Out</h2>
       <div class="listbox reveal"><div><ul>
-        <li>In-app purchases and subscriptions</li>
-        <li>Taxes beyond a flat rate on total profit, with no loss carry-forward; no other business or platform costs unless you enter them as running or dev cost</li>
-        <li>Separate retention for individual campaigns, markets or channels inside one game</li>
+        <li>Per-player purchase behavior: purchases are an average per daily user, not a payer funnel</li>
+        <li>Revenue per user that differs by country or by channel (channels differ in cost and retention, not in revenue)</li>
+        <li>More than three paid channels in a game, or retention that differs by individual campaign or creative</li>
+        <li>Taxes beyond a flat rate on profit or a monthly carry-forward; no deductions, credits, or studio-level tax beyond the overhead you enter</li>
       </ul></div><div><ul>
-        <li>Live exchange rates and currency risk</li>
-        <li>Cross-promo beyond an even split between launched games, and no limit on how many installs a game can absorb</li>
-        <li>Anything random: no variance, ranges or confidence intervals. Compare scenarios instead</li>
+        <li>Live exchange rates while you work: rates are fixed until you edit or fetch them, and there's no currency risk modeling</li>
+        <li>Pairwise control of cross-promo (who sends how much to whom): each game has a receiving weight and a cap</li>
+        <li>Random day-to-day noise. The range analysis varies four inputs by a uniform amount you choose; its percentages describe the model's runs, not the real world</li>
+        <li>Saving, loading and exporting results</li>
       </ul></div></div>
     </div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon">How to Use It Responsibly</h2>
-      <div class="steps">
-        <div class="card step reveal"><h3>Run three cases</h3><p>Low, base and high: duplicate the game tab and change retention and ARPDAU.</p></div>
+      <div class="steps four">
+        <div class="card step reveal"><h3>Run three cases</h3><p>Low, base and high: duplicate the game tab, then run the range analysis to see how fragile the base case is.</p></div>
         <div class="card step reveal"><h3>Use your own numbers</h3><p>Replace every starting value with your soft-launch numbers as soon as you have them.</p></div>
+        <div class="card step reveal"><h3>Set honest spreads</h3><p>Set the range spreads to how unsure you really are; the starting spreads are guesses.</p></div>
         <div class="card step reveal"><h3>Read ranges</h3><p>Compare scenarios with each other. Never quote a single run as a forecast.</p></div>
       </div>
     </div></section>
@@ -183,7 +190,7 @@
       <div class="cols">
         <div>
           <a class="wordmark" href="index.html"><span class="crs-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Mobile Game Revenue <em>Simulator</em></span></a>
-          <p>Model your mobile game's players and ad revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
+          <p>Model your mobile game's players and revenue before you spend on UA. A calculator for your assumptions, not a crystal ball.</p>
         </div>
         <div><h4>Product</h4><ul>
           <li><a href="what-it-does.html">What it does</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="accuracy.html">Accuracy and limits</a></li><li><a href="customize.html">Customize and extend</a></li>

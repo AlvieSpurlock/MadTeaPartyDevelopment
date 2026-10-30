@@ -52,3 +52,6 @@ if ("IntersectionObserver" in window && !calm) {
 } else {
   items.forEach(el => el.classList.add("in"));
 }
+
+// Page-view counter (assets/traffic.js): loaded from here so every studio page counts.
+(function () { try { var s = document.createElement("script"); s.src = "assets/traffic.js"; s.defer = true; document.head.appendChild(s); } catch (e) {} })();

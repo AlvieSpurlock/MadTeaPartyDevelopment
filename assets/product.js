@@ -23,3 +23,6 @@ box.addEventListener("click", () => box.classList.remove("open"));
 document.addEventListener("keydown", e => { if (e.key === "Escape") box.classList.remove("open"); });
 document.querySelectorAll(".gallery button, .row-media img").forEach(el =>
   el.addEventListener("click", () => open((el.querySelector("img") || el).src)));
+
+// Page-view counter (assets/traffic.js, next to this file): loaded from here so every product site counts.
+(function () { try { var me = document.currentScript && document.currentScript.src; if (!me) return; var s = document.createElement("script"); s.src = me.replace(/product\.js(\?.*)?$/, "traffic.js"); s.defer = true; document.head.appendChild(s); } catch (e) {} })();

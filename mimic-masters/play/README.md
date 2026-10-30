@@ -1,6 +1,6 @@
 # Free Demo (play.html)
 
-A 5-minute demo in the browser, then a panel pointing to the free
+A 10-minute demo in the browser, then a panel pointing to the free
 Google Play and App Store versions first, and itch.io ($2.99, no ads) last.
 The timer and panel live on the web page, so the game itself needs no changes.
 
