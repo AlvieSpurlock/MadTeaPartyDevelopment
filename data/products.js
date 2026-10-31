@@ -5,10 +5,10 @@
    ========================================================== */
 window.PRODUCTS = {
   // buy:  Gumroad product link.   demo: the YouTube video ID of the demo (the part after watch?v=).
-  "queens-court":  { name: "Queens Court",  price: "$19.99", buy: "", demo: "" },   // e.g. buy: "https://yourname.gumroad.com/l/queens-court"
-  "looking-glass": { name: "Looking Glass", price: "$14.99", buy: "", demo: "" },   // e.g. demo: "dQw4w9WgXcQ"
+  "queens-court":  { name: "Queens Court",  price: "$19.99", buy: "https://madteaparty.gumroad.com/l/queens-court", demo: "" },   // e.g. buy: "https://yourname.gumroad.com/l/queens-court"
+  "looking-glass": { name: "Looking Glass", price: "$14.99", buy: "https://madteaparty.gumroad.com/l/looking-glass", demo: "" },   // e.g. demo: "dQw4w9WgXcQ"
   // Price left blank until decided: buttons then read "Coming soon".
-  "revenue-simulator": { name: "Mobile Game Revenue Simulator", price: "$14.99", buy: "", demo: "Z_kNJIF6YB4" },
+  "revenue-simulator": { name: "Mobile Game Revenue Simulator", price: "$14.99", buy: "https://madteaparty.gumroad.com/l/mobile-game-revenue-simulator", demo: "Z_kNJIF6YB4" },
   // Game Dev Kits (Unity plugins): paste each store link; "" shows "Coming soon" on that button.
   devkits: {
     "levelplay":    { name: "LevelPlay for Unity",    fab: "", unity: "", gumroad: "" },
