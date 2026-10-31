@@ -14,6 +14,6 @@ Capture every one of these from the shipped app (never mock-ups). Use exactly th
 | config-js.png | config.js open with a new market added | Customize |
 | market-dropdown.png | The same market showing in the app's dropdown | Customize |
 
-Current dashboard.png, dau-chart.png and monthly-tables.png are from an earlier build (all games on day 0, before realism settings); replace them and remove the "earlier build" captions in sim.py.
+dashboard.png, dau-chart.png and monthly-tables.png are from the current build.
 
 The edit → save → Ctrl+R capture goes on YouTube; paste its ID into data/products.js (demo: "...").

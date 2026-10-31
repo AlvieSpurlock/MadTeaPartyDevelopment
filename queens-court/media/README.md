@@ -6,7 +6,8 @@ Drop these files in this folder with exactly these names. Each one appears on th
 | File | What to capture | Where it shows |
 |---|---|---|
 | hero-swipe.mp4 | A short muted loop of Swipe on a phone: approve, reject, next | Home hero, over the phone drawing |
-| menu.png | The grouped, foldable menu | Features, top |
+| signoff.png | What a Sign Off found (outlets by type) | Features, top |
+| studio.png | The Studio overview | Features → Clips |
 | today.png | Today: the day's checklist | Features → Daily |
 | pitch.png | A drafted pitch (use a public outlet; no private email text) | Features → Outreach |
 | outreach-locator.png | Outreach Locator with suggestions | Features → Find people and Awards |
