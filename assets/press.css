@@ -1,0 +1,20 @@
+/* Press kit pages (linked from the footer only) */
+.page-head .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 18px; }
+.pk h2 { font-family: var(--head); margin: 0 0 12px; font-size: 1.35rem; }
+.pk-grid { display: grid; grid-template-columns: minmax(260px, 1fr) 2fr; gap: 28px; align-items: start; }
+@media (max-width: 820px) { .pk-grid { grid-template-columns: 1fr; } }
+.pk-facts { padding: 20px 22px; border-radius: 14px; background: linear-gradient(180deg, var(--panel), var(--panel2)); border: 1px solid var(--line); }
+.pk-facts dl { margin: 0; display: grid; gap: 12px; }
+.pk-facts dt { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.pk-facts dd { margin: 2px 0 0; color: var(--text); overflow-wrap: anywhere; }
+.pk-facts a, .pk-about a, .pk-note a, .pk-img figcaption a { color: var(--neon); }
+.pk-about h2 + p, .pk-about p { color: var(--muted); line-height: 1.65; margin: 0 0 22px; max-width: 70ch; }
+.pk-about ul { margin: 0 0 22px; padding-left: 20px; color: var(--muted); display: grid; gap: 6px; }
+.pk-note { color: var(--muted); margin: 0 0 16px; }
+.pk-imgs { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.pk-img { margin: 0; padding: 12px; border-radius: 14px; background: var(--panel2); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; }
+.pk-img img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; display: block; background: rgba(0,0,0,.25); }
+.pk-img.pk-logo img { object-fit: contain; padding: 10px; }
+.pk-img figcaption { font-size: .88rem; color: var(--muted); display: flex; justify-content: space-between; gap: 10px; }
+.pk-socials { font-size: .92rem; }
+.p-footer .legal .pk-link { opacity: .8; }

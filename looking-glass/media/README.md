@@ -1,14 +1,16 @@
 # Looking Glass media
 
-Drop these files in this folder with exactly these names. Each one appears on the site automatically.
+Drop these files in this folder with exactly these names. Each one appears on the site automatically
+(until then, a labelled placeholder shows). Capture them from the current Mirror Night build.
 
-| File | Where it shows |
-|---|---|
-| hero-clip.mp4 | Home page hero: the before/after clip loop, playing over the drawing |
-| clip-list.png | Features → Voice-triggered clipping |
-| finished-clip.png | Features → Smart crop (a 9:16 finished clip) |
-| swipe.png | Features → Raw copies too |
-| schedule.png | Features → Posting and analytics |
-| analytics.png | Features → under Posting and analytics |
+| File | What to capture | Where it shows |
+|---|---|---|
+| hero-clip.mp4 | Short muted before/after loop: the landscape stream frame next to the finished 9:16 clip | Home hero, over the drawing |
+| home.png | The Home dashboard (waiting, scheduled, posted) | Features → Home |
+| progress-card.png | The progress card mid-run (which stream, which step, clips made) | Features → Home |
+| edit-room.png | The Edit Room with a clip open | Features → Create |
+| finished-clip.png | One finished 9:16 clip (portrait frame) | Features → Create |
+| drop-calendar.png | The Drop Calendar with clips scheduled | Features → Grow |
+| growth.png | Growth charts with best posting times | Features → Grow |
 
 The demo video goes on YouTube. Paste its ID into data/products.js (demo: "...").

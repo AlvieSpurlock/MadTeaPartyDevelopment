@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asset Logger · Press kit</title>
+  <meta name="description" content="Press kit for Asset Logger: factsheet, descriptions, images and contact.">
+  <meta name="theme-color" content="#0e1116">
+  <link rel="icon" href="../assets/covers/asset-logger.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/press.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="stylesheet" href="../assets/used-in.css">
+  <style>
+    :root {
+      --bg: #0e1116; --bg2: #141922;
+      --panel: #18202b; --panel2: #121820; --line: #2b3a4a;
+      --text: #e8eef5; --muted: #9fb0c2;
+      --a1: #f2b134; --a1d: #94650c;
+      --a2: #20c6d6; --a2d: #0d6f78;
+      --a3: #b8e04a; --a3d: #5f7a14;
+      --neon: #20d6e6; --neon2: #c8f04f;
+      --head: 'Space Grotesk', system-ui, sans-serif;
+      --body: 'Inter', system-ui, sans-serif;
+      --bevel: rgba(32,214,230,.28);
+      --title-shadow: none;
+    }
+    body { background: radial-gradient(ellipse 60% 40% at 80% 0%, rgba(32,214,230,.12), transparent 70%), radial-gradient(ellipse 50% 40% at 0% 30%, rgba(200,240,79,.08), transparent 70%), linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 100% 32px, var(--bg); }
+    .p-hero { background: linear-gradient(180deg, transparent, var(--bg)); }
+    .p-hero .panel { text-align: left; display: grid; grid-template-columns: 1fr 260px; gap: 30px; align-items: center; }
+    .p-hero .panel .actions { justify-content: flex-start; }
+    .p-hero .tagline { margin-left: 0; }
+    .p-hero .cover { border-radius: 16px; border: 3px solid #000; box-shadow: 0 0 0 2px var(--line), 0 0 40px rgba(32,214,230,.25); }
+    @media (max-width: 760px) { .p-hero .panel { grid-template-columns: 1fr; text-align: center; } .p-hero .panel .actions { justify-content: center; } .p-hero .cover { max-width: 240px; margin: 0 auto; } }
+    .p-title { font-weight: 700; letter-spacing: -.02em; }
+    .p-title em { font-style: normal; color: var(--neon); }
+    .wordmark { font-weight: 700; letter-spacing: -.01em; } .wordmark em { color: var(--neon); }
+    .neon { font-weight: 700; border-radius: 12px; letter-spacing: .02em; }
+    .btn { border-radius: 10px; } .btn:not(.dark) { color: #0b0f14; text-shadow: none; } .btn:not(.dark):hover { color: #0b0f14; }
+    .card { text-align: left; } .card .ico { margin: 0 0 12px; border-radius: 12px; width: 54px; height: 54px; font-size: 1.5rem; background: rgba(32,214,230,.1); border-color: rgba(32,214,230,.4); }
+    .for { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .for div { padding: 14px 16px; border-radius: 12px; background: rgba(200,240,79,.06); border: 1px solid rgba(200,240,79,.25); }
+    .for div::before { content: "→ "; color: var(--neon2); font-weight: 700; }
+    .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .vs > div { border-radius: 14px; padding: 18px 20px; }
+    .vs .old { background: rgba(255,90,90,.06); border: 1px solid rgba(255,90,90,.3); }
+    .vs .new { background: rgba(32,214,230,.07); border: 1px solid rgba(32,214,230,.4); }
+    .vs h3 { font-family: var(--head); margin: 0 0 8px; }
+    .vs ul { margin: 0; padding-left: 18px; color: var(--muted); display: grid; gap: 4px; }
+    @media (max-width: 700px) { .vs { grid-template-columns: 1fr; } }
+    .a-hero { background: var(--hero-bg, linear-gradient(180deg, color-mix(in srgb, var(--neon) 8%, var(--bg)), var(--bg))); }
+    .a-hero h1 { font-family: var(--head); }
+    .glance { margin-top: 0; }
+  </style>
+</head>
+<body class="asset-logger">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="crumb"><div class="wrap">
+    <a class="crumb-home" href="../index.html"><img src="../assets/logos/mad-tea-party.webp" alt=""><span>Mad Tea Party <small>Development</small></span></a>
+    <a class="crumb-back" href="../index.html#menu">← Back to the Software Shop</a>
+  </div></div>
+
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="#main"><span>Asset<em>Logger</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="index.html#how">How It Works</a>
+        <a href="index.html#workflow">See It Work</a>
+        <a href="index.html#features">What It Does</a>
+        <a href="used-in.html">Used By</a>
+        <a href="index.html#faq">FAQ</a>
+        <a class="btn small" href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Get it · $1.99</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head"><div class="wrap">
+      <span class="eyebrow">Press kit</span>
+      <h1>Asset Logger press kit</h1>
+      <p>Facts, descriptions and images for writing about Asset Logger. Everything here is free to use in coverage.</p>
+      <div class="actions"><a class="btn" href="press/asset-logger-press-kit.zip" download>Download the press kit (.zip)</a><a class="btn dark" href="mailto:madteapartydevelopment@outlook.com?subject=Asset Logger%20press%20inquiry">Email the developer</a></div>
+    </div></section>
+    <section class="p-section pk"><div class="wrap pk-grid">
+      <div class="pk-facts"><h2>Factsheet</h2><dl>
+<div><dt>Product</dt><dd>Asset Logger</dd></div>
+<div><dt>Type</dt><dd>Desktop tool · asset documentation</dd></div>
+<div><dt>Developer</dt><dd>Mad Tea Party Development (Alvie Spurlock)</dd></div>
+<div><dt>Platform</dt><dd>Windows 10 / 11</dd></div>
+<div><dt>Price</dt><dd>$1.99, one-time purchase</dd></div>
+<div><dt>Store</dt><dd>itch.io (with a free proof of concept)</dd></div>
+<div><dt>Used in</dt><dd>Scorchlet</dd></div>
+<div><dt>Website</dt><dd><a href="../asset-logger/index.html">https://alviespurlock.github.io/MadTeaPartyDevelopment/asset-logger/</a></dd></div>
+<div><dt>Press contact</dt><dd><a href="mailto:madteapartydevelopment@outlook.com">madteapartydevelopment@outlook.com</a></dd></div>
+      </dl></div>
+      <div class="pk-about">
+        <h2>Short description</h2><p>Asset Logger documents every third-party asset in your game and exports a clean, submission-ready CSV for Steam and other platforms.</p>
+        <h2>Long description</h2><p>Asset Logger is a small Windows tool that takes the spreadsheet headache out of asset documentation. For each third-party asset it asks six questions (platform, where it&#x27;s used, how it&#x27;s used, asset name, creator and license type), shows a formatted summary to confirm, and lets you log as many assets as you need in one session. Everything lands in one tidy CSV, with a safety check before any overwrite, ready to drop into a store submission. March Hare Games used it to document every third-party asset in Scorchlet.</p>
+        <h2>Key features</h2><ul><li>Guided entry: prompts for every required field, so nothing gets missed</li><li>A confirmation step with a formatted summary before each asset is saved</li><li>Log as many assets as you need in one session</li><li>Clean CSV export, ready for a submission package</li><li>File safety: a check before any overwrite</li></ul>
+        
+      </div>
+    </div></section>
+    <section class="p-section pk"><div class="wrap">
+      <h2>Images</h2>
+      
+      <div class="pk-imgs">
+<figure class="pk-img pk-logo"><a href="../assets/covers/asset-logger.webp" download><img src="../assets/covers/asset-logger.webp" alt="Asset Logger cover" loading="lazy"></a><figcaption>Asset Logger cover <a href="../assets/covers/asset-logger.webp" download>Download</a></figcaption></figure>
+<figure class="pk-img"><a href="../asset-logger/img/new-asset.webp" download><img src="../asset-logger/img/new-asset.webp" alt="Logging a new asset" loading="lazy"></a><figcaption>Logging a new asset <a href="../asset-logger/img/new-asset.webp" download>Download</a></figcaption></figure>
+<figure class="pk-img"><a href="../asset-logger/img/registry.webp" download><img src="../asset-logger/img/registry.webp" alt="The asset registry" loading="lazy"></a><figcaption>The asset registry <a href="../asset-logger/img/registry.webp" download>Download</a></figcaption></figure>
+<figure class="pk-img"><a href="../asset-logger/img/csv-output.webp" download><img src="../asset-logger/img/csv-output.webp" alt="The exported CSV" loading="lazy"></a><figcaption>The exported CSV <a href="../asset-logger/img/csv-output.webp" download>Download</a></figcaption></figure>
+      </div>
+    </div></section>
+    <section class="p-section pk"><div class="wrap pk-grid">
+      <div class="pk-about"><h2>About the studio</h2><p>Mad Tea Party Development is the workshop of Alvie Spurlock, also known as HattersMania: game developer, storyteller and chaos-alchemist. Every tool on its menu is one the studio uses itself. All software is a one-time purchase with editable code, so buyers can change it however they like. Its sister label, March Hare Games, gives at least 10% of every game to charity, and every cent is public.</p>
+        <p class="pk-socials"><a href="https://www.youtube.com/@HattersMania" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.twitch.tv/hattersmania" target="_blank" rel="noopener">Twitch</a> · <a href="https://bsky.app/profile/alviespurlock.bsky.social" target="_blank" rel="noopener">Bluesky</a> · <a href="https://mastodon.social/@alviespurlock" target="_blank" rel="noopener">Mastodon</a> · <a href="https://www.instagram.com/hattersmania/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61559210605002" target="_blank" rel="noopener">Facebook</a></p></div>
+      <div class="pk-facts"><h2>Contact</h2><dl>
+        <div><dt>Press and business</dt><dd><a href="mailto:madteapartydevelopment@outlook.com">madteapartydevelopment@outlook.com</a></dd></div>
+        <div><dt>Studio site</dt><dd><a href="../index.html">Mad Tea Party Development</a></dd></div>
+        <div><dt>Review copies</dt><dd>Ask by email; include your outlet or channel.</dd></div>
+      </dl></div>
+    </div></section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="#main"><span>Asset<em>Logger</em></span></a>
+          <p>Clean asset documentation without the spreadsheet headache.</p>
+        </div>
+        <div>
+          <h4>Tool</h4>
+          <ul>
+            <li><a href="https://marchharegames.itch.io/asset-logger" target="_blank" rel="noopener">Get it · $1.99</a></li>
+            <li><a href="index.html#how">How it works</a></li>
+            <li><a href="index.html#workflow">See it work</a></li>
+            <li><a href="index.html#features">What it does</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="../index.html#menu">Software Shop</a></li>
+            <li><a href="../index.html#rules">House Rules</a></li>
+            <li><a href="../queens-court/index.html">Queens Court</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="../socials.html">All socials</a></li>
+            <li><a href="https://marchharegames.itch.io" target="_blank" rel="noopener">itch.io</a></li>
+            <li><a href="../index.html">Mad Tea Party</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a class="pk-link" href="press.html">Press kit</a>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../data/used-in.js"></script>
+  <script src="../assets/product.js"></script>
+  <script src="../assets/used-in.js"></script>
+</body>
+</html>

@@ -4,61 +4,73 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Looking Glass · Guides</title>
-  <meta name="description" content="Looking Glass turns your stream recordings into captioned vertical clips, posts them across 7 platforms, and tells followers when you go live. $14.99 one time, Windows.">
-  <meta name="theme-color" content="#0a0b14">
-  <link rel="icon" href="../assets/icons/looking_glass.webp">
+  <meta name="description" content="Looking Glass turns your streams into finished vertical clips and posts every one on every platform you use, with one approval. $14.99 one time, Windows.">
+  <meta name="theme-color" content="#0B0A1A">
+  <link rel="icon" href="../assets/logos/looking-glass.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/product.css">
   <link rel="stylesheet" href="../assets/app.css">
   <link rel="stylesheet" href="../assets/used-in.css">
   <style>
     :root {
-      --bg: #0a0b14; --bg2: #10121e;
-      --panel: #171a2b; --panel2: #10121f; --line: #333a5c;
-      --text: #eef0ff; --muted: #a9b0d4;
-      --a1: #8b5cf6; --a1d: #4c2a9e;
-      --a2: #12b5d0; --a2d: #0b6372;
-      --a3: #ec4899; --a3d: #8a1e55;
-      --neon: #7ee8fa; --neon2: #c4b5fd;
-      --head: 'Syne', system-ui, sans-serif;
-      --body: 'Inter', system-ui, sans-serif;
-      --bevel: rgba(196,181,253,.3);
+      --bg: #0B0A1A; --bg2: #110f24;
+      --panel: rgba(26,23,52,.72); --panel2: rgba(16,14,36,.72); --line: rgba(169,116,255,.32);
+      --text: #DCE3F2; --muted: #a6aec8;
+      --a1: #2EE6D6; --a1d: #0f7f76;
+      --a2: #A974FF; --a2d: #5a2fa8;
+      --a3: #1d1a3a; --a3d: #0a0918;
+      --neon: #2EE6D6; --neon2: #A974FF;
+      --head: 'Outfit', system-ui, sans-serif;
+      --body: 'Outfit', system-ui, sans-serif;
+      --bevel: rgba(46,230,214,.18);
       --title-shadow: none;
-      --hero: radial-gradient(ellipse 50% 60% at 80% 40%, rgba(139,92,246,.28), transparent 70%), radial-gradient(ellipse 45% 50% at 15% 10%, rgba(18,181,208,.18), transparent 70%), linear-gradient(180deg, #0d0f1c, var(--bg));
+      --grad: linear-gradient(90deg, #DCE3F2 0%, #2EE6D6 50%, #A974FF 100%);
+      --hero: radial-gradient(ellipse 50% 60% at 82% 40%, rgba(169,116,255,.26), transparent 70%), radial-gradient(ellipse 45% 50% at 10% 5%, rgba(46,230,214,.16), transparent 70%), var(--bg);
     }
-    body { background: var(--bg); }
-    .a-hero h1, .page-head h1, .neon, .plan h3, .final h2, .wordmark { font-weight: 800; letter-spacing: -.01em; }
-    .p-title { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: -.02em; background: linear-gradient(90deg, #ffffff, #c4b5fd 60%, #7ee8fa); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .p-title span { font-weight: 700; letter-spacing: 0; background: linear-gradient(90deg, #7ee8fa, #c4b5fd, #f0abfc); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .a-hero h1 .say { background: linear-gradient(90deg, #7ee8fa, #c4b5fd, #f0abfc); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .neon { text-transform: none; border-radius: 16px; border-color: transparent; background: linear-gradient(var(--bg), var(--bg)) padding-box, linear-gradient(90deg, #7ee8fa, #c4b5fd, #f0abfc) border-box; box-shadow: 0 0 24px rgba(196,181,253,.25); text-shadow: none; }
-    .neon.alt { background: linear-gradient(var(--bg), var(--bg)) padding-box, linear-gradient(90deg, #f0abfc, #c4b5fd, #7ee8fa) border-box; text-shadow: none; }
-    .wordmark em { font-style: normal; background: linear-gradient(90deg, #7ee8fa, #c4b5fd); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .lg-mark { width: 34px; height: 34px; border-radius: 50%; background: conic-gradient(from 210deg, #7ee8fa, #c4b5fd, #f0abfc, #7ee8fa); box-shadow: inset 0 0 0 5px #0a0b14, 0 0 18px rgba(126,232,250,.45); }
-    .panel { background: linear-gradient(180deg, rgba(23,26,43,.92), rgba(16,18,31,.92)); backdrop-filter: blur(8px); }
-    .card { background: linear-gradient(180deg, rgba(23,26,43,.8), rgba(16,18,31,.8)); }
-    .card .ico { background: radial-gradient(circle at 35% 30%, rgba(126,232,250,.25), rgba(139,92,246,.15)); border-color: rgba(196,181,253,.5); }
-    .step::before { background: linear-gradient(135deg, #8b5cf6, #12b5d0); box-shadow: 0 4px 0 #2a1a5e; font-family: 'Syne', sans-serif; }
-    /* stream → clip mirror */
-    .mirror { display: grid; grid-template-columns: 1fr auto 150px; gap: 16px; align-items: center; width: 100%; max-width: 520px; }
-    .stream { position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; border: 2px solid #000; box-shadow: 0 0 0 1px #333a5c, 0 18px 36px rgba(0,0,0,.5); background: linear-gradient(160deg, #1e2a4a, #2a1650); }
+    body { background: radial-gradient(ellipse 40% 35% at 0% 0%, rgba(46,230,214,.10), transparent 70%) fixed, radial-gradient(ellipse 40% 35% at 100% 100%, rgba(169,116,255,.12), transparent 70%) fixed, var(--bg); }
+    .a-hero h1, .page-head h1, .neon, .final h2, .plan h3, .group h2 { font-weight: 800; letter-spacing: -.015em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; }
+    .a-hero h1 .say { background: linear-gradient(90deg, #2EE6D6, #A974FF); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .neon { text-transform: none; border: 1px solid rgba(46,230,214,.45); border-radius: 16px; box-shadow: 0 0 24px rgba(46,230,214,.18); }
+    .neon.alt { border-color: rgba(169,116,255,.55); box-shadow: 0 0 24px rgba(169,116,255,.22); }
+    .wordmark { font-weight: 700; letter-spacing: -.01em; }
+    .wordmark em { font-style: normal; background: linear-gradient(90deg, #2EE6D6, #A974FF); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .app-logo { width: 38px; height: 38px; filter: drop-shadow(0 0 10px rgba(46,230,214,.35)); }
+    .lg-mark { width: 34px; height: 34px; border-radius: 50%; background: conic-gradient(from 210deg, #2EE6D6, #A974FF, #DCE3F2, #2EE6D6); box-shadow: inset 0 0 0 5px #0B0A1A, 0 0 18px rgba(46,230,214,.5); }
+    .panel { background: linear-gradient(180deg, rgba(26,23,52,.66), rgba(16,14,36,.66)); backdrop-filter: blur(12px); border: 1px solid rgba(169,116,255,.35); outline: none; border-radius: 22px; }
+    .card, .plan, .faq details, .listbox > div, .reqs > div { background: rgba(26,23,52,.55); backdrop-filter: blur(10px); border: 1px solid rgba(169,116,255,.30); }
+    .card { border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.35); } .card:hover { border-color: #2EE6D6; }
+    .card .ico { background: radial-gradient(circle at 35% 30%, rgba(46,230,214,.22), rgba(169,116,255,.14)); border: 1px solid rgba(169,116,255,.5); }
+    .btn { border-radius: 999px; }
+    .btn:not(.b2):not(.dark):not(.soon):not(.ghost) { color: #06201d; text-shadow: none; box-shadow: 0 5px 0 var(--d), 0 0 26px rgba(46,230,214,.45); }
+    .btn:not(.b2):not(.dark):not(.soon):not(.ghost):hover { color: #06201d; }
+    .btn.b2 { color: #fff; box-shadow: 0 5px 0 var(--d), 0 0 22px rgba(169,116,255,.4); }
+    .step::before { background: linear-gradient(135deg, #2EE6D6, #A974FF); box-shadow: 0 4px 0 #2a1a5e; color: #0B0A1A; }
+    .eyebrow { color: #2EE6D6; }
+    .compare .hl { background: rgba(46,230,214,.07); }
+    /* stream -> clip mirror */
+    .mirror-wrap { width: 100%; max-width: 540px; display: grid; gap: 18px; }
+    .mirror { display: grid; grid-template-columns: 1fr auto 150px; gap: 16px; align-items: center; width: 100%; }
+    .stream { position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; border: 1px solid rgba(169,116,255,.45); box-shadow: 0 18px 36px rgba(0,0,0,.5); background: linear-gradient(160deg, #15243f, #24164a); }
     .stream .live { position: absolute; top: 8px; left: 8px; background: #e11d48; color: #fff; font-size: .62rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; letter-spacing: .06em; }
-    .stream .cam { position: absolute; right: 8px; bottom: 8px; width: 28%; aspect-ratio: 4/3; border-radius: 6px; background: radial-gradient(circle at 50% 40%, #f0abfc 0 18%, #6b4fa8 19% 100%); border: 2px solid #000; }
-    .stream .game i { position: absolute; border-radius: 4px; background: rgba(126,232,250,.35); }
-    .stream .game i:nth-child(1) { left: 10%; top: 35%; width: 30%; height: 10%; } .stream .game i:nth-child(2) { left: 18%; top: 55%; width: 18%; height: 18%; background: rgba(196,181,253,.4); } .stream .game i:nth-child(3) { left: 45%; top: 25%; width: 14%; height: 40%; background: rgba(240,171,252,.3); }
-    .stream .bubble { position: absolute; left: 34%; bottom: 14%; background: #fff; color: #10121f; font-weight: 800; font-size: .72rem; padding: 4px 8px; border-radius: 10px 10px 10px 2px; animation: pop 3.6s ease-in-out infinite; }
-    .arrow { font-size: 1.6rem; color: var(--neon); text-shadow: 0 0 12px rgba(126,232,250,.7); }
-    .clip { position: relative; aspect-ratio: 9/16; border-radius: 18px; overflow: hidden; border: 2px solid #000; box-shadow: 0 0 0 1px #c4b5fd, 0 0 40px rgba(196,181,253,.3), 0 20px 40px rgba(0,0,0,.5); background: linear-gradient(180deg, #2a1650, #1e2a4a); animation: glow 3.6s ease-in-out infinite; }
-    .clip-game { position: absolute; inset: 0 0 45% 0; } .clip-game i { position: absolute; border-radius: 4px; background: rgba(126,232,250,.4); } .clip-game i:nth-child(1) { left: 12%; top: 40%; width: 60%; height: 12%; } .clip-game i:nth-child(2) { left: 30%; top: 60%; width: 30%; height: 25%; background: rgba(196,181,253,.45); }
-    .clip-cam { position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: radial-gradient(circle at 50% 45%, #f0abfc 0 22%, #6b4fa8 23% 100%); border-top: 2px solid #000; }
-    .cap { position: absolute; left: 6%; right: 6%; top: 50%; transform: translateY(-50%); text-align: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: .8rem; color: #fff; text-shadow: 0 2px 0 #000, 0 0 6px #000; }
-    .cap b { color: #fde047; }
-    .clip-meta { position: absolute; left: 8px; right: 8px; bottom: 8px; font-size: .55rem; color: #fff; text-shadow: 0 1px 2px #000; } .clip-meta b { color: var(--neon); }
+    .stream .cam { position: absolute; right: 8px; bottom: 8px; width: 28%; aspect-ratio: 4/3; border-radius: 6px; background: radial-gradient(circle at 50% 40%, #A974FF 0 18%, #3b2a78 19% 100%); border: 2px solid #2EE6D6; }
+    .stream .game i { position: absolute; border-radius: 4px; background: rgba(46,230,214,.35); }
+    .stream .game i:nth-child(1) { left: 10%; top: 35%; width: 30%; height: 10%; } .stream .game i:nth-child(2) { left: 18%; top: 55%; width: 18%; height: 18%; background: rgba(169,116,255,.4); } .stream .game i:nth-child(3) { left: 45%; top: 25%; width: 14%; height: 40%; background: rgba(220,227,242,.22); }
+    .stream .bubble { position: absolute; left: 34%; bottom: 14%; background: #fff; color: #0B0A1A; font-weight: 800; font-size: .72rem; padding: 4px 8px; border-radius: 10px 10px 10px 2px; animation: pop 3.6s ease-in-out infinite; }
+    .arrow { font-size: 1.6rem; color: #2EE6D6; text-shadow: 0 0 12px rgba(46,230,214,.7); }
+    .clip { position: relative; aspect-ratio: 9/16; border-radius: 18px; overflow: hidden; border: 1px solid #A974FF; box-shadow: 0 0 40px rgba(169,116,255,.3), 0 20px 40px rgba(0,0,0,.5); background: linear-gradient(180deg, #24164a, #15243f); animation: glow 3.6s ease-in-out infinite; }
+    .clip-game { position: absolute; inset: 0 0 45% 0; } .clip-game i { position: absolute; border-radius: 4px; background: rgba(46,230,214,.4); } .clip-game i:nth-child(1) { left: 12%; top: 40%; width: 60%; height: 12%; } .clip-game i:nth-child(2) { left: 30%; top: 60%; width: 30%; height: 25%; background: rgba(169,116,255,.45); }
+    .clip-cam { position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: radial-gradient(circle at 50% 45%, #A974FF 0 22%, #3b2a78 23% 100%); border-top: 2px solid #2EE6D6; }
+    .cap { position: absolute; left: 6%; right: 6%; top: 50%; transform: translateY(-50%); text-align: center; font-weight: 800; font-size: .8rem; color: #fff; text-shadow: 0 2px 0 #000, 0 0 6px #000; }
+    .cap b { color: #2EE6D6; }
+    .clip-meta { position: absolute; left: 8px; right: 8px; bottom: 8px; font-size: .55rem; color: #fff; text-shadow: 0 1px 2px #000; } .clip-meta b { color: #2EE6D6; }
+    .plats { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+    .plats span { font-size: .72rem; font-weight: 600; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(169,116,255,.35); color: var(--muted); background: rgba(26,23,52,.6); animation: lit 3.6s ease-in-out infinite; animation-delay: calc(1.2s + var(--i) * .12s); }
+    @keyframes lit { 0%, 30%, 100% { color: var(--muted); background: rgba(26,23,52,.6); border-color: rgba(169,116,255,.35); box-shadow: none; } 34%, 75% { color: #0B0A1A; background: #2EE6D6; border-color: #2EE6D6; box-shadow: 0 0 14px rgba(46,230,214,.6); } }
     @keyframes pop { 0%, 15% { opacity: 0; transform: scale(.6); } 25%, 70% { opacity: 1; transform: none; } 85%, 100% { opacity: 0; } }
-    @keyframes glow { 0%, 25% { box-shadow: 0 0 0 1px #c4b5fd, 0 0 20px rgba(196,181,253,.15), 0 20px 40px rgba(0,0,0,.5); } 45%, 80% { box-shadow: 0 0 0 1px #7ee8fa, 0 0 50px rgba(126,232,250,.45), 0 20px 40px rgba(0,0,0,.5); } 100% { box-shadow: 0 0 0 1px #c4b5fd, 0 0 20px rgba(196,181,253,.15), 0 20px 40px rgba(0,0,0,.5); } }
-    @media (prefers-reduced-motion: reduce) { .stream .bubble, .clip { animation: none; } }
+    @keyframes glow { 0%, 25% { box-shadow: 0 0 20px rgba(169,116,255,.15), 0 20px 40px rgba(0,0,0,.5); } 45%, 80% { box-shadow: 0 0 50px rgba(46,230,214,.45), 0 20px 40px rgba(0,0,0,.5); } 100% { box-shadow: 0 0 20px rgba(169,116,255,.15), 0 20px 40px rgba(0,0,0,.5); } }
+    @media (prefers-reduced-motion: reduce) { .stream .bubble, .clip, .plats span { animation: none; } }
     @media (max-width: 520px) { .mirror { grid-template-columns: 1fr 110px; } .arrow { display: none; } }
   </style>
 </head>
@@ -71,7 +83,7 @@
 
   <header class="p-nav">
     <div class="wrap">
-      <a class="wordmark" href="index.html"><span class="lg-mark"></span><span>Looking <em>Glass</em></span></a>
+      <a class="wordmark" href="index.html"><img class="app-logo" src="../assets/logos/looking-glass.svg" alt=""><span>Looking <em>Glass</em></span></a>
       <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
       <nav class="p-links">
         <a href="features.html">Features</a>
@@ -94,9 +106,9 @@
       <div class="doc-nav"><a class="btn b2 small" href="#setup">Setup Guide</a><a class="btn b2 small" href="#operating">Operating Guide</a></div>
       <div class="panel reveal">
         <section id="setup"><h2>Setup Guide <span class="pending">Full guide at launch</span></h2>
-          <p>What it walks you through:</p><ol><li>Running the installer: double-click <b>Run Looking Glass</b>.</li><li>What installs on first run (Python, ffmpeg, Ollama, its AI models and the speech-to-text model), all free.</li><li>Pointing it at your stream recordings (OBS or your platform's download).</li><li>Creating your free developer sign-in on each platform for auto-posting, one by one.</li><li>Optional: turning on automatic Twitch downloading (off by default; may break Twitch's terms).</li></ol></section>
+          <p>What it walks you through:</p><ol><li>Running the installer: double-click <b>Run Looking Glass</b>.</li><li>What installs on first run (Python, ffmpeg, Ollama and its AI models, the speech-to-text model, OpenCV and free fonts), all free.</li><li>Pointing it at your stream recordings (OBS or your platform's download).</li><li>Creating your free developer sign-in on each platform for auto-posting, one by one.</li><li>Phone access: home Wi-Fi, or a secure link with a passcode (optional free Cloudflare account for a fixed link).</li><li>Optional: turning on automatic Twitch downloading (off by default; may break Twitch's terms).</li></ol></section>
         <section id="operating"><h2>Operating Guide <span class="pending">Full guide at launch</span></h2>
-          <p>What it covers:</p><ol><li>The questionnaire: your brand, platforms, voice and how much to post.</li><li>Dropping in a recording or VOD, and setting your own clip words and lengths.</li><li>Smart crop and the Splitscreen title keywords.</li><li>Reviewing clips: approve, swap in your own polished version, or turn on automatic approval.</li><li>Going-live posts, the weekly YouTube compilation, the schedule and analytics.</li><li>Updating: download the newest version from Gumroad; your settings and data stay.</li></ol></section>
+          <p>What it covers:</p><ol><li>The questionnaire: your channel, platforms and voice.</li><li>Clip words: the built-in ones, your own words and lengths, and Second Looks.</li><li>The Studio and the Edit Room: finishing, fixing captions, stitching moments, your stash of media and music.</li><li>Approving: one approval for every platform, or automatic approval.</li><li>Grow: pacing, the Drop Calendar and Mass reschedule, going-live posts, Best Of and Growth.</li><li>Channels: running several at once, each with its own settings.</li><li>Updating: download the newest version from Gumroad; your settings and data stay.</li></ol></section>
       </div>
     </div></section>
   </main>
@@ -105,8 +117,8 @@
     <div class="wrap">
       <div class="cols">
         <div>
-          <a class="wordmark" href="index.html"><span class="lg-mark"></span><span>Looking <em>Glass</em></span></a>
-          <p>Every stream, clipped. A one-time purchase from Mad Tea Party Development.</p>
+          <a class="wordmark" href="index.html"><img class="app-logo" src="../assets/logos/looking-glass.svg" alt=""><span>Looking <em>Glass</em></span></a>
+          <p>Every stream, clipped and everywhere. A one-time purchase from Mad Tea Party Development.</p>
         </div>
         <div><h4>Looking Glass</h4><ul>
           <li><a href="index.html">Home</a></li><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="guides.html">Guides</a></li><li><a href="faq.html">FAQ</a></li><li><a href="used-in.html">Used By</a></li>
@@ -121,9 +133,10 @@
           <li><a href="../socials.html">Socials</a></li>
         </ul></div>
       </div>
-      <p class="cross" style="margin-top:26px">Want outreach to press and creators too? <a href="../queens-court/index.html">Queens Court</a> runs your whole launch for $19.99.</p>
+      <p class="cross" style="margin-top:26px">Need outreach to press and creators too? <a href="../queens-court/index.html">Queens Court</a> runs your whole launch for $19.99.</p>
       <div class="legal">
         <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a class="pk-link" href="press.html">Press kit</a>
         <a href="#main">Back to top ↑</a>
       </div>
     </div>

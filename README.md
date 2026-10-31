@@ -116,3 +116,10 @@ every page. Same rules: no cookies, no visitor ID, skips Do Not Track, bots and 
 In the Sheet, TrafficReceiver.gs (run `setup()`) builds an Overview tab plus one tab per brand: Mad Tea Party
 Development, March Hare Games and Mimic Masters. To count a new landing page, add it to LANDING in
 `assets/traffic.js` and to BRANDS in TrafficReceiver.gs, then run `setup()` again.
+
+## Press kits
+Every software product and Game Dev Kit has a press kit page, linked only from the bottom strip of its footer
+(never the top menu): queens-court/press.html, looking-glass/press.html, revenue-simulator/press.html,
+asset-logger/press.html, dnd-combat-balancer/press.html, dev-kits/press.html (hub) and dev-kits/<kit>-press.html.
+Each has a downloadable .zip in its folder's press/ subfolder (factsheet.txt + logo + screenshots).
+These pages aren't counted by the traffic tracker.

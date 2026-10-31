@@ -4,58 +4,69 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Queens Court · Guides</title>
-  <meta name="description" content="Queens Court finds the people who should hear about your work, writes every pitch, post and follow-up in your voice, and waits for your yes. $19.99 one time, Windows.">
-  <meta name="theme-color" content="#14060b">
-  <link rel="icon" href="../assets/icons/crown.webp">
+  <meta name="description" content="Queens Court finds the people who should hear about your work, writes every pitch, post and follow-up in your voice, clips your streams, and waits for your yes. $19.99 one time, Windows.">
+  <meta name="theme-color" content="#170A12">
+  <link rel="icon" href="../assets/logos/queens-court.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/product.css">
   <link rel="stylesheet" href="../assets/app.css">
   <link rel="stylesheet" href="../assets/used-in.css">
   <style>
     :root {
-      --bg: #12050a; --bg2: #1c0910;
-      --panel: #2a0d17; --panel2: #1a070e; --line: #5e1a2c;
-      --text: #fbeee6; --muted: #d4b4b8;
-      --a1: #d4183a; --a1d: #6e0717;
-      --a2: #c9952b; --a2d: #6a4a0c;
-      --a3: #4a1022; --a3d: #1a050b;
-      --neon: #f3c55a; --neon2: #ff4d6d;
-      --head: 'Playfair Display', Georgia, serif;
-      --body: 'DM Sans', system-ui, sans-serif;
-      --bevel: rgba(243,197,90,.32);
-      --title-shadow: 0 3px 0 #3a0610;
-      --hero: radial-gradient(ellipse 60% 70% at 78% 40%, rgba(212,24,58,.35), transparent 70%), radial-gradient(ellipse 50% 60% at 10% 0%, rgba(243,197,90,.12), transparent 70%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ctext x='8' y='30' font-size='22' fill='%23ffffff' fill-opacity='.035'%3E%E2%99%A5%3C/text%3E%3Ctext x='48' y='70' font-size='22' fill='%23ffffff' fill-opacity='.035'%3E%E2%99%A0%3C/text%3E%3C/svg%3E"), var(--bg);
+      --bg: #170A12; --bg2: #1e0e18;
+      --panel: #28121F; --panel2: #1e0d17; --line: rgba(227,180,72,.42);
+      --text: #F5EBDD; --muted: #d6c6b4;
+      --a1: #E3B448; --a1d: #7a5a12;
+      --a2: #C8102E; --a2d: #5e0614;
+      --a3: #3a1a2a; --a3d: #160810;
+      --neon: #E3B448; --neon2: #C8102E;
+      --head: 'Cinzel', Georgia, serif;
+      --body: 'Nunito', system-ui, sans-serif;
+      --bevel: rgba(227,180,72,.26);
+      --title-shadow: 0 3px 0 #2a0612;
+      --checker: conic-gradient(rgba(245,235,221,.028) 25%, transparent 0 50%, rgba(245,235,221,.028) 0 75%, transparent 0) 0 0 / 56px 56px;
+      --hero: radial-gradient(ellipse 60% 70% at 78% 40%, rgba(200,16,46,.30), transparent 70%), radial-gradient(ellipse 50% 60% at 10% 0%, rgba(227,180,72,.12), transparent 70%), var(--checker), var(--bg);
     }
-    body { background: var(--bg); }
-    .p-title, .a-hero h1, .page-head h1, .neon, .plan h3, .final h2 { font-weight: 900; }
-    .a-hero h1 { font-style: italic; }
-    .p-title { font-family: 'Playfair Display', serif; font-weight: 900; color: #fbeee6; text-shadow: 0 3px 0 #3a0610, 0 0 30px rgba(212,24,58,.45); }
-    .p-title span { font-style: italic; font-weight: 700; color: var(--neon); text-shadow: 0 2px 0 #3a0610; }
-    .neon { font-family: 'Playfair Display', serif; font-weight: 900; text-transform: none; letter-spacing: .01em; border-radius: 4px; }
-    .wordmark { font-family: 'Playfair Display', serif; font-weight: 900; } .wordmark em { color: var(--neon); font-style: italic; }
-    .qc-mark { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe08a, #c9952b 70%); color: #3a0610; font-size: 1.25rem; box-shadow: 0 0 0 2px #000, 0 0 16px rgba(243,197,90,.4); }
-    .btn { border-radius: 10px; }
-    .card .ico { background: radial-gradient(circle at 35% 30%, #4a1022, #1a070e); border-color: var(--neon); }
-    .step::before { background: var(--a1); box-shadow: 0 4px 0 var(--a1d); font-family: 'Playfair Display', serif; }
-    .compare .hl { background: rgba(243,197,90,.08); }
+    body { background: var(--checker), var(--bg); }
+    .a-hero h1, .page-head h1, .neon, .plan h3, .final h2, .wordmark, .card h3, .group h2 { font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: .02em; }
+    .a-hero h1, .page-head h1 { color: #F5EBDD; }
+    .a-hero h1 { text-shadow: 0 3px 0 #2a0612, 0 0 30px rgba(227,180,72,.25); }
+    .neon { text-transform: none; color: var(--a1); border: 1px solid rgba(227,180,72,.55); border-radius: 4px; box-shadow: 0 0 18px rgba(227,180,72,.18); text-shadow: 0 0 12px rgba(227,180,72,.35); }
+    .neon.alt { color: #F5EBDD; border-color: rgba(200,16,46,.7); box-shadow: 0 0 18px rgba(200,16,46,.25); text-shadow: 0 0 12px rgba(200,16,46,.5); }
+    .wordmark em { color: var(--a1); font-style: normal; }
+    .app-logo { width: 38px; height: 38px; filter: drop-shadow(0 0 10px rgba(227,180,72,.35)); }
+    .qc-mark { position: relative; display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #f7d98a, #E3B448 55%, #a07418); color: #2a0612; font-size: 1.2rem; box-shadow: 0 0 0 2px #000, 0 0 16px rgba(227,180,72,.4); font-style: normal; }
+    .qc-mark i { position: absolute; right: -4px; bottom: -3px; font-style: normal; font-size: .75rem; color: #C8102E; text-shadow: 0 0 0 #000, 1px 1px 0 #000; }
+    .btn { border-radius: 8px; font-weight: 800; }
+    .btn:not(.b2):not(.dark):not(.soon):not(.ghost) { color: #2a0612; text-shadow: none; }
+    .btn:not(.b2):not(.dark):not(.soon):not(.ghost):hover { color: #2a0612; }
+    .card { position: relative; border: 1px solid var(--line); border-radius: 12px; }
+    .card::after { content: "♠"; position: absolute; top: 8px; right: 12px; font-size: .95rem; color: var(--a1); opacity: .75; }
+    .card:nth-child(4n+2)::after { content: "♥"; color: #C8102E; } .card:nth-child(4n+3)::after { content: "♦"; color: #C8102E; } .card:nth-child(4n)::after { content: "♣"; }
+    .card .ico { background: radial-gradient(circle at 35% 30%, #3a1a2a, #1e0d17); border: 1px solid var(--a1); }
+    .plan { border: 1px solid var(--line); } .plan.this { border-color: var(--a1); }
+    .panel { border-color: #000; outline-color: rgba(227,180,72,.18); }
+    .step::before { background: var(--a2); box-shadow: 0 4px 0 var(--a2d); font-family: 'Cinzel', serif; color: #F5EBDD; }
+    .compare .hl { background: rgba(227,180,72,.08); }
+    .eyebrow { color: var(--a1); }
     /* phone + card deck */
-    .phone { position: relative; width: 270px; height: 520px; border-radius: 42px; background: #0b0306; border: 3px solid #000; box-shadow: 0 0 0 2px #5e1a2c, 0 0 0 9px #1a070e, 0 0 0 11px #3a0b18, 0 30px 60px rgba(0,0,0,.6), 0 0 80px rgba(212,24,58,.25); padding: 22px 16px; display: flex; flex-direction: column; transform: rotate(3deg); }
-    .phone-top { display: flex; justify-content: space-between; font-size: .8rem; color: var(--muted); padding: 4px 8px 12px; } .phone-top span:first-child { color: var(--neon); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .phone { position: relative; width: 270px; height: 520px; border-radius: 42px; background: #0f0509; border: 3px solid #000; box-shadow: 0 0 0 2px #5a3a22, 0 0 0 9px #1e0d17, 0 0 0 11px #3a2412, 0 30px 60px rgba(0,0,0,.6), 0 0 80px rgba(200,16,46,.22); padding: 22px 16px; display: flex; flex-direction: column; transform: rotate(3deg); }
+    .phone-top { display: flex; justify-content: space-between; font-size: .8rem; color: var(--muted); padding: 4px 8px 12px; } .phone-top span:first-child { color: var(--a1); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-family: 'Cinzel', serif; }
     .deck { position: relative; flex: 1; }
-    .pcard { position: absolute; inset: 0; border-radius: 18px; background: #fbf3e8; border: 2px solid #000; }
-    .pcard.back2 { transform: rotate(-7deg) translate(-8px, 6px); background: #d4183a; }
-    .pcard.back1 { transform: rotate(-3deg) translate(-3px, 3px); background: #f3c55a; }
-    .pcard.front { padding: 18px; color: #2a0d17; animation: deal 4.5s ease-in-out infinite; }
-    .pcard .suit { position: absolute; top: 10px; right: 14px; color: #d4183a; font-size: 1.6rem; }
+    .pcard { position: absolute; inset: 0; border-radius: 18px; background: #F5EBDD; border: 2px solid #000; }
+    .pcard.back2 { transform: rotate(-7deg) translate(-8px, 6px); background: #C8102E; }
+    .pcard.back1 { transform: rotate(-3deg) translate(-3px, 3px); background: #E3B448; }
+    .pcard.front { padding: 18px; color: #28121F; animation: deal 4.5s ease-in-out infinite; }
+    .pcard .suit { position: absolute; top: 10px; right: 14px; color: #C8102E; font-size: 1.6rem; }
     .pc-kind { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: #8a3a4a; font-weight: 800; }
     .pc-to { font-weight: 800; margin: 8px 0 6px; font-size: .95rem; }
-    .pc-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.05rem; line-height: 1.25; margin-bottom: 14px; }
-    .pc-lines i { display: block; height: 8px; border-radius: 4px; background: #e8d8c8; margin: 8px 0; } .pc-lines i.short { width: 60%; }
+    .pc-sub { font-family: 'Cinzel', serif; font-size: 1rem; line-height: 1.3; margin-bottom: 14px; }
+    .pc-lines i { display: block; height: 8px; border-radius: 4px; background: #e2d4c0; margin: 8px 0; } .pc-lines i.short { width: 60%; }
     .phone-btns { display: flex; justify-content: space-around; padding-top: 16px; }
     .phone-btns span { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.4rem; font-weight: 800; border: 2px solid #000; }
-    .phone-btns .no { background: #3a0b18; color: #ff8fa3; } .phone-btns .edit { background: #2a2a36; color: #fff; } .phone-btns .yes { background: #1f9c5c; color: #fff; box-shadow: 0 0 18px rgba(31,156,92,.5); }
+    .phone-btns .no { background: #3a0b18; color: #ff8fa3; } .phone-btns .edit { background: #2a2a36; color: #fff; } .phone-btns .yes { background: #E3B448; color: #2a0612; box-shadow: 0 0 18px rgba(227,180,72,.5); }
     @keyframes deal { 0%, 70%, 100% { transform: none; } 80% { transform: translateX(26px) rotate(6deg); } 90% { transform: translateX(-4px) rotate(-1deg); } }
     @media (prefers-reduced-motion: reduce) { .pcard.front { animation: none; } }
     @media (max-width: 900px) { .phone { transform: none; } }
@@ -70,7 +81,7 @@
 
   <header class="p-nav">
     <div class="wrap">
-      <a class="wordmark" href="index.html"><span class="qc-mark">♛</span><span>Queens <em>Court</em></span></a>
+      <a class="wordmark" href="index.html"><img class="app-logo" src="../assets/logos/queens-court.svg" alt=""><span>Queens <em>Court</em></span></a>
       <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
       <nav class="p-links">
         <a href="features.html">Features</a>
@@ -93,9 +104,9 @@
       <div class="doc-nav"><a class="btn b2 small" href="#setup">Setup Guide</a><a class="btn b2 small" href="#operating">Operating Guide</a></div>
       <div class="panel reveal">
         <section id="setup"><h2>Setup Guide <span class="pending">Full guide at launch</span></h2>
-          <p>What it walks you through:</p><ol><li>Running the installer: double-click <b>Run Queens Court</b>.</li><li>What installs on first run (Python, ffmpeg, Ollama and its AI models), all free.</li><li>Connecting your email account (Outlook, Gmail or any SMTP/IMAP account).</li><li>Creating your free developer sign-in on each platform for auto-posting, one by one.</li><li>Optional: Docker Desktop for free, unlimited web search.</li></ol></section>
+          <p>What it walks you through:</p><ol><li>Running the installer: double-click <b>Run Queens Court</b>.</li><li>What installs on first run (Python, ffmpeg, Ollama and its AI models, the speech-to-text model, OpenCV and free fonts), all free.</li><li>Connecting your email account (Outlook, Gmail or any SMTP/IMAP account).</li><li>Creating your free developer sign-in on each platform for auto-posting, one by one.</li><li>Phone access: home Wi-Fi, or a secure link with a passcode (optional free Cloudflare account for a fixed link).</li><li>Optional: Docker Desktop for free, unlimited web search.</li></ol></section>
         <section id="operating"><h2>Operating Guide <span class="pending">Full guide at launch</span></h2>
-          <p>What it covers:</p><ol><li>The questionnaire: what you promote, who you want to reach, your voice.</li><li>Sign Off: finding outlets, creators and communities and writing drafts.</li><li>Swipe: approving, editing and rejecting on your phone.</li><li>Sending: safe-paced email, scheduled posts and the shared reply inbox.</li><li>Clips, grants and awards, and running several projects at once.</li><li>Updating: download the newest version from Gumroad; your settings and data stay.</li></ol></section>
+          <p>What it covers:</p><ol><li>The questionnaire: what you promote, who you want to reach, your voice, whether you stream.</li><li>Sign Off: finding outlets, creators and communities and writing drafts.</li><li>Today and Swipe: approving, editing and rejecting, on your PC or your phone.</li><li>Sending: safe-paced email, the shared reply inbox and QnA Memory.</li><li>Posts and clips: clip words, the Studio, the Clip Editor, pacing and Mass reschedule.</li><li>Grants, awards, coverage, and running several projects at once.</li><li>Updating: download the newest version from Gumroad; your settings and data stay.</li></ol></section>
       </div>
     </div></section>
   </main>
@@ -104,7 +115,7 @@
     <div class="wrap">
       <div class="cols">
         <div>
-          <a class="wordmark" href="index.html"><span class="qc-mark">♛</span><span>Queens <em>Court</em></span></a>
+          <a class="wordmark" href="index.html"><img class="app-logo" src="../assets/logos/queens-court.svg" alt=""><span>Queens <em>Court</em></span></a>
           <p>Your launch team, on your own PC. A one-time purchase from Mad Tea Party Development.</p>
         </div>
         <div><h4>Queens Court</h4><ul>
@@ -123,6 +134,7 @@
       <p class="cross" style="margin-top:26px">Only need social posts and stream clips? <a href="../looking-glass/index.html">Looking Glass</a> does that half for $14.99.</p>
       <div class="legal">
         <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a class="pk-link" href="press.html">Press kit</a>
         <a href="#main">Back to top ↑</a>
       </div>
     </div>

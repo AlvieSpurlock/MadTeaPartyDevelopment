@@ -16,8 +16,8 @@
   var DND = { name: "D&D Combat Balancer", by: "Mad Tea Party Development", url: "../dnd-combat-balancer/index.html", logo: "assets/covers/dnd-combat-balancer.webp" };
   var AL  = { name: "Asset Logger", by: "Mad Tea Party Development", url: "../asset-logger/index.html", logo: "assets/covers/asset-logger.webp" };
   var SIM = { name: "Mobile Game Revenue Simulator", by: "Mad Tea Party Development", url: "../revenue-simulator/index.html", logo: "assets/icons/coins_pouch.webp" };
-  var QC  = { name: "Queens Court", by: "Mad Tea Party Development", url: "../queens-court/index.html", logo: "assets/icons/crown.webp" };
-  var LG  = { name: "Looking Glass", by: "Mad Tea Party Development", url: "../looking-glass/index.html", logo: "assets/icons/looking_glass.webp" };
+  var QC  = { name: "Queens Court", by: "Mad Tea Party Development", url: "../queens-court/index.html", logo: "assets/logos/queens-court.svg" };
+  var LG  = { name: "Looking Glass", by: "Mad Tea Party Development", url: "../looking-glass/index.html", logo: "assets/logos/looking-glass.svg" };
   var use = function (p, how) { return Object.assign({}, p, { how: how }); };
 
   window.USED_IN = {
