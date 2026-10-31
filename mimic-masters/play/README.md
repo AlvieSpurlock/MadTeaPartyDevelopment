@@ -15,13 +15,13 @@ The timer and panel live on the web page, so the game itself needs no changes.
 
 ## 2. Copy the build here
 
-From Unity's output folder, copy the **Build** folder into `mimic-masters/play/`
+From Unity's output folder, copy the **Build** folder into `play/`
 (and **StreamingAssets** too, if your build has one). You should end up with:
 
-    mimic-masters/play/Build/MimicMasters.loader.js
-    mimic-masters/play/Build/MimicMasters.data
-    mimic-masters/play/Build/MimicMasters.framework.js
-    mimic-masters/play/Build/MimicMasters.wasm
+    play/Build/MimicMasters.loader.js
+    play/Build/MimicMasters.data
+    play/Build/MimicMasters.framework.js
+    play/Build/MimicMasters.wasm
 
 Ignore Unity's index.html and TemplateData; play.html replaces them.
 
