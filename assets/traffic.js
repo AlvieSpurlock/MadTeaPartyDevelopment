@@ -2,9 +2,10 @@
    the Mimic Masters copy). Same rules and the same Google Sheet as the standalone Mimic Masters site
    (see the Traffic Tracking blueprint):
    - Sends exactly two fields: p = page, s = source. No cookies, no visitor ID.
-   - p names the site as well as the page, so every site gets its own rows:
-       studio.index.html, studio.games.html, queens-court.pricing.html, dev-kits.admob.html,
-       mimic-masters.play.html ... (the standalone Mimic Masters site keeps its plain names: index.html ...)
+   - Only landing pages are counted here (the LANDING list below): the studio homes, each software,
+     dev kit and game landing page. p names the site as well as the page: studio.index.html,
+     queens-court.index.html, dev-kits.admob.html ... (the standalone Mimic Masters site counts every
+     page with its plain names: index.html, play.html ...)
    - s = ?src= / ?utm_source= tag, else "site" (from your own sites), "from:<host>" or "direct".
    - Skips localhost, Do Not Track / Global Privacy Control, bots and prerendering, and any device
      opted out with ?notrack=1 (?notrack=0 counts it again). Counts each page once per tab visit. */
@@ -28,6 +29,18 @@
     var folder = segs[segs.length - 1] || "";
     var site = (!folder || folder === REPO) ? "studio" : folder.replace(/[^a-z0-9_-]/g, "");
     var page = (site + "." + file).slice(-65);
+
+    // Only landing pages are counted on the studio sites, so the Sheet shows which products get the most eyes.
+    var LANDING = [
+      // Mad Tea Party Development
+      "studio.index.html", "studio.transparency.html", "studio.coalition.html", "studio.socials.html",
+      "queens-court.index.html", "looking-glass.index.html", "revenue-simulator.index.html",
+      "asset-logger.index.html", "dnd-combat-balancer.index.html",
+      "dev-kits.index.html", "dev-kits.levelplay.html", "dev-kits.appodeal.html", "dev-kits.admob.html", "dev-kits.localization.html",
+      // March Hare Games
+      "studio.games.html", "mimic-masters.index.html", "scorchlet.index.html", "hero-impervious.index.html", "we-built-this-city.index.html"
+    ];
+    if (LANDING.indexOf(page) < 0) return;
 
     var src = (q.get("src") || q.get("utm_source") || "").toLowerCase();
     if (!src) {

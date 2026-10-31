@@ -15,17 +15,16 @@ window.SITE={
   },
   itchPrice:"$2.99",
   // "Free Demo" page (play.html): the game in the browser as a timed demo, then the store panel.
-  // Put your Unity WebGL build's Build folder at play/Build (see play/README.md).
+  // Put your Unity WebGL build's Build folder at mimic-masters/play/Build (see play/README.md).
   webPlay:{
-    buildBase:"play/Build/",   // where the Build folder lives
-    streamingAssets:"play/StreamingAssets",
+    buildBase:"https://alviespurlock.github.io/MadTeaPartyDevelopment/mimic-masters/play/Build/play/Build/",   // where the Build folder lives
+    streamingAssets:"https://alviespurlock.github.io/MadTeaPartyDevelopment/mimic-masters/play/Build/play/StreamingAssets",
     buildName:"MimicMasters",   // the start of the build's file names
     fileSuffix:"",              // "" for uncompressed loader/framework files (what's uploaded now)
     gzip:true,                  // the split pieces are gzipped and unpacked in the browser (smaller downloads)
     parts:{data:5, wasm:1},     // big files are split into numbered pieces; how many of each
     productName:"Mimic Masters Memory Game", productVersion:"1.4.0",   // must match the Unity build (keeps players' saves)
     freeMinutes:10,             // length of the demo in minutes
-    graceSeconds:60,            // after time is up, how long the current round gets to finish
     aspect:"9 / 16"             // the game's shape: "9 / 16" portrait, "16 / 9" landscape
   },
 
@@ -33,7 +32,7 @@ window.SITE={
   // If set, it is used instead of data/stores.csv / data/games.csv (falls back to them on failure).
   // Press page: Google Sheet with tabs named Videos and Press (columns: Thumbnail, Description, Date, Link). Share it as "Anyone with the link: Viewer".
   pressSheetUrl:"https://docs.google.com/spreadsheets/d/1-EAeArB_0UWxSoTxya9A-qL-SpKa5cw5RTqVdsQCdNI/edit?usp=sharing",
-  trafficUrl:"https://script.google.com/macros/s/AKfycbxQPRHkJw_xzJ2kGwJy28oEKJ_15cpd4gmDQOzhY_d9waQCcfOylBdEOehHd9ji-ihB/exec",   // Page-view counter: paste your TrafficReceiver web app URL (ends in /exec). Leave blank to count nothing.
+  trafficUrl:"",   // Left blank on this copy: the studio's ../assets/traffic.js counts these pages as mimic-masters.<page>, so the standalone site's numbers stay separate.   // Page-view counter: paste your TrafficReceiver web app URL (ends in /exec). Leave blank to count nothing.
   // Landing page "Platform Progress" block. ios.status and ios.asOf are plain text you edit as things change.
   // Android shows a live tester count from a Google Sheet: the number of non-empty cells in testersColumn (blank cells are ignored). Share that Sheet as "Anyone with the link: Viewer".
   // When stores.ios / stores.android above hold a real store link, that platform switches to "Available now", and the block hides once both are live.
@@ -51,7 +50,7 @@ window.SITE={
   donationCharity:["ASAN","Autistic Self Advocacy Network"],
   // Actual monthly payouts (Google Play, App Store, itch.io): the shared CSV in the main site's data folder.
   // When it lists donations, it is used for "Donated so far" instead of the ledger Sheet above.
-  transparencyCsv:"https://alviespurlock.github.io/MadTeaPartyDevelopment/data/mimic-masters.csv",
+  transparencyCsv:"../data/mimic-masters.csv",
   // Estimated raised: the Google Sheet the games report to (tab "Players").
   contributionsSheetUrl:"https://docs.google.com/spreadsheets/d/1KCmfXcqwW6QI4aUAgZk9iZ3ofzt2U2F8g2hDD4U6YSc/edit?usp=sharing"
 };

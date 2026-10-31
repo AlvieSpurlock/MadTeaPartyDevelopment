@@ -107,14 +107,12 @@ line into the right list. An empty list shows a "Your project could be first" no
 
 ## Traffic per site and page
 
-Every studio page, product site and the Mimic Masters copy load `assets/traffic.js` (through `main.js` or
-`assets/product.js`, or directly on the Mimic Masters pages). It sends page views to the same Google Sheet as the
-standalone Mimic Masters site, using the same rules: no cookies, no visitor ID, skips Do Not Track, bots and
-`?notrack=1` devices.
+The studio pages and product sites load `assets/traffic.js` (through `main.js` or `assets/product.js`, or
+directly on the Mimic Masters copy). It counts **landing pages only** (the LANDING list in that file): the
+Software Shop home, studio pages, every software, dev kit and game landing page. Subpages like Features or
+Pricing aren't counted. Views go to the same Google Sheet as the standalone Mimic Masters site, which counts
+every page. Same rules: no cookies, no visitor ID, skips Do Not Track, bots and `?notrack=1` devices.
 
-Each row names the site and the page: `studio.index.html`, `queens-court.pricing.html`, `dev-kits.admob.html`,
-`mimic-masters.play.html` and so on (the standalone Mimic Masters site keeps its plain names like `index.html`).
-Tag any link you hand out with `?src=name` to see it as its own source.
-
-To group the new pages in the Sheet's Totals tab, add their names to the PAGES array in TrafficReceiver.gs and
-run setup() again. Until then they show under "Other pages".
+In the Sheet, TrafficReceiver.gs (run `setup()`) builds an Overview tab plus one tab per brand: Mad Tea Party
+Development, March Hare Games and Mimic Masters. To count a new landing page, add it to LANDING in
+`assets/traffic.js` and to BRANDS in TrafficReceiver.gs, then run `setup()` again.

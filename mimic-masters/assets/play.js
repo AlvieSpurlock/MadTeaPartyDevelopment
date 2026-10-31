@@ -3,7 +3,7 @@
    Settings live in assets/config.js → stores, itchPrice, webPlay. Nothing to edit here. */
 (function () {
   var S = window.SITE || {};
-  var W = Object.assign({ buildName: "MimicMasters", fileSuffix: "", freeMinutes: 5, graceSeconds: 60, aspect: "9 / 16" }, S.webPlay || {});
+  var W = Object.assign({ buildName: "MimicMasters", fileSuffix: "", freeMinutes: 10, aspect: "9 / 16" }, S.webPlay || {});
   var stores = S.stores || {};
   var KEY = "mm_free_play_seconds";
   var limit = W.freeMinutes * 60;
@@ -135,16 +135,10 @@
     if (!document.hidden) played += 1;          // only count time the page is on screen
     if (Math.floor(played) % 10 === 0) save(played);
     var left = Math.max(0, Math.ceil(limit - played));
-    timeLeft.textContent = left > 0 ? Math.floor(left / 60) + ":" + String(left % 60).padStart(2, "0") + " left in the demo" : "The demo is over: finish your round!";
-    if (played >= limit) {
-      if (!overAt) { overAt = played; toast.hidden = false; }
-      if (played - overAt >= W.graceSeconds) showPanel();
-    }
+    timeLeft.textContent = Math.floor(left / 60) + ":" + String(left % 60).padStart(2, "0") + " left in the demo";
+    if (played >= limit) showPanel();   // time's up: the demo ends right away
   }
 
-  // Optional: if the game calls window.MMRoundEnded() (see play/unity-optional), the panel
-  // shows the moment the round in progress ends, instead of after the grace time.
-  window.MMRoundEnded = function () { if (played >= limit) showPanel(); };
 
   function showPanel() {
     if (shown) return;
