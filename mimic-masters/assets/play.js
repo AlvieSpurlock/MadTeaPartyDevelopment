@@ -41,7 +41,7 @@
     if (stores.itch) {
       var i = document.createElement("a");
       i.className = "btn dk"; i.href = stores.itch; i.target = "_blank"; i.rel = "noopener";
-      i.textContent = "itch.io · " + (S.itchPrice || "") + " once, no ads";
+      i.textContent = "itch.io · " + (S.itchPrice || "") + " once · Windows & Android, no ads";
       box.appendChild(i);
     }
   }
@@ -49,8 +49,8 @@
   var anyLive = !!(stores.ios || stores.android);
   document.querySelectorAll("[data-mm-free-line]").forEach(function (el) {
     el.textContent = anyLive
-      ? "Keep playing all 7 modes for free on your phone. Prefer no ads? Get it once on itch.io."
-      : "Mimic Masters is coming free to Google Play and the App Store. Join the testers to play it on your phone now, or get it once on itch.io with no ads.";
+      ? "Keep playing all 7 modes for free on your phone. Prefer no ads? Get it once on itch.io for Windows or Android."
+      : "Mimic Masters is coming free to Google Play and the App Store. Join the testers to play it on your phone now, or get it once on itch.io for Windows or Android, with no ads.";
   });
 
   // ---- Already used the free minutes on this browser? ----
