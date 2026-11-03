@@ -11,6 +11,6 @@ Drop these files in this folder with exactly these names. Each one appears on th
 | edit-room.png | The Edit Room with a clip open | Features → Create |
 | finished-clip.png | One finished 9:16 clip (portrait frame) | Features → Create |
 | drop-calendar.png | The Drop Calendar with clips scheduled | Features → Grow |
-| growth.png | Growth charts with best posting times | Features → Grow |
+| growth.png | Growth charts | Features → Grow |
 
 The demo video goes on YouTube. Paste its ID into data/products.js (demo: "...").

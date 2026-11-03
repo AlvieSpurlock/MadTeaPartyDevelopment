@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Queens Court · What&#x27;s New</title>
+  <meta name="description" content="Queens Court finds the people who should hear about your work, writes every pitch, post and follow-up in your voice, clips your streams, and waits for your yes. $19.99 one time, Windows.">
+  <meta name="theme-color" content="#170A12">
+  <link rel="icon" href="../assets/logos/queens-court.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/product.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="stylesheet" href="../assets/used-in.css">
+  <style>
+    :root {
+      --bg: #170A12; --bg2: #1e0e18;
+      --panel: #28121F; --panel2: #1e0d17; --line: rgba(227,180,72,.42);
+      --text: #F5EBDD; --muted: #d6c6b4;
+      --a1: #E3B448; --a1d: #7a5a12;
+      --a2: #C8102E; --a2d: #5e0614;
+      --a3: #3a1a2a; --a3d: #160810;
+      --neon: #E3B448; --neon2: #C8102E;
+      --head: 'Cinzel', Georgia, serif;
+      --body: 'Nunito', system-ui, sans-serif;
+      --bevel: rgba(227,180,72,.26);
+      --title-shadow: 0 3px 0 #2a0612;
+      --checker: conic-gradient(rgba(245,235,221,.028) 25%, transparent 0 50%, rgba(245,235,221,.028) 0 75%, transparent 0) 0 0 / 56px 56px;
+      --hero: radial-gradient(ellipse 60% 70% at 78% 40%, rgba(200,16,46,.30), transparent 70%), radial-gradient(ellipse 50% 60% at 10% 0%, rgba(227,180,72,.12), transparent 70%), var(--checker), var(--bg);
+    }
+    body { background: var(--checker), var(--bg); }
+    .a-hero h1, .page-head h1, .neon, .plan h3, .final h2, .wordmark, .card h3, .group h2 { font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: .02em; }
+    .a-hero h1, .page-head h1 { color: #F5EBDD; }
+    .a-hero h1 { text-shadow: 0 3px 0 #2a0612, 0 0 30px rgba(227,180,72,.25); }
+    .neon { text-transform: none; color: var(--a1); border: 1px solid rgba(227,180,72,.55); border-radius: 4px; box-shadow: 0 0 18px rgba(227,180,72,.18); text-shadow: 0 0 12px rgba(227,180,72,.35); }
+    .neon.alt { color: #F5EBDD; border-color: rgba(200,16,46,.7); box-shadow: 0 0 18px rgba(200,16,46,.25); text-shadow: 0 0 12px rgba(200,16,46,.5); }
+    .wordmark em { color: var(--a1); font-style: normal; }
+    .app-logo { width: 38px; height: 38px; filter: drop-shadow(0 0 10px rgba(227,180,72,.35)); }
+    .qc-mark { position: relative; display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #f7d98a, #E3B448 55%, #a07418); color: #2a0612; font-size: 1.2rem; box-shadow: 0 0 0 2px #000, 0 0 16px rgba(227,180,72,.4); font-style: normal; }
+    .qc-mark i { position: absolute; right: -4px; bottom: -3px; font-style: normal; font-size: .75rem; color: #C8102E; text-shadow: 0 0 0 #000, 1px 1px 0 #000; }
+    .btn { border-radius: 8px; font-weight: 800; }
+    .btn:not(.b2):not(.dark):not(.soon):not(.ghost) { color: #2a0612; text-shadow: none; }
+    .btn:not(.b2):not(.dark):not(.soon):not(.ghost):hover { color: #2a0612; }
+    .card { position: relative; border: 1px solid var(--line); border-radius: 12px; }
+    .card::after { content: "♠"; position: absolute; top: 8px; right: 12px; font-size: .95rem; color: var(--a1); opacity: .75; }
+    .card:nth-child(4n+2)::after { content: "♥"; color: #C8102E; } .card:nth-child(4n+3)::after { content: "♦"; color: #C8102E; } .card:nth-child(4n)::after { content: "♣"; }
+    .card .ico { background: radial-gradient(circle at 35% 30%, #3a1a2a, #1e0d17); border: 1px solid var(--a1); }
+    .plan { border: 1px solid var(--line); } .plan.this { border-color: var(--a1); }
+    .panel { border-color: #000; outline-color: rgba(227,180,72,.18); }
+    .step::before { background: var(--a2); box-shadow: 0 4px 0 var(--a2d); font-family: 'Cinzel', serif; color: #F5EBDD; }
+    .compare .hl { background: rgba(227,180,72,.08); }
+    .eyebrow { color: var(--a1); }
+    .shot[data-need*="phone"] { max-width: 300px; margin-inline: auto; }
+    /* phone + card deck */
+    .phone { position: relative; width: 270px; height: 520px; border-radius: 42px; background: #0f0509; border: 3px solid #000; box-shadow: 0 0 0 2px #5a3a22, 0 0 0 9px #1e0d17, 0 0 0 11px #3a2412, 0 30px 60px rgba(0,0,0,.6), 0 0 80px rgba(200,16,46,.22); padding: 22px 16px; display: flex; flex-direction: column; transform: rotate(3deg); }
+    .phone-top { display: flex; justify-content: space-between; font-size: .8rem; color: var(--muted); padding: 4px 8px 12px; } .phone-top span:first-child { color: var(--a1); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-family: 'Cinzel', serif; }
+    .deck { position: relative; flex: 1; }
+    .pcard { position: absolute; inset: 0; border-radius: 18px; background: #F5EBDD; border: 2px solid #000; }
+    .pcard.back2 { transform: rotate(-7deg) translate(-8px, 6px); background: #C8102E; }
+    .pcard.back1 { transform: rotate(-3deg) translate(-3px, 3px); background: #E3B448; }
+    .pcard.front { padding: 18px; color: #28121F; animation: deal 4.5s ease-in-out infinite; }
+    .pcard .suit { position: absolute; top: 10px; right: 14px; color: #C8102E; font-size: 1.6rem; }
+    .pc-kind { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: #8a3a4a; font-weight: 800; }
+    .pc-to { font-weight: 800; margin: 8px 0 6px; font-size: .95rem; }
+    .pc-sub { font-family: 'Cinzel', serif; font-size: 1rem; line-height: 1.3; margin-bottom: 14px; }
+    .pc-lines i { display: block; height: 8px; border-radius: 4px; background: #e2d4c0; margin: 8px 0; } .pc-lines i.short { width: 60%; }
+    .phone-btns { display: flex; justify-content: space-around; padding-top: 16px; }
+    .phone-btns span { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.4rem; font-weight: 800; border: 2px solid #000; }
+    .phone-btns .no { background: #3a0b18; color: #ff8fa3; } .phone-btns .edit { background: #2a2a36; color: #fff; } .phone-btns .yes { background: #E3B448; color: #2a0612; box-shadow: 0 0 18px rgba(227,180,72,.5); }
+    @keyframes deal { 0%, 70%, 100% { transform: none; } 80% { transform: translateX(26px) rotate(6deg); } 90% { transform: translateX(-4px) rotate(-1deg); } }
+    @media (prefers-reduced-motion: reduce) { .pcard.front { animation: none; } }
+    @media (max-width: 900px) { .phone { transform: none; } }
+  </style>
+</head>
+<body class="queens-court">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="crumb"><div class="wrap">
+    <a class="crumb-home" href="../index.html"><img src="../assets/logos/mad-tea-party.webp" alt=""><span>Mad Tea Party <small>Development</small></span></a>
+    <a class="crumb-back" href="../index.html#menu">← Back to the Software Shop</a>
+  </div></div>
+
+  <header class="p-nav">
+    <div class="wrap">
+      <a class="wordmark" href="index.html"><img class="app-logo" src="../assets/logos/queens-court.svg" alt=""><span>Queens <em>Court</em></span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="p-links">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="guides.html">Guides</a>
+        <a href="faq.html">FAQ</a>
+        <a href="used-in.html">Used By</a>
+        <a class="btn small" data-buy="queens-court" href="#">Get it · $19.99</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head"><div class="wrap">
+      <span class="eyebrow">♛ What's New</span>
+      <h1>What's new in Queens Court</h1>
+      <p>The latest improvements. Everything here is in the app today, and in every copy you can download from your Gumroad library.</p>
+    </div></section>
+    <section class="p-section"><div class="wrap">
+      <div class="panel reveal whatsnew" id="whats-new"><ul class="wn"><li><b>Every project&#x27;s posts in one place:</b> Approve every project&#x27;s posts together, with media add, change and remove, and fresh hashtags on each card.</li><li><b>Friendlier emails:</b> Pitches end with a short, human sign-off instead of a boilerplate footer.</li><li><b>A social-only project:</b> Gets the Looking Glass look and menu inside Queens Court.</li><li><b>Post times that learn from your results:</b> Every post and clip is scored against your usual, and new posts go out at the hours that work best for you, per platform. No screenshots needed.</li><li><b>Analytics read by themselves:</b> YouTube, Facebook, Instagram, Threads and TikTok through their own APIs (views, reach, likes, comments, shares, saves, watch time), plus Bluesky, Mastodon and Tumblr.</li><li><b>Editing that follows your YouTube numbers:</b> New clips are cut where your best clips hold viewers, with a note in the editor saying why. Pick longer versions three times in a row and it stops shortening.</li><li><b>Full YouTube details:</b> Translated titles, descriptions and caption tracks, a playlist per game, made-for-kids and paid-promotion labels, recording date and brand partner.</li><li><b>Instagram Reels done right:</b> Shown in the main feed, the cover set to the clip&#x27;s big moment, collaborators and a place tag.</li><li><b>Your comment on every clip:</b> Posted for you on YouTube, Facebook and Instagram once the clip is live.</li><li><b>Smarter pacing:</b> Starts at 3 clips a day on YouTube, Instagram and Facebook; posts spread through the day, never bunched; one shared schedule across all your projects so nothing collides.</li><li><b>A higher YouTube ceiling:</b> With an automatic pause if YouTube says the channel has hit its daily upload limit.</li><li><b>Per-project parts:</b> Switch each part of a project on or off (with presets). Parts you switch off fold away and clear their leftovers at your next sign-off.</li><li><b>Stream routing:</b> Skip streams by words in the title, or have every project leave the other projects&#x27; streams alone. Matching ignores capitals and catches typos.</li><li><b>Training that keeps up:</b> While you&#x27;re signed off, it makes practice cards for every project; each kind of writing stops practicing once it&#x27;s trained; new projects get practice cards even before you add facts.</li><li><b>Keep posting even without news:</b> A per-project option for steady, evergreen marketing: topics come back on their own schedule, always in fresh words.</li><li><b>Going-live posts on their own:</b> Keep going-live posts on even when social posts are off.</li><li><b>Never lose a setting:</b> A “Not saved yet” note lists every change you haven&#x27;t saved.</li><li><b>New in-depth guides:</b> The Setup Guide and the Operating Guide as PDFs, with contents pages and bookmarks.</li><li><b>No street addresses:</b> Posts never give a street address, phone number or opening hours.</li></ul></div>
+      <a class="more-link" href="features.html">See every feature →</a>
+    </div></section>
+    <section class="p-section"><div class="wrap">
+      <div class="panel final reveal">
+        <h2>Stop doing promotion by hand.</h2>
+        <p>One payment. Updates come through your Gumroad library.</p>
+        <a class="btn" data-buy="queens-court" href="#">Get Queens Court · $19.99</a>
+      </div>
+    </div></section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="wordmark" href="index.html"><img class="app-logo" src="../assets/logos/queens-court.svg" alt=""><span>Queens <em>Court</em></span></a>
+          <p>Your launch team, on your own PC. A one-time purchase from Mad Tea Party Development.</p>
+        </div>
+        <div><h4>Queens Court</h4><ul>
+          <li><a href="index.html">Home</a></li><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="guides.html">Guides</a></li><li><a href="faq.html">FAQ</a></li><li><a href="used-in.html">Used By</a></li><li><a href="whats-new.html">What's New</a></li>
+        </ul></div>
+        <div><h4>Legal</h4><ul>
+          <li><a href="legal.html#eula">EULA</a></li><li><a href="legal.html#privacy">Privacy policy</a></li><li><a href="legal.html#notices">Third-party notices</a></li><li><a href="legal.html#refunds">Refund policy</a></li>
+        </ul></div>
+        <div><h4>Support</h4><ul>
+          <li><a data-support href="#">Email support</a></li>
+          <li><a href="../looking-glass/index.html">Looking Glass ($14.99)</a></li>
+          <li><a href="../index.html#menu">Software Shop</a></li>
+          <li><a href="../socials.html">Socials</a></li>
+        </ul></div>
+      </div>
+      <p class="cross" style="margin-top:26px">Only need social posts and stream clips? <a href="../looking-glass/index.html">Looking Glass</a> does that half for $14.99.</p>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a class="pk-link" href="press.html">Press kit</a>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../data/products.js"></script>
+  <script src="../data/used-in.js"></script>
+  <script src="../assets/product.js"></script>
+  <script src="../assets/app.js"></script>
+  <script src="../assets/used-in.js"></script>
+</body>
+</html>

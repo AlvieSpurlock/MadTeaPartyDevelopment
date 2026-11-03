@@ -163,3 +163,10 @@ body.dnd-combat-balancer .cards, body.asset-logger .cards { grid-template-column
 .why p { margin: 0 0 14px; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
 .why p:last-child { margin-bottom: 0; }
 .why b, .why em { color: var(--text); }
+/* What's New panel (Queens Court + Looking Glass features pages) */
+.whatsnew { padding: 26px 30px; margin-bottom: 40px; text-align: left; }
+.whatsnew h2 { font-family: var(--head); margin: 0 0 14px; }
+.whatsnew h3 { font-family: var(--head); margin: 0 0 8px; color: var(--neon); }
+.whatsnew .wn { margin: 0; padding-left: 20px; display: grid; gap: 8px; color: var(--muted); columns: 2 340px; column-gap: 34px; }
+.whatsnew .wn { display: block; } .whatsnew .wn li { break-inside: avoid; margin-bottom: 8px; }
+.whatsnew .wn b { color: var(--text); }
