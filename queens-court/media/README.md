@@ -12,7 +12,7 @@ Drop these files in this folder with exactly these names. Each one appears on th
 | pitch.png | A drafted pitch (use a public outlet; no private email text) | Features → Outreach |
 | outreach-locator.png | Outreach Locator with suggestions | Features → Find people and Awards |
 | clip-editor.png | The Clip Editor with a clip open | Features → Clips |
-| (none) | The progress card on Features → Clips uses looking-glass/media/progress-card.png, because clip and social projects use the Looking Glass look | Features → Clips |
+| every-project-posts.png | Every project's posts, one card with media | Features → Posts |
 | swipe.png | Swipe on a phone (portrait) | Features → Your phone |
 
 The demo video goes on YouTube. Paste its ID into data/products.js (demo: "...").

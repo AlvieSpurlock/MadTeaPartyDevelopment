@@ -7,10 +7,9 @@ Drop these files in this folder with exactly these names. Each one appears on th
 |---|---|---|
 | hero-clip.mp4 | Short muted before/after loop: the landscape stream frame next to the finished 9:16 clip | Home hero, over the drawing |
 | home.png | The Home dashboard (waiting, scheduled, posted) | Features → Home |
-| progress-card.png | The progress card mid-run (which stream, which step, clips made) | Features → Home |
+| finished-clips.png | Studio → Latest finished clips | Features → Create |
+| post-details.png | A clip ready to post (time, expected result, title, description) | Features → Grow |
+| schedule.png | Clips → the scheduled list | Features → Grow |
 | edit-room.png | The Edit Room with a clip open | Features → Create |
-| finished-clip.png | One finished 9:16 clip (portrait frame) | Features → Create |
-| drop-calendar.png | The Drop Calendar with clips scheduled | Features → Grow |
-| growth.png | Growth charts | Features → Grow |
 
 The demo video goes on YouTube. Paste its ID into data/products.js (demo: "...").

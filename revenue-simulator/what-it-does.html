@@ -149,7 +149,7 @@
 <tr><td><b>Cross-promo</b></td><td>A preset from None to Very Aggressive, or a custom percentage; per game, a share-received weight and a cap on installs absorbed per 30 days; an optional chaining switch</td><td>Sends a share of each game's users to the other launched games as free installs, split by weight and capped</td></tr>
 <tr><td><b>Tax</b></td><td>A rate, and a method: flat on total profit, or month by month with losses carried forward</td><td>Estimated on profit; never on a loss</td></tr>
 <tr><td><b>Currency</b></td><td>Eight currencies; rates editable in the app, set in the settings file, or fetched on demand</td><td>Changes what you see and type; results don't change</td></tr>
-<tr><td><b>Range analysis</b></td><td>Spreads for retention, revenue per user, CPI and free installs; whether games share one swing</td><td>Runs the portfolio 200 times with seeded random nudges and summarizes the spread</td></tr>
+<tr><td><b>Range analysis</b></td><td>A step size (every input moved by that, twice and three times as much, lower and higher); whether games share one swing</td><td>Runs the portfolio 900,000 times (6 variations of 150,000) with seeded draws and averages them</td></tr>
 <tr><td><b>Timeline</b></td><td>Simulation length, 30 to 360 days</td><td>Shared by all games</td></tr>
 </tbody></table></div><p class="caption">Slider limits, market presets and starting values are all editable in a settings file (<a href="customize.html">Customize and extend</a>).</p>
     </div></section>
@@ -164,7 +164,7 @@
           <li>A per-game table: end DAU, net revenue, spend, return on spend, average paid CPI and cross-promo installs received</li>
           <li>A monthly net revenue table by 30-day month, with a combined row</li>
           <li>A monthly take-home table: net revenue minus the money already committed to the next paid wave, minus dev and running costs, with a studio-overhead row and a combined row</li>
-          <li>A range analysis panel: low, middle and high results, the share of runs that are profitable and that break even, and a profit-range chart</li>
+          <li>A range analysis panel: the average of all runs with its uncertainty, your inputs run once, the middle 80% of runs, the average of each variation, the share of runs that are profitable and that break even, and a profit-range chart</li>
           <li>A Resim button that recalculates everything</li>
         </ul></div>
         <div class="row-media"><figure class="shot reveal" data-need="Screenshot: the range analysis panel with its profit-range chart"><img src="media/range-analysis.png" alt="The range analysis panel" loading="lazy"><figcaption>The range analysis panel</figcaption></figure></div>
