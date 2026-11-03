@@ -59,7 +59,7 @@
     .pcard { position: absolute; inset: 0; border-radius: 18px; background: #F5EBDD; border: 2px solid #000; }
     .pcard.back2 { transform: rotate(-7deg) translate(-8px, 6px); background: #C8102E; }
     .pcard.back1 { transform: rotate(-3deg) translate(-3px, 3px); background: #E3B448; }
-    .pcard.front { padding: 18px; color: #28121F; animation: deal 4.5s ease-in-out infinite; }
+    .pcard.front { padding: 18px; color: #28121F; }
     .pcard .suit { position: absolute; top: 10px; right: 14px; color: #C8102E; font-size: 1.6rem; }
     .pc-kind { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: #8a3a4a; font-weight: 800; }
     .pc-to { font-weight: 800; margin: 8px 0 6px; font-size: .95rem; }
@@ -68,8 +68,9 @@
     .phone-btns { display: flex; justify-content: space-around; padding-top: 16px; }
     .phone-btns span { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.4rem; font-weight: 800; border: 2px solid #000; }
     .phone-btns .no { background: #3a0b18; color: #ff8fa3; } .phone-btns .edit { background: #2a2a36; color: #fff; } .phone-btns .yes { background: #E3B448; color: #2a0612; box-shadow: 0 0 18px rgba(227,180,72,.5); }
-    @keyframes deal { 0%, 70%, 100% { transform: none; } 80% { transform: translateX(26px) rotate(6deg); } 90% { transform: translateX(-4px) rotate(-1deg); } }
-    @media (prefers-reduced-motion: reduce) { .pcard.front { animation: none; } }
+    .phone-btns .yes { animation: tapyes 4.5s ease-in-out infinite; }
+    @keyframes tapyes { 0%, 70%, 100% { transform: none; } 76% { transform: scale(.86); box-shadow: 0 0 30px rgba(227,180,72,.9); } 84% { transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .phone-btns .yes { animation: none; } }
     @media (max-width: 900px) { .phone { transform: none; } }
   </style>
 </head>
@@ -112,11 +113,12 @@
 <details><summary>When do posts go out?</summary><p>At the hours that work best for you, per platform. Every post and clip is scored against your usual, and the results are read straight from each platform, so there are no screenshots to upload.</p></details>
 <details><summary>Can I fix a clip?</summary><p>Yes: fix the captions, change the edit, stitch moments, or swap in your own version. After 30 approved versions it edits in your style.</p></details>
 <details><summary>Can I edit the app?</summary><p>Yes. It's plain Python: change the code, templates and rules for your own use, in your own custom folder. You can't resell or share it (see the <a href="legal.html#eula">EULA</a>).</p></details>
+<details><summary>Can I use it for my clients?</summary><p>No. One license covers one person or one business promoting its own work. Running it for clients or other businesses (agency, done-for-you or white-label) needs a license for each business it runs for. See the <a href="legal.html#eula">EULA</a>.</p></details>
 <details><summary>Does it clip Twitch automatically?</summary><p>Drop in your stream recording and it clips it. Automatic Twitch downloading is an off-by-default option, because downloading VODs may break Twitch's terms.</p></details>
 <details><summary>Do I need API keys?</summary><p>Not to start. Auto-posting needs your own free developer sign-in per platform; without one, every post comes with posting steps.</p></details>
 <details><summary>Where is my data?</summary><p>In the Queens Court folder on your PC. Nothing is uploaded to us.</p></details>
-<details><summary>Refunds?</summary><p>See the <a href="legal.html#refunds">refund policy</a>.</p></details>
-<details><summary>Updates?</summary><p>Download the newest version from your Gumroad library; your settings and data stay.</p></details></div></div></section>
+<details><summary>Refunds?</summary><p>Yes: a full refund within 14 days, no questions asked. See the <a href="legal.html#refunds">refund policy</a>.</p></details>
+<details><summary>Updates?</summary><p>Free forever. Download the newest version from your Gumroad library; your settings and data stay. See <a href="legal.html#updates">Updates</a>.</p></details></div></div></section>
 
     <section class="p-section"><div class="wrap">
       <h2 class="neon alt">Requirements</h2>

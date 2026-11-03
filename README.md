@@ -82,7 +82,10 @@ The bot that copies the privacy policy from the Google Doc now lives at `.github
 
 Fonts: IM Fell English (storybook) and Alata (the kit's recommended UI font), loaded from Google Fonts.
 
-## Game Dev Kits (dev-kits/)
+## Game Dev Kits (dev-kits/), REMOVED FOR NOW
+
+The kits are off the site for now: their pages, the Software Shop section, the footer link and the Mimic Masters "Appodeal" card were removed (Nov 3). Notes below are kept for when they come back.
+
 
 Unity plugin pages: LevelPlay, Appodeal, Google AdMob, Localization, plus a support page.
 

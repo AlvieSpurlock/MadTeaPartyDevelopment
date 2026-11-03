@@ -176,3 +176,7 @@ body.dnd-combat-balancer .cards, body.asset-logger .cards { grid-template-column
 @media (max-width: 600px) { .cards.creed .card { max-width: none; } }
 .cards.creed .card { text-align: center; }
 .creed-why { max-width: 720px; margin: 26px auto 0; text-align: center; color: var(--muted); font-size: 1.05rem; }
+/* Full license text on Legal pages */
+.doc-full { margin: 14px 0 6px; border: 1px solid var(--line); border-radius: 12px; padding: 10px 16px; background: rgba(0,0,0,.18); }
+.doc-full summary { cursor: pointer; font-weight: 700; color: var(--neon); }
+.doc-full pre { white-space: pre-wrap; overflow-wrap: anywhere; font-family: ui-monospace, Consolas, monospace; font-size: .82rem; line-height: 1.5; color: var(--muted); margin: 12px 0 4px; max-height: 70vh; overflow: auto; }

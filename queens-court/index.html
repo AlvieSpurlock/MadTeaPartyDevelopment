@@ -59,7 +59,7 @@
     .pcard { position: absolute; inset: 0; border-radius: 18px; background: #F5EBDD; border: 2px solid #000; }
     .pcard.back2 { transform: rotate(-7deg) translate(-8px, 6px); background: #C8102E; }
     .pcard.back1 { transform: rotate(-3deg) translate(-3px, 3px); background: #E3B448; }
-    .pcard.front { padding: 18px; color: #28121F; animation: deal 4.5s ease-in-out infinite; }
+    .pcard.front { padding: 18px; color: #28121F; }
     .pcard .suit { position: absolute; top: 10px; right: 14px; color: #C8102E; font-size: 1.6rem; }
     .pc-kind { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: #8a3a4a; font-weight: 800; }
     .pc-to { font-weight: 800; margin: 8px 0 6px; font-size: .95rem; }
@@ -68,8 +68,9 @@
     .phone-btns { display: flex; justify-content: space-around; padding-top: 16px; }
     .phone-btns span { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.4rem; font-weight: 800; border: 2px solid #000; }
     .phone-btns .no { background: #3a0b18; color: #ff8fa3; } .phone-btns .edit { background: #2a2a36; color: #fff; } .phone-btns .yes { background: #E3B448; color: #2a0612; box-shadow: 0 0 18px rgba(227,180,72,.5); }
-    @keyframes deal { 0%, 70%, 100% { transform: none; } 80% { transform: translateX(26px) rotate(6deg); } 90% { transform: translateX(-4px) rotate(-1deg); } }
-    @media (prefers-reduced-motion: reduce) { .pcard.front { animation: none; } }
+    .phone-btns .yes { animation: tapyes 4.5s ease-in-out infinite; }
+    @keyframes tapyes { 0%, 70%, 100% { transform: none; } 76% { transform: scale(.86); box-shadow: 0 0 30px rgba(227,180,72,.9); } 84% { transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .phone-btns .yes { animation: none; } }
     @media (max-width: 900px) { .phone { transform: none; } }
   </style>
 </head>
@@ -140,7 +141,7 @@
       <div class="steps">
         <div class="card step reveal"><h3>Tell it about you</h3><p>A short questionnaire: what you promote, who you want to reach, your voice, whether you stream.</p></div>
         <div class="card step reveal"><h3>Click Sign Off</h3><p>It finds outlets, creators and communities, looks up how to reach them, and writes drafts.</p></div>
-        <div class="card step reveal"><h3>Swipe on your phone</h3><p>Go through everything: approve, edit or reject.</p></div>
+        <div class="card step reveal"><h3>Approve, one at a time</h3><p>On your PC or phone, go through each draft: approve, edit, reject or skip. Every decision trains it.</p></div>
         <div class="card step reveal"><h3>It goes out, safely</h3><p>Emails at a safe pace; posts and clips on every platform at the best times. Replies land in one inbox, answered.</p></div>
       </div>
     </div></section>

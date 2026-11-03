@@ -59,7 +59,7 @@
     .pcard { position: absolute; inset: 0; border-radius: 18px; background: #F5EBDD; border: 2px solid #000; }
     .pcard.back2 { transform: rotate(-7deg) translate(-8px, 6px); background: #C8102E; }
     .pcard.back1 { transform: rotate(-3deg) translate(-3px, 3px); background: #E3B448; }
-    .pcard.front { padding: 18px; color: #28121F; animation: deal 4.5s ease-in-out infinite; }
+    .pcard.front { padding: 18px; color: #28121F; }
     .pcard .suit { position: absolute; top: 10px; right: 14px; color: #C8102E; font-size: 1.6rem; }
     .pc-kind { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: #8a3a4a; font-weight: 800; }
     .pc-to { font-weight: 800; margin: 8px 0 6px; font-size: .95rem; }
@@ -68,8 +68,9 @@
     .phone-btns { display: flex; justify-content: space-around; padding-top: 16px; }
     .phone-btns span { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.4rem; font-weight: 800; border: 2px solid #000; }
     .phone-btns .no { background: #3a0b18; color: #ff8fa3; } .phone-btns .edit { background: #2a2a36; color: #fff; } .phone-btns .yes { background: #E3B448; color: #2a0612; box-shadow: 0 0 18px rgba(227,180,72,.5); }
-    @keyframes deal { 0%, 70%, 100% { transform: none; } 80% { transform: translateX(26px) rotate(6deg); } 90% { transform: translateX(-4px) rotate(-1deg); } }
-    @media (prefers-reduced-motion: reduce) { .pcard.front { animation: none; } }
+    .phone-btns .yes { animation: tapyes 4.5s ease-in-out infinite; }
+    @keyframes tapyes { 0%, 70%, 100% { transform: none; } 76% { transform: scale(.86); box-shadow: 0 0 30px rgba(227,180,72,.9); } 84% { transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .phone-btns .yes { animation: none; } }
     @media (max-width: 900px) { .phone { transform: none; } }
   </style>
 </head>
@@ -104,10 +105,10 @@
     <section class="p-section"><div class="wrap doc">
       <div class="doc-nav"><a class="btn b2 small" href="#setup">Setup Guide</a><a class="btn b2 small" href="#operating">Operating Guide</a></div>
       <div class="panel reveal">
-        <section id="setup"><h2>Setup Guide <span class="pending">Full guide at launch</span></h2>
+        <section id="setup"><h2>Setup Guide <span class="pending">PDF in the download</span></h2>
           <p>Both guides also come in the download as PDFs, with contents pages and bookmarks. What it walks you through:</p><ol><li>Running the installer: double-click <b>Run Queens Court</b>.</li><li>What installs on first run (Python, ffmpeg, Ollama and its AI models, the speech-to-text model, OpenCV and free fonts), all free.</li><li>Connecting your email account (Outlook, Gmail or any SMTP/IMAP account).</li><li>Creating your free developer sign-in on each platform for auto-posting, one by one.</li><li>Phone access: home Wi-Fi, or a secure link with a passcode (optional free Cloudflare account for a fixed link).</li><li>Optional: Docker Desktop for free, unlimited web search.</li></ol></section>
-        <section id="operating"><h2>Operating Guide <span class="pending">Full guide at launch</span></h2>
-          <p>What it covers:</p><ol><li>The questionnaire: what you promote, who you want to reach, your voice, whether you stream.</li><li>Sign Off: finding outlets, creators and communities and writing drafts.</li><li>Today and Swipe: approving, editing and rejecting, on your PC or your phone.</li><li>Sending: safe-paced email, the shared reply inbox and QnA Memory.</li><li>Posts and clips: clip words, the Studio, the Clip Editor, pacing and Mass reschedule.</li><li>Grants, awards, coverage, and running several projects at once.</li><li>Updating: download the newest version from Gumroad; your settings and data stay.</li></ol></section>
+        <section id="operating"><h2>Operating Guide <span class="pending">PDF in the download</span></h2>
+          <p>What it covers:</p><ol><li>The questionnaire: what you promote, who you want to reach, your voice, whether you stream.</li><li>Sign Off: finding outlets, creators and communities and writing drafts.</li><li>Today and Swipe: approving, editing, rejecting and skipping, one item at a time, on your PC or your phone.</li><li>Sending: safe-paced email, the shared reply inbox and QnA Memory.</li><li>Posts and clips: clip words, the Studio, the Clip Editor, pacing and Mass reschedule.</li><li>Grants, awards, coverage, and running several projects at once.</li><li>Updating: download the newest version from Gumroad; your settings and data stay.</li></ol></section>
       </div>
     </div></section>
   </main>

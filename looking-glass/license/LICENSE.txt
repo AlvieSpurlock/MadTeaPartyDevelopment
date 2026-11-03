@@ -1,0 +1,196 @@
+Looking Glass - END USER LICENSE AGREEMENT
+Version 1.1.0
+Copyright (c) 2026 Mad Tea Party Development. All rights reserved.
+
+PLEASE READ THIS AGREEMENT BEFORE INSTALLING OR USING Looking Glass. BY INSTALLING, COPYING OR USING IT, YOU AGREE TO
+BE BOUND BY THIS AGREEMENT. IF YOU DO NOT AGREE, DO NOT INSTALL OR USE IT, AND REQUEST A REFUND AS THE STORE PAGE
+YOU BOUGHT IT FROM DESCRIBES.
+
+This End User License Agreement ("Agreement") is a legal agreement between you, either an individual or a single
+legal entity ("you", "Licensee"), and Mad Tea Party Development ("we", "us", "Licensor"), for the software called Looking Glass,
+including its source code, object code, scripts, user interface, page layouts, prompts, templates, rules, default
+settings, guides, documentation, names, logos and every update or upgrade we provide (together, the "Software").
+
+
+1. DEFINITIONS
+
+1.1 "Source Code" means the human-readable files of the Software, including every .py, .ps1, .bat, .toml, .md and
+    .txt file, and the prompts, templates, rules and default settings they contain.
+1.2 "Modification" means any change to, addition to, deletion from, translation of, or port of any part of the
+    Software, including any file placed in the "custom" folder that is copied from or based on the Software.
+1.3 "Derivative Work" means any work, product or service that is based on, derived from, copied from, adapted
+    from or substantially similar to the Software or any part of it, in any programming language or form,
+    whether or not it is renamed, rebranded, reskinned, re-themed, restructured, refactored, rewritten,
+    translated, combined with other software, or changed in appearance, wording or function.
+1.4 "Your Content" means the text, settings, contacts, facts, media and other material you put into the
+    Software, and the posts, messages, clips and other output the Software produces for you from it.
+1.5 "Your Business" means you, if you are an individual, or the single legal entity that bought the license.
+    It does not include clients, customers, affiliates, franchisees or other companies you work for or with.
+
+
+2. LICENSE GRANT
+
+2.1 Subject to your continued compliance with this Agreement and payment of the purchase price, we grant you a
+    limited, non-exclusive, non-transferable, non-sublicensable, revocable license to:
+    a) install and use the Software on computers owned or controlled by Your Business, solely for the internal
+       promotion of Your Business's own products, services, projects and channels;
+    b) view, study and make Modifications to the Source Code solely for use under 2.1(a); and
+    c) make one backup copy of the Software for archival purposes.
+2.2 The Software is licensed, not sold. We and our licensors keep all right, title and interest in and to the
+    Software, including all copyrights, trade secrets, trademarks and other intellectual property rights.
+    Except for the license expressly granted in 2.1, no right or license is granted to you, by implication,
+    estoppel or otherwise.
+2.3 Access to the Source Code is provided for your convenience and does not make the Software open source. No
+    open-source license applies to the Software itself.
+
+
+3. RESTRICTIONS
+
+You must not, and must not allow or help anyone else to:
+
+3.1 sell, resell, rent, lease, lend, license, sublicense, distribute, publish, upload, share, give away,
+    transfer or otherwise make available the Software, any copy of it, any part of it, or any Modification of it,
+    to any third party, for money or for free, in any form or by any means (including websites, marketplaces,
+    app stores, code repositories, file-sharing services, courses, templates, bundles and private groups);
+3.2 create, sell, distribute, publish or offer any Derivative Work, including by renaming, rebranding,
+    reskinning or re-theming the Software, changing its interface, wording or features, removing or replacing
+    our names, or combining it with other software, and then offering the result as your own or anyone else's
+    product, service, app, tool, template, plugin or script;
+3.3 use the Software, its Source Code, its structure, its prompts or templates, or any knowledge gained from
+    studying them, to design, build, train, improve or market any product or service that competes with the
+    Software or that performs substantially similar functions, whether for sale or for free;
+3.4 copy or reuse any part of the Source Code, prompts, templates, rules or documentation in any other software,
+    product or service, except your own Modifications used under 2.1;
+3.5 offer the Software, or any output or function of it, as a service to others, including running it on
+    behalf of clients, customers or other businesses (agency, consulting, "done-for-you", white-label, managed,
+    hosted, software-as-a-service or similar use). Each business the Software is run for needs its own license;
+3.6 use the Software, its Source Code, its prompts or templates, or its documentation as training data, input
+    or reference material for any artificial-intelligence or machine-learning model or system, other than the
+    local models the Software itself runs on your computer for its normal operation;
+3.7 remove, alter or obscure any copyright notice, trademark, license notice, this Agreement or
+    THIRD_PARTY_NOTICES.txt;
+3.8 share, sell or transfer your license, your purchase, your download link or your copy to anyone else;
+3.9 use the Software for spam, harassment, deception, impersonation, fraud, or any unlawful purpose, or in
+    breach of the terms of any platform or service it connects to; or
+3.10 use our names, trademarks, product names or logos, or any confusingly similar name or mark, for any
+    product or service other than to truthfully say you use the Software.
+
+
+4. YOUR MODIFICATIONS AND YOUR CONTENT
+
+4.1 Modifications. You may make Modifications for your own use under 2.1. Every Modification remains subject to
+    this Agreement, may only be used together with your licensed copy, and may not be distributed in any form
+    under Section 3. To the extent a Modification contains or is based on any part of the Software, that part
+    remains ours. You may not claim any right in the Software because of your Modifications.
+4.2 Feedback. If you send us ideas, suggestions or fixes, we may use them freely without any obligation to you.
+4.3 Your Content. You own Your Content. We do not receive it, and we claim no rights in it. You are solely
+    responsible for Your Content and for having every right needed to use it, including music, video, images,
+    names, trademarks and contact information.
+
+
+5. THIRD-PARTY SOFTWARE, SERVICES AND MODELS
+
+5.1 On first run the Software downloads and installs third-party programs, libraries and AI models (listed in
+    THIRD_PARTY_NOTICES.txt) from their official sources. They are not part of the Software, are not licensed
+    to you by us, and are governed solely by their own licenses, which you must follow.
+5.2 The Software works with your own accounts on third-party services (email providers, YouTube, Instagram,
+    Facebook, TikTok, X, Threads, Bluesky, Mastodon, Tumblr, Twitch, search engines and others). You are solely
+    responsible for complying with each service's terms, policies, rate limits and developer rules, and for
+    any developer applications you create. Services may change or stop working with the Software at any time,
+    and that is not a defect of the Software.
+5.3 Automatic downloading of Twitch streams is turned off until you turn it on. Downloading streams may violate
+    Twitch's terms of service. Turning it on is your decision and your responsibility.
+
+
+6. YOUR RESPONSIBILITIES
+
+6.1 Nothing is sent or posted unless you approve it or turn on an automatic option yourself. You are solely
+    responsible for everything sent, posted, submitted or published from your accounts or computers using the
+    Software.
+6.2 You are solely responsible for complying with all laws that apply to you, including anti-spam laws (such as
+    the US CAN-SPAM Act and its requirements for a valid physical address and an unsubscribe in commercial
+    email), privacy and data-protection laws, consumer-protection and advertising-disclosure rules (such as
+    labeling paid partnerships), copyright and trademark law, and telephone and text-messaging laws.
+6.3 Text, titles, tags and other output written by AI can be wrong, misleading or inappropriate. You must review
+    all output before you approve it. We are not responsible for any output you approve or publish.
+
+
+7. UPDATES AND SUPPORT
+
+We are not required to provide updates, upgrades, fixes or support. Any we do provide are delivered through the
+store you bought the Software from, are part of the Software, and are governed by this Agreement unless they come
+with their own terms. Support, if offered: the support address on the product page.
+
+
+8. TERMINATION
+
+8.1 This Agreement is effective until terminated. It terminates automatically, without notice, if you breach any
+    of its terms.
+8.2 On termination you must stop using the Software and destroy every copy of it and of every Modification in
+    your possession or control.
+8.3 Sections 1, 2.2, 2.3, 3, 4, 8.2, 8.3, 9, 10, 11, 12 and 13 survive termination.
+
+
+9. ENFORCEMENT
+
+9.1 Any use, copying, modification or distribution of the Software outside the license in Section 2 is a
+    material breach of this Agreement and an infringement of our copyright, and may also misappropriate our
+    trade secrets.
+9.2 You agree that a breach of Section 3 would cause us irreparable harm for which money damages would not be
+    an adequate remedy. In addition to any other remedy available at law or in equity, we are entitled to seek
+    immediate injunctive relief, without posting a bond, to stop or prevent any such breach.
+9.3 We may have any infringing copy, listing, repository or Derivative Work removed, including through takedown
+    notices under the US Digital Millennium Copyright Act and the rules of any marketplace or host.
+9.4 You will pay any money, revenue or other benefit you receive from a breach of Section 3 to us, in addition to
+    any damages, and you will reimburse our reasonable attorneys' fees and costs of enforcing this Agreement if
+    we prevail.
+9.5 Our failure or delay in enforcing any part of this Agreement is not a waiver of it.
+
+
+10. DISCLAIMER OF WARRANTIES
+
+TO THE FULLEST EXTENT PERMITTED BY LAW, THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITH ALL FAULTS AND
+WITHOUT WARRANTY OF ANY KIND. WE EXPRESSLY DISCLAIM ALL WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY OR
+OTHERWISE, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-
+INFRINGEMENT, ACCURACY AND QUIET ENJOYMENT. WE DO NOT WARRANT THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS, WORK
+WITH ANY THIRD-PARTY SERVICE, OR BE ERROR-FREE OR UNINTERRUPTED, AND WE MAKE NO PROMISE OF ANY RESULT, INCLUDING
+COVERAGE, REPLIES, FOLLOWERS, VIEWS, SALES, GRANTS, AWARDS OR INCOME. SOME JURISDICTIONS DO NOT ALLOW THE
+EXCLUSION OF IMPLIED WARRANTIES, SO SOME OF THESE EXCLUSIONS MAY NOT APPLY TO YOU.
+
+
+11. LIMITATION OF LIABILITY
+
+TO THE FULLEST EXTENT PERMITTED BY LAW, IN NO EVENT WILL WE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
+CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, DATA, ACCOUNTS, GOODWILL OR
+OPPORTUNITIES, OR FOR ANY SUSPENSION OR BAN OF ANY ACCOUNT, ARISING OUT OF OR RELATING TO THIS AGREEMENT OR THE
+SOFTWARE, HOWEVER CAUSED AND UNDER ANY THEORY OF LIABILITY, EVEN IF WE WERE ADVISED OF THEIR POSSIBILITY. OUR TOTAL
+LIABILITY FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THIS AGREEMENT OR THE SOFTWARE WILL NOT EXCEED THE AMOUNT
+YOU PAID FOR THE SOFTWARE. SOME JURISDICTIONS DO NOT ALLOW THESE LIMITATIONS, SO THEY MAY NOT APPLY TO YOU.
+
+
+12. INDEMNIFICATION
+
+You will defend, indemnify and hold harmless us and our owners, employees and agents from and against any claims,
+damages, losses, liabilities, costs and expenses (including reasonable attorneys' fees) arising out of or relating
+to Your Content, anything sent, posted or published using your copy of the Software, your Modifications, your
+violation of any law or third-party terms, or your breach of this Agreement.
+
+
+13. GENERAL
+
+13.1 Governing law and venue. This Agreement is governed by the laws of the State of Texas, USA, and applicable
+     US federal law, without regard to conflict-of-law rules. The United Nations Convention on Contracts for the
+     International Sale of Goods does not apply. The state and federal courts located in Texas have exclusive
+     jurisdiction over any dispute arising out of or relating to this Agreement, and you consent to their
+     personal jurisdiction, except that we may seek injunctive relief under Section 9 in any court.
+13.2 Export. You will comply with all applicable export and sanctions laws in using the Software.
+13.3 Assignment. You may not assign or transfer this Agreement or your license, by operation of law or
+     otherwise. Any attempted assignment is void. We may assign this Agreement without restriction.
+13.4 Severability. If any provision is held unenforceable, it will be enforced to the maximum extent permitted
+     and the remaining provisions remain in full force.
+13.5 Consumer rights. Nothing in this Agreement limits any right you have under consumer-protection law that
+     cannot be waived by contract.
+13.6 Entire agreement. This Agreement is the entire agreement between you and us about the Software and
+     supersedes all prior understandings. It may only be changed in a writing signed by us, or by a new version
+     included with an update, which applies to that update.
+13.7 Contact. Mad Tea Party Development. Support: the support address on the product page.

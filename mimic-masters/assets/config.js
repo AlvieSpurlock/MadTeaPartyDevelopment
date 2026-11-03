@@ -38,7 +38,7 @@ window.SITE={
   // Android shows a live tester count from a Google Sheet: the number of non-empty cells in testersColumn (blank cells are ignored). Share that Sheet as "Anyone with the link: Viewer".
   // When stores.ios / stores.android above hold a real store link, that platform switches to "Available now", and the block hides once both are live.
   platformProgress:{
-    ios:{status:"Waiting for Review", asOf:"October 21st"},
+    ios:{status:"Fixing Apple's review notes · resubmitting by Friday, November 6", asOf:"November 3rd"},
     android:{testersSheetUrl:"https://docs.google.com/spreadsheets/d/1oUBcPp-Il2eZvQ3F6S6aGnhL4-rkJzHZP3n-bytQJ6I/edit?usp=sharing", testersColumn:"B", testersGoal:30, goalReachedStatus:"Tester goal reached. Waiting on Google Play"}
   },
   nearbyMiles:50,   // Store Network: how far "nearby" reaches

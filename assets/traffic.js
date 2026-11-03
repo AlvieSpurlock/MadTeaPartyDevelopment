@@ -36,7 +36,6 @@
       "studio.index.html", "studio.transparency.html", "studio.coalition.html", "studio.socials.html",
       "queens-court.index.html", "looking-glass.index.html", "revenue-simulator.index.html",
       "asset-logger.index.html", "dnd-combat-balancer.index.html",
-      "dev-kits.index.html", "dev-kits.levelplay.html", "dev-kits.appodeal.html", "dev-kits.admob.html", "dev-kits.localization.html",
       // March Hare Games
       "studio.games.html", "mimic-masters.index.html", "scorchlet.index.html", "hero-impervious.index.html", "we-built-this-city.index.html"
     ];

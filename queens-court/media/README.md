@@ -5,14 +5,14 @@ Drop these files in this folder with exactly these names. Each one appears on th
 
 | File | What to capture | Where it shows |
 |---|---|---|
-| hero-swipe.mp4 | A short muted loop of Swipe on a phone: approve, reject, next | Home hero, over the phone drawing |
+| hero-swipe.mp4 | Optional: a short muted loop of Swipe on a phone (tap approve, the next item appears) | Home hero, over the phone drawing |
 | signoff.png | What a Sign Off found (outlets by type) | Features, top |
 | studio.png | The Studio overview | Features → Clips |
 | today.png | Today: the day's checklist | Features → Daily |
 | pitch.png | A drafted pitch (use a public outlet; no private email text) | Features → Outreach |
 | outreach-locator.png | Outreach Locator with suggestions | Features → Find people and Awards |
 | clip-editor.png | The Clip Editor with a clip open | Features → Clips |
-| progress-card.png | The Studio progress card mid-run | Features → Clips |
+| (none) | The progress card on Features → Clips uses looking-glass/media/progress-card.png, because clip and social projects use the Looking Glass look | Features → Clips |
 | swipe.png | Swipe on a phone (portrait) | Features → Your phone |
 
 The demo video goes on YouTube. Paste its ID into data/products.js (demo: "...").

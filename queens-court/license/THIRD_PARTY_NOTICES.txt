@@ -1,0 +1,70 @@
+Queens Court - THIRD-PARTY SOFTWARE
+Version 1.1.0
+
+Queens Court's own code is licensed under LICENSE.txt. It doesn't include anyone else's software in its download.
+When you first run it, its installer downloads the programs and libraries below from their official sources onto
+your PC. Each one is under its own license (not under Queens Court's), which you can read at the address given.
+
+PROGRAMS
+- Python (Python Software Foundation License) - https://www.python.org/ - installed with winget if missing
+- ffmpeg (GPL-3.0 build from gyan.dev) - https://ffmpeg.org/legal.html - downloaded into the tools folder
+- Ollama (MIT) - https://github.com/ollama/ollama - installed with winget if missing
+- cloudflared (Apache-2.0), optional - https://github.com/cloudflare/cloudflared - downloaded into the tools folder
+  only when you turn on "Open it from anywhere"; the link runs through Cloudflare under its terms
+  (https://www.cloudflare.com/website-terms/)
+- SearXNG (AGPL-3.0), optional - https://github.com/searxng/searxng - runs unchanged in Docker Desktop when you
+  click "Set up free unlimited search"; Docker Desktop has its own terms (https://www.docker.com/legal/)
+
+AI MODELS (downloaded by Ollama or faster-whisper; each under its own license)
+- Mistral 7B Instruct (Apache-2.0) - writing - https://ollama.com/library/mistral
+- Qwen2.5-VL (see its license on the Ollama page) - reading analytics screenshots, and clip moments when a game
+  asks it - https://ollama.com/library/qwen2.5vl
+- nomic-embed-text (Apache-2.0) - matching - https://ollama.com/library/nomic-embed-text
+- Whisper speech models via faster-whisper (MIT) - speech-to-text for clips - https://github.com/SYSTRAN/faster-whisper
+You can change the models in Setup; any model you choose comes with its own license.
+
+FONTS (downloaded once from Google Fonts - github.com/google/fonts - into assets\global\fonts the first time text
+art is drawn; each under its own license, free for commercial use)
+- Lilita One, Fredoka, Titan One, Bangers, Bungee, Anton, Bowlby One SC, Rubik Mono One, Creepster - SIL Open Font
+  License 1.1 - https://openfontlicense.org/
+- Luckiest Guy - Apache License 2.0 - https://www.apache.org/licenses/LICENSE-2.0
+
+STARTER ASSETS
+The starter sound effects, GIFs and color grades (assets\global) are made by Queens Court itself, by code, the first time
+the clip studio runs - they're original and yours to use. Files you add on the Assets page are yours to have rights
+to.
+
+PYTHON LIBRARIES (installed with pip into the program's own .venv folder)
+- streamlit (Apache-2.0) - https://github.com/streamlit/streamlit
+- pandas (BSD-3-Clause) - https://github.com/pandas-dev/pandas
+- numpy (BSD-3-Clause) - https://github.com/numpy/numpy
+- scikit-learn (BSD-3-Clause) - https://github.com/scikit-learn/scikit-learn
+- requests (Apache-2.0) - https://github.com/psf/requests
+- rapidfuzz (MIT) - https://github.com/rapidfuzz/RapidFuzz
+- msal (MIT) - https://github.com/AzureAD/microsoft-authentication-library-for-python
+- segno (BSD-3-Clause) - https://github.com/heuer/segno
+- ddgs (MIT) - https://github.com/deedy5/ddgs
+- yt-dlp (Unlicense) - https://github.com/yt-dlp/yt-dlp
+- faster-whisper (MIT) - https://github.com/SYSTRAN/faster-whisper
+- tomlkit (MIT) - https://github.com/python-poetry/tomlkit
+- psutil (BSD-3-Clause) - https://github.com/giampaolo/psutil
+- dnspython (ISC) - https://github.com/rthalley/dnspython
+- phonenumbers (Apache-2.0) - https://github.com/daviddrysdale/python-phonenumbers
+- opencv-python-headless (Apache-2.0; its wheel includes FFmpeg under the LGPL-2.1) - smart crop -
+  https://github.com/opencv/opencv-python
+- Pillow (MIT-CMU, installed with streamlit) - GIFs and font previews - https://github.com/python-pillow/Pillow
+And the libraries these depend on, each under its own license (pip shows them: "pip show <name>").
+
+ONLY ON PCs WITH AN NVIDIA GRAPHICS CARD
+- nvidia-cublas-cu12, nvidia-cudnn-cu12, nvidia-cuda-runtime-cu12 (NVIDIA Software License Agreement - proprietary,
+  free to use) - https://docs.nvidia.com/cuda/eula/ - installed from PyPI so speech-to-text can use the card
+
+ONLY IF YOU RUN "Install Fine-Tuning Parts.bat" (optional)
+- PyTorch (BSD-3-Clause) - https://github.com/pytorch/pytorch
+- transformers, trl, peft, datasets, accelerate (Apache-2.0) - https://github.com/huggingface
+- bitsandbytes (MIT) - https://github.com/bitsandbytes-foundation/bitsandbytes
+- the base model it fine-tunes (Mistral 7B Instruct v0.3, Apache-2.0) - https://huggingface.co/mistralai
+
+SERVICES
+Search engines, social platforms, email providers and Twitch are reached with your own accounts under their own
+terms. Automatic Twitch downloading is off until you turn it on (see LICENSE.txt, section 4c).
