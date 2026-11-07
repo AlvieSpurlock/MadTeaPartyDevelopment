@@ -36,7 +36,7 @@
     // Only landing pages are counted on the studio sites, so the Sheet shows which products get the most eyes.
     var LANDING = [
       // Mad Tea Party Development
-      "studio.index.html", "studio.transparency.html", "studio.coalition.html", "studio.socials.html", "studio.founding-members.html", "studio.affiliates.html",
+      "studio.index.html", "studio.transparency.html", "studio.coalition.html", "studio.socials.html", "studio.founding-members.html", "studio.affiliates.html", "studio.tutorials.html",
       "queens-court.index.html", "looking-glass.index.html", "revenue-simulator.index.html",
       "asset-logger.index.html", "dnd-combat-balancer.index.html",
       // March Hare Games

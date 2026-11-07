@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutorials · Mad Tea Party Development</title>
+  <meta name="description" content="Video tutorials for Looking Glass and Queens Court: setup, clips, posting and outreach. Search them all in one place.">
+  <meta name="theme-color" content="#0a140f">
+  <link rel="icon" href="assets/logos/mad-tea-party.webp">
+  <link rel="me" href="https://mastodon.social/@alviespurlock">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<style>
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .tut-bar { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .tut-search { flex: 1 1 320px; }
+  .tut-search input { width: 100%; padding: 13px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--moss); color: var(--text); font: 1rem var(--ui); }
+  .tut-search input:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .tut-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tut-tabs button { font: .95rem var(--ui); padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; }
+  .tut-tabs button[aria-selected="true"] { background: var(--plum); color: #fff; border-color: var(--violet); }
+  .tut-count { color: var(--muted); margin: 0 0 18px; font-family: var(--ui); }
+  .tut-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; margin-bottom: 40px; }
+  .tut { background: var(--moss); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .tut-play { position: relative; display: block; width: 100%; aspect-ratio: 16/9; border: 0; padding: 0; background: #000 center/cover no-repeat; cursor: pointer; }
+  .tut-play::after { content: "▶"; position: absolute; inset: 0; margin: auto; width: 64px; height: 64px; border-radius: 50%; background: rgba(10,20,15,.82); color: var(--gold); font-size: 1.6rem; line-height: 64px; text-align: center; border: 2px solid var(--gold); transition: transform .15s; }
+  .tut-play:hover::after, .tut-play:focus-visible::after { transform: scale(1.08); }
+  .tut iframe { width: 100%; aspect-ratio: 16/9; border: 0; display: block; }
+  .tut-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .tut-body h3 { margin: 0; font: 1.05rem/1.35 var(--ui); color: var(--text); }
+  .tut-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; font: .85rem var(--ui); }
+  .tut-tag { padding: 3px 10px; border-radius: 999px; background: rgba(141,255,193,.12); color: var(--glow); }
+  .tut-tag.qc { background: rgba(176,136,255,.15); color: var(--violet); }
+  .tut-meta a { color: var(--muted); }
+  .tut-empty { grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 30px 10px; }
+  .tut-cta { text-align: center; max-width: 760px; margin: 0 auto; }
+  .tut-cta-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img class="logo" src="assets/logos/mad-tea-party.webp" alt="">
+        <span>Mad Tea Party<small>Development</small></span>
+      </a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Shop</a>
+        <a href="games.html">Games</a>
+        <a href="transparency.html">Transparency</a>
+        <a href="coalition.html">Coalition</a>
+        <a href="socials.html">Socials</a>
+        <a href="games.html" class="btn violet small"><img src="assets/icons/key_gold.webp" alt="">March Hare Games</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero compact">
+      <div class="hero-bg" style="background-image:url(assets/bg/forest.webp);background-position:center 70%"></div>
+      <div class="fireflies" data-count="24" aria-hidden="true"></div>
+      <div class="wrap reveal">
+        <p class="kicker">~ a lesson at the tea table ~</p>
+        <h1 data-wobble>Tutorials</h1>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="tagline">Video walkthroughs for Looking Glass and Queens Court, from setup to your first week of posts. New ones land here as soon as they're up.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:20px">
+      <div class="wrap">
+        <div class="tut-bar">
+          <label class="tut-search"><span class="sr">Search tutorials</span>
+            <input id="tut-q" type="search" placeholder="Search tutorials, like &ldquo;TikTok&rdquo; or &ldquo;setup&rdquo;" autocomplete="off"></label>
+          <div class="tut-tabs" role="tablist" aria-label="Which app">
+            <button role="tab" data-app="all" aria-selected="true">All</button>
+            <button role="tab" data-app="looking-glass" aria-selected="false">Looking Glass</button>
+            <button role="tab" data-app="queens-court" aria-selected="false">Queens Court</button>
+          </div>
+        </div>
+        <p class="tut-count" id="tut-count" aria-live="polite">Brewing the tutorials&hellip;</p>
+        <div class="tut-grid" id="tut-grid"></div>
+        <div class="panel reveal tut-cta"><div class="panel-inner">
+          <h3>Want to try it yourself?</h3>
+          <p>Looking Glass has a free demo, and both apps are one price, once.</p>
+          <div class="tut-cta-btns">
+            <a class="btn gold" href="looking-glass/index.html#try-demo">Try the free demo</a>
+            <a class="btn" href="looking-glass/index.html">Looking Glass · $14.99</a>
+            <a class="btn violet" href="queens-court/index.html">Queens Court · $19.99</a>
+          </div>
+        </div></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="brand" href="index.html"><img class="logo" src="assets/logos/mad-tea-party.webp" alt=""><span>Mad Tea Party<small>Development</small></span></a>
+          <p>By a player, for the players. Home of March Hare Games.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="index.html#menu">The Tea Menu</a></li>
+            <li><a href="index.html#rules">House Rules</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Games</h4>
+          <ul>
+            <li><a href="mimic-masters/index.html">Mimic Masters</a></li>
+            <li><a href="scorchlet/index.html">Scorchlet</a></li>
+            <li><a href="hero-impervious/index.html">Hero Impervious</a></li>
+            <li><a href="we-built-this-city/index.html">We Built This City</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="index.html#contact">Send a Raven</a></li>
+            <li><a href="transparency.html">Transparency</a></li>
+            <li><a href="coalition.html">The Coalition</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© <span data-year>2026</span> Mad Tea Party Development</span>
+        <a href="#main">Back up the rabbit hole ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/products.js"></script>
+  <script>
+  /* Tutorials, read live from the Google Sheet in data/products.js (tutorialsSheet).
+     Row 1 holds the headers "Looking Glass" and "Queens Court"; each cell below is one YouTube link,
+     or "Title | link" to set the title yourself. Newest (lowest) rows show first. */
+  (function () {
+    var P = window.PRODUCTS || {};
+    var SHEET = P.tutorialsSheet || "";
+    var grid = document.getElementById("tut-grid"), count = document.getElementById("tut-count");
+    var qBox = document.getElementById("tut-q"), tabs = document.querySelectorAll(".tut-tabs button");
+    var APPS = { "looking glass": "looking-glass", "queens court": "queens-court" };
+    var NAMES = { "looking-glass": "Looking Glass", "queens-court": "Queens Court" };
+    var items = [], app = "all";
+    var params = new URLSearchParams(location.search);
+    if (NAMES[params.get("app")]) app = params.get("app");
+    if (params.get("q")) qBox.value = params.get("q").slice(0, 80);
+
+    function vidId(s) {
+      var m = String(s).match(/(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/|v\/))([\w-]{11})/);
+      return m ? m[1] : (/^[\w-]{11}$/.test(String(s).trim()) ? String(s).trim() : "");
+    }
+    function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+    function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+
+    // Title for a video with no title in the sheet: YouTube's oEmbed, then noembed.com, then a plain label.
+    function fetchTitle(it) {
+      var cached = store("tut-title:" + it.id);
+      if (cached) { it.title = cached; return Promise.resolve(); }
+      var url = "https://www.youtube.com/watch?v=" + it.id;
+      return fetch("https://www.youtube.com/oembed?format=json&url=" + encodeURIComponent(url))
+        .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+        .catch(function () { return fetch("https://noembed.com/embed?url=" + encodeURIComponent(url)).then(function (r) { return r.json(); }); })
+        .then(function (d) { if (d && d.title) { it.title = d.title; store("tut-title:" + it.id, d.title); } })
+        .catch(function () {});
+    }
+
+    function render() {
+      var words = qBox.value.toLowerCase().split(/\s+/).filter(Boolean);
+      var shown = items.filter(function (it) {
+        if (app !== "all" && it.app !== app) return false;
+        var hay = (it.title + " " + NAMES[it.app]).toLowerCase();
+        return words.every(function (w) { return hay.indexOf(w) > -1; });
+      });
+      var where = app === "all" ? "" : " for " + NAMES[app];
+      count.textContent = items.length ? shown.length + (shown.length === 1 ? " tutorial" : " tutorials") + where + (words.length ? " matching “" + qBox.value.trim() + "”" : "") : "";
+      grid.innerHTML = shown.length ? shown.map(function (it) {
+        return '<article class="tut"><button class="tut-play" data-id="' + it.id + '" aria-label="Play: ' + esc(it.title) + '" style="background-image:url(https://i.ytimg.com/vi/' + it.id + '/hqdefault.jpg)"></button>' +
+          '<div class="tut-body"><h3>' + esc(it.title) + '</h3><div class="tut-meta"><span class="tut-tag' + (it.app === "queens-court" ? " qc" : "") + '">' + NAMES[it.app] + '</span>' +
+          '<a href="https://www.youtube.com/watch?v=' + it.id + '" target="_blank" rel="noopener">Watch on YouTube ↗</a></div></div></article>';
+      }).join("") : '<p class="tut-empty">' + (items.length ? "No tutorials match that yet. Try another word, or <a href=\"#\" id=\"tut-clear\">clear the search</a>." : "The first tutorials are on their way. Check back soon!") + "</p>";
+    }
+
+    grid.addEventListener("click", function (e) {
+      var b = e.target.closest(".tut-play");
+      if (b) {
+        var f = document.createElement("iframe");
+        f.src = "https://www.youtube-nocookie.com/embed/" + b.dataset.id + "?autoplay=1&rel=0";
+        f.title = b.getAttribute("aria-label");
+        f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        f.allowFullscreen = true;
+        b.replaceWith(f);
+      }
+      if (e.target.id === "tut-clear") { e.preventDefault(); qBox.value = ""; setApp("all"); }
+    });
+    function setApp(a) {
+      app = a;
+      tabs.forEach(function (t) { t.setAttribute("aria-selected", t.dataset.app === a ? "true" : "false"); });
+      render();
+    }
+    tabs.forEach(function (t) { t.addEventListener("click", function () { setApp(t.dataset.app); }); });
+    var timer; qBox.addEventListener("input", function () { clearTimeout(timer); timer = setTimeout(render, 120); });
+    setApp(app);
+
+    // Read the sheet through Google's public query endpoint (JSONP, so no server needed).
+    window.__tutSheet = function (res) {
+      try {
+        var t = res.table, cols = t.cols.map(function (c) { return APPS[String(c.label || "").trim().toLowerCase()] || ""; });
+        var rows = t.rows.slice();
+        // If Google didn't treat row 1 as headers, read them from the first row.
+        if (!cols.some(Boolean) && rows.length) { cols = rows.shift().c.map(function (c) { return APPS[String(c && c.v || "").trim().toLowerCase()] || ""; }); }
+        var seen = {}, list = [];
+        rows.forEach(function (r, ri) {
+          (r.c || []).forEach(function (c, ci) {
+            if (!c || c.v == null || !cols[ci]) return;
+            var raw = String(c.v).trim(), title = "", link = raw;
+            if (raw.indexOf("|") > -1) { var parts = raw.split("|"); link = parts.pop().trim(); title = parts.join("|").trim(); }
+            var id = vidId(link);
+            if (!id || seen[id + cols[ci]]) return;
+            seen[id + cols[ci]] = 1;
+            list.push({ id: id, app: cols[ci], title: title || "", row: ri });
+          });
+        });
+        list.sort(function (a, b) { return b.row - a.row; });   // newest rows first
+        list.forEach(function (it) { if (!it.title) it.title = store("tut-title:" + it.id) || NAMES[it.app] + " tutorial"; });
+        items = list; render();
+        Promise.all(list.filter(function (it) { return /tutorial$/.test(it.title) && !store("tut-title:" + it.id); }).map(fetchTitle)).then(render);
+      } catch (e) { fail(); }
+    };
+    function fail() { count.textContent = ""; grid.innerHTML = '<p class="tut-empty">The tutorials didn’t load just now. Try refreshing, or find them all on <a href="https://www.youtube.com/@HattersMania" target="_blank" rel="noopener">YouTube</a>.</p>'; }
+    if (!/^[\w-]{20,}$/.test(SHEET)) { grid.innerHTML = '<p class="tut-empty">The first tutorials are on their way. Check back soon!</p>'; count.textContent = ""; return; }
+    var s = document.createElement("script");
+    s.src = "https://docs.google.com/spreadsheets/d/" + SHEET + "/gviz/tq?headers=1&tqx=responseHandler:__tutSheet&_=" + Math.floor(Date.now() / 60000);
+    s.onerror = fail;
+    document.head.appendChild(s);
+    setTimeout(function () { if (!items.length && /Brewing/.test(count.textContent)) fail(); }, 12000);
+  })();
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

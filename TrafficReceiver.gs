@@ -33,7 +33,8 @@ var BRANDS = [
       ['Ethical Indie Dev Coalition', 'studio.coalition.html'],
       ['Socials', 'studio.socials.html'],
       ['Founding Members', 'studio.founding-members.html'],
-      ['Become an Affiliate', 'studio.affiliates.html']
+      ['Become an Affiliate', 'studio.affiliates.html'],
+      ['Tutorials', 'studio.tutorials.html']
     ]],
     ['Software', [
       ['Queens Court', 'queens-court.index.html'],

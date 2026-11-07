@@ -20,6 +20,8 @@ window.PRODUCTS = {
   },
   // Affiliate application: your Google Form link (affiliates.html). "" = the Apply button emails you instead.
   affiliateForm: "",
+  // Tutorials page: the ID of the Google Sheet (Share > Anyone with the link > Viewer).
+  tutorialsSheet: "1WIG4TNC7g5jkqZRRL2mv1S7tsvN3gOjGLMNoiHyuWP4",
   // Founding Members: how many buyers get a spot on the wall.
   foundingSpots: 50,
   supportForm: "https://forms.gle/2CixqjeG1XYBWkGUA",
