@@ -126,3 +126,11 @@ Every software product and Game Dev Kit has a press kit page, linked only from t
 asset-logger/press.html, dnd-combat-balancer/press.html, dev-kits/press.html (hub) and dev-kits/<kit>-press.html.
 Each has a downloadable .zip in its folder's press/ subfolder (factsheet.txt + logo + screenshots).
 These pages aren't counted by the traffic tracker.
+
+## Launch features (Nov 2026)
+- **Looking Glass free demo button:** paste the download link into `data/products.js` → `looking-glass.demoDownload`. Until then every demo button reads "Free demo · available <demoDate>". Once set, every click is counted in the traffic Sheet as **looking-glass.demo-download.html** (Mad Tea Party Development tab → Clicks). Re-run `setup()` in TrafficReceiver.gs once so the new rows appear.
+- **Affiliate buttons:** paste your Gumroad affiliate sign-up link into `data/products.js` → `affiliateSignup` (blank = they email you).
+- **Founding Members wall:** add names to `data/founding-members.js` (only people who opted in at checkout).
+- **Upgrade note:** Looking Glass owners email their receipt for a one-use code worth $14.99 off Queens Court.
+- **Become an Affiliate page (affiliates.html):** paste your Google Form link into `data/products.js` → `affiliateForm`. Until then the Apply button opens a pre-filled email. Apply clicks are counted as **studio.affiliate-apply.html**.
+- **Proof screenshots:** looking-glass/media/proof-*.png, shown under Real Results.

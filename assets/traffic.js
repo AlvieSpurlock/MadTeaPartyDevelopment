@@ -8,8 +8,11 @@
      page with its plain names: index.html, play.html ...)
    - s = ?src= / ?utm_source= tag, else "site" (from your own sites), "from:<host>" or "direct".
    - Skips localhost, Do Not Track / Global Privacy Control, bots and prerendering, and any device
-     opted out with ?notrack=1 (?notrack=0 counts it again). Counts each page once per tab visit. */
+     opted out with ?notrack=1 (?notrack=0 counts it again). Counts each page once per tab visit.
+   - Also counts clicks on links marked data-track (the Looking Glass demo download button), as
+     looking-glass.demo-download.html in the Sheet. */
 (function () {
+  var send = null;   // set below once the checks pass; used for page views and tracked clicks
   try {
     // The TrafficReceiver web app URL (ends in /exec). Leave blank to count nothing.
     var U = "https://script.google.com/macros/s/AKfycbxQPRHkJw_xzJ2kGwJy28oEKJ_15cpd4gmDQOzhY_d9waQCcfOylBdEOehHd9ji-ihB/exec";
@@ -33,14 +36,12 @@
     // Only landing pages are counted on the studio sites, so the Sheet shows which products get the most eyes.
     var LANDING = [
       // Mad Tea Party Development
-      "studio.index.html", "studio.transparency.html", "studio.coalition.html", "studio.socials.html",
+      "studio.index.html", "studio.transparency.html", "studio.coalition.html", "studio.socials.html", "studio.founding-members.html", "studio.affiliates.html",
       "queens-court.index.html", "looking-glass.index.html", "revenue-simulator.index.html",
       "asset-logger.index.html", "dnd-combat-balancer.index.html",
       // March Hare Games
       "studio.games.html", "mimic-masters.index.html", "scorchlet.index.html", "hero-impervious.index.html", "we-built-this-city.index.html"
     ];
-    if (LANDING.indexOf(page) < 0) return;
-
     var src = (q.get("src") || q.get("utm_source") || "").toLowerCase();
     if (!src) {
       try {
@@ -50,9 +51,28 @@
     }
     src = src.replace(/[^a-z0-9:._-]/g, "").slice(0, 40) || "direct";
 
+    send = function (pg, from) {
+      var body = new URLSearchParams({ p: pg, s: from });
+      if (navigator.sendBeacon && navigator.sendBeacon(U, body)) return;
+      fetch(U, { method: "POST", body: body, mode: "no-cors", keepalive: true }).catch(function () {});
+    };
+
+    // Tracked clicks: any link with data-track="<site>.<name>" is counted as "<site>.<name>.html"
+    // (e.g. looking-glass.demo-download.html). Every click counts; repeat clicks within 3 seconds don't.
+    var lastClick = {};
+    document.addEventListener("click", function (ev) {
+      var a = ev.target && ev.target.closest && ev.target.closest("[data-track]");
+      if (!a || a.getAttribute("aria-disabled") === "true") return;
+      var key = String(a.getAttribute("data-track") || "").toLowerCase().replace(/[^a-z0-9._-]/g, "").slice(0, 55);
+      if (!key) return;
+      var now = Date.now();
+      if (lastClick[key] && now - lastClick[key] < 3000) return;
+      lastClick[key] = now;
+      send(key + ".html", src);
+    }, true);
+
+    if (LANDING.indexOf(page) < 0) return;
     try { var k = "mm_v_" + page; if (sessionStorage.getItem(k)) return; sessionStorage.setItem(k, "1"); } catch (e) {}
-    var body = new URLSearchParams({ p: page, s: src });
-    if (navigator.sendBeacon && navigator.sendBeacon(U, body)) return;
-    fetch(U, { method: "POST", body: body, mode: "no-cors", keepalive: true }).catch(function () {});
+    send(page, src);
   } catch (e) {}
 })();

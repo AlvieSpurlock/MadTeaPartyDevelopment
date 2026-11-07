@@ -21,6 +21,23 @@
     f.allow = "accelerometer; encrypted-media; gyroscope; picture-in-picture"; f.allowFullscreen = true;
     box.replaceChildren(f); box.classList.add("has-video");
   });
+  // Free demo download buttons: data-demo-download="looking-glass". Clicks are counted (data-track) once the link is set.
+  document.querySelectorAll("[data-demo-download]").forEach(btn => {
+    const p = P[btn.dataset.demoDownload]; if (!p) return;
+    if (p.demoDownload) {
+      btn.href = p.demoDownload; btn.target = "_blank"; btn.rel = "noopener";
+      btn.textContent = btn.dataset.label || "Try the free demo · 3 streams";
+      btn.setAttribute("data-track", `${btn.dataset.demoDownload}.demo-download`);
+    } else {
+      btn.removeAttribute("href"); btn.classList.add("soon"); btn.setAttribute("aria-disabled", "true");
+      btn.textContent = `Free demo · available ${p.demoDate || "soon"}`;
+    }
+  });
+  // Affiliate sign-up buttons
+  document.querySelectorAll("[data-affiliate]").forEach(a => {
+    if (P.affiliateSignup) { a.href = P.affiliateSignup; a.target = "_blank"; a.rel = "noopener"; }
+    else if (P.supportEmail) a.href = "mailto:" + P.supportEmail + "?subject=Affiliate%20program";
+  });
   // Screenshot slots: until the file exists, show what belongs there
   document.querySelectorAll(".shot img").forEach(img => {
     const miss = () => img.closest(".shot").classList.add("missing");
