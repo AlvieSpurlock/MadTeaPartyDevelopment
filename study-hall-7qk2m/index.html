@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Affiliate Study Hall · Mad Tea Party Development</title>
+  <meta name="theme-color" content="#0a140f">
+  <link rel="icon" href="../assets/logos/mad-tea-party.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --void: #040806; --forest: #0a140f; --moss: #10211a; --bark: #1a2b22; --line: #2c4436;
+      --text: #e8efe6; --muted: #9db3a5; --glow: #8dffc1; --violet: #b088ff; --plum: #4a2a78;
+      --gold: #f3c85e; --rose: #ff5d7d; --good: #8dffc1; --bad: #ff8fa3;
+      --title: "IM Fell English SC", Georgia, serif; --story: "IM Fell English", Georgia, serif;
+      --ui: "Alata", "Segoe UI", system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--forest); color: var(--text); font: 17px/1.6 var(--ui); overflow-x: hidden; }
+    a { color: var(--glow); }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+    header.hero { position: relative; padding: 46px 0 34px; text-align: center; overflow: hidden; border-bottom: 1px solid var(--line); }
+    header.hero::before { content: ""; position: absolute; inset: 0; background: url(../assets/bg/forest.webp) center 70%/cover; opacity: .35; }
+    header.hero .wrap { position: relative; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-family: var(--story); }
+    .brand img { width: 40px; height: 40px; border-radius: 50%; }
+    .kicker { font-family: var(--story); font-style: italic; color: var(--gold); margin: 18px 0 4px; font-size: 1.15rem; }
+    h1 { font: 400 clamp(2.2rem, 6vw, 3.4rem)/1.1 var(--title); margin: 0; color: #f1e6cc; text-shadow: 0 3px 14px rgba(0,0,0,.8); }
+    .lead { max-width: 640px; margin: 12px auto 0; color: var(--text); }
+    .secret { display: inline-block; margin-top: 14px; font-size: .85rem; color: var(--muted); border: 1px dashed var(--line); border-radius: 999px; padding: 4px 14px; background: rgba(0,0,0,.35); }
+
+    nav.modes { position: sticky; top: 0; z-index: 5; background: rgba(10,20,15,.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+    nav.modes .wrap { display: flex; gap: 6px; overflow-x: auto; padding-top: 10px; padding-bottom: 10px; scrollbar-width: none; }
+    nav.modes button { flex: none; font: .95rem var(--ui); padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; }
+    nav.modes button[aria-selected="true"] { background: var(--plum); color: #fff; border-color: var(--violet); }
+
+    main { padding: 26px 0 60px; }
+    .panel { background: var(--moss); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+    @media (max-width: 600px) { .panel { padding: 18px 14px; } }
+    h2 { font: 400 1.9rem/1.2 var(--title); color: var(--violet); margin: 0 0 6px; }
+    .sub { color: var(--muted); margin: 0 0 18px; }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .grow { flex: 1; }
+    .btn { font: .95rem var(--ui); padding: 10px 18px; border-radius: 12px; border: 1px solid var(--line); background: var(--bark); color: var(--text); cursor: pointer; }
+    .btn:hover { border-color: var(--gold); }
+    .btn.gold { background: var(--gold); color: #2b1a02; border-color: var(--gold); }
+    .btn:disabled { opacity: .45; cursor: default; }
+    select, input[type=search], input[type=text] { font: 1rem var(--ui); padding: 10px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--forest); color: var(--text); }
+    select:focus, input:focus, .btn:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .tag { display: inline-block; font-size: .78rem; padding: 2px 10px; border-radius: 999px; background: rgba(141,255,193,.12); color: var(--glow); }
+    .tag.qc { background: rgba(176,136,255,.16); color: var(--violet); }
+    .tag.aff { background: rgba(243,200,94,.15); color: var(--gold); }
+    .tag.both { background: rgba(255,255,255,.08); color: var(--text); }
+    .score { font-family: var(--ui); color: var(--gold); }
+    .hidden { display: none !important; }
+
+    /* Flashcards */
+    .card-stage { perspective: 1200px; margin: 18px 0; }
+    .flash { position: relative; width: 100%; min-height: 260px; border: 0; padding: 0; background: none; cursor: pointer; transform-style: preserve-3d; transition: transform .5s; color: inherit; font: inherit; text-align: center; }
+    .flash.flipped { transform: rotateY(180deg); }
+    .face { position: absolute; inset: 0; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; padding: 26px; border-radius: 18px; border: 2px solid var(--line); background: linear-gradient(160deg, var(--bark), var(--moss)); }
+    .face.back { transform: rotateY(180deg); border-color: var(--gold); }
+    .face .q { font: 400 clamp(1.3rem, 3.6vw, 1.75rem)/1.3 var(--story); }
+    .face .a { font-size: 1.08rem; max-width: 620px; }
+    .face .hint { color: var(--muted); font-size: .85rem; }
+    @media (prefers-reduced-motion: reduce) { .flash { transition: none; } }
+
+    /* Match */
+    .match { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .match .col { display: grid; gap: 10px; align-content: start; }
+    .tile { font: .98rem/1.35 var(--ui); text-align: left; padding: 12px 14px; border-radius: 12px; border: 2px solid var(--line); background: var(--forest); color: var(--text); cursor: pointer; min-height: 56px; }
+    .tile.sel { border-color: var(--gold); background: rgba(243,200,94,.08); }
+    .tile.done { border-color: var(--good); background: rgba(141,255,193,.08); color: var(--muted); cursor: default; }
+    .tile.miss { animation: shake .35s; border-color: var(--bad); }
+    @keyframes shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+    @media (max-width: 560px) { .tile { font-size: .9rem; padding: 10px; } }
+
+    /* Fill and quiz */
+    .prompt { font: 400 clamp(1.2rem, 3.4vw, 1.5rem)/1.4 var(--story); margin: 18px 0 14px; }
+    .blank { display: inline-block; min-width: 90px; border-bottom: 2px solid var(--gold); color: var(--gold); text-align: center; }
+    .feedback { min-height: 1.6em; margin-top: 12px; }
+    .feedback.ok { color: var(--good); } .feedback.no { color: var(--bad); }
+    .choices { display: grid; gap: 10px; margin-top: 8px; }
+    .choice { text-align: left; }
+    .choice.right { border-color: var(--good); background: rgba(141,255,193,.1); }
+    .choice.wrong { border-color: var(--bad); background: rgba(255,143,163,.08); }
+    .progress { height: 6px; border-radius: 99px; background: var(--forest); overflow: hidden; margin-top: 16px; }
+    .progress span { display: block; height: 100%; background: var(--gold); width: 0; transition: width .3s; }
+
+    /* Cheat sheet */
+    .sheet { display: grid; gap: 10px; margin-top: 16px; }
+    .sheet details { border: 1px solid var(--line); border-radius: 12px; background: var(--forest); padding: 12px 16px; }
+    .sheet summary { cursor: pointer; font-weight: 600; display: flex; gap: 10px; align-items: baseline; justify-content: space-between; }
+    .sheet summary span:first-child { flex: 1; }
+    .sheet p { margin: 10px 0 0; color: var(--text); }
+    .say { margin-top: 18px; padding: 16px; border-radius: 14px; border: 1px dashed var(--gold); }
+    .say h3 { margin: 0 0 6px; color: var(--gold); font: 400 1.25rem var(--story); }
+    .say p { margin: 0; }
+    footer { border-top: 1px solid var(--line); padding: 22px 0 40px; color: var(--muted); font-size: .9rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <a class="brand" href="../index.html"><img src="../assets/logos/mad-tea-party.webp" alt=""><span>Mad Tea Party Development</span></a>
+      <p class="kicker">~ for affiliates' eyes only ~</p>
+      <h1>The Affiliate Study Hall</h1>
+      <p class="lead">Learn the answers your chat will ask about Looking Glass and Queens Court, so you can answer like you built it. Flashcards, matching, fill in the blank and a quiz, all from the real FAQ.</p>
+      <span class="secret">Unlisted: please keep this link inside the affiliates' Discord</span>
+    </div>
+  </header>
+
+  <nav class="modes" aria-label="Study modes">
+    <div class="wrap" role="tablist">
+      <button role="tab" data-mode="flash" aria-selected="true">Flashcards</button>
+      <button role="tab" data-mode="match" aria-selected="false">Match</button>
+      <button role="tab" data-mode="fill" aria-selected="false">Fill in the blank</button>
+      <button role="tab" data-mode="quiz" aria-selected="false">Quiz</button>
+      <button role="tab" data-mode="sheet" aria-selected="false">Cheat sheet</button>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <div class="row" style="margin-bottom:16px">
+      <label for="deck" class="sub" style="margin:0">Deck</label>
+      <select id="deck">
+        <option value="all">Everything</option>
+        <option value="lg">Looking Glass</option>
+        <option value="qc">Queens Court</option>
+        <option value="aff">Affiliate rules</option>
+      </select>
+    </div>
+
+    <!-- Flashcards -->
+    <section id="mode-flash" class="panel">
+      <h2>Flashcards</h2>
+      <p class="sub">Tap the card to flip it. Say the answer out loud before you flip, like you would on stream.</p>
+      <div class="card-stage">
+        <button class="flash" id="flash" aria-live="polite">
+          <div class="face front"><span id="f-tag" class="tag"></span><div class="q" id="f-q"></div><div class="hint">Tap to flip</div></div>
+          <div class="face back"><div class="a" id="f-a"></div><div class="hint">Tap to flip back</div></div>
+        </button>
+      </div>
+      <div class="row">
+        <button class="btn" id="f-prev">← Back</button>
+        <span class="grow score" id="f-count" style="text-align:center"></span>
+        <button class="btn" id="f-shuffle">Shuffle</button>
+        <button class="btn gold" id="f-next">Next →</button>
+      </div>
+    </section>
+
+    <!-- Match -->
+    <section id="mode-match" class="panel hidden">
+      <h2>Match</h2>
+      <p class="sub">Pick a question, then the answer that goes with it.</p>
+      <div class="row"><span class="score grow" id="m-score"></span><button class="btn gold" id="m-new">New round</button></div>
+      <div class="match"><div class="col" id="m-left"></div><div class="col" id="m-right"></div></div>
+    </section>
+
+    <!-- Fill in the blank -->
+    <section id="mode-fill" class="panel hidden">
+      <h2>Fill in the blank</h2>
+      <p class="sub">Type the missing words. Close is fine: it checks for the key words, not exact punctuation.</p>
+      <div class="prompt" id="b-prompt"></div>
+      <form class="row" id="b-form" autocomplete="off">
+        <input type="text" id="b-input" class="grow" aria-label="Your answer" placeholder="Your answer">
+        <button class="btn gold" type="submit">Check</button>
+        <button class="btn" type="button" id="b-show">Show answer</button>
+        <button class="btn" type="button" id="b-next">Next →</button>
+      </form>
+      <div class="feedback" id="b-feedback" aria-live="polite"></div>
+      <p class="score" id="b-score"></p>
+    </section>
+
+    <!-- Quiz -->
+    <section id="mode-quiz" class="panel hidden">
+      <h2>Quiz</h2>
+      <p class="sub">10 questions, one answer each. Your best score is saved on this device.</p>
+      <div id="q-run">
+        <div class="row"><span class="score grow" id="q-count"></span><span class="score" id="q-best"></span></div>
+        <div class="prompt" id="q-prompt"></div>
+        <div class="choices" id="q-choices"></div>
+        <div class="feedback" id="q-feedback" aria-live="polite"></div>
+        <div class="row" style="margin-top:12px"><span class="grow"></span><button class="btn gold" id="q-next" disabled>Next →</button></div>
+        <div class="progress"><span id="q-bar"></span></div>
+      </div>
+      <div id="q-done" class="hidden" style="text-align:center">
+        <div class="prompt" id="q-result"></div>
+        <button class="btn gold" id="q-again">Take it again</button>
+      </div>
+    </section>
+
+    <!-- Cheat sheet -->
+    <section id="mode-sheet" class="panel hidden">
+      <h2>Cheat sheet</h2>
+      <p class="sub">Every answer in one place. Keep it open on a second screen while you stream.</p>
+      <input type="search" id="s-q" placeholder="Search, like “refund” or “Mac”" aria-label="Search the cheat sheet" style="width:100%">
+      <div class="say"><h3>The one line to remember</h3><p>&ldquo;Buy once, no subscription. 14-day refund, free updates forever. Windows. There's a free 3-stream demo, and my link gets you 30% off (affiliate link).&rdquo;</p></div>
+      <div class="sheet" id="s-list"></div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">Answers match the Looking Glass and Queens Court FAQ pages as of November 2026. Something out of date? Tell Alvie in the affiliates' Discord.</div></footer>
+
+  <script>
+  (function () {
+    // q: question · a: full answer · key: short answer · alts: other accepted answers
+    // fill: sentence with ___ · wrong: 3 quiz distractors · deck: lg, qc, both, aff
+    var CARDS = [
+      { deck: "lg", q: "How much is Looking Glass?", a: "$14.99, one time. No subscription.", key: "$14.99", alts: ["14.99", "15"], fill: "Looking Glass costs ___, once, with no subscription.", wrong: ["$9.99 a month", "$19.99", "$4.99 a month"] },
+      { deck: "qc", q: "How much is Queens Court?", a: "$19.99, one time. No subscription.", key: "$19.99", alts: ["19.99", "20"], fill: "Queens Court costs ___, once, and includes everything Looking Glass does.", wrong: ["$14.99", "$29.99 a month", "$49.99"] },
+      { deck: "qc", q: "I already own Looking Glass. Do I pay full price for Queens Court?", a: "No. Email your Looking Glass receipt and get a code to upgrade for the $5 difference.", key: "$5", alts: ["5", "five dollars"], fill: "Looking Glass owners upgrade to Queens Court for the ___ difference.", wrong: ["Full price", "$10", "It's a free upgrade"] },
+      { deck: "both", q: "Is it a subscription?", a: "No. One payment, yours to keep.", key: "One payment", alts: ["no", "one time", "once"], fill: "It's not a subscription: it's ___, yours to keep.", wrong: ["Monthly, cancel anytime", "Yearly", "Free with ads"] },
+      { deck: "both", q: "Can I get a refund?", a: "Yes: a full refund within 14 days, no questions asked.", key: "14 days", alts: ["14", "fourteen days", "two weeks"], fill: "A full refund within ___, no questions asked.", wrong: ["7 days", "30 days", "No refunds"] },
+      { deck: "both", q: "Do updates cost extra?", a: "No. Free forever: download the newest version from your Gumroad library. Your settings and data stay.", key: "Free forever", alts: ["free", "forever"], fill: "Updates are ___, from your Gumroad library.", wrong: ["Free for one year", "$5 each", "Only with a subscription"] },
+      { deck: "lg", q: "Is there a free trial?", a: "Yes. The free demo runs 3 full streams with every feature. Demo clips carry a small “Made with Looking Glass” mark.", key: "3 streams", alts: ["3", "three streams", "3 full streams"], fill: "The free demo runs ___ with every feature.", wrong: ["7 days", "1 stream", "There's no trial"] },
+      { deck: "both", q: "Does it work on Mac?", a: "Windows only for now (Windows 10 or 11, 64-bit).", key: "Windows only", alts: ["windows", "no"], fill: "It runs on ___ for now (Windows 10 or 11, 64-bit).", wrong: ["Mac and Windows", "Any browser", "Mac only"] },
+      { deck: "both", q: "Will it run on my PC?", a: "16 GB RAM recommended (8 GB works, slower), about 10 GB free disk for the free AI models, and an NVIDIA GPU recommended for fast clipping.", key: "16 GB", alts: ["16", "16gb"], fill: "___ of RAM is recommended (8 GB works, just slower).", wrong: ["4 GB", "64 GB", "Any laptop"] },
+      { deck: "both", q: "Which AI does it use?", a: "Free open models that run on your own PC through Ollama. Nothing is sent to an AI company, and there's no AI bill.", key: "Ollama", alts: ["local", "on your pc"], fill: "It uses free open models on your PC through ___.", wrong: ["ChatGPT", "A paid cloud AI", "Google Gemini"] },
+      { deck: "both", q: "Where is my data?", a: "In the app's folder on your PC. Nothing is uploaded to us.", key: "On your PC", alts: ["pc", "local", "your pc"], fill: "Your data stays ___; nothing is uploaded.", wrong: ["In our cloud", "On Gumroad", "In Google Drive"] },
+      { deck: "lg", q: "How does it know what to clip?", a: "Say “clip this” or “clip that” (or your own words). Every clip word is checked by listening again, so silence, music and loops don't make clips.", key: "Clip that", alts: ["clip this", "say clip that"], fill: "Say “___” on stream and it makes a finished clip.", wrong: ["Press F9", "It clips every 5 minutes", "Chat votes on clips"] },
+      { deck: "lg", q: "Which platforms does it post to?", a: "YouTube, TikTok, Instagram, Facebook, X, Bluesky, Threads, Mastodon and Tumblr, all with one approval.", key: "9 platforms", alts: ["9", "nine"], fill: "One approval posts a clip on up to ___.", wrong: ["Only YouTube", "3 platforms", "Twitch only"] },
+      { deck: "both", q: "How many clips a day does it post?", a: "It starts at 3 a day on YouTube, Instagram and Facebook, spread through the day, and goes up only when you keep up and your followers aren't dropping.", key: "3 a day", alts: ["3", "three"], fill: "It starts at ___ on YouTube, Instagram and Facebook.", wrong: ["20 a day", "1 a week", "As many as possible"] },
+      { deck: "both", q: "Can I edit my clips?", a: "Yes: fix captions, change the edit, stitch moments or upload your own version. After 30 approved versions it edits in your style.", key: "30 versions", alts: ["30", "thirty"], fill: "After ___ approved versions, it edits in your style.", wrong: ["3 versions", "100 versions", "It never learns"] },
+      { deck: "lg", q: "Does it post on its own?", a: "Only what you approved, or everything once you turn on automatic approval yourself.", key: "Only what you approve", alts: ["what you approve", "approve"], fill: "It posts ___, unless you turn on automatic approval.", wrong: ["Everything, always", "Nothing, ever", "Whatever chat picks"] },
+      { deck: "both", q: "Does it download my Twitch VODs?", a: "Drop in your recording or VOD file and it clips it. Automatic Twitch downloading is off by default, since it may break Twitch's terms.", key: "Off by default", alts: ["off", "optional"], fill: "Automatic Twitch downloading is ___, because it may break Twitch's terms.", wrong: ["Always on", "Not possible", "Required"] },
+      { deck: "lg", q: "Which streaming platforms does it work with?", a: "Any, because it works from the recording file. Going-live detection is for Twitch.", key: "Any", alts: ["all", "any platform"], fill: "It works with ___ streaming platform, because it uses the recording file.", wrong: ["Twitch only", "YouTube only", "Kick only"] },
+      { deck: "both", q: "Can I use it from my phone?", a: "Yes: on your home Wi-Fi, or from anywhere with a secure link and a passcode.", key: "Passcode", alts: ["yes", "secure link"], fill: "From anywhere, you open it with a secure link and a ___.", wrong: ["App store app", "Not possible", "Email login"] },
+      { deck: "lg", q: "Does it post to TikTok?", a: "Yes: auto-post with your own TikTok developer sign-in, or get copy-and-post steps (title, description, hashtags, best time).", key: "Developer sign-in", alts: ["developer", "sign-in"], fill: "Auto-posting to TikTok uses your own TikTok ___.", wrong: ["Password", "Paid plan", "It can't post to TikTok"] },
+      { deck: "both", q: "Can I use it for my clients?", a: "No. One license covers one person or business promoting its own work. Each client business needs its own license.", key: "One license per business", alts: ["no", "one license"], fill: "Running it for clients needs ___ it runs for.", wrong: ["One license covers everyone", "A free agency add-on", "Nothing extra"] },
+      { deck: "both", q: "Can I change the app?", a: "Yes. It's plain Python: change it for your own use. You can't resell or share it.", key: "Plain Python", alts: ["python", "yes"], fill: "It's ___, so you can change it for your own use.", wrong: ["Locked and encrypted", "A web app only", "Closed source"] },
+      { deck: "qc", q: "What's the difference between Looking Glass and Queens Court?", a: "Looking Glass runs your social side: clips and posts on every platform. Queens Court does all that plus press, creators, pitches, replies that answer questions, grants and awards.", key: "Your whole launch", alts: ["whole launch", "everything"], fill: "Looking Glass runs your social side; Queens Court runs ___.", wrong: ["Only your emails", "Your Twitch chat", "Your game's code"] },
+      { deck: "aff", q: "How much do I earn as an affiliate?", a: "25% of every sale through your link, paid automatically by Gumroad.", key: "25%", alts: ["25", "twenty five"], fill: "Affiliates keep ___ of every sale through their link.", wrong: ["10%", "50%", "A flat $1"] },
+      { deck: "aff", q: "What do my viewers get?", a: "30% off with your code, through your link.", key: "30% off", alts: ["30", "30%"], fill: "Your viewers get ___ with your code.", wrong: ["10% off", "A free month", "Nothing"] },
+      { deck: "aff", q: "What's the monthly code?", a: "[MONTH]35 (like DEC35): 35% off for the first 7 days of each month, shared with your own link.", key: "35% off", alts: ["35", "35%"], fill: "The monthly code is ___ for the first 7 days of the month.", wrong: ["50% off all month", "20% off", "Free for a week"] },
+      { deck: "aff", q: "Should I share my code or my link?", a: "Always your link. Gumroad credits the link, not the code. A viewer who only types your code gets the discount, but you don't get the sale.", key: "Always the link", alts: ["link", "the link"], fill: "Share ___: Gumroad credits the link, not the code.", wrong: ["Just the code", "Either one", "A screenshot"] },
+      { deck: "aff", q: "How do I disclose it?", a: "Say “affiliate link” or #ad on every post and mention. The FTC requires it, and viewers trust it more.", key: "#ad", alts: ["affiliate link", "ad"], fill: "Every post says “affiliate link” or ___.", wrong: ["Nothing", "Only in the first post", "Sponsored by nobody"] },
+      { deck: "aff", q: "I haven't used it yet. Can I say I use it?", a: "No. Share it as a recommendation (“check out this tool”), not “I use this every day.” Claiming to use something you don't breaks the FTC's endorsement rules.", key: "Recommend it", alts: ["recommendation", "no"], fill: "If you haven't used it, ___ instead of claiming you use it.", wrong: ["Say you use it daily", "Don't mention it", "Make up a review"] },
+      { deck: "aff", q: "How do I get a free copy?", a: "Once your sales cover the price (about 3 sales), you get it free, on top of your 25%.", key: "About 3 sales", alts: ["3", "3 sales"], fill: "Your free copy comes after ___, on top of your 25%.", wrong: ["10 sales", "1 sale", "100 followers"] },
+      { deck: "aff", q: "What's bring a friend?", a: "Refer 3 streamers who join and each make a sale, and Queens Court is yours free, plus a badge on the leaderboard.", key: "3 friends", alts: ["3", "three"], fill: "Refer ___ who each make a sale and Queens Court is yours free.", wrong: ["10 friends", "1 friend", "50 followers"] }
+    ];
+    var NAMES = { lg: "Looking Glass", qc: "Queens Court", both: "Both apps", aff: "Affiliate rules" };
+    function $(id) { return document.getElementById(id); }
+    function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+    function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+    function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+    function deckCards() {
+      var d = $("deck").value;
+      return CARDS.filter(function (c) { return d === "all" || c.deck === d || (c.deck === "both" && (d === "lg" || d === "qc")); });
+    }
+    function tag(c) { return '<span class="tag ' + (c.deck === "qc" ? "qc" : c.deck === "aff" ? "aff" : c.deck === "both" ? "both" : "") + '">' + NAMES[c.deck] + "</span>"; }
+
+    // ---------- Modes
+    var mode = "flash";
+    var tabs = document.querySelectorAll("nav.modes button");
+    function setMode(m) {
+      mode = m;
+      tabs.forEach(function (t) { t.setAttribute("aria-selected", t.dataset.mode === m ? "true" : "false"); });
+      ["flash", "match", "fill", "quiz", "sheet"].forEach(function (x) { $("mode-" + x).classList.toggle("hidden", x !== m); });
+      start();
+    }
+    tabs.forEach(function (t) { t.addEventListener("click", function () { setMode(t.dataset.mode); }); });
+    $("deck").addEventListener("change", start);
+    function start() { ({ flash: flashStart, match: matchStart, fill: fillStart, quiz: quizStart, sheet: sheetStart })[mode](); }
+
+    // ---------- Flashcards
+    var fl = [], fi = 0;
+    function flashStart() { fl = deckCards(); fi = 0; flashShow(); }
+    function flashShow() {
+      var c = fl[fi]; $("flash").classList.remove("flipped");
+      $("f-tag").className = "tag " + (c.deck === "qc" ? "qc" : c.deck === "aff" ? "aff" : c.deck === "both" ? "both" : "");
+      $("f-tag").textContent = NAMES[c.deck];
+      $("f-q").textContent = c.q; $("f-a").textContent = c.a;
+      $("f-count").textContent = (fi + 1) + " of " + fl.length;
+    }
+    $("flash").addEventListener("click", function () { this.classList.toggle("flipped"); });
+    $("f-next").addEventListener("click", function () { fi = (fi + 1) % fl.length; flashShow(); });
+    $("f-prev").addEventListener("click", function () { fi = (fi - 1 + fl.length) % fl.length; flashShow(); });
+    $("f-shuffle").addEventListener("click", function () { fl = shuffle(fl); fi = 0; flashShow(); });
+
+    // ---------- Match
+    var mSel = null, mDone = 0, mTries = 0, mRound = [];
+    function matchStart() {
+      mRound = shuffle(deckCards()).slice(0, 6); mSel = null; mDone = 0; mTries = 0;
+      $("m-left").innerHTML = mRound.map(function (c, i) { return '<button class="tile" data-side="q" data-i="' + i + '">' + esc(c.q) + "</button>"; }).join("");
+      $("m-right").innerHTML = shuffle(mRound.map(function (c, i) { return i; })).map(function (i) { return '<button class="tile" data-side="a" data-i="' + i + '">' + esc(mRound[i].key) + "</button>"; }).join("");
+      matchScore();
+    }
+    function matchScore() { $("m-score").textContent = mDone === mRound.length ? "All matched in " + mTries + " tries!" : mDone + " of " + mRound.length + " matched"; }
+    document.querySelector(".match").addEventListener("click", function (e) {
+      var t = e.target.closest(".tile"); if (!t || t.classList.contains("done")) return;
+      if (!mSel || mSel.dataset.side === t.dataset.side) {
+        if (mSel) mSel.classList.remove("sel");
+        mSel = t; t.classList.add("sel"); return;
+      }
+      mTries++;
+      if (mSel.dataset.i === t.dataset.i) { [mSel, t].forEach(function (x) { x.classList.remove("sel"); x.classList.add("done"); x.disabled = true; }); mDone++; }
+      else { var a = mSel; [a, t].forEach(function (x) { x.classList.remove("sel"); x.classList.add("miss"); setTimeout(function () { x.classList.remove("miss"); }, 400); }); }
+      mSel = null; matchScore();
+    });
+    $("m-new").addEventListener("click", matchStart);
+
+    // ---------- Fill in the blank
+    var bl = [], bi = 0, bRight = 0, bSeen = 0, bAnswered = false;
+    function norm(s) { return String(s).toLowerCase().replace(/[^a-z0-9%$]/g, ""); }
+    function fillStart() { bl = shuffle(deckCards()); bi = 0; bRight = 0; bSeen = 0; fillShow(); }
+    function fillShow() {
+      var c = bl[bi]; bAnswered = false;
+      $("b-prompt").innerHTML = esc(c.fill).replace("___", '<span class="blank" id="b-blank">?</span>');
+      $("b-input").value = ""; $("b-feedback").textContent = ""; $("b-feedback").className = "feedback";
+      $("b-score").textContent = bSeen ? bRight + " right out of " + bSeen : "";
+    }
+    function reveal(c) { $("b-blank").textContent = c.key; }
+    $("b-form").addEventListener("submit", function (e) {
+      e.preventDefault(); var c = bl[bi], v = norm($("b-input").value); if (!v) return;
+      var ok = [c.key].concat(c.alts || []).some(function (k) { var n = norm(k); return n && (v === n || (v.length >= 2 && (v.indexOf(n) > -1 || (n.indexOf(v) > -1 && v.length >= Math.min(3, n.length))))); });
+      if (!bAnswered) { bSeen++; if (ok) bRight++; bAnswered = true; }
+      $("b-feedback").textContent = ok ? "Right! " + c.a : "Not quite. Try again, or show the answer.";
+      $("b-feedback").className = "feedback " + (ok ? "ok" : "no");
+      if (ok) reveal(c);
+      $("b-score").textContent = bRight + " right out of " + bSeen;
+    });
+    $("b-show").addEventListener("click", function () { var c = bl[bi]; if (!bAnswered) { bSeen++; bAnswered = true; } reveal(c); $("b-feedback").textContent = c.a; $("b-feedback").className = "feedback"; $("b-score").textContent = bRight + " right out of " + bSeen; });
+    $("b-next").addEventListener("click", function () { bi = (bi + 1) % bl.length; fillShow(); $("b-input").focus(); });
+
+    // ---------- Quiz
+    var ql = [], qi = 0, qRight = 0;
+    function quizStart() {
+      ql = shuffle(deckCards()).slice(0, 10); qi = 0; qRight = 0;
+      $("q-run").classList.remove("hidden"); $("q-done").classList.add("hidden");
+      var best = store("studyhall-best-" + $("deck").value);
+      $("q-best").textContent = best ? "Best: " + best + "/10" : "";
+      quizShow();
+    }
+    function quizShow() {
+      var c = ql[qi];
+      $("q-count").textContent = "Question " + (qi + 1) + " of " + ql.length;
+      $("q-prompt").textContent = c.q;
+      $("q-choices").innerHTML = shuffle([c.key].concat(c.wrong)).map(function (o) { return '<button class="btn choice" data-right="' + (o === c.key) + '">' + esc(o) + "</button>"; }).join("");
+      $("q-feedback").textContent = ""; $("q-feedback").className = "feedback"; $("q-next").disabled = true;
+      $("q-bar").style.width = (qi / ql.length * 100) + "%";
+    }
+    $("q-choices").addEventListener("click", function (e) {
+      var b = e.target.closest(".choice"); if (!b || !$("q-next").disabled) return;
+      var ok = b.dataset.right === "true", c = ql[qi];
+      if (ok) qRight++;
+      this.querySelectorAll(".choice").forEach(function (x) { x.disabled = true; if (x.dataset.right === "true") x.classList.add("right"); });
+      if (!ok) b.classList.add("wrong");
+      $("q-feedback").textContent = (ok ? "Right! " : "Not quite. ") + c.a;
+      $("q-feedback").className = "feedback " + (ok ? "ok" : "no");
+      $("q-next").disabled = false; $("q-next").focus();
+    });
+    $("q-next").addEventListener("click", function () {
+      qi++;
+      if (qi < ql.length) { quizShow(); return; }
+      $("q-bar").style.width = "100%";
+      var key = "studyhall-best-" + $("deck").value, best = Number(store(key) || 0);
+      if (qRight > best) store(key, String(qRight));
+      var msg = qRight === ql.length ? "Perfect! You could run the FAQ page yourself." : qRight >= ql.length * .7 ? "Nicely done. Chat's in good hands." : "A few more laps with the flashcards and you've got it.";
+      $("q-result").textContent = qRight + " out of " + ql.length + ". " + msg;
+      $("q-run").classList.add("hidden"); $("q-done").classList.remove("hidden");
+    });
+    $("q-again").addEventListener("click", quizStart);
+
+    // ---------- Cheat sheet
+    function sheetStart() { sheetRender(); }
+    function sheetRender() {
+      var words = $("s-q").value.toLowerCase().split(/\s+/).filter(Boolean);
+      var list = deckCards().filter(function (c) { var h = (c.q + " " + c.a + " " + NAMES[c.deck]).toLowerCase(); return words.every(function (w) { return h.indexOf(w) > -1; }); });
+      $("s-list").innerHTML = list.length ? list.map(function (c) { return "<details><summary><span>" + esc(c.q) + "</span>" + tag(c) + "</summary><p>" + esc(c.a) + "</p></details>"; }).join("") : '<p class="sub">Nothing matches that. Try another word.</p>';
+    }
+    var st; $("s-q").addEventListener("input", function () { clearTimeout(st); st = setTimeout(sheetRender, 120); });
+
+    start();
+  })();
+  </script>
+</body>
+</html>
