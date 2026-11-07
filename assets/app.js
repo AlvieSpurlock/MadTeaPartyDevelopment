@@ -37,7 +37,7 @@
   document.querySelectorAll("[data-affiliate]").forEach(a => {
     const form = P.affiliateForm || P.affiliateSignup;
     if (form) { a.href = form; a.target = "_blank"; a.rel = "noopener"; }
-    else if (P.supportEmail) a.href = "mailto:" + P.supportEmail + "?subject=Affiliate%20application&body=Channel%20link%3A%0AAudience%20size%3A%0AWhich%20app%3A";
+    else if (P.supportEmail) a.href = "mailto:" + P.supportEmail + "?subject=Affiliate%20application&body=Name%3A%0AChannel%20link%3A%0AWho%20sent%20you%3F%20(optional)%3A%0AOK%20to%20name%20you%20in%20shout-outs%3F%20(yes%2Fno)%3A";
     if (a.dataset.affiliate === "apply") a.setAttribute("data-track", "studio.affiliate-apply");
   });
   // Screenshot slots: until the file exists, show what belongs there
