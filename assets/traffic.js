@@ -37,7 +37,7 @@
     var LANDING = [
       // Mad Tea Party Development
       "studio.index.html", "studio.transparency.html", "studio.coalition.html", "studio.socials.html", "studio.founding-members.html", "studio.affiliates.html", "studio.tutorials.html",
-      "queens-court.index.html", "looking-glass.index.html", "revenue-simulator.index.html",
+      "queens-court.index.html", "looking-glass.index.html", "queens-court.affiliates.html", "looking-glass.affiliates.html", "revenue-simulator.index.html",
       "asset-logger.index.html", "dnd-combat-balancer.index.html",
       // March Hare Games
       "studio.games.html", "mimic-masters.index.html", "scorchlet.index.html", "hero-impervious.index.html", "we-built-this-city.index.html"

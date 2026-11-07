@@ -39,6 +39,8 @@ var BRANDS = [
     ['Software', [
       ['Queens Court', 'queens-court.index.html'],
       ['Looking Glass', 'looking-glass.index.html'],
+      ['Queens Court · Become an Affiliate', 'queens-court.affiliates.html'],
+      ['Looking Glass · Become an Affiliate', 'looking-glass.affiliates.html'],
       ['Mobile Game Revenue Simulator', 'revenue-simulator.index.html'],
       ['Asset Logger', 'asset-logger.index.html'],
       ['D&D Combat Balancer', 'dnd-combat-balancer.index.html']

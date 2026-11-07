@@ -22,6 +22,9 @@ window.PRODUCTS = {
   affiliateForm: "",
   // Tutorials page: the ID of the Google Sheet (Share > Anyone with the link > Viewer).
   tutorialsSheet: "1WIG4TNC7g5jkqZRRL2mv1S7tsvN3gOjGLMNoiHyuWP4",
+  // Affiliate top 10: the "Leaderboard" tab of the same Sheet (columns Name | Link | Sales). Add only people who said yes.
+  leaderboardSheet: "",
+  leaderboardTab: "Leaderboard",
   // Founding Members: how many buyers get a spot on the wall.
   foundingSpots: 50,
   supportForm: "https://forms.gle/2CixqjeG1XYBWkGUA",

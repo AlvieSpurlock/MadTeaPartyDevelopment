@@ -193,3 +193,18 @@ body.dnd-combat-balancer .cards, body.asset-logger .cards { grid-template-column
 .proof-shots a { display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--muted); font-size: .88rem; }
 .proof-shots img { width: 100%; height: 200px; object-fit: contain; border-radius: 12px; border: 1px solid var(--line); background: #111; }
 .proof-shots a:hover img { border-color: var(--neon); }
+
+/* Affiliate leaderboard (assets/leaderboard.js) */
+.lb { list-style: none; margin: 0 auto; padding: 0; max-width: 620px; display: grid; gap: 10px; }
+.lb li { display: flex; align-items: center; gap: 14px; padding: 12px 18px; border-radius: 14px; background: rgba(0,0,0,.22); border: 2px solid var(--line); }
+.lb li.top { border-color: var(--a1); }
+.lb-rank { width: 34px; text-align: center; font-family: var(--head); font-size: 1.25rem; flex: none; }
+.lb-name { flex: 1; font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
+.lb-name a { color: var(--text); }
+.lb-sales { color: var(--muted); font-size: .92rem; flex: none; }
+.lb-empty { text-align: center; color: var(--muted); margin: 0; }
+.lb-note { text-align: center; color: var(--muted); font-size: .92rem; margin: 14px 0 0; }
+.aff-steps { max-width: 720px; margin: 0 auto; }
+.aff-steps ol, .aff-steps ul { margin: 0; padding-left: 22px; }
+.aff-steps li { margin: 8px 0; }
+.aff-steps h3 { margin-top: 0; }

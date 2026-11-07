@@ -35,8 +35,10 @@
   });
   // Affiliate sign-up buttons
   document.querySelectorAll("[data-affiliate]").forEach(a => {
-    if (P.affiliateSignup) { a.href = P.affiliateSignup; a.target = "_blank"; a.rel = "noopener"; }
-    else if (P.supportEmail) a.href = "mailto:" + P.supportEmail + "?subject=Affiliate%20program";
+    const form = P.affiliateForm || P.affiliateSignup;
+    if (form) { a.href = form; a.target = "_blank"; a.rel = "noopener"; }
+    else if (P.supportEmail) a.href = "mailto:" + P.supportEmail + "?subject=Affiliate%20application&body=Channel%20link%3A%0AAudience%20size%3A%0AWhich%20app%3A";
+    if (a.dataset.affiliate === "apply") a.setAttribute("data-track", "studio.affiliate-apply");
   });
   // Screenshot slots: until the file exists, show what belongs there
   document.querySelectorAll(".shot img").forEach(img => {
