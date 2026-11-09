@@ -8,8 +8,8 @@
    - doGet: answers "ok", so opening the web app URL in a browser confirms it is live.
    - setup(): builds the report tabs:
        Overview                   the three brands side by side
-       Mad Tea Party Development  software shop, studio pages, every software landing page, demo download clicks
-       March Hare Games           games home and every game's landing page
+       Mad Tea Party Development  the studio pages, every page of each software site and the dev kits, Buy / demo / Apply / store clicks
+       March Hare Games           games home and every game's page
        Mimic Masters              every page of the standalone site
      Each brand tab: a page table (today / 7 days / all time), a most-viewed-this-week ranking,
      where visits came from, and views per day. Run setup() once, and again after editing BRANDS.
@@ -23,8 +23,9 @@ var TZ = 'America/Chicago';
 var MAX_ROWS = 40000;      // flood guard: no new rows past this
 var TRAFFIC = 'Traffic';
 
-/* Which pages belong to which brand, with the name to show for each.
-   The studio sites only send their landing pages; the standalone Mimic Masters site sends every page. */
+/* Which pages belong to which brand, with the name to show for each - every page of every site.
+   The studio sites send site.page.html (queens-court.pricing.html); the standalone Mimic Masters site sends plain names.
+   Clicks (Buy, demo download, Apply, dev kit stores) arrive as their own page ids. */
 var BRANDS = [
   { tab: 'Mad Tea Party Development', color: '#3a2463', sections: [
     ['Studio', [
@@ -36,18 +37,88 @@ var BRANDS = [
       ['Become an Affiliate', 'studio.affiliates.html'],
       ['Tutorials', 'studio.tutorials.html']
     ]],
-    ['Software', [
-      ['Queens Court', 'queens-court.index.html'],
-      ['Looking Glass', 'looking-glass.index.html'],
-      ['Queens Court · Become an Affiliate', 'queens-court.affiliates.html'],
-      ['Looking Glass · Become an Affiliate', 'looking-glass.affiliates.html'],
-      ['Mobile Game Revenue Simulator', 'revenue-simulator.index.html'],
-      ['Asset Logger', 'asset-logger.index.html'],
-      ['D&D Combat Balancer', 'dnd-combat-balancer.index.html']
+    ['Queens Court', [
+      ['Overview (home)', 'queens-court.index.html'],
+      ['Features', 'queens-court.features.html'],
+      ['Pricing', 'queens-court.pricing.html'],
+      ['FAQ', 'queens-court.faq.html'],
+      ['Guides', 'queens-court.guides.html'],
+      ['What\'s new', 'queens-court.whats-new.html'],
+      ['Used in', 'queens-court.used-in.html'],
+      ['Become an Affiliate', 'queens-court.affiliates.html'],
+      ['Press kit', 'queens-court.press.html'],
+      ['Legal', 'queens-court.legal.html']
+    ]],
+    ['Looking Glass', [
+      ['Overview (home)', 'looking-glass.index.html'],
+      ['Features', 'looking-glass.features.html'],
+      ['Pricing', 'looking-glass.pricing.html'],
+      ['FAQ', 'looking-glass.faq.html'],
+      ['Guides', 'looking-glass.guides.html'],
+      ['What\'s new', 'looking-glass.whats-new.html'],
+      ['Used in', 'looking-glass.used-in.html'],
+      ['Become an Affiliate', 'looking-glass.affiliates.html'],
+      ['Press kit', 'looking-glass.press.html'],
+      ['Legal', 'looking-glass.legal.html']
+    ]],
+    ['Mobile Game Revenue Simulator', [
+      ['Overview (home)', 'revenue-simulator.index.html'],
+      ['What it does', 'revenue-simulator.what-it-does.html'],
+      ['How it works', 'revenue-simulator.how-it-works.html'],
+      ['Accuracy', 'revenue-simulator.accuracy.html'],
+      ['Customize', 'revenue-simulator.customize.html'],
+      ['Pricing', 'revenue-simulator.pricing.html'],
+      ['FAQ', 'revenue-simulator.faq.html'],
+      ['Support', 'revenue-simulator.support.html'],
+      ['Used by', 'revenue-simulator.used-in.html'],
+      ['Press kit', 'revenue-simulator.press.html'],
+      ['Legal', 'revenue-simulator.legal.html']
+    ]],
+    ['Asset Logger', [
+      ['Overview (home)', 'asset-logger.index.html'],
+      ['Used in', 'asset-logger.used-in.html'],
+      ['Press kit', 'asset-logger.press.html']
+    ]],
+    ['D&D Combat Balancer', [
+      ['Overview (home)', 'dnd-combat-balancer.index.html'],
+      ['Press kit', 'dnd-combat-balancer.press.html']
+    ]],
+    ['Game Dev Kits', [
+      ['Game Dev Kits (home)', 'dev-kits.index.html'],
+      ['LevelPlay for Unity', 'dev-kits.levelplay.html'],
+      ['Appodeal for Unity', 'dev-kits.appodeal.html'],
+      ['Google AdMob for Unity', 'dev-kits.admob.html'],
+      ['Localization for Unity', 'dev-kits.localization.html'],
+      ['Support', 'dev-kits.support.html'],
+      ['Used in', 'dev-kits.used-in.html'],
+      ['Press kits', 'dev-kits.press.html'],
+      ['LevelPlay press kit', 'dev-kits.levelplay-press.html'],
+      ['Appodeal press kit', 'dev-kits.appodeal-press.html'],
+      ['AdMob press kit', 'dev-kits.admob-press.html'],
+      ['Localization press kit', 'dev-kits.localization-press.html']
+    ]],
+    ['Affiliates only', [
+      ['Study Hall', 'study-hall.index.html']
     ]],
     ['Clicks', [
-      ['Looking Glass demo downloads (button clicks)', 'looking-glass.demo-download.html'],
-      ['Affiliate applications (Apply button clicks)', 'studio.affiliate-apply.html']
+      ['Queens Court - Buy button clicks', 'queens-court.buy.html'],
+      ['Looking Glass - Buy button clicks', 'looking-glass.buy.html'],
+      ['Looking Glass - free demo downloads', 'looking-glass.demo-download.html'],
+      ['Queens Court - free demo downloads', 'queens-court.demo-download.html'],
+      ['Revenue Simulator - Buy button clicks', 'revenue-simulator.buy.html'],
+      ['Affiliate applications (Apply button clicks)', 'studio.affiliate-apply.html'],
+      ['LevelPlay - Fab store clicks', 'dev-kits.levelplay-fab.html'],
+      ['LevelPlay - Unity store clicks', 'dev-kits.levelplay-unity.html'],
+      ['LevelPlay - Gumroad store clicks', 'dev-kits.levelplay-gumroad.html'],
+      ['Appodeal - Fab store clicks', 'dev-kits.appodeal-fab.html'],
+      ['Appodeal - Unity store clicks', 'dev-kits.appodeal-unity.html'],
+      ['Appodeal - Gumroad store clicks', 'dev-kits.appodeal-gumroad.html'],
+      ['AdMob - Fab store clicks', 'dev-kits.admob-fab.html'],
+      ['AdMob - Unity store clicks', 'dev-kits.admob-unity.html'],
+      ['AdMob - Gumroad store clicks', 'dev-kits.admob-gumroad.html'],
+      ['Localization - Fab store clicks', 'dev-kits.localization-fab.html'],
+      ['Localization - Unity store clicks', 'dev-kits.localization-unity.html'],
+      ['Localization - Gumroad store clicks', 'dev-kits.localization-gumroad.html']
     ]]
   ]},
   { tab: 'March Hare Games', color: '#5b2a86', sections: [

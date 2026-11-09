@@ -7,6 +7,7 @@
     const label = btn.dataset.label || `Get it${tail}`;
     if (p.buy) {
       btn.href = p.buy; btn.target = "_blank"; btn.rel = "noopener"; btn.textContent = label;
+      btn.setAttribute("data-track", `${btn.dataset.buy}.buy`);       // Buy clicks are counted (assets/traffic.js)
     } else {
       btn.removeAttribute("href"); btn.classList.add("soon"); btn.setAttribute("aria-disabled", "true");
       btn.textContent = btn.classList.contains("gum") ? "Coming soon to Gumroad" : `Coming soon${tail}`;
@@ -26,7 +27,7 @@
     const p = P[btn.dataset.demoDownload]; if (!p) return;
     if (p.demoDownload) {
       btn.href = p.demoDownload; btn.target = "_blank"; btn.rel = "noopener";
-      btn.textContent = btn.dataset.label || "Try the free demo · 3 streams";
+      btn.textContent = btn.dataset.label || (btn.dataset.demoDownload === "looking-glass" ? "Try the free demo · 3 streams" : "Try the free demo");
       btn.setAttribute("data-track", `${btn.dataset.demoDownload}.demo-download`);
     } else {
       btn.removeAttribute("href"); btn.classList.add("soon"); btn.setAttribute("aria-disabled", "true");
@@ -54,7 +55,8 @@
   document.querySelectorAll("[data-kit][data-store]").forEach(b => {
     const k = (P.devkits || {})[b.dataset.kit]; if (!k) return;
     const url = k[b.dataset.store], name = STORE[b.dataset.store] || b.dataset.store;
-    if (url) { b.href = url; b.target = "_blank"; b.rel = "noopener"; b.textContent = `Get it on ${name}`; b.classList.remove("soon"); }
+    if (url) { b.href = url; b.target = "_blank"; b.rel = "noopener"; b.textContent = `Get it on ${name}`; b.classList.remove("soon");
+      b.setAttribute("data-track", `dev-kits.${b.dataset.kit}-${b.dataset.store}`); }
     else { b.removeAttribute("href"); b.classList.add("soon"); b.setAttribute("aria-disabled", "true"); b.textContent = `${name} · Coming soon`; }
   });
   document.querySelectorAll("iframe[data-form]").forEach(f => { if (P.supportForm) f.src = P.supportForm; });

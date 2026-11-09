@@ -110,22 +110,29 @@ line into the right list. An empty list shows a "Your project could be first" no
 
 ## Traffic per site and page
 
-The studio pages and product sites load `assets/traffic.js` (through `main.js` or `assets/product.js`, or
-directly on the Mimic Masters copy). It counts **landing pages only** (the LANDING list in that file): the
-Software Shop home, studio pages, every software, dev kit and game landing page. Subpages like Features or
-Pricing aren't counted. Views go to the same Google Sheet as the standalone Mimic Masters site, which counts
-every page. Same rules: no cookies, no visitor ID, skips Do Not Track, bots and `?notrack=1` devices.
+The studio pages and product sites load `assets/traffic.js` (through `main.js` or `assets/product.js`;
+Study Hall loads it directly). It counts **every page** of the studio sites in its SITES list: the studio
+pages, every page of each software site (Features, Pricing, FAQ, Guides, What's new, Used in, Affiliates,
+Press, Legal ...), the Game Dev Kits and their press kits, the game pages and Study Hall (counted as
+`study-hall.index.html`, never by its private address). It also counts clicks marked `data-track`
+(assets/app.js marks them): Buy buttons (`queens-court.buy.html`, `looking-glass.buy.html`,
+`revenue-simulator.buy.html`), the Looking Glass demo download, the affiliate Apply button and the dev kit
+store buttons (`dev-kits.admob-fab.html`). Views go to the same Google Sheet as the standalone Mimic Masters
+site, which counts every page. Same rules: no cookies, no visitor ID, skips Do Not Track, bots and
+`?notrack=1` devices.
 
 In the Sheet, TrafficReceiver.gs (run `setup()`) builds an Overview tab plus one tab per brand: Mad Tea Party
-Development, March Hare Games and Mimic Masters. To count a new landing page, add it to LANDING in
-`assets/traffic.js` and to BRANDS in TrafficReceiver.gs, then run `setup()` again.
+Development (a section per site: Studio, Queens Court, Looking Glass, Revenue Simulator, Asset Logger, D&D
+Combat Balancer, Game Dev Kits, Study Hall, Clicks), March Hare Games and Mimic Masters. To count a new site
+folder, add it to SITES in `assets/traffic.js`; for any new page, add it to BRANDS in TrafficReceiver.gs, then
+run `setup()` again.
 
 ## Press kits
 Every software product and Game Dev Kit has a press kit page, linked only from the bottom strip of its footer
 (never the top menu): queens-court/press.html, looking-glass/press.html, revenue-simulator/press.html,
 asset-logger/press.html, dnd-combat-balancer/press.html, dev-kits/press.html (hub) and dev-kits/<kit>-press.html.
 Each has a downloadable .zip in its folder's press/ subfolder (factsheet.txt + logo + screenshots).
-These pages aren't counted by the traffic tracker.
+They're counted by the traffic tracker like every other page.
 
 ## Launch features (Nov 2026)
 - **Looking Glass free demo button:** paste the download link into `data/products.js` → `looking-glass.demoDownload`. Until then every demo button reads "Free demo · available <demoDate>". Once set, every click is counted in the traffic Sheet as **looking-glass.demo-download.html** (Mad Tea Party Development tab → Clicks). Re-run `setup()` in TrafficReceiver.gs once so the new rows appear.

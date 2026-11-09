@@ -5,7 +5,9 @@
    ========================================================== */
 window.PRODUCTS = {
   // buy:  Gumroad product link.   demo: the YouTube video ID of the demo (the part after watch?v=).
-  "queens-court":  { name: "Queens Court",  price: "$19.99", buy: "https://madteaparty.gumroad.com/l/queens-court", demo: "e2aQhTt1J4c" },   // e.g. buy: "https://yourname.gumroad.com/l/queens-court"
+  "queens-court":  { name: "Queens Court",  price: "$19.99", buy: "https://madteaparty.gumroad.com/l/queens-court", demo: "e2aQhTt1J4c",
+    // Free Queens Court demo (find outlets + write pitches, sends nothing). Paste its download link when it's live.
+    demoDownload: "", demoDate: "soon" },   // e.g. buy: "https://yourname.gumroad.com/l/queens-court"
   "looking-glass": { name: "Looking Glass", price: "$14.99", buy: "https://madteaparty.gumroad.com/l/looking-glass", demo: "oR9c80A1LQQ",
     // Free demo download (3 streams). Paste the download link when it's live; until then the button says "available <demoDate>".
     demoDownload: "https://madteaparty.gumroad.com/l/looking-glass", demoDate: "Nov 9" },   // e.g. demo: "dQw4w9WgXcQ"

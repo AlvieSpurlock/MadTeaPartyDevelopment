@@ -2,15 +2,17 @@
    the Mimic Masters copy). Same rules and the same Google Sheet as the standalone Mimic Masters site
    (see the Traffic Tracking blueprint):
    - Sends exactly two fields: p = page, s = source. No cookies, no visitor ID.
-   - Only landing pages are counted here (the LANDING list below): the studio homes, each software,
-     dev kit and game landing page. p names the site as well as the page: studio.index.html,
-     queens-court.index.html, dev-kits.admob.html ... (the standalone Mimic Masters site counts every
-     page with its plain names: index.html, play.html ...)
+   - Every page of the studio sites is counted (the SITES list below: the studio pages, each software
+     site with all its pages, the dev kits, the games, Study Hall). p names the site as well as the page:
+     studio.index.html, queens-court.pricing.html, dev-kits.admob.html ... (the standalone Mimic Masters
+     site counts every page with its plain names: index.html, play.html ...)
    - s = ?src= / ?utm_source= tag, else "site" (from your own sites), "from:<host>" or "direct".
    - Skips localhost, Do Not Track / Global Privacy Control, bots and prerendering, and any device
      opted out with ?notrack=1 (?notrack=0 counts it again). Counts each page once per tab visit.
-   - Also counts clicks on links marked data-track (the Looking Glass demo download button), as
-     looking-glass.demo-download.html in the Sheet. */
+   - Also counts clicks on links marked data-track (assets/app.js marks them): Buy buttons
+     (queens-court.buy.html), the Looking Glass demo download (looking-glass.demo-download.html), the
+     affiliate Apply button (studio.affiliate-apply.html) and dev kit store buttons
+     (dev-kits.admob-fab.html). */
 (function () {
   var send = null;   // set below once the checks pass; used for page views and tracked clicks
   try {
@@ -30,18 +32,13 @@
     var segs = L.pathname.toLowerCase().split("/").filter(Boolean);
     var file = /\.html$/.test(segs[segs.length - 1] || "") ? segs.pop() : "index.html";
     var folder = segs[segs.length - 1] || "";
-    var site = (!folder || folder === REPO) ? "studio" : folder.replace(/[^a-z0-9_-]/g, "");
+    var site = (!folder || folder === REPO) ? "studio" : /^study-hall/.test(folder) ? "study-hall"   // never the private address
+      : folder.replace(/[^a-z0-9_-]/g, "");
     var page = (site + "." + file).slice(-65);
 
-    // Only landing pages are counted on the studio sites, so the Sheet shows which products get the most eyes.
-    var LANDING = [
-      // Mad Tea Party Development
-      "studio.index.html", "studio.transparency.html", "studio.coalition.html", "studio.socials.html", "studio.founding-members.html", "studio.affiliates.html", "studio.tutorials.html",
-      "queens-court.index.html", "looking-glass.index.html", "queens-court.affiliates.html", "looking-glass.affiliates.html", "revenue-simulator.index.html",
-      "asset-logger.index.html", "dnd-combat-balancer.index.html",
-      // March Hare Games
-      "studio.games.html", "mimic-masters.index.html", "scorchlet.index.html", "hero-impervious.index.html", "we-built-this-city.index.html"
-    ];
+    // The studio sites whose pages are counted (a page in any other folder isn't).
+    var SITES = ["studio", "queens-court", "looking-glass", "revenue-simulator", "asset-logger", "dnd-combat-balancer",
+      "dev-kits", "mimic-masters", "scorchlet", "hero-impervious", "we-built-this-city", "study-hall"];
     var src = (q.get("src") || q.get("utm_source") || "").toLowerCase();
     if (!src) {
       try {
@@ -71,7 +68,7 @@
       send(key + ".html", src);
     }, true);
 
-    if (LANDING.indexOf(page) < 0) return;
+    if (SITES.indexOf(site) < 0) return;
     try { var k = "mm_v_" + page; if (sessionStorage.getItem(k)) return; sessionStorage.setItem(k, "1"); } catch (e) {}
     send(page, src);
   } catch (e) {}
